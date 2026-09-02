@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✈️ 종이비행기 항해 - 신규 음원 3종 비교 청취 플레이어</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --card-bg: rgba(20, 27, 45, 0.85);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.4);
+      --accent: #fbbf24;
+      --accent-glow: rgba(251, 191, 36, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0a0e17 80%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .track-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .track-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px var(--primary-glow);
+    }
+
+    .track-card.recommended {
+      border: 2px solid var(--accent);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px var(--accent-glow);
+    }
+
+    .rank-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .rank-gold {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #000;
+    }
+
+    .rank-silver {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .track-info {
+      margin-bottom: 20px;
+    }
+
+    .track-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .track-genre {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .metric-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    .metric-item {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+    }
+
+    .metric-item span.val {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .track-desc {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    audio {
+      width: 100%;
+      height: 42px;
+      border-radius: 999px;
+      outline: none;
+      filter: invert(0.9) hue-rotate(180deg);
+    }
+
+    .verdict-box {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+    }
+
+    .verdict-box h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .verdict-box p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">AI Music Intelligence & Evaluation</div>
+      <h1>✈️ 종이비행기 항해 - 신규 음원 비교 청취</h1>
+      <p class="subtitle">구글 드라이브 노래 폴더에 새로 업로드된 트랙들을 직접 들어보고 비교해 보세요!</p>
+    </header>
+
+    <div class="card-grid">
+      <!-- Track 4: 1위 강력 추천 -->
+      <div class="track-card recommended">
+        <div class="rank-tag rank-gold">👑 1위 압도적 추천</div>
+        <div class="track-info">
+          <div class="track-title">종이비행기 항해 (리믹스) (4)</div>
+          <div class="track-genre">⚡ 172 BPM 하이 에너지 팝-락 (Anime OST)</div>
+          <ul class="metric-list">
+            <li class="metric-item"><span>재생 시간</span><span class="val">3분 43초 (223.1s)</span></li>
+            <li class="metric-item"><span>템포 (BPM)</span><span class="val">172.3 BPM</span></li>
+            <li class="metric-item"><span>다이내믹 레인지</span><span class="val" style="color: #fbbf24;">1.95 (최고치)</span></li>
+            <li class="metric-item"><span>저음 펀치감 (Bass)</span><span class="val" style="color: #38bdf8;">8.43 (최강)</span></li>
+          </ul>
+          <div class="track-desc">
+            🌟 <strong>선정이유:</strong> 172 BPM의 질주하는 락 드럼 비트와 강력한 베이스, 폭발적인 코러스 파워가 종이비행기의 비상과 모험 테마에 100% 완벽히 매칭됩니다! 기승전결이 가장 드라마틱합니다.
+          </div>
+        </div>
+        <audio controls src="/track_remix_4.mp3"></audio>
+      </div>
+
+      <!-- Track 2 / 3 -->
+      <div class="track-card">
+        <div class="rank-tag rank-silver">✨ 신스팝 버전 (2&3 동일)</div>
+        <div class="track-info">
+          <div class="track-title">종이비행기 항해 (리믹스) (2) / (3)</div>
+          <div class="track-genre">🎵 117 BPM 미디엄 템포 신스팝 / 일렉트로닉</div>
+          <ul class="metric-list">
+            <li class="metric-item"><span>재생 시간</span><span class="val">3분 39초 (219.8s)</span></li>
+            <li class="metric-item"><span>템포 (BPM)</span><span class="val">117.5 BPM</span></li>
+            <li class="metric-item"><span>다이내믹 레인지</span><span class="val">1.68</span></li>
+            <li class="metric-item"><span>저음 펀치감 (Bass)</span><span class="val">7.53</span></li>
+          </ul>
+          <div class="track-desc">
+            💡 <strong>특징:</strong> (2)번과 (3)번은 완전히 동일한 파일입니다. 117 BPM의 세련되고 그루비한 일렉트로닉 비트로, 락보다는 카페/드라이브 감성의 부드러운 신스팝 분위기를 띱니다.
+          </div>
+        </div>
+        <audio controls src="/track_remix_2.mp3"></audio>
+      </div>
+
+      <!-- Existing Original Track 1 -->
+      <div class="track-card">
+        <div class="rank-tag rank-silver">🌸 이전 오리지널 락 (1)</div>
+        <div class="track-info">
+          <div class="track-title">종이비행기 항해 (1) (기존)</div>
+          <div class="track-genre">🎸 170 BPM 오리지널 풀 밴드 락</div>
+          <ul class="metric-list">
+            <li class="metric-item"><span>재생 시간</span><span class="val">3분 09초 (189.5s)</span></li>
+            <li class="metric-item"><span>템포 (BPM)</span><span class="val">170.0 BPM</span></li>
+            <li class="metric-item"><span>다이내믹 레인지</span><span class="val">1.89</span></li>
+            <li class="metric-item"><span>저음 펀치감 (Bass)</span><span class="val">7.92</span></li>
+          </ul>
+          <div class="track-desc">
+            🎸 <strong>특징:</strong> 현재 뮤직비디오로 제작된 원본 트랙입니다. 깔끔하고 에너지 넘치는 3분 09초 구성입니다.
+          </div>
+        </div>
+        <audio controls src="/track_orig_1.wav"></audio>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <h2>🏆 AI 음악 분석 전문가의 최종 평가 및 추천</h2>
+      <p>1. <strong class="highlight">[리믹스 (2)]</strong>와 <strong class="highlight">[리믹스 (3)]</strong>은 MD5 해시값이 <code>68551233278f904f439a293be1db87a7</code>로 100% 동일한 중복 파일입니다. (117 BPM 미디엄 템포 신스팝 버전)</p>
+      <p>2. 새로 업로드해주신 곡 중에서는 🥇 <strong style="color:#fbbf24;">『종이비행기 항해 (리믹스) (4)』 (3분 43초 / 172.3 BPM)</strong>가 <strong>압도적으로 가장 훌륭합니다!</strong></p>
+      <p>3. <strong>『리믹스 (4)』</strong>는 이전 3분 09초 버전보다 러닝타임이 34초 늘어나면서 <strong>후반부 클라이맥스 락 기타 솔로와 보컬 애드리브, 웅장한 아웃트로가 대폭 확장</strong>되어 시네마틱 뮤직비디오의 감동과 쾌감이 극대화됩니다.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구글 드라이브 음악 라이브러리 명곡 큐레이션</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap');
+    * { font-family: 'Pretendard', sans-serif; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.2);
+    }
+    .active-card {
+      border-color: #38bdf8 !important;
+      background: rgba(30, 41, 59, 0.9) !important;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.3) !important;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen pb-32">
+
+  <!-- Top Hero Header -->
+  <header class="border-b border-slate-800/80 bg-slate-900/60 sticky top-0 z-40 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-500 flex items-center justify-center text-xl shadow-lg shadow-sky-500/20">
+          <i class="fa-solid fa-music"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-white via-slate-100 to-sky-400 bg-clip-text text-transparent">
+            구글 드라이브 음원 마스터 큐레이션
+          </h1>
+          <p class="text-xs text-slate-400">80여 개 전체 트랙 음향학적 분석 및 베스트 명곡 추천</p>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 bg-slate-950/80 p-1.5 rounded-xl border border-slate-800 text-xs font-semibold">
+        <button onclick="filterCategory('all')" id="btn-all" class="filter-btn px-3 py-1.5 rounded-lg bg-sky-500 text-white transition-all">전체 (18곡)</button>
+        <button onclick="filterCategory('Vocal Track')" id="btn-vocal" class="filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">🎙️ 보컬 가요</button>
+        <button onclick="filterCategory('OST/BGM Track')" id="btn-ost" class="filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">🎬 웅장한 OST / BGM</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    
+    <!-- Highlights Banner -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div class="glass-card p-5 rounded-2xl bg-gradient-to-br from-indigo-950/40 to-slate-900/60 border-indigo-500/20">
+        <div class="text-xs font-bold text-indigo-400 mb-1 flex items-center gap-1.5">
+          <i class="fa-solid fa-crown"></i> 종합 1위 하이 에너지 락
+        </div>
+        <div class="text-base font-bold text-white mb-1">종이비행기 항해 (리믹스 4)</div>
+        <div class="text-xs text-slate-400">117.5 BPM • 완곡 3분 43초 • 폭발적인 기타 솔로와 대합창</div>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl bg-gradient-to-br from-amber-950/40 to-slate-900/60 border-amber-500/20">
+        <div class="text-xs font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+          <i class="fa-solid fa-fire"></i> 보컬 가요 명곡 추천
+        </div>
+        <div class="text-base font-bold text-white mb-1">돈보다 사랑이야 & 지하철 창가에</div>
+        <div class="text-xs text-slate-400">신나는 트롯/댄스 팝 & 감성 시티팝 어쿠스틱 발라드</div>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl bg-gradient-to-br from-emerald-950/40 to-slate-900/60 border-emerald-500/20">
+        <div class="text-xs font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
+          <i class="fa-solid fa-compass"></i> 시네마틱 OST 1위
+        </div>
+        <div class="text-base font-bold text-white mb-1">빛과 그림자의 여정 & 결의의 북소리</div>
+        <div class="text-xs text-slate-400">161.5 BPM • 웅장한 대서사시 오케스트라 판타지</div>
+      </div>
+    </div>
+
+    <!-- Song List Grid -->
+    <div id="song-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Injected by JS -->
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Audio Player Bar -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 border-t border-slate-800 backdrop-blur-xl px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Current Song Info -->
+      <div class="flex items-center gap-4 w-full md:w-1/3">
+        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-sky-400 text-xl font-bold flex-shrink-0" id="current-badge">
+          🎵
+        </div>
+        <div class="truncate">
+          <div class="font-bold text-sm text-white truncate" id="player-title">곡을 선택해주세요</div>
+          <div class="text-xs text-slate-400 truncate" id="player-meta">클릭하면 즉시 고음질로 재생됩니다</div>
+        </div>
+      </div>
+
+      <!-- Controls & Progress -->
+      <div class="flex flex-col items-center gap-2 w-full md:w-1/3">
+        <div class="flex items-center gap-5">
+          <button onclick="playPrev()" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-backward-step text-lg"></i></button>
+          <button onclick="togglePlay()" id="play-btn" class="w-11 h-11 rounded-full bg-sky-500 hover:bg-sky-400 text-white flex items-center justify-center text-lg shadow-lg shadow-sky-500/30 transition">
+            <i class="fa-solid fa-play" id="play-icon"></i>
+          </button>
+          <button onclick="playNext()" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-forward-step text-lg"></i></button>
+        </div>
+
+        <div class="w-full flex items-center gap-2 text-[11px] text-slate-400 font-mono">
+          <span id="curr-time">0:00</span>
+          <input type="range" id="seek-bar" value="0" min="0" max="100" class="w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-sky-400" oninput="seekAudio(this.value)">
+          <span id="dur-time">0:00</span>
+        </div>
+      </div>
+
+      <!-- Volume & Source Link -->
+      <div class="flex items-center justify-end gap-3 w-full md:w-1/3 text-xs text-slate-400">
+        <i class="fa-solid fa-volume-high"></i>
+        <input type="range" min="0" max="1" step="0.05" value="0.9" class="w-20 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-sky-400" oninput="audio.volume = this.value">
+        <span class="ml-2 font-mono text-[10px] text-sky-400 bg-sky-950/60 border border-sky-800/40 px-2 py-0.5 rounded">320kbps</span>
+      </div>
+
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
+  <script>
+    let songs = [];
+    let currentIdx = 0;
+    let currentFilter = 'all';
+    const audio = document.getElementById('audio-player');
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const playerTitle = document.getElementById('player-title');
+    const playerMeta = document.getElementById('player-meta');
+    const currTimeEl = document.getElementById('curr-time');
+    const durTimeEl = document.getElementById('dur-time');
+    const seekBar = document.getElementById('seek-bar');
+
+    fetch('curated_songs.json')
+      .then(res => res.json())
+      .then(data => {
+        songs = data;
+        renderList();
+      });
+
+    function formatTime(sec) {
+      if (isNaN(sec)) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function renderList() {
+      const grid = document.getElementById('song-grid');
+      grid.innerHTML = '';
+
+      songs.forEach((s, idx) => {
+        if (currentFilter !== 'all' && s.category !== currentFilter) return;
+
+        const card = document.createElement('div');
+        card.className = `glass-card p-5 rounded-2xl cursor-pointer transition-all ${idx === currentIdx ? 'active-card' : ''}`;
+        card.id = `song-card-${idx}`;
+        card.onclick = () => selectSong(idx);
+
+        const isVocal = s.category === 'Vocal Track';
+        const tagBg = isVocal ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+        const rankColor = idx === 0 ? 'text-amber-400' : (idx === 1 ? 'text-slate-300' : (idx === 2 ? 'text-amber-600' : 'text-slate-500'));
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div class="flex items-center gap-3">
+              <span class="font-black text-lg font-mono ${rankColor}">${idx + 1}</span>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${tagBg}">
+                  ${isVocal ? '🎙️ 보컬 가요' : '🎬 웅장한 OST'}
+                </span>
+                <h3 class="font-bold text-sm text-white mt-1.5 truncate max-w-[220px]">${s.name}</h3>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-xs font-mono font-bold text-sky-400">${s.score}점</div>
+              <div class="text-[10px] text-slate-500 font-mono">${formatTime(s.duration)}</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/50 text-[11px] font-mono text-slate-400">
+            <div><span class="text-slate-600">BPM:</span> <span class="text-slate-200">${s.bpm.toFixed(1)}</span></div>
+            <div><span class="text-slate-600">다이내믹:</span> <span class="text-slate-200">${s.dyn_range.toFixed(2)}x</span></div>
+            <div><span class="text-slate-600">하모닉:</span> <span class="text-slate-200">${Math.round(s.harm_ratio*100)}%</span></div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function selectSong(idx) {
+      currentIdx = idx;
+      const s = songs[idx];
+      audio.src = s.web_audio_path;
+      audio.play();
+      playIcon.className = 'fa-solid fa-pause';
+      playerTitle.innerText = `${idx + 1}위. ${s.name}`;
+      playerMeta.innerText = `${s.category === 'Vocal Track' ? '🎙️ 보컬 가요' : '🎬 OST'} • ${s.bpm.toFixed(1)} BPM • 다이내믹스 ${s.dyn_range.toFixed(2)}x (AI 점수: ${s.score}점)`;
+      renderList();
+    }
+
+    function togglePlay() {
+      if (!audio.src) {
+        selectSong(0);
+        return;
+      }
+      if (audio.paused) {
+        audio.play();
+        playIcon.className = 'fa-solid fa-pause';
+      } else {
+        audio.pause();
+        playIcon.className = 'fa-solid fa-play';
+      }
+    }
+
+    function playPrev() {
+      if (currentIdx > 0) selectSong(currentIdx - 1);
+    }
+
+    function playNext() {
+      if (currentIdx < songs.length - 1) selectSong(currentIdx + 1);
+    }
+
+    audio.ontimeupdate = () => {
+      currTimeEl.innerText = formatTime(audio.currentTime);
+      durTimeEl.innerText = formatTime(audio.duration);
+      seekBar.value = (audio.currentTime / (audio.duration || 1)) * 100;
+    };
+
+    audio.onended = () => {
+      playNext();
+    };
+
+    function seekAudio(val) {
+      if (audio.duration) {
+        audio.currentTime = (val / 100) * audio.duration;
+      }
+    }
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.className = 'filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all';
+      });
+      if (cat === 'all') document.getElementById('btn-all').className = 'filter-btn px-3 py-1.5 rounded-lg bg-sky-500 text-white transition-all';
+      if (cat === 'Vocal Track') document.getElementById('btn-vocal').className = 'filter-btn px-3 py-1.5 rounded-lg bg-sky-500 text-white transition-all';
+      if (cat === 'OST/BGM Track') document.getElementById('btn-ost').className = 'filter-btn px-3 py-1.5 rounded-lg bg-sky-500 text-white transition-all';
+      renderList();
+    }
+  </script>
+</body>
+</html>

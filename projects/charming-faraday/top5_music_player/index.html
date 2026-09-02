@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌟 『별을 따다』 Ver.1 vs Ver.2 A/B 청음 비교 플레이어</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 45%, #020617 100%);
+      --card1: rgba(245, 158, 11, 0.12);
+      --card2: rgba(168, 85, 247, 0.12);
+      --border1: rgba(245, 158, 11, 0.35);
+      --border2: rgba(168, 85, 247, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 120px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 18px;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fde047;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 10%, #fde047 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    p.sub {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .comparison-grid {
+      width: 100%;
+      max-width: 950px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-v1 {
+      background: var(--card1);
+      border: 2px solid var(--border1);
+      box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+    }
+
+    .card-v2 {
+      background: var(--card2);
+      border: 2px solid var(--border2);
+      box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
+    }
+
+    .card.active {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .card-v1.active {
+      border-color: #f59e0b;
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.5);
+      background: rgba(245, 158, 11, 0.2);
+    }
+
+    .card-v2.active {
+      border-color: #a855f7;
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.5);
+      background: rgba(168, 85, 247, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .tag-recommend {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4);
+    }
+
+    .tag-sub {
+      background: rgba(255, 255, 255, 0.1);
+      color: #d8b4fe;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .track-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .track-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .lyrics-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #e2e8f0;
+      max-height: 170px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .play-btn-large {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+      color: #0f172a;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .card-v1.active .play-btn-large {
+      background: #f59e0b;
+      color: #fff;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.8);
+    }
+
+    .card-v2.active .play-btn-large {
+      background: #a855f7;
+      color: #fff;
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
+    }
+
+    /* Fixed Bottom Player Bar */
+    .player-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 900px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(25px);
+      border-radius: 24px;
+      padding: 16px 28px;
+      display: grid;
+      grid-template-columns: 240px 1fr 120px;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .now-playing {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      overflow: hidden;
+    }
+
+    .now-title {
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .now-genre {
+      font-size: 12px;
+      color: #f59e0b;
+    }
+
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .progress-bar-wrap {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6);
+      border-radius: 999px;
+      width: 0%;
+    }
+
+    .time-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">🌟 REAL-TIME A/B COMPARISON</div>
+    <h1>『별을 따다』 1번 vs 2번 집중 비교 청음</h1>
+    <p class="sub">카드를 클릭하여 두 곡의 도입부, 감정선, 클라이맥스 벅참을 직접 비교해 보세요!</p>
+  </div>
+
+  <div class="comparison-grid">
+    <!-- Card 1 (Ver. 1) -->
+    <div class="card card-v1 active" id="card-0" onclick="playTrack(0)">
+      <div>
+        <div class="card-header">
+          <span class="tag-recommend">👑 1순위 강력 추천 (완성도 100%)</span>
+          <span style="font-size: 13px; color: #fde047; font-weight: 700;">3분 02초 (182.4s)</span>
+        </div>
+        <div class="track-title">별을 따다 (Ver.1 완곡)</div>
+        <div class="track-meta">잔잔한 인트로 ➔ 감정선 빌드업 ➔ 피날레 폭발 대합창</div>
+        <div class="lyrics-box">
+          <b>[도입부]</b> "하늘에서 별을 따다..."<br>
+          <b>[1절]</b> "나는 그대 모습 바라보면 행복하죠 내 사랑..."<br>
+          <b>[후렴]</b> "하늘에서 별을 따다 하늘에서 달을 따다 마음에 담아 올게요"<br>
+          <b>[피날레]</b> "아름다운 그대 모습 나를 숨 못 쉬게 하죠... 영원히"
+        </div>
+      </div>
+      <div class="card-footer">
+        <span style="font-size: 13px; color: #94a3b8;">✨ 잡음 제로 & 완벽한 기승전결</span>
+        <button class="play-btn-large" id="btn-0">❚❚</button>
+      </div>
+    </div>
+
+    <!-- Card 2 (Ver. 2) -->
+    <div class="card card-v2" id="card-1" onclick="playTrack(1)">
+      <div>
+        <div class="card-header">
+          <span class="tag-sub">감성 믹스 버전</span>
+          <span style="font-size: 13px; color: #d8b4fe; font-weight: 700;">3분 00초 (180.6s)</span>
+        </div>
+        <div class="track-title">별을 따다 (Ver.2 믹스)</div>
+        <div class="track-meta">도입부부터 바로 후렴구가 시작되는 다이렉트 믹스</div>
+        <div class="lyrics-box">
+          <b>[도입부]</b> "하늘에서 별을 따다 하늘에서 달을 따다 두 손에 담아줄게요"<br>
+          <b>[1절]</b> "아름다운 그대 모습 바라보면 행복하죠 내 사랑..."<br>
+          <b>[후렴]</b> "차가운 바람 끝에도 당신만은 따뜻해요"<br>
+          <b>[피날레]</b> "아름다운 그대 모습 나를 숨 쉬게 하죠... 영원히"
+        </div>
+      </div>
+      <div class="card-footer">
+        <span style="font-size: 13px; color: #94a3b8;">✨ 빠른 템포 전개</span>
+        <button class="play-btn-large" id="btn-1">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Player Bar -->
+  <div class="player-bar">
+    <div class="now-playing">
+      <div class="now-title" id="barTitle">별을 따다 (Ver.1 완곡)</div>
+      <div class="now-genre" id="barGenre">하늘에서 별을 따다 하늘에서 달을 따다</div>
+    </div>
+    <div class="timeline-container">
+      <div class="progress-bar-wrap" onclick="seekAudio(event)">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="time-labels">
+        <span id="curTime">0:00</span>
+        <span id="totTime">3:02</span>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="togglePlay()" id="mainPlayBtn">⏸</button>
+    </div>
+  </div>
+
+  <audio id="audioElement" preload="auto"></audio>
+
+  <script>
+    const tracks = [
+      {
+        title: "별을 따다 (Ver.1 완곡 - 3분 02초)",
+        genre: "잔잔한 피아노 인트로 ➔ 감정선 빌드업 ➔ 피날레 폭발",
+        src: "audio/star_v1.wav"
+      },
+      {
+        title: "별을 따다 (Ver.2 믹스 - 3분 00초)",
+        genre: "도입부 다이렉트 후렴 믹스",
+        src: "audio/star_v2.wav"
+      }
+    ];
+
+    let currentIdx = 0;
+    const audio = document.getElementById('audioElement');
+    const barTitle = document.getElementById('barTitle');
+    const barGenre = document.getElementById('barGenre');
+    const progressFill = document.getElementById('progressFill');
+    const curTime = document.getElementById('curTime');
+    const totTime = document.getElementById('totTime');
+    const mainPlayBtn = document.getElementById('mainPlayBtn');
+
+    function loadTrack(idx) {
+      currentIdx = idx;
+      const t = tracks[idx];
+      audio.src = t.src;
+      barTitle.textContent = t.title;
+      barGenre.textContent = t.genre;
+
+      document.querySelectorAll('.card').forEach((c, i) => {
+        c.classList.toggle('active', i === idx);
+        const btn = document.getElementById(`btn-${i}`);
+        if (btn) btn.textContent = (i === idx && !audio.paused) ? '❚❚' : '▶';
+      });
+    }
+
+    function playTrack(idx) {
+      if (currentIdx === idx && !audio.paused) {
+        audio.pause();
+        mainPlayBtn.textContent = '▶';
+        document.getElementById(`btn-${idx}`).textContent = '▶';
+      } else {
+        if (currentIdx !== idx) {
+          loadTrack(idx);
+        }
+        audio.play().then(() => {
+          mainPlayBtn.textContent = '❚❚';
+          document.getElementById(`btn-${idx}`).textContent = '❚❚';
+        }).catch(err => console.log('Autoplay:', err));
+      }
+    }
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        mainPlayBtn.textContent = '❚❚';
+        document.getElementById(`btn-${currentIdx}`).textContent = '❚❚';
+      } else {
+        audio.pause();
+        mainPlayBtn.textContent = '▶';
+        document.getElementById(`btn-${currentIdx}`).textContent = '▶';
+      }
+    }
+
+    function formatTime(s) {
+      if (isNaN(s)) return '0:00';
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = pct + '%';
+        curTime.textContent = formatTime(audio.currentTime);
+        totTime.textContent = formatTime(audio.duration);
+      }
+    });
+
+    function seekAudio(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      if (audio.duration) {
+        audio.currentTime = (clickX / width) * audio.duration;
+      }
+    }
+
+    // Init
+    loadTrack(0);
+    audio.play().catch(e => {});
+  </script>
+</body>
+</html>

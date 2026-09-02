@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✈️ 종이비행기 전 버전 비교 감상 플레이어</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #0b111e 0%, #172439 50%, #0d1726 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+        .track-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .track-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .track-card:hover {
+            background: rgba(51, 65, 85, 0.7);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+        .track-card.active {
+            background: linear-gradient(135deg, rgba(14, 116, 144, 0.4) 0%, rgba(67, 56, 202, 0.4) 100%);
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+        }
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .track-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+        }
+        .track-card.active .track-badge {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+        .track-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tag-recommend {
+            font-size: 11px;
+            background: #f59e0b;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 800;
+        }
+        .track-desc {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .track-meta {
+            text-align: right;
+        }
+        .track-duration {
+            font-size: 15px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+        .track-score {
+            font-size: 12px;
+            color: #38bdf8;
+            margin-top: 2px;
+        }
+        /* Player Controls */
+        .player-bar {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .now-playing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .np-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .play-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4);
+            transition: all 0.2s ease;
+        }
+        .play-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+        }
+        .seek-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .time-text {
+            font-size: 13px;
+            color: #94a3b8;
+            min-width: 44px;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            border-radius: 4px;
+            transition: width 0.1s linear;
+        }
+        .lyrics-box {
+            margin-top: 24px;
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            max-height: 180px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.8;
+            font-size: 14px;
+            color: #cbd5e1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>✈️ 『종이비행기』 전 버전 비교 감상 플레이어</h1>
+        <p>각 버전을 클릭하여 바로 들어보시고, 뮤직비디오로 제작할 곡을 선택해 보세요!</p>
+    </div>
+
+    <div class="track-list">
+        <!-- Track 1 -->
+        <div class="track-card active" onclick="selectTrack(0)">
+            <div class="track-info">
+                <div class="track-badge">1</div>
+                <div>
+                    <div class="track-title">
+                        종이비행기 항해 (1) (WAV 완곡)
+                        <span class="tag-recommend">👑 AI 분석 1위 추천</span>
+                    </div>
+                    <div class="track-desc">다이내믹비 1.89 / 벅차오르는 풀 락 밴드 사운드 & 완벽한 기승전결</div>
+                </div>
+            </div>
+            <div class="track-meta">
+                <div class="track-duration">3:09</div>
+                <div class="track-score">명료도 24.37 dB</div>
+            </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track-card" onclick="selectTrack(1)">
+            <div class="track-info">
+                <div class="track-badge">2</div>
+                <div>
+                    <div class="track-title">종이비행기 항해 (오리지널 WAV)</div>
+                    <div class="track-desc">다이내믹비 1.63 / 정돈되고 깔끔한 오리지널 믹스</div>
+                </div>
+            </div>
+            <div class="track-meta">
+                <div class="track-duration">3:04</div>
+                <div class="track-score">명료도 24.68 dB</div>
+            </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="track-card" onclick="selectTrack(2)">
+            <div class="track-info">
+                <div class="track-badge">3</div>
+                <div>
+                    <div class="track-title">종이비행기 항해 리믹스 (EDM Pop)</div>
+                    <div class="track-desc">다이내믹비 1.53 / 베이스와 신스가 신나는 댄스/클럽 리믹스 비트</div>
+                </div>
+            </div>
+            <div class="track-meta">
+                <div class="track-duration">3:22</div>
+                <div class="track-score">명료도 24.42 dB</div>
+            </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="track-card" onclick="selectTrack(3)">
+            <div class="track-info">
+                <div class="track-badge">4</div>
+                <div>
+                    <div class="track-title">날아가, 종이비행기</div>
+                    <div class="track-desc">다이내믹비 1.56 / 빠르고 컴팩트한 애니메이션 숏 오프닝 스타일</div>
+                </div>
+            </div>
+            <div class="track-meta">
+                <div class="track-duration">3:01</div>
+                <div class="track-score">명료도 24.26 dB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Bar -->
+    <div class="player-bar">
+        <div class="now-playing">
+            <span class="np-title" id="npTitle">1. 종이비행기 항해 (1) (WAV 완곡)</span>
+            <span style="font-size: 13px; color: #38bdf8;">170 BPM • Energetic J-Pop/Rock</span>
+        </div>
+
+        <div class="seek-container">
+            <span class="time-text" id="curTime">0:00</span>
+            <div class="progress-bar" id="progressBar" onclick="seek(event)">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="time-text" id="durTime">3:09</span>
+        </div>
+
+        <div class="controls">
+            <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+        </div>
+    </div>
+
+    <!-- Lyrics Box -->
+    <div class="lyrics-box">
+        <p><b>[가사 하이라이트]</b></p>
+        <p>골목 끝에 남은 그림자 / 내 이름도 작아 보일 때</p>
+        <p>무릎에 묻은 먼지 속에 / 내일이 숨어 있는 걸 알아</p>
+        <p>웃으며 말했지, 넘어져도 괜찮다고 / 작은 발로 걷는 길이 가장 멀리 간다고</p>
+        <p style="color: #38bdf8; font-weight: 700; margin: 8px 0;">"날아가, 종이비행기야! 바람이 안 도와줘도 구겨진 마음도 끝내는 펼쳐져"</p>
+        <p style="color: #38bdf8; font-weight: 700;">"높이만이 답은 아냐, 떨어진 자리에서 다시 보면 돼!"</p>
+    </div>
+</div>
+
+<audio id="audioElement"></audio>
+
+<script>
+    const tracks = [
+        { title: "1. 종이비행기 항해 (1) (★추천 1위)", file: "track1_flight_1.mp3" },
+        { title: "2. 종이비행기 항해 (오리지널)", file: "track2_flight_orig.mp3" },
+        { title: "3. 종이비행기 항해 (리믹스)", file: "track3_remix.mp3" },
+        { title: "4. 날아가, 종이비행기", file: "track4_fly_plane.mp3" }
+    ];
+
+    let currentIdx = 0;
+    const audio = document.getElementById('audioElement');
+    const playBtn = document.getElementById('playBtn');
+    const npTitle = document.getElementById('npTitle');
+    const curTime = document.getElementById('curTime');
+    const durTime = document.getElementById('durTime');
+    const progressFill = document.getElementById('progressFill');
+    const cards = document.querySelectorAll('.track-card');
+
+    function formatTime(s) {
+        if (isNaN(s)) return "0:00";
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    function selectTrack(idx) {
+        currentIdx = idx;
+        cards.forEach((c, i) => {
+            if (i === idx) c.classList.add('active');
+            else c.classList.remove('active');
+        });
+        npTitle.innerText = tracks[idx].title;
+        audio.src = tracks[idx].file;
+        audio.play();
+        playBtn.innerText = '⏸';
+    }
+
+    function togglePlay() {
+        if (!audio.src) {
+            selectTrack(0);
+            return;
+        }
+        if (audio.paused) {
+            audio.play();
+            playBtn.innerText = '⏸';
+        } else {
+            audio.pause();
+            playBtn.innerText = '▶';
+        }
+    }
+
+    audio.addEventListener('timeupdate', () => {
+        curTime.innerText = formatTime(audio.currentTime);
+        durTime.innerText = formatTime(audio.duration);
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = `${pct}%`;
+    });
+
+    audio.addEventListener('ended', () => {
+        playBtn.innerText = '▶';
+        progressFill.style.width = '0%';
+    });
+
+    function seek(e) {
+        const bar = document.getElementById('progressBar');
+        const rect = bar.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const width = rect.width;
+        const newTime = (clickX / width) * audio.duration;
+        audio.currentTime = newTime;
+    }
+
+    // Auto load first track
+    window.addEventListener('load', () => {
+        audio.src = tracks[0].file;
+    });
+</script>
+
+</body>
+</html>
