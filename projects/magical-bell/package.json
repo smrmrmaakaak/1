@@ -1,0 +1,27 @@
+{
+  "name": "casting-abilities",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fully procedural ice-eruption ability with a MOBA-style ground aim indicator, built with Three.js, custom GLSL and a real-time VFX editor.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "firebase": "^12.18.0",
+    "lil-gui": "^0.21.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1",
+    "vite": "^8.1.5"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.2.5"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "appId": "com.elemental.defense",
+  "appName": "황태민의 멋진 게임",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}

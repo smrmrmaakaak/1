@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">황태민의 멋진 게임</string>
+    <string name="title_activity_main">황태민의 멋진 게임</string>
+    <string name="package_name">com.elemental.defense</string>
+    <string name="custom_url_scheme">com.elemental.defense</string>
+</resources>
