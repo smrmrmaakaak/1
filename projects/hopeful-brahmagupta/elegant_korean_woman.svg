@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <!-- 배경 그라데이션 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1030"/>
+      <stop offset="50%" stop-color="#3d1e4f"/>
+      <stop offset="100%" stop-color="#12081f"/>
+    </linearGradient>
+    <!-- 달빛 -->
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff7e6" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#ffe9c4" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffe9c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonBody" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#fffdf5"/>
+      <stop offset="100%" stop-color="#f5d9a8"/>
+    </radialGradient>
+    <!-- 피부톤 -->
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe9dc"/>
+      <stop offset="100%" stop-color="#f6cdb8"/>
+    </linearGradient>
+    <!-- 입술 -->
+    <linearGradient id="lipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e05a6d"/>
+      <stop offset="100%" stop-color="#b02a44"/>
+    </linearGradient>
+    <!-- 머리카락 -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b1533"/>
+      <stop offset="55%" stop-color="#4a2260"/>
+      <stop offset="100%" stop-color="#150a20"/>
+    </linearGradient>
+    <!-- 꽃잎 -->
+    <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb7c9"/>
+      <stop offset="100%" stop-color="#ff6f9c"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="blurSmall">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- ======== 배경 ======== -->
+  <rect width="800" height="1000" fill="url(#bgGrad)"/>
+
+  <!-- 별들 -->
+  <g fill="#ffffff">
+    <circle cx="90" cy="120" r="1.6" opacity="0.9"/>
+    <circle cx="180" cy="60" r="1.1" opacity="0.6"/>
+    <circle cx="300" cy="140" r="1.4" opacity="0.8"/>
+    <circle cx="520" cy="80" r="1.2" opacity="0.7"/>
+    <circle cx="650" cy="170" r="1.7" opacity="0.9"/>
+    <circle cx="720" cy="90" r="1.0" opacity="0.5"/>
+    <circle cx="60" cy="300" r="1.3" opacity="0.7"/>
+    <circle cx="740" cy="330" r="1.5" opacity="0.8"/>
+    <circle cx="130" cy="480" r="1.1" opacity="0.6"/>
+    <circle cx="700" cy="520" r="1.2" opacity="0.6"/>
+    <circle cx="240" cy="240" r="1.0" opacity="0.5"/>
+    <circle cx="580" cy="260" r="1.4" opacity="0.75"/>
+  </g>
+
+  <!-- 보름달 -->
+  <circle cx="600" cy="230" r="150" fill="url(#moonGlow)"/>
+  <circle cx="600" cy="230" r="88" fill="url(#moonBody)" opacity="0.95"/>
+
+  <!-- 달 앞 가지 -->
+  <path d="M 500 160 Q 560 190 610 175 Q 660 160 700 185"
+        stroke="#241233" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="585" cy="172" r="7" fill="#ff8fb0" opacity="0.9"/>
+  <circle cx="625" cy="168" r="5" fill="#ffb7c9" opacity="0.85"/>
+  <circle cx="555" cy="182" r="4" fill="#ff8fb0" opacity="0.8"/>
+
+  <!-- ======== 뒤쪽 흐르는 머리카락 ======== -->
+  <g fill="none" stroke="url(#hairGrad)" stroke-linecap="round" filter="url(#softGlow)">
+    <path d="M 400 250 C 300 320 250 450 235 600 C 225 720 245 830 215 930" stroke-width="46" opacity="0.95"/>
+    <path d="M 400 250 C 480 330 545 460 560 610 C 572 730 550 840 585 935" stroke-width="48" opacity="0.95"/>
+    <path d="M 385 270 C 320 350 285 470 275 610 C 268 720 280 820 255 915" stroke-width="26" opacity="0.8"/>
+    <path d="M 415 270 C 470 360 510 480 520 615 C 528 725 512 830 540 920" stroke-width="24" opacity="0.8"/>
+  </g>
+
+  <!-- ======== 목과 어깨 ======== -->
+  <path d="M 340 560 
+           C 342 620 330 665 295 690
+           C 340 725 460 725 505 690
+           C 470 665 458 620 460 560 Z"
+        fill="url(#skinGrad)"/>
+
+  <!-- 어깨 드레스 -->
+  <path d="M 295 690
+           C 220 730 165 800 145 900
+           L 145 1000 L 655 1000 L 655 900
+           C 635 800 580 730 505 690
+           C 460 725 340 725 295 690 Z"
+        fill="#5c1440"/>
+  <path d="M 295 690 C 340 725 460 725 505 690 L 495 720 C 450 750 350 750 305 720 Z"
+        fill="#7d1d55" opacity="0.9"/>
+
+  <!-- 드레스 은은한 반짝임 -->
+  <g fill="#ffd9ec" opacity="0.55">
+    <circle cx="230" cy="850" r="2.2"/>
+    <circle cx="310" cy="900" r="1.8"/>
+    <circle cx="420" cy="870" r="2.4"/>
+    <circle cx="520" cy="910" r="1.9"/>
+    <circle cx="580" cy="840" r="2.1"/>
+    <circle cx="370" cy="950" r="1.7"/>
+    <circle cx="180" cy="940" r="2.0"/>
+    <circle cx="620" cy="950" r="1.8"/>
+  </g>
+
+  <!-- ======== 얼굴 ======== -->
+  <ellipse cx="400" cy="430" rx="118" ry="142" fill="url(#skinGrad)"/>
+
+  <!-- 귀 -->
+  <ellipse cx="288" cy="445" rx="14" ry="24" fill="#f6cdb8"/>
+  <ellipse cx="512" cy="445" rx="14" ry="24" fill="#f6cdb8"/>
+
+  <!-- 귀걸이 -->
+  <circle cx="288" cy="478" r="5" fill="#ffd76e" filter="url(#softGlow)"/>
+  <circle cx="512" cy="478" r="5" fill="#ffd76e" filter="url(#softGlow)"/>
+
+  <!-- 눈썹 -->
+  <path d="M 318 392 C 332 380 362 378 380 388" stroke="#3a2030" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 420 388 C 438 378 468 380 482 392" stroke="#3a2030" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- 눈 -->
+  <g>
+    <ellipse cx="348" cy="425" rx="21" ry="12" fill="#ffffff"/>
+    <ellipse cx="452" cy="425" rx="21" ry="12" fill="#ffffff"/>
+    <circle cx="350" cy="426" r="9.5" fill="#4a2c1a"/>
+    <circle cx="450" cy="426" r="9.5" fill="#4a2c1a"/>
+    <circle cx="353" cy="423" r="3.2" fill="#ffffff"/>
+    <circle cx="453" cy="423" r="3.2" fill="#ffffff"/>
+    <!-- 속눈썹 -->
+    <path d="M 327 420 C 334 411 356 408 369 414" stroke="#2a1620" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 473 420 C 466 411 444 408 431 414" stroke="#2a1620" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- 아이라인 음영 -->
+    <path d="M 330 437 Q 348 443 366 437" stroke="#d99a86" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 434 437 Q 452 443 470 437" stroke="#d99a86" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- 코 -->
+  <path d="M 398 445 C 394 462 390 472 384 478 Q 400 486 416 478"
+        stroke="#dfa08c" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- 입술 -->
+  <path d="M 366 512 Q 383 502 400 510 Q 417 502 434 512 Q 418 534 400 534 Q 382 534 366 512 Z"
+        fill="url(#lipGrad)"/>
+  <path d="M 366 512 Q 400 518 434 512" stroke="#8e1f36" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <!-- 볼터치 블러셔 -->
+  <ellipse cx="322" cy="470" rx="20" ry="11" fill="#ff9aa8" opacity="0.35" filter="url(#blurSmall)"/>
+  <ellipse cx="478" cy="470" rx="20" ry="11" fill="#ff9aa8" opacity="0.35" filter="url(#blurSmall)"/>
+
+  <!-- ======== 앞머리 / 헤어라인 ======== -->
+  <path d="M 282 430
+           C 270 330 320 268 400 264
+           C 480 268 530 330 518 430
+           C 512 380 495 345 470 330
+           C 478 365 472 392 460 408
+           C 452 370 430 340 400 332
+           C 415 360 412 385 402 400
+           C 388 362 355 340 330 342
+           C 345 368 348 392 340 412
+           C 315 385 295 395 282 430 Z"
+        fill="url(#hairGrad)"/>
+
+  <!-- 옆으로 흘러내리는 앞머리 타래 -->
+  <path d="M 300 350 C 290 420 292 500 305 570 C 312 610 308 650 295 685"
+        stroke="url(#hairGrad)" stroke-width="30" fill="none" stroke-linecap="round"/>
+  <path d="M 500 350 C 512 420 510 500 497 570 C 490 610 494 650 507 685"
+        stroke="url(#hairGrad)" stroke-width="30" fill="none" stroke-linecap="round"/>
+
+  <!-- 머리카락 하이라이트 -->
+  <g stroke="#a86bc9" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M 320 300 C 300 340 292 400 296 460" stroke-width="4"/>
+    <path d="M 480 300 C 500 340 508 400 504 460" stroke-width="4"/>
+    <path d="M 360 285 C 345 310 338 340 336 368" stroke-width="3"/>
+    <path d="M 440 285 C 455 310 462 340 464 368" stroke-width="3"/>
+  </g>
+
+  <!-- ======== 머리에 꽂은 꽃 ======== -->
+  <g transform="translate(505, 330)">
+    <g fill="url(#petalGrad)">
+      <ellipse cx="0" cy="-16" rx="9" ry="16"/>
+      <ellipse cx="15" cy="-5" rx="9" ry="16" transform="rotate(72 15 -5)"/>
+      <ellipse cx="9" cy="13" rx="9" ry="16" transform="rotate(144 9 13)"/>
+      <ellipse cx="-9" cy="13" rx="9" ry="16" transform="rotate(216 -9 13)"/>
+      <ellipse cx="-15" cy="-5" rx="9" ry="16" transform="rotate(288 -15 -5)"/>
+    </g>
+    <circle cx="0" cy="0" r="6" fill="#ffe28a"/>
+  </g>
+
+  <!-- ======== 떠다니는 꽃잎 ======== -->
+  <g fill="url(#petalGrad)" opacity="0.9">
+    <path d="M 150 620 q 10 -14 22 0 q -10 14 -22 0 Z"/>
+    <path d="M 660 560 q 10 -14 22 0 q -10 14 -22 0 Z"/>
+    <path d="M 110 780 q 9 -12 20 0 q -9 12 -20 0 Z"/>
+    <path d="M 690 760 q 9 -12 20 0 q -9 12 -20 0 Z"/>
+    <path d="M 210 900 q 8 -11 18 0 q -8 11 -18 0 Z"/>
+    <path d="M 600 920 q 8 -11 18 0 q -8 11 -18 0 Z"/>
+  </g>
+
+  <!-- ======== 프레임 장식 ======== -->
+  <rect x="18" y="18" width="764" height="964" fill="none" stroke="#c9a3ff" stroke-width="2" opacity="0.35" rx="10"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#c9a3ff" stroke-width="1" opacity="0.2" rx="8"/>
+
+  <!-- 시그니처 -->
+  <text x="400" y="972" text-anchor="middle" font-family="Georgia, serif" font-size="20"
+        fill="#e8d5ff" opacity="0.75" font-style="italic">Moonlit Grace</text>
+</svg>

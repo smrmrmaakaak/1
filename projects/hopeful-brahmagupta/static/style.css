@@ -1,0 +1,150 @@
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.2);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.4);
+}
+
+/* Markdown Prose Styling */
+.prose-content {
+  color: #e5e7eb;
+  line-height: 1.65;
+  font-size: 0.925rem;
+}
+.prose-content p {
+  margin-bottom: 0.75rem;
+}
+.prose-content p:last-child {
+  margin-bottom: 0;
+}
+.prose-content h1, .prose-content h2, .prose-content h3, .prose-content h4 {
+  color: #f3f4f6;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.prose-content h1 { font-size: 1.35rem; }
+.prose-content h2 { font-size: 1.2rem; }
+.prose-content h3 { font-size: 1.05rem; }
+.prose-content ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.prose-content ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.prose-content li {
+  margin-bottom: 0.25rem;
+}
+.prose-content blockquote {
+  border-left: 3px solid #6366f1;
+  padding-left: 0.85rem;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 0.75rem 0;
+}
+.prose-content a {
+  color: #818cf8;
+  text-decoration: underline;
+}
+.prose-content code:not(pre code) {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Code Block Wrapper */
+.code-block-wrapper {
+  position: relative;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0;
+  overflow: hidden;
+}
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  background-color: #1e293b/60;
+  border-bottom: 1px solid #334155;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+.code-block-wrapper pre {
+  margin: 0;
+  padding: 0.85rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* Tool Execution Box */
+.tool-card {
+  background-color: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  border-radius: 0.65rem;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.tool-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+}
+.tool-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  background-color: rgba(31, 41, 55, 0.5);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+}
+.tool-card-content {
+  padding: 0.75rem;
+  border-top: 1px solid rgba(55, 65, 81, 0.6);
+  background-color: #0d1117;
+  font-size: 0.75rem;
+}
+
+/* Thinking Box */
+.thought-card {
+  background-color: rgba(30, 27, 75, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.8rem;
+  color: #a5b4fc;
+}
+
+/* Copy Button */
+.copy-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  transition: all 0.15s;
+}
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
