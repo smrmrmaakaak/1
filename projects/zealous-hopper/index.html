@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Flow & Flow Music - Sakuga Anime Fight Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --card-bg: #12161f;
+            --accent-cyan: #00f2fe;
+            --accent-crimson: #ff0844;
+            --accent-gold: #f6d365;
+            --text-main: #f3f4f6;
+            --text-sub: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Pretendard', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            max-width: 900px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, rgba(255, 8, 68, 0.2), rgba(0, 242, 254, 0.2));
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Orbitron', 'Pretendard', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 20%, var(--accent-cyan) 60%, var(--accent-crimson) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Cinema Theater View */
+        .theater-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.15);
+        }
+
+        .slide-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 0.8s ease-in-out, transform 4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide-img.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Screen FX Layers */
+        .speed-lines {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.6) 90%);
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .flash-overlay {
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.1s ease-out;
+        }
+
+        .hud-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            padding: 30px 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .scene-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .scene-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+
+        .scene-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .playback-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-crimson), #ff4e50);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 8, 68, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .audio-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            height: 16px;
+        }
+
+        .audio-bar {
+            width: 3px;
+            height: 100%;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+            animation: audioBounce 0.8s infinite ease-in-out alternate;
+        }
+
+        .audio-bar:nth-child(2) { animation-delay: 0.2s; height: 70%; }
+        .audio-bar:nth-child(3) { animation-delay: 0.4s; height: 90%; }
+        .audio-bar:nth-child(4) { animation-delay: 0.1s; height: 50%; }
+
+        @keyframes audioBounce {
+            0% { transform: scaleY(0.2); }
+            100% { transform: scaleY(1); }
+        }
+
+        /* Prompt Cards Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 10px;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .tag-veo {
+            background: rgba(0, 242, 254, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+        }
+
+        .tag-lyria {
+            background: rgba(246, 211, 101, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(246, 211, 101, 0.3);
+        }
+
+        .prompt-code {
+            background: #080a0f;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 12.5px;
+            color: #d1d5db;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            user-select: all;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-copy {
+            flex: 1;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .btn-copy:hover {
+            background: rgba(0, 242, 254, 0.2);
+        }
+
+        .btn-link {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-link:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Timeline Navigation */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .timeline-thumb {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+        }
+
+        .timeline-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .timeline-thumb.active {
+            border-color: var(--accent-cyan);
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .thumb-label {
+            position: absolute;
+            bottom: 6px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            background: #10b981;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="badge">⚡ Google Flow & Flow Music Studio</div>
+        <h1>SAKUGA CLASH : ULTIMATE DUEL</h1>
+        <p class="subtitle">Google Labs Veo 3.1 & Lyria 3.5 엔진 기반 정밀 애니메이션 격투씬 & BGM 통합 스튜디오</p>
+    </div>
+
+    <div class="main-container">
+        <!-- Cinema Viewer -->
+        <div class="theater-box" id="theater">
+            <img src="assets/scene_1_charge.jpg" class="slide-img active" id="img-0" alt="Scene 1: Charge & Rush">
+            <img src="assets/scene_2_clash.jpg" class="slide-img" id="img-1" alt="Scene 2: Mid-air Clash">
+            <img src="assets/scene_3_finisher.jpg" class="slide-img" id="img-2" alt="Scene 3: Climax Finisher">
+
+            <div class="speed-lines"></div>
+            <div class="flash-overlay" id="flash"></div>
+
+            <div class="hud-overlay">
+                <div class="scene-info">
+                    <div class="scene-num" id="sceneNum">CUT 01 / 03</div>
+                    <div class="scene-title" id="sceneTitle">격돌의 전조 (Rush & Ignition)</div>
+                </div>
+                <div class="playback-controls">
+                    <button class="btn btn-secondary" id="btnAudioToggle">
+                        <span id="audioIcon">🔇</span>
+                        <span id="audioText">BGM 켜기 (175 BPM OST)</span>
+                        <div class="audio-indicator" id="audioIndicator" style="display: none;">
+                            <div class="audio-bar"></div>
+                            <div class="audio-bar"></div>
+                            <div class="audio-bar"></div>
+                            <div class="audio-bar"></div>
+                        </div>
+                    </button>
+                    <button class="btn btn-primary" id="btnAutoPlay">
+                        <span>▶</span> 시네마틱 재생
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Thumbnails -->
+        <div class="timeline">
+            <div class="timeline-thumb active" onclick="setSlide(0)">
+                <img src="assets/scene_1_charge.jpg" alt="Cut 1">
+                <div class="thumb-label">CUT 01: 돌진</div>
+            </div>
+            <div class="timeline-thumb" onclick="setSlide(1)">
+                <img src="assets/scene_2_clash.jpg" alt="Cut 2">
+                <div class="thumb-label">CUT 02: 공중 격돌</div>
+            </div>
+            <div class="timeline-thumb" onclick="setSlide(2)">
+                <img src="assets/scene_3_finisher.jpg" alt="Cut 3">
+                <div class="thumb-label">CUT 03: 일섬 피니셔</div>
+            </div>
+        </div>
+
+        <!-- Flow & Flow Music Direct Connect Prompts -->
+        <div class="grid-2">
+            <!-- Google Flow (Veo 3.1) Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>🎬 구글 플로우 (Google Flow)</span>
+                        <span class="tag tag-veo">Veo 3.1 Video</span>
+                    </div>
+                </div>
+                <div class="prompt-code" id="veoPrompt">[Style]: 2D Japanese anime sakuga animation, Ufotable MAPPA studio aesthetic, hyper-detailed lineart, crisp cel-shading, vibrant neon grading.
+[Shot & Camera]: Dynamic rapid tracking shot with Dutch tilt angle, extreme foreshortening, high-speed camera shake on blade impact.
+[Action]: Two rival swordsmen dash and clash mid-air at supersonic speed, erupting massive shockwave with cyan lightning arcs and crimson kinetic energy sparks.
+[Atmosphere]: Volumetric rim lighting, dusk storm with lightning flashes, floating rock debris and burning embers, cinematic 24fps motion blur.</div>
+                <div class="card-actions">
+                    <button class="btn btn-copy" onclick="copyPrompt('veoPrompt')">📋 Veo 영상 프롬프트 복사</button>
+                    <a href="https://labs.google/fx/tools/flow" target="_blank" class="btn-link">Google Flow 바로가기 ↗</a>
+                </div>
+            </div>
+
+            <!-- Google Flow Music (Lyria 3.5) Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>🎵 구글 플로우 뮤직 (Flow Music)</span>
+                        <span class="tag tag-lyria">Lyria 3.5 OST</span>
+                    </div>
+                </div>
+                <div class="prompt-code" id="musicPrompt">High-energy Japanese Anime Battle Orchestral Rock OST.
+- Tempo: 175 BPM | Key: D minor | Time: 4/4
+- Instrumentation: Heavily distorted high-gain electric guitars, pounding cinematic Taiko & metal drums, aggressive brass stabs, fast arpeggiated synth leads, dramatic full choir chants.
+- Mood: Tense, explosive, climactic, heroic anime sakuga battle.
+- Structure: Rapid high-tempo buildup -> explosive drop with ferocious guitar solo and epic orchestral choir.</div>
+                <div class="card-actions">
+                    <button class="btn btn-copy" onclick="copyPrompt('musicPrompt')">📋 플로우 뮤직 프롬프트 복사</button>
+                    <a href="https://flowmusic.app" target="_blank" class="btn-link">Flow Music 바로가기 ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">프롬프트가 클립보드에 복사되었습니다!</div>
+
+    <script>
+        const scenes = [
+            { title: "격돌의 전조 (Rush & Ignition)", num: "CUT 01 / 03" },
+            { title: "초음속 공중 격돌 (Mid-Air Lightning Clash)", num: "CUT 02 / 03" },
+            { title: "일섬 - 결착의 순간 (Cross Slash Climax)", num: "CUT 03 / 03" }
+        ];
+
+        let currentIdx = 0;
+        let isPlaying = false;
+        let playInterval = null;
+        let audioCtx = null;
+        let isAudioPlaying = false;
+        let audioTimer = null;
+
+        function setSlide(idx) {
+            currentIdx = idx;
+            document.querySelectorAll('.slide-img').forEach((img, i) => {
+                img.classList.toggle('active', i === idx);
+            });
+            document.querySelectorAll('.timeline-thumb').forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === idx);
+            });
+            document.getElementById('sceneNum').innerText = scenes[idx].num;
+            document.getElementById('sceneTitle').innerText = scenes[idx].title;
+
+            // Trigger visual flash FX
+            const flash = document.getElementById('flash');
+            flash.style.opacity = '0.6';
+            setTimeout(() => { flash.style.opacity = '0'; }, 80);
+
+            // Play SFX if audio enabled
+            if (isAudioPlaying) {
+                playSwordSFX(idx);
+            }
+        }
+
+        function nextSlide() {
+            setSlide((currentIdx + 1) % scenes.length);
+        }
+
+        document.getElementById('btnAutoPlay').addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                this.innerHTML = '<span>⏸</span> 일시 정지';
+                this.style.background = '#4b5563';
+                if (!isAudioPlaying) toggleAudio();
+                playInterval = setInterval(nextSlide, 2800);
+            } else {
+                this.innerHTML = '<span>▶</span> 시네마틱 재생';
+                this.style.background = '';
+                clearInterval(playInterval);
+            }
+        });
+
+        // Web Audio Synthesizer: 175 BPM High-Octane Anime Rock BGM Synth
+        function toggleAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            isAudioPlaying = !isAudioPlaying;
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioText');
+            const indicator = document.getElementById('audioIndicator');
+
+            if (isAudioPlaying) {
+                icon.innerText = '🔊';
+                text.innerText = 'BGM 재생 중 (175 BPM)';
+                indicator.style.display = 'inline-flex';
+                startMusicSynth();
+            } else {
+                icon.innerText = '🔇';
+                text.innerText = 'BGM 켜기 (175 BPM OST)';
+                indicator.style.display = 'none';
+                stopMusicSynth();
+            }
+        }
+
+        document.getElementById('btnAudioToggle').addEventListener('click', toggleAudio);
+
+        // Synth Engine
+        let step = 0;
+        const bpm = 175;
+        const intervalMs = (60 / bpm / 4) * 1000; // 16th notes
+        const bassNotes = [73.42, 73.42, 87.31, 73.42, 98.00, 73.42, 110.00, 98.00]; // D minor riff
+
+        function startMusicSynth() {
+            if (audioTimer) clearInterval(audioTimer);
+            step = 0;
+            audioTimer = setInterval(() => {
+                const now = audioCtx.currentTime;
+
+                // Kick on 1, 5, 9, 13
+                if (step % 4 === 0) {
+                    playKick(now);
+                }
+                // Snare on 5, 13
+                if (step % 8 === 4) {
+                    playSnare(now);
+                }
+                // Hi-hat on every 16th note
+                playHiHat(now);
+
+                // Heavy Bass riff
+                const freq = bassNotes[step % bassNotes.length];
+                playBass(now, freq);
+
+                step = (step + 1) % 32;
+            }, intervalMs);
+        }
+
+        function stopMusicSynth() {
+            if (audioTimer) {
+                clearInterval(audioTimer);
+                audioTimer = null;
+            }
+        }
+
+        function playKick(time) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.frequency.setValueAtTime(150, time);
+            osc.frequency.exponentialRampToValueAtTime(30, time + 0.12);
+            gain.gain.setValueAtTime(0.7, time);
+            gain.gain.exponentialRampToValueAtTime(0.01, time + 0.15);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(time);
+            osc.stop(time + 0.15);
+        }
+
+        function playSnare(time) {
+            const noise = audioCtx.createBufferSource();
+            const buffer = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.1, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < buffer.length; i++) data[i] = Math.random() * 2 - 1;
+            noise.buffer = buffer;
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'highpass';
+            filter.frequency.value = 1000;
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.4, time);
+            gain.gain.exponentialRampToValueAtTime(0.01, time + 0.1);
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+            noise.start(time);
+        }
+
+        function playHiHat(time) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'highpass';
+            osc.frequency.setValueAtTime(8000, time);
+            gain.gain.setValueAtTime(0.1, time);
+            gain.gain.exponentialRampToValueAtTime(0.001, time + 0.04);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(time);
+            osc.stop(time + 0.04);
+        }
+
+        function playBass(time, freq) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(freq, time);
+            gain.gain.setValueAtTime(0.2, time);
+            gain.gain.exponentialRampToValueAtTime(0.01, time + 0.15);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(time);
+            osc.stop(time + 0.15);
+        }
+
+        function playSwordSFX(idx) {
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            if (idx === 1) { // Lightning clash
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(200, now + 0.3);
+            } else if (idx === 2) { // Finisher blast
+                osc.frequency.setValueAtTime(1200, now);
+                osc.frequency.exponentialRampToValueAtTime(100, now + 0.5);
+            } else { // Draw sword
+                osc.frequency.setValueAtTime(400, now);
+                osc.frequency.exponentialRampToValueAtTime(900, now + 0.2);
+            }
+            gain.gain.setValueAtTime(0.5, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.4);
+        }
+
+        function copyPrompt(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>
