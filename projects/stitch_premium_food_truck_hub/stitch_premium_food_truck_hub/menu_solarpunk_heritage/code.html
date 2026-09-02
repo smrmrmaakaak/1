@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | Street Pulse</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e3e2e1",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeec",
+                        "primary-fixed": "#c5eadf",
+                        "outline-variant": "#c1c8c4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf9f7",
+                        "on-secondary-container": "#4f6a49",
+                        "on-tertiary-fixed": "#1c1c16",
+                        "surface-container-low": "#f4f4f2",
+                        "secondary-fixed": "#ccebc2",
+                        "inverse-surface": "#2f3130",
+                        "primary": "#01261f",
+                        "surface-bright": "#faf9f7",
+                        "error-container": "#ffdad6",
+                        "outline": "#717976",
+                        "tertiary-fixed-dim": "#c9c6bd",
+                        "inverse-primary": "#aacec3",
+                        "surface-container-highest": "#e3e2e1",
+                        "on-secondary-fixed": "#082007",
+                        "surface-tint": "#43655c",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e8e8e6",
+                        "tertiary-container": "#373630",
+                        "on-surface-variant": "#414846",
+                        "on-primary-fixed": "#00201a",
+                        "on-primary-container": "#83a69c",
+                        "secondary-fixed-dim": "#b1cfa7",
+                        "tertiary-fixed": "#e5e2d9",
+                        "on-primary-fixed-variant": "#2b4d44",
+                        "on-tertiary-container": "#a19f96",
+                        "surface-dim": "#dadad8",
+                        "tertiary": "#21211b",
+                        "on-tertiary-fixed-variant": "#484740",
+                        "background": "#faf9f7",
+                        "secondary": "#4a6545",
+                        "primary-container": "#1a3c34",
+                        "primary-fixed-dim": "#aacec3",
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "secondary-container": "#c9e8bf",
+                        "on-secondary-fixed-variant": "#334d2f",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .texture-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+
+        .ambient-glow {
+            box-shadow: 0 10px 40px -10px rgba(1, 38, 31, 0.08);
+        }
+
+        /* Fluid grid utilities */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        .image-mask {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(26, 60, 52, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col relative selection:bg-primary-container selection:text-on-primary-container">
+<div class="texture-overlay"></div>
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md dark:bg-surface-container/80 border-b border-outline-variant/10 shadow-sm dark:shadow-none font-headline-sm text-headline-sm tracking-tight">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-screen-2xl mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                Street Pulse
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded-md active:scale-95 transition-transform duration-200" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded-md active:scale-95 transition-transform duration-200" href="#">Menu</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded-md active:scale-95 transition-transform duration-200" href="#">Locations</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded-md active:scale-95 transition-transform duration-200" href="#">Catering</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="hidden md:block bg-primary text-on-primary border border-primary px-6 py-2 rounded font-label-md text-label-md hover:shadow-[0_0_15px_rgba(197,234,223,0.5)] transition-shadow duration-300">
+                    Reserve the Pulse
+                </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Header Section -->
+<header class="mb-xl max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Culinary Masterpieces.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Experience the synthesis of heritage recipes and sustainable future-tech farming. Every dish is a curated artifact, designed to nourish both body and ecosystem.
+            </p>
+</header>
+<!-- Bento Menu Grid -->
+<div class="bento-grid">
+<!-- Featured Item 1 (Large) -->
+<article class="col-span-12 lg:col-span-8 glass-panel rounded-xl ambient-glow overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-500 flex flex-col md:flex-row relative">
+<div class="w-full md:w-3/5 h-64 md:h-full relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking, high-end food photography shot of an avant-garde dish featuring sustainably sourced seared scallops. The scallops are arranged precisely on a pristine, classically proportioned white ceramic plate. The setting is a minimalist, organic-futurist dining space bathed in soft, natural daylight entering through large architectural windows. The image has a warm, parchment-like tone overall, with striking accents of vibrant green micro-herbs and a subtle, high-tech electric teal foam. The aesthetic perfectly blends classical culinary arts with modern sustainable tech visual themes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6KIYeWbGMPMQ-0_jLrqNdj0uG-0_zfFaaqZfiir7lL7x2p7aSUE2AOoyPZGZ1dzFZSEyhM2IWkTnAijxv9GdzmA3cy2mlI-Zlbb39oc7IEZrODMOhKtmY8KAHAfTUo3108EPqxJAKQjRRcF0hjB1EuqrgMQpWbb9sI-R4GEO8BNw65-LiCiv7M5QVB36uVu6nscd8YuY-VQOI24D_ouh9U0K3e0DHjoQ2mz5ZYiMLl0rlI21oz5j7IA"/>
+</div>
+<div class="w-full md:w-2/5 p-lg flex flex-col justify-between">
+<div>
+<div class="flex flex-wrap gap-xs mb-sm">
+<span class="bg-primary-fixed/30 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Signature</span>
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm border border-secondary/10">Sustainable Tech</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Seared Scallop Convergence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-4">
+                            Diver-caught scallops resting on a bed of aeroponically grown micro-greens, finished with a precise emulsion of heritage citrus and a glowing, nutrient-dense spirulina foam.
+                        </p>
+</div>
+<div class="flex items-end justify-between mt-auto">
+<span class="font-headline-sm text-headline-sm text-primary">$38</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Secondary Item (Tall) -->
+<article class="col-span-12 md:col-span-6 lg:col-span-4 glass-panel rounded-xl ambient-glow overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-500 flex flex-col">
+<div class="h-56 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro, elegant photograph of a vertically layered architectural dessert. The structure resembles a classical column made of delicate, crisp layers of toasted parchment-colored pastry, interspersed with smooth, soft sage green pistachio cream. The lighting is dramatic yet natural, casting soft shadows that highlight the textures. Subtle, precise geometric drops of electric teal berry coulis decorate the plate, adding a futuristic touch to the historical form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoAN0iA977oQqqmG6lcm5lEspmPrmfmsyQp39_fz89E4Wa_zKomGgW7HnAQj1L20xe12abGdCKb4h5irYvdTCPuN2XdKUEZGhdsLXiS43oNX1e3VZphwNDQ1Wavlvi-0_1bnROx8mb4i6fVyV3qDmtZ4lFIFPCHdjg21BHsOV3OiUIYUmliIix3LappTDrJMCG4gx65BjP8UQ6Yr_7egQynxW86ndJwPNVuQCRgV-9CK6yL8MhCmtmcA"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex flex-wrap gap-xs mb-sm">
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm border border-secondary/10">Organic Origin</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-xs">Pistachio Architecture</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                        A structural dessert of heritage grain mille-feuille, layered with bio-dynamic pistachio mousseline and geometric drops of tart local berry coulis.
+                    </p>
+<div class="flex items-end justify-between mt-auto pt-sm border-t border-primary-container/10">
+<span class="font-headline-sm text-headline-sm text-primary">$22</span>
+</div>
+</div>
+</article>
+<!-- Standard Item 1 -->
+<article class="col-span-12 md:col-span-6 lg:col-span-4 glass-panel rounded-xl ambient-glow overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-500 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An overhead, meticulously composed shot of a vibrant heirloom tomato salad presented in a clear, translucent glass bowl that mimics advanced materials. The tomatoes range from deep crimson to soft yellow, arranged in a perfect geometric spiral. The background is a warm, textured parchment surface. The lighting is bright and clean, emphasizing the natural dew on the fresh produce. The overall aesthetic feels like a sophisticated, eco-conscious laboratory celebrating natural forms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLxLuObIrSHp46_oL3BelMRp3XTKm5me-RwTRMrQ2SoVbaohkHPRzrwyqQARYwHBu_kxFeSuLqCdNfdEM_3B-1s0_A5kdVSFxyfFCSVuvk20jplkw7MH1haESsS1Gm-JO-1s-9Ch5VK5vn9SPvC-3SS5_uAZn5C2ZoQV3wUOcsu5_dq2gmHT0LMaUtCbRjL71mWiBufgK1dKW-z81527jnefsDJNmbo9MYTb56y07VFIkifLXaT4rkNw"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-xs">Heirloom Geometry</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                        A curated selection of forgotten tomato varieties, arranged with precision and dressed in a minimalist, cold-pressed basil infusion.
+                    </p>
+<div class="flex items-end justify-between mt-auto pt-sm border-t border-primary-container/10">
+<span class="font-headline-sm text-headline-sm text-primary">$18</span>
+</div>
+</div>
+</article>
+<!-- Standard Item 2 -->
+<article class="col-span-12 md:col-span-6 lg:col-span-4 glass-panel rounded-xl ambient-glow overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-500 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A moody, elegant photograph of a slow-roasted root vegetable dish, emphasizing rich, deep earthy tones. The vegetables are glazed and have a slight metallic sheen, plated on a dark forest green, matte ceramic dish. A delicate, translucent glass-like cloche partially covers the food, capturing a wisp of aromatic smoke. The surrounding environment implies a refined, classical space upgraded with subtle modern technology, bathed in warm, directional light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9TGAmL4OG3AiZaPWRYdxzXW0GeyVoje6CEJ3U-CTH6V0U3MLr6N4PdZFpYcxHiJFq2R0haOt7E5_NO6yrQsVa9k4m8WhiIySJ90Tesr0Y-U83iSdnwkeAf_-3gJJcA69TBn4bWxBXPenDShpEtzQP8JznprvstSrDKO2JCh-UXSIFttsE-iXec9Gm8cArBOgJ-4jWY_I_GTSuRM69iRUwzIc9oY-qh9Nq6axyAOm97SZDhit8TCwFag"/>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex flex-wrap gap-xs mb-sm">
+<span class="bg-secondary-container/50 text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm border border-secondary/10">Heritage</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-xs">Smoked Earth Root</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
+                        Slow-roasted ancient root vegetables, captured under a glass cloche with hickory smoke, finished with a reduction of wild-foraged mushrooms.
+                    </p>
+<div class="flex items-end justify-between mt-auto pt-sm border-t border-primary-container/10">
+<span class="font-headline-sm text-headline-sm text-primary">$26</span>
+</div>
+</div>
+</article>
+<!-- Standard Item 3 -->
+<article class="col-span-12 md:col-span-12 lg:col-span-4 glass-panel rounded-xl ambient-glow overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-500 flex flex-col">
+<div class="p-md flex flex-col flex-grow relative overflow-hidden bg-primary-fixed/10">
+<div class="absolute -right-10 -top-10 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-sm relative z-10">The Pulse Tasting Menu</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow relative z-10">
+                        Embark on a seven-course journey exploring the intersection of classical flavor profiles and zero-emission culinary techniques. A true exhibition of our philosophy.
+                    </p>
+<div class="mt-auto pt-sm relative z-10">
+<button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md rounded hover:shadow-[0_0_15px_rgba(197,234,223,0.5)] transition-all duration-300">
+                            View Itinerary ($145)
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-3 gap-gutter items-start max-w-screen-2xl mx-auto mt-auto">
+<div>
+<div class="font-headline-sm text-headline-sm italic text-primary mb-4">
+                Street Pulse
+            </div>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80">
+                © 2024 Street Pulse. Sustainable Heritage in Every Bite.
+            </div>
+</div>
+<div class="md:col-span-2 flex flex-wrap gap-md justify-start md:justify-end">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Sustainability Report</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

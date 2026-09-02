@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catering - Street Pulse</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e3e2e1",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeec",
+                        "primary-fixed": "#c5eadf",
+                        "outline-variant": "#c1c8c4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf9f7",
+                        "on-secondary-container": "#4f6a49",
+                        "on-tertiary-fixed": "#1c1c16",
+                        "surface-container-low": "#f4f4f2",
+                        "secondary-fixed": "#ccebc2",
+                        "inverse-surface": "#2f3130",
+                        "primary": "#01261f",
+                        "surface-bright": "#faf9f7",
+                        "error-container": "#ffdad6",
+                        "outline": "#717976",
+                        "tertiary-fixed-dim": "#c9c6bd",
+                        "inverse-primary": "#aacec3",
+                        "surface-container-highest": "#e3e2e1",
+                        "on-secondary-fixed": "#082007",
+                        "surface-tint": "#43655c",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c1b",
+                        "surface-container-high": "#e8e8e6",
+                        "tertiary-container": "#373630",
+                        "on-surface-variant": "#414846",
+                        "on-primary-fixed": "#00201a",
+                        "on-primary-container": "#83a69c",
+                        "secondary-fixed-dim": "#b1cfa7",
+                        "tertiary-fixed": "#e5e2d9",
+                        "on-primary-fixed-variant": "#2b4d44",
+                        "on-tertiary-container": "#a19f96",
+                        "surface-dim": "#dadad8",
+                        "tertiary": "#21211b",
+                        "on-tertiary-fixed-variant": "#484740",
+                        "background": "#faf9f7",
+                        "secondary": "#4a6545",
+                        "primary-container": "#1a3c34",
+                        "primary-fixed-dim": "#aacec3",
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "secondary-container": "#c9e8bf",
+                        "on-secondary-fixed-variant": "#334d2f",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "headline-lg-mobile": ["36px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            /* Subtle noise texture for parchment feel */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+
+        .ambient-glow {
+            box-shadow: 0 10px 40px -10px rgba(1, 38, 31, 0.08);
+        }
+
+        .ghost-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid theme('colors.primary-container');
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        .ghost-input:focus {
+            box-shadow: none;
+            border-bottom-color: theme('colors.primary');
+            background-color: rgba(204, 235, 194, 0.1); /* Very subtle Soft Sage on focus */
+        }
+        
+        /* Smooth transitions */
+        .transition-all-slow {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 500ms;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md dark:bg-surface-container/80 border-b border-outline-variant/10 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-screen-2xl mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed active:scale-95 transition-transform duration-200" href="/">
+                Street Pulse
+            </a>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded" href="/home">Home</a>
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded" href="/menu">Menu</a>
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded" href="/locations">Locations</a>
+<a aria-current="page" class="font-headline-sm text-headline-sm tracking-tight text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:bg-primary-fixed/20 dark:hover:bg-primary-container/30 transition-all duration-300 px-3 py-2 rounded" href="/catering">Catering</a>
+</nav>
+<button class="hidden md:flex items-center gap-2 bg-primary text-on-primary hover:bg-primary-container hover:text-primary-fixed px-6 py-3 rounded-full font-label-md text-label-md transition-all active:scale-95 duration-200 border border-primary-container">
+                Reserve the Pulse
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full pt-xl pb-lg px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 z-10 space-y-md">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary text-balance">
+                        Elevate Your <br/>Garden Gathering
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Bespoke culinary experiences designed to harmonize with nature. We bring the vibrant energy of sustainable street culture to elegant, open-air environments.
+                    </p>
+</div>
+<div class="md:col-span-5 relative h-96 md:h-[600px] mt-lg md:mt-0 rounded-tl-full rounded-tr-full rounded-br-full overflow-hidden ambient-glow border border-outline-variant/20">
+<img class="w-full h-full object-cover transition-transform duration-[10s] hover:scale-105" data-alt="A sophisticated outdoor dining setup in a lush garden setting during golden hour. Elegant long tables draped in natural linen are adorned with minimalist tableware and organic floral arrangements. Soft, warm sunlight filters through the trees, casting dappled shadows. The aesthetic is high-end organic futurism, blending classical natural beauty with refined, modern event design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDigqaG1etlqHv2tgj7fT85b9dmm3iKPNhMOWbQ-hmc2oJldjIXF5dJZvlo4gxHjplkJaQAPFTeVTDlasBQMY2avAJqb3dWQRuFq1dF_f_D1K-eKIrKv8n9KSJ22PKLBNKM8Fj6fTSHQ5WIfFJ4nD2szt_1U714ubRzmSSbPLtSKa7RHpRzH5v1H3kfz0mTi02PXBNedFvjnryRzuakgWy9Mo9a9G-E1_M7tJA3vmIljuc58m5ulY5r8A"/>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="w-full py-xl px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-sm">Our Philosophy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Tailored experiences that honor both the ingredients and the environment.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel p-md rounded-xl flex flex-col h-full ambient-glow transition-all hover:-translate-y-1">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-md" style="font-variation-settings: 'FILL' 0;">eco</span>
+<h3 class="font-headline-md text-headline-sm text-primary mb-sm">Sustainable Sourcing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Every ingredient is traceably sourced from local, regenerative farms, ensuring a minimal carbon footprint and maximum flavor.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-md rounded-xl flex flex-col h-full ambient-glow transition-all hover:-translate-y-1">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-md" style="font-variation-settings: 'FILL' 0;">restaurant</span>
+<h3 class="font-headline-md text-headline-sm text-primary mb-sm">Heritage Menus</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Classical culinary techniques applied to modern, plant-forward street food concepts, tailored specifically for your event.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-md rounded-xl flex flex-col h-full ambient-glow transition-all hover:-translate-y-1 md:col-span-3 lg:col-span-1">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-md" style="font-variation-settings: 'FILL' 0;">nature_people</span>
+<h3 class="font-headline-md text-headline-sm text-primary mb-sm">Seamless Integration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Our elegant mobile stations blend glass and natural wood, designed to complement rather than disrupt your natural setting.</p>
+</div>
+</div>
+</section>
+<!-- Inquiry Form Section -->
+<section class="w-full py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="max-w-screen-md mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-sm">Begin the Dialogue</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Share the vision for your upcoming gathering.</p>
+</div>
+<form class="glass-panel p-lg rounded-xl ambient-glow">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-lg mb-lg">
+<div class="flex flex-col relative group">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="name">First Name</label>
+<input class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0" id="name" placeholder="e.g. Clara" type="text"/>
+</div>
+<div class="flex flex-col relative group">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="lastName">Last Name</label>
+<input class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0" id="lastName" placeholder="e.g. Sterling" type="text"/>
+</div>
+<div class="flex flex-col relative group md:col-span-2">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="email">Email Address</label>
+<input class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0" id="email" placeholder="clara@example.com" type="email"/>
+</div>
+<div class="flex flex-col relative group">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="date">Proposed Date</label>
+<input class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0 text-on-surface-variant" id="date" type="date"/>
+</div>
+<div class="flex flex-col relative group">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="guests">Estimated Guest Count</label>
+<input class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0" id="guests" placeholder="e.g. 50" type="number"/>
+</div>
+<div class="flex flex-col relative group md:col-span-2">
+<label class="font-label-sm text-label-sm text-primary-container mb-xs transition-colors group-focus-within:text-primary" for="details">Event Details &amp; Vision</label>
+<textarea class="ghost-input font-body-lg text-body-lg text-primary w-full py-2 focus:ring-0 resize-none" id="details" placeholder="Tell us about the atmosphere you wish to create..." rows="4"></textarea>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary text-on-primary hover:bg-primary-container hover:text-primary-fixed px-8 py-4 rounded-full font-label-md text-label-md transition-all active:scale-95 duration-200 border border-primary-container flex items-center gap-2 group" type="submit">
+                            Submit Inquiry
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-3 gap-gutter items-start max-w-screen-2xl mx-auto">
+<div class="space-y-sm">
+<p class="font-headline-sm text-headline-sm italic text-primary dark:text-on-primary-fixed">Street Pulse</p>
+<p class="font-body-md text-body-md text-primary dark:text-on-primary-fixed">
+                © 2024 Street Pulse. Sustainable Heritage in Every Bite.
+            </p>
+</div>
+<div class="md:col-span-2 flex flex-col md:flex-row gap-md md:justify-end">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Sustainability Report</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed transition-colors underline" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

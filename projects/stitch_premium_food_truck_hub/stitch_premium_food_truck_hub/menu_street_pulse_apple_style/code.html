@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Street Pulse - Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "on-secondary-container": "#636264",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9f9fb",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-primary": "#aac7ff",
+                        "tertiary-fixed": "#e3e2e7",
+                        "on-background": "#1a1c1d",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e4",
+                        "primary-fixed-dim": "#aac7ff",
+                        "outline": "#727784",
+                        "surface-bright": "#f9f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5f5e60",
+                        "on-tertiary-container": "#e9e8ed",
+                        "surface": "#f9f9fb",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3132",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#00458e",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "tertiary-container": "#68686d",
+                        "tertiary-fixed-dim": "#c7c6cb",
+                        "on-surface-variant": "#414753",
+                        "surface-container-low": "#f3f3f5",
+                        "surface-variant": "#e2e2e4",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e2dfe1",
+                        "surface-container-high": "#e8e8ea",
+                        "surface-tint": "#005cba",
+                        "on-primary-fixed": "#001b3e",
+                        "primary-container": "#0066cc",
+                        "primary-fixed": "#d7e3ff",
+                        "surface-container": "#eeeef0",
+                        "on-secondary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#f0f0f2",
+                        "surface-dim": "#d9dadc",
+                        "outline-variant": "#c1c6d5",
+                        "tertiary": "#4f5054",
+                        "on-primary-container": "#dfe8ff",
+                        "primary": "#004e9f",
+                        "on-surface": "#1a1c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-md": "80px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "section-gap-lg": "160px",
+                        "unit": "8px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "body-lg": ["21px", { "lineHeight": "1.4", "letterSpacing": "0.011em", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "1.05", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["17px", { "lineHeight": "1.47", "letterSpacing": "-0.022em", "fontWeight": "400" }],
+                        "headline-xl": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.005em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1c1d;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom styles for high-end aesthetic */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .item-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav aria-label="Main Navigation" class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto glass-nav" role="navigation">
+<div class="flex items-center gap-6">
+<a class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl tracking-tighter text-on-surface hover:opacity-80 transition-opacity duration-300" href="#">Street Pulse</a>
+<ul class="hidden md:flex items-center gap-8 ml-8">
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">Home</a></li>
+<li><a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Menu</a></li>
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">Locations</a></li>
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">Catering</a></li>
+</ul>
+</div>
+<div class="flex items-center">
+<button class="bg-primary-container text-on-primary rounded-full px-6 py-2 font-label-md text-label-md hover:opacity-80 transition-opacity duration-300 hidden md:block">Order Now</button>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] md:pt-[120px]">
+<!-- Hero Section -->
+<header class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center py-section-gap-md">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">Masterpieces.<br/>Ready to devour.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Experience street food elevated to an art form. Every ingredient selected with precision, every flavor engineered for maximum impact.</p>
+</header>
+<!-- Category: Burgers -->
+<section class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap-lg">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Burgers</h2>
+<p class="font-body-md text-body-md text-secondary">Pro. In every bite.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Item 1 -->
+<article class="item-card bg-surface-container-low rounded-[24px] p-8 md:p-12 flex flex-col items-center text-center">
+<img alt="The Classic Pro Burger" class="w-full max-w-[400px] aspect-square object-contain mb-8 mix-blend-multiply" data-alt="A meticulously crafted gourmet double cheeseburger on a perfectly toasted brioche bun. The burger features two thick, juicy beef patties, melted aged cheddar cheese cascading over the edges, crisp green butter lettuce, and a slice of ripe red heirloom tomato. The lighting is bright, studio-quality, emphasizing the textures against a clean, minimalist white background. The composition is central, highlighting the high-end, premium quality of the street food." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIHntyVQYw5P58gH66t-ImF7cXNu-EyCtYcbHbQLEO2Y2G2XEVDH-aHISUn297mNJnllMKO5-Ofe0IJRsXY9chChxAIdWomc3B8_TBrsgXxT1YipVHxBF14TLojw2R2XRkqJu3n2JCUdt4pOlal3V7Q0SI67lG0mmZJveA9qOs30jykNMU1HzJ1KWlk3-9ptnpr2ao1wBRPefIt3kqEGN4L4QtRsR3Bm9SulHZUn01vseFEDD-r22bA"/>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Classic Pro</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Double wagyu patty. Aged cheddar. House sauce.</p>
+<div class="mt-auto flex flex-col items-center gap-4">
+<span class="font-label-md text-label-md text-secondary tracking-widest uppercase">$18</span>
+<button class="bg-primary-container text-on-primary rounded-full px-8 py-3 font-label-md text-label-md hover:bg-primary transition-colors">Add to Order</button>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="item-card bg-surface-container-low rounded-[24px] p-8 md:p-12 flex flex-col items-center text-center">
+<img alt="Spicy Crispy Max" class="w-full max-w-[400px] aspect-square object-contain mb-8 mix-blend-multiply" data-alt="An extraordinary gourmet chicken sandwich presented with premium aesthetics. A thick, perfectly crispy fried chicken breast sits on a soft artisan bun, topped with a tangy, vibrant purple cabbage slaw and thinly sliced jalapenos. The lighting is pristine, high-key studio style, isolating the food against a pure white minimalist background. The focus is incredibly sharp, capturing every flake of the crispy batter and the rich colors of the slaw." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvcC14praRRfhRg1P2JgINmrbnPyaCEMAwCT84AAbVcjHo0endMXsjVn4MUMdvdn5tTog_RK8usAyb9IW7xttFHxTgynn_hhcLlXiREFgZl3sWLGCXvY0qes1cBxBTE_q1jxTm21Cd_uYEgy08J3tvSu0ZCbEj9UbTEHvVdkyMUmvGcj8jh1MYNqPujKmQyfUoMSI8SorsK_Fy7TpJ-P_GO_0NtuD-7TBiS0w99f8lRFN2_OGTdLpzTA"/>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Spicy Crispy Max</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Crispy buttermilk chicken. Purple slaw. Jalapeño aioli.</p>
+<div class="mt-auto flex flex-col items-center gap-4">
+<span class="font-label-md text-label-md text-secondary tracking-widest uppercase">$16</span>
+<button class="bg-primary-container text-on-primary rounded-full px-8 py-3 font-label-md text-label-md hover:bg-primary transition-colors">Add to Order</button>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background border-t border-outline-variant/30 py-section-gap-md px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface block mb-6">Street Pulse</span>
+<p class="font-label-md text-label-md text-secondary">© 2024 Street Pulse. All rights reserved.</p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-4">Legal</h4>
+<ul class="space-y-3">
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

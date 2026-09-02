@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Street Pulse - The Future of Heritage Flavor</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Simulating subtle parchment texture without data-uris using CSS gradients */
+        body {
+            background-color: theme('colors.surface');
+            background-image: 
+                radial-gradient(circle at 100% 150%, rgba(197, 234, 223, 0.15) 24%, transparent 24%),
+                radial-gradient(circle at 0% 50%, rgba(204, 235, 194, 0.1) 15%, transparent 15%),
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(1, 38, 31, 0.015) 2px, rgba(1, 38, 31, 0.015) 4px);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+        
+        .glass-panel-sage {
+            background-color: rgba(204, 235, 194, 0.3); /* secondary-fixed low opacity */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 60, 52, 0.1);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 8px 32px rgba(1, 38, 31, 0.06);
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(170, 206, 195, 0.6); /* inverse-primary glow */
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e3e2e1",
+                      "error": "#ba1a1a",
+                      "surface-container": "#eeeeec",
+                      "primary-fixed": "#c5eadf",
+                      "outline-variant": "#c1c8c4",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#faf9f7",
+                      "on-secondary-container": "#4f6a49",
+                      "on-tertiary-fixed": "#1c1c16",
+                      "surface-container-low": "#f4f4f2",
+                      "secondary-fixed": "#ccebc2",
+                      "inverse-surface": "#2f3130",
+                      "primary": "#01261f",
+                      "surface-bright": "#faf9f7",
+                      "error-container": "#ffdad6",
+                      "outline": "#717976",
+                      "tertiary-fixed-dim": "#c9c6bd",
+                      "inverse-primary": "#aacec3",
+                      "surface-container-highest": "#e3e2e1",
+                      "on-secondary-fixed": "#082007",
+                      "surface-tint": "#43655c",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1a1c1b",
+                      "surface-container-high": "#e8e8e6",
+                      "tertiary-container": "#373630",
+                      "on-surface-variant": "#414846",
+                      "on-primary-fixed": "#00201a",
+                      "on-primary-container": "#83a69c",
+                      "secondary-fixed-dim": "#b1cfa7",
+                      "tertiary-fixed": "#e5e2d9",
+                      "on-primary-fixed-variant": "#2b4d44",
+                      "on-tertiary-container": "#a19f96",
+                      "surface-dim": "#dadad8",
+                      "tertiary": "#21211b",
+                      "on-tertiary-fixed-variant": "#484740",
+                      "background": "#faf9f7",
+                      "secondary": "#4a6545",
+                      "primary-container": "#1a3c34",
+                      "primary-fixed-dim": "#aacec3",
+                      "inverse-on-surface": "#f1f1ef",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#1a1c1b",
+                      "secondary-container": "#c9e8bf",
+                      "on-secondary-fixed-variant": "#334d2f",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "base": "8px",
+                      "xl": "80px",
+                      "sm": "12px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "lg": "48px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Playfair Display"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<header class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-screen-2xl mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold text-primary active:scale-95 transition-transform duration-200" href="#">
+                Street Pulse
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-gutter">
+<!-- Active Item: Home -->
+<a class="font-headline-sm text-headline-sm tracking-tight text-primary border-b-2 border-primary pb-1 active:scale-95 transition-transform duration-200" href="#">
+                    Home
+                </a>
+<!-- Inactive Items -->
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-fixed/20 px-3 py-1 rounded-DEFAULT duration-300 active:scale-95" href="#">
+                    Menu
+                </a>
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-fixed/20 px-3 py-1 rounded-DEFAULT duration-300 active:scale-95" href="#">
+                    Locations
+                </a>
+<a class="font-headline-sm text-headline-sm tracking-tight text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-fixed/20 px-3 py-1 rounded-DEFAULT duration-300 active:scale-95" href="#">
+                    Catering
+                </a>
+</nav>
+<!-- Trailing Action -->
+<button class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary border border-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-on-primary hover:text-primary transition-colors duration-300 glow-hover active:scale-95">
+                Reserve the Pulse
+            </button>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section (Bento Grid) -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Hero Text -->
+<div class="lg:col-span-5 flex flex-col gap-md pr-0 lg:pr-lg z-10">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full w-fit border border-primary-container/10">
+<span class="material-symbols-outlined" style="font-size: 16px;">eco</span>
+<span class="font-label-sm text-label-sm">Solarpunk Gastronomy</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary leading-tight">
+                        The Future of <br/><span class="italic font-light text-surface-tint">Heritage Flavor</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Experience the synthesis of ecological stewardship and classical refinement. We preserve ancient culinary techniques using tomorrow's sustainable technology.
+                    </p>
+<div class="flex flex-wrap items-center gap-sm mt-sm">
+<button class="bg-primary text-inverse-primary border border-primary px-8 py-4 rounded-full font-label-md text-label-md inline-flex items-center gap-2 transition-all duration-300 glow-hover active:scale-95">
+                            Explore Menu
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Hero Bento Visuals -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-sm md:gap-md relative mt-xl lg:mt-0">
+<!-- Main High-End Dish Image -->
+<div class="col-span-2 glass-panel-sage rounded-xl overflow-hidden ambient-shadow h-[400px] relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end culinary presentation in a Solarpunk aesthetic. A beautifully plated dish of organic heirloom vegetables glowing subtly under advanced, warm lighting. The setting combines classical marble textures with translucent glass surfaces and glowing teal accents. Shot with a shallow depth of field, emphasizing the freshness of the ingredients against a futuristic backdrop. Light mode, bright, calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSJ7oOXOuuwbkQ2wC56ie6tW2Dmfeug5TRmYdUnw8_LsGOzgdkEnYNMn_VAl6eO2n7ljM_ypjFQObsr4Ddx-69mV88VfXCSM_BMa4WQSMLKzd5XLFxmSDZdWo4kZFTdy_62NapYGRf6e2pG0vHUgoPw5Q5iREiIHBwySgvzTfGlyF8v1LqyP5_7rV9priT0Mu0JEYm-_f2Ehqt929_YStf--RR9vk98Q3T0kAY6OpZ9uuRGUu4VBujmg"/>
+<div class="absolute bottom-4 left-4 glass-panel px-4 py-2 rounded-lg">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Signature</p>
+<p class="font-headline-sm text-headline-sm text-primary">Hydroponic Basil &amp; Heirloom Tart</p>
+</div>
+</div>
+<!-- Secondary Image -->
+<div class="col-span-1 glass-panel rounded-xl overflow-hidden ambient-shadow h-[200px] relative">
+<img class="w-full h-full object-cover" data-alt="A close-up of a futuristic, glowing transparent dome covering a small, thriving micro-green plant. The scene blends classical botanical illustration vibes with cutting-edge technology. Warm parchment-colored background with soft, glowing green and teal highlights. Sophisticated, clean, light mode organic-futurism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpYbRl882LWBV1mEqISKyA6uvHWmJVx6LS09QJ8kn1wmk87OK66lbDSI7rUING4r94Rfbpv-n4TE13UIgr0JA1oNjtSeYCoSY4kZ5bdw3Uo2yvRNUSzLGkamtt38gn7z7RuW9D5Ef_39eX_deSh_F8Z9GmGUoHrm_oqOR_Gy9XC9pYECEIXipoH2gd_jOx1rWTft0BXZ2TrT623-FAJa9eh33Fk6j1gwwsQVNYREDWgqZfa40z8UhJeg"/>
+</div>
+<!-- Info Card -->
+<div class="col-span-1 glass-panel rounded-xl p-md flex flex-col justify-between ambient-shadow h-[200px]">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px; font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Zero Waste</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Powered by integrated urban kinetic energy systems.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section (Asymmetric Layout) -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl max-w-screen-2xl mx-auto relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute right-[-10%] top-[20%] w-[500px] h-[500px] rounded-full bg-primary-fixed/20 blur-3xl -z-10"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Philosophy Image -->
+<div class="md:col-span-6 order-2 md:order-1 relative">
+<div class="absolute inset-0 bg-secondary/10 rounded-[2rem] transform -rotate-3 scale-105 -z-10"></div>
+<div class="glass-panel rounded-[2rem] p-2 ambient-shadow">
+<img class="w-full h-[500px] object-cover rounded-[1.8rem]" data-alt="A state-of-the-art vertical farming system integrated seamlessly into classical Roman-style architecture. Lush green plants grow hydroponically within elegant glass tubes beside ancient stone columns. Bathed in natural sunlight and soft technological glows. High contrast, elegant composition, light mode, solarpunk classical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuQ-yY4TtXBlgxZXWNcTT70R28W-X-eY9mGt41sFvhyz07I8wixt0NKlErR5sWe_ti2AOCrNzt8_FIDLr383qLIyyw6HXTRQXlETHfNE7XuBQ3o5huRqmWJVqw8smqtJ0SwsWVPdQjKqWyBhIs5F5PYPDVPvb2NGLjZ4ncR6b6adQJ9GcaJynqzrEq6XwNQO1yk8iZZz0Z0gFBSD5xDemgMVikfx1--Ov23INt1JjYHSIL7ix4o_aCUQ"/>
+</div>
+</div>
+<!-- Philosophy Text -->
+<div class="md:col-span-5 md:col-start-8 order-1 md:order-2 flex flex-col gap-md mb-xl md:mb-0">
+<h2 class="font-headline-lg text-headline-lg text-primary">
+                        Our Philosophy:<br/>
+<span class="italic font-light">Where Roots Meet Algorithms</span>
+</h2>
+<div class="w-12 h-px bg-primary/30 my-2"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        We believe that true luxury lies in the preservation of nature without sacrificing progress. By combining age-old agrarian wisdom with predictive AI climate modeling, we cultivate ingredients that are not only pure but hyper-optimized for flavor and nutrition.
+                    </p>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-start gap-4">
+<div class="bg-primary-fixed text-on-primary-fixed p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">spa</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Heritage Seeds</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Resurrecting forgotten varietals from pre-industrial eras.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">data_usage</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Precision Cultivation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Micro-climate control ensures zero water waste and maximum yield.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-start max-w-screen-2xl mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm italic text-primary">
+                    Street Pulse
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80">
+                    © 2024 Street Pulse. Sustainable Heritage in Every Bite.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3 md:col-start-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 hover:decoration-primary" href="#">
+                    Terms of Service
+                </a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 hover:decoration-primary" href="#">
+                    Privacy Policy
+                </a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 hover:decoration-primary" href="#">
+                    Sustainability Report
+                </a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 hover:decoration-primary" href="#">
+                    Contact Us
+                </a>
+</div>
+</div>
+</footer>
+</body></html>
