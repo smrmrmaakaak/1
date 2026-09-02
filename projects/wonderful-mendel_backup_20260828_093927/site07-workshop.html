@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 7. 가상 목공 아틀리에 작업실 에디션</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #1A130E;
+      color: #EBD5BE;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .workshop-bench {
+      background: linear-gradient(180deg, #3A2A1E 0%, #251B13 100%);
+      border: 2px solid #8B5A2B;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+    .tool-chip {
+      background: rgba(42, 31, 23, 0.8);
+      border: 1px solid #8B5A2B;
+      transition: all 0.2s;
+    }
+    .tool-chip.active, .tool-chip:hover {
+      background: #D4A373;
+      color: #1A130E;
+      font-weight: 800;
+      border-color: #D4A373;
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-700 selection:text-white">
+
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between border-b border-[#8B5A2B]/40">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-amber-400 text-2xl">handyman</span>
+      <span class="text-xl font-bold text-white">조인형 목수의 가상 작업대</span>
+    </div>
+    <a href="tel:010-9276-4245" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold rounded-lg text-xs">
+      직통 010-9276-4245
+    </a>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+    
+    <div class="text-center space-y-3 max-w-2xl mx-auto">
+      <span class="text-amber-400 text-xs font-bold uppercase tracking-wider bg-amber-950/60 px-3.5 py-1.5 rounded-full border border-amber-800">
+        도구를 클릭해 실제 시공 현장을 확인하세요
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-black text-white">
+        "목수의 도구는 거짓말을 하지 않습니다"
+      </h1>
+    </div>
+
+    <!-- 인터랙티브 작업대 인터페이스 -->
+    <div class="workshop-bench p-6 sm:p-10 rounded-3xl space-y-8">
+      
+      <!-- 도구 4종 선택 탭 -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <button onclick="pickTool('saw')" id="tool-saw" class="tool-chip active p-4 rounded-2xl text-center">
+          <span class="material-symbols-outlined text-2xl block mb-1">carpenter</span>
+          <span class="text-xs font-bold block">30mm 특수 목공 톱</span>
+        </button>
+        <button onclick="pickTool('level')" id="tool-level" class="tool-chip p-4 rounded-2xl text-center">
+          <span class="material-symbols-outlined text-2xl block mb-1">straighten</span>
+          <span class="text-xs font-bold block">레이저 수평계</span>
+        </button>
+        <button onclick="pickTool('chisel')" id="tool-chisel" class="tool-chip p-4 rounded-2xl text-center">
+          <span class="material-symbols-outlined text-2xl block mb-1">build</span>
+          <span class="text-xs font-bold block">힌지 정밀 끌/조각도</span>
+        </button>
+        <button onclick="pickTool('clean')" id="tool-clean" class="tool-chip p-4 rounded-2xl text-center">
+          <span class="material-symbols-outlined text-2xl block mb-1">cleaning_services</span>
+          <span class="text-xs font-bold block">무분진 강력 집진기</span>
+        </button>
+      </div>
+
+      <!-- 선택된 도구의 실제 시공 현장 쇼케이스 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-4 border-t border-[#8B5A2B]/40">
+        <div class="md:col-span-6 aspect-video rounded-2xl overflow-hidden border border-amber-700/50">
+          <img id="ws-photo" src="assets/images/sink_bellago/photo_6.jpg" alt="작업 현장" class="w-full h-full object-cover">
+        </div>
+        <div class="md:col-span-6 space-y-4">
+          <span class="text-xs font-bold text-amber-400" id="ws-tag">주방 상판 가공 전용 공구</span>
+          <h3 class="text-2xl font-black text-white" id="ws-title">부평 원목 상판 사각싱크볼 컷팅</h3>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed" id="ws-desc">
+            일반 톱으로 자르면 원목 상판이 쪼개지거나 파손됩니다. 조인형 대표의 특수 30mm 정밀 톱날과 속도 제어 기술로 상판 손상 0% 안착을 실현했습니다.
+          </p>
+          <a href="#estimate" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs rounded-xl shadow">
+            이 공정으로 사진 견적 받기
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 하단 견적대 -->
+    <div class="workshop-bench p-8 rounded-3xl text-center space-y-4 max-w-xl mx-auto" id="estimate">
+      <h3 class="text-xl font-bold text-white">3초 사진 간편 견적</h3>
+      <p class="text-xs text-stone-300">현장 사진을 보내주시면 조인형 대표가 직접 검토 후 답변합니다.</p>
+      <a href="sms:010-9276-4245?body=%5B%EA%B3%B5%EB%B0%A9%20%EC%9E%91%EC%97%85%EB%8C%80%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%5D" class="inline-block px-8 py-3.5 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs rounded-xl shadow">
+        문자로 사진 전송 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <script src="switcher.js"></script>
+  <script>
+    const tools = {
+      saw: {
+        tag: '주방 상판 가공 전용 공구',
+        title: '부평 원목 상판 사각싱크볼 컷팅',
+        desc: '일반 톱으로 자르면 원목 상판이 쪼개지거나 파손됩니다. 조인형 대표의 특수 30mm 정밀 톱날과 속도 제어 기술로 상판 손상 0% 안착을 실현했습니다.',
+        photo: 'assets/images/sink_bellago/photo_6.jpg'
+      },
+      level: {
+        tag: '수평 1mm 단차 제로 계측기',
+        title: '아트월 철거 후 벽면 평탄화 목공',
+        desc: '레이저 수평 계측으로 벽면의 울퉁불퉁한 단차를 찾아내고, 석고보드 2P 상작업을 통해 도배지가 들뜨지 않는 완벽한 수평을 만듭니다.',
+        photo: 'assets/images/kitchen_artwall/photo_4.jpg'
+      },
+      chisel: {
+        tag: '미세 힌지 정밀 가공 도구',
+        title: '마곡 아파트 처진 도어 힌지 복원',
+        desc: '문틀을 뜯지 않고 상하부 경첩의 미세 각도와 홈을 끌로 정밀 가공하여, 30분 만에 닫히지 않던 문을 부드럽게 복원합니다.',
+        photo: 'assets/images/door_film/photo_1.jpg'
+      },
+      clean: {
+        tag: '살림집 비산 분진 0% 흡입기',
+        title: '거주 중 가구 이중 보양 & 무분진 컷팅',
+        desc: '공구와 직결된 고성능 집진기와 비닐 텐트 이중 보양으로, 살림살이가 가득 찬 집에서도 먼지 날림 없이 당일 시공을 끝냅니다.',
+        photo: 'assets/images/kindergarten/photo_1.jpg'
+      }
+    };
+
+    function pickTool(key) {
+      document.querySelectorAll('.tool-chip').forEach(t => t.classList.remove('active'));
+      document.getElementById(`tool-${key}`).classList.add('active');
+      const data = tools[key];
+      document.getElementById('ws-tag').textContent = data.tag;
+      document.getElementById('ws-title').textContent = data.title;
+      document.getElementById('ws-desc').textContent = data.desc;
+      document.getElementById('ws-photo').src = data.photo;
+    }
+  </script>
+</body>
+</html>

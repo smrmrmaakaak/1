@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>목수의 홈케어마스터 온라인 마케팅 플랜 비교 시뮬레이터 | 조인형 대표님 전용</title>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { font-family: 'Pretendard', sans-serif; -webkit-tap-highlight-color: transparent; }
+    body { background-color: #0B0F19; color: #F8FAFC; overflow-x: hidden; }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .naver-green { color: #03C75A; }
+    .bg-naver-green { background-color: #03C75A; }
+    .border-naver-green { border-color: #03C75A; }
+
+    .glow-gold {
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+    }
+    .glow-naver {
+      box-shadow: 0 0 25px rgba(3, 199, 90, 0.25);
+    }
+
+    /* Mockup phone frame */
+    .mockup-phone {
+      border: 8px solid #1E293B;
+      border-radius: 36px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+
+    .plan-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .plan-card.active {
+      transform: translateY(-6px);
+      border-color: #F59E0B;
+      background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
+      box-shadow: 0 12px 30px -8px rgba(245, 158, 11, 0.3);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-24">
+
+  <!-- 🔒 보안 PIN 잠금 화면 (대표님/관리자 전용 - 고객 열람 절대 불가) -->
+  <div id="proposal-pin-screen" class="fixed inset-0 z-50 bg-slate-950 flex items-center justify-center p-4">
+    <div class="max-w-sm w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 text-center space-y-6 shadow-2xl">
+      <div class="w-16 h-16 rounded-2xl bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 mx-auto flex items-center justify-center text-2xl font-black">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <div>
+        <h2 class="text-lg font-black text-white">조인형 대표 전용 마케팅 시뮬레이터</h2>
+        <p class="text-xs text-slate-400 mt-1">접속 PIN 번호를 입력해 주세요</p>
+      </div>
+      <form onsubmit="checkProposalPin(event)" class="space-y-4">
+        <input type="password" id="proposal-pin-input" placeholder="PIN 4자리 입력" maxlength="6" autofocus
+          class="w-full text-center tracking-widest text-2xl font-black py-3 rounded-2xl bg-slate-950 border border-slate-700 text-yellow-400 focus:outline-none focus:border-yellow-400 transition" />
+        <p id="proposal-pin-error" class="text-xs text-red-400 font-bold hidden">PIN 번호가 일치하지 않습니다.</p>
+        <button type="submit" class="w-full py-3.5 rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black text-sm transition shadow-lg shadow-yellow-500/20">
+          제안서 열람하기
+        </button>
+      </form>
+      <div class="pt-2 border-t border-slate-800">
+        <a href="index.html" class="text-xs text-slate-500 hover:text-slate-300">홈페이지로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🌟 상단 헤더 바 -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bg-yellow-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-md shadow-yellow-500/20">
+        木
+      </div>
+      <div>
+        <h1 class="text-sm sm:text-base font-black text-white flex items-center gap-2">
+          <span>목수의 홈케어마스터</span>
+          <span class="text-[10px] bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 px-2 py-0.5 rounded-full font-bold">마케팅 시뮬레이터</span>
+        </h1>
+        <p class="text-[11px] text-slate-400">조인형 대표님 전용 포털 검색 노출 & 매출 비교 제안서</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-house text-yellow-400"></i>
+        <span class="hidden sm:inline">홈페이지 보기</span>
+      </a>
+      <a href="admin.html" class="px-3 py-1.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-xs font-black text-slate-950 transition flex items-center gap-1.5 shadow">
+        <i class="fa-solid fa-tower-broadcast"></i>
+        <span>관제탑 (PIN: 4245)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 🚀 메인 컨테이너 -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 space-y-10">
+
+    <!-- 1. 제안 타이틀 섹션 -->
+    <div class="text-center space-y-3">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>월 투자금 대비 실제 검색창 노출 & 예상 수익 시뮬레이션</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+        "내가 선택한 플랜, 네이버와 구글에서 <span class="gold-gradient-text">어떻게 뜰까?</span>"
+      </h2>
+      <p class="text-xs sm:text-base text-slate-400 max-w-2xl mx-auto">
+        아래에서 <strong class="text-yellow-400">10만 원 / 30만 원 / 50만 원 플랜</strong>을 눌러보세요.<br class="sm:hidden">
+        실제 스마트폰 검색창 화면이 실시간으로 어떻게 바뀌는지 1초 만에 직접 눈으로 확인하실 수 있습니다.
+      </p>
+    </div>
+
+    <!-- 2. 플랜 선택 탭 (3개 버튼) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+      
+      <!-- 🥉 10만 원 플랜 -->
+      <button onclick="selectPlan('10')" id="plan-btn-10" class="plan-card text-left p-5 sm:p-6 rounded-3xl border-2 border-slate-800 bg-slate-900/60 relative overflow-hidden group hover:border-slate-600 cursor-pointer">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">기본 관제형</span>
+          <span class="text-[11px] bg-slate-800 text-slate-300 font-bold px-2 py-0.5 rounded-full">현상 유지</span>
+        </div>
+        <div class="flex items-baseline gap-1 mb-3">
+          <span class="text-3xl sm:text-4xl font-black text-white">월 10</span>
+          <span class="text-sm font-bold text-slate-400">만 원</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+          네이버 지도 기본 등록 및 스마트폰 앱 24시간 알림 시스템 기본 유지
+        </p>
+        <div class="space-y-1.5 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>네이버 지도(스마트플레이스) 기본 등록</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>스마트폰 24시간 실시간 예약 알림</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-500 line-through">
+            <i class="fa-solid fa-xmark text-slate-600 text-xs"></i>
+            <span>네이버/구글 1위 파워링크 광고 미포함</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-500 line-through">
+            <i class="fa-solid fa-xmark text-slate-600 text-xs"></i>
+            <span>숏폼 영상 & 블로그 원고 미포함</span>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-bold">
+          <span class="text-slate-400">예상 월 신규 문의</span>
+          <span class="text-white font-mono font-black">2 ~ 4건</span>
+        </div>
+      </button>
+
+      <!-- 🥈 30만 원 플랜 -->
+      <button onclick="selectPlan('30')" id="plan-btn-30" class="plan-card text-left p-5 sm:p-6 rounded-3xl border-2 border-slate-800 bg-slate-900/60 relative overflow-hidden group hover:border-slate-600 cursor-pointer">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">지역 성장형</span>
+          <span class="text-[11px] bg-sky-500/20 text-sky-300 border border-sky-500/30 font-bold px-2 py-0.5 rounded-full">인기 선택</span>
+        </div>
+        <div class="flex items-baseline gap-1 mb-3">
+          <span class="text-3xl sm:text-4xl font-black text-white">월 30</span>
+          <span class="text-sm font-bold text-slate-400">만 원</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-4 line-clamp-2">
+          인천/부평 핵심 지역 네이버 파워링크 2~3위 노출 + 월 2회 블로그 발행
+        </p>
+        <div class="space-y-1.5 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>네이버 파워링크 광고 2~3위권 노출</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>네이버 지도 상위 랭킹 최적화</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>월 2회 현장 시공 전문 블로그 발행</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-500 line-through">
+            <i class="fa-solid fa-xmark text-slate-600 text-xs"></i>
+            <span>4K 시네마틱 숏폼 영상 제작 미포함</span>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-bold">
+          <span class="text-slate-400">예상 월 신규 문의</span>
+          <span class="text-sky-400 font-mono font-black">8 ~ 12건</span>
+        </div>
+      </button>
+
+      <!-- 🥇 50만 원 플랜 (★강력추천) -->
+      <button onclick="selectPlan('50')" id="plan-btn-50" class="plan-card active text-left p-5 sm:p-6 rounded-3xl border-2 border-yellow-500 bg-slate-900 relative overflow-hidden group cursor-pointer">
+        <div class="absolute -top-3 -right-8 bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 text-[11px] font-black px-8 py-1 rotate-12 shadow-md">
+          ★ 강력 추천
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">🔥 1위 독점 올인원</span>
+          <span class="text-[11px] bg-yellow-400 text-slate-950 font-black px-2 py-0.5 rounded-full">최고 가성비</span>
+        </div>
+        <div class="flex items-baseline gap-1 mb-3">
+          <span class="text-3xl sm:text-4xl font-black text-white">월 50</span>
+          <span class="text-sm font-bold text-slate-400">만 원</span>
+          <span class="text-[10px] text-yellow-400/90 font-bold ml-1.5">(광고비 실비 포함!)</span>
+        </div>
+        <p class="text-xs text-yellow-200/90 mb-4 line-clamp-2">
+          네이버 & 구글 검색창 1위 무조건 고정 + 월 4회 숏폼 영상 및 블로그 완벽 대행
+        </p>
+        <div class="space-y-1.5 text-xs text-slate-200 pt-3 border-t border-slate-700/80">
+          <div class="flex items-center gap-2 font-bold text-yellow-300">
+            <i class="fa-solid fa-crown text-yellow-400 text-xs"></i>
+            <span>네이버 & 구글 최상단 1위 독점 광고 고정</span>
+          </div>
+          <div class="flex items-center gap-2 font-bold text-yellow-300">
+            <i class="fa-solid fa-crown text-yellow-400 text-xs"></i>
+            <span>네이버 지도(플레이스) 1순위 상단 배치</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-200">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>월 4회 9:16 시네마틱 숏폼 영상 + 3,000자 블로그</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-200">
+            <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+            <span>전용 24시간 스마트폰 관제 + 010 직통 연결</span>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between text-xs font-bold">
+          <span class="text-slate-300">예상 월 신규 문의</span>
+          <span class="text-yellow-400 font-mono font-black text-sm">20 ~ 35건+ (폭발적 유입)</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- 3. 실시간 검색창 시뮬레이터 (네이버 vs 구글 뷰어) -->
+    <div class="card-dark p-4 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 pulse-dot"></span>
+              <span>실시간 검색창 노출 라이브 시뮬레이션</span>
+            </h3>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">
+            선택된 플랜: <span id="current-selected-plan-badge" class="text-yellow-400 font-black font-mono">50만 원 플랜 (1위 독점 올인원)</span>
+          </p>
+        </div>
+
+        <!-- 포털 전환 탭 (네이버 vs 구글) -->
+        <div class="inline-flex p-1 rounded-2xl bg-slate-950 border border-slate-800">
+          <button onclick="switchPortal('naver')" id="portal-tab-naver" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-slate-950 shadow">
+            <span class="font-black text-sm">N</span>
+            <span>네이버 검색 화면</span>
+          </button>
+          <button onclick="switchPortal('google')" id="portal-tab-google" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+            <i class="fa-brands fa-google text-xs"></i>
+            <span>구글 검색 화면</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 📱 시뮬레이션 폰 컨테이너 -->
+      <div class="max-w-md mx-auto mockup-phone bg-white text-slate-900 overflow-hidden text-left shadow-2xl">
+        
+        <!-- 🟢 1. 네이버 모바일 검색창 시뮬레이터 -->
+        <div id="mockup-naver-view" class="space-y-0 text-slate-900 text-sm">
+          
+          <!-- 네이버 상단 그린 바 -->
+          <div class="bg-naver-green px-4 py-3 flex items-center justify-between text-white">
+            <div class="flex items-center gap-2.5 w-full">
+              <span class="font-black text-xl tracking-tighter">NAVER</span>
+              <div class="flex-1 bg-white rounded-full px-3 py-1.5 flex items-center justify-between text-slate-800 text-xs shadow-inner">
+                <span class="font-bold truncate" id="naver-search-keyword">인천 사각싱크볼 교체</span>
+                <i class="fa-solid fa-magnifying-glass text-naver-green font-black"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 네이버 탭 바 -->
+          <div class="flex items-center gap-5 px-4 py-2.5 border-b border-slate-200 text-xs font-bold text-slate-600 bg-white overflow-x-auto">
+            <span class="text-naver-green font-black border-b-2 border-naver-green pb-1">통합</span>
+            <span>VIEW</span>
+            <span>플레이스</span>
+            <span>이미지</span>
+            <span>지식iN</span>
+          </div>
+
+          <!-- 📱 검색 결과 내용 동적 렌더링 영역 -->
+          <div class="p-3.5 space-y-3 bg-slate-50 min-h-[480px]" id="naver-results-container">
+            <!-- JS 동적 주입 -->
+          </div>
+
+        </div>
+
+        <!-- 🔵 2. 구글 모바일 검색창 시뮬레이터 (기본 히든) -->
+        <div id="mockup-google-view" class="hidden space-y-0 text-slate-900 text-sm">
+          
+          <!-- 구글 상단 바 -->
+          <div class="bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2.5 w-full">
+              <span class="font-bold text-lg tracking-tight">
+                <span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-500">g</span><span class="text-green-500">l</span><span class="text-red-500">e</span>
+              </span>
+              <div class="flex-1 bg-slate-100 rounded-full px-3.5 py-1.5 flex items-center justify-between text-slate-800 text-xs border border-slate-300">
+                <span class="font-bold truncate" id="google-search-keyword">목수의 홈케어마스터</span>
+                <i class="fa-solid fa-magnifying-glass text-slate-500"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 구글 검색 결과 동적 렌더링 영역 -->
+          <div class="p-3.5 space-y-3 bg-white min-h-[480px]" id="google-results-container">
+            <!-- JS 동적 주입 -->
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 4. 대표님 순수익 및 투자 대비 효과 분석표 (ROI) -->
+    <div class="card-dark p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+      
+      <div class="text-center space-y-1">
+        <h3 class="text-xl sm:text-2xl font-black text-white">
+          💰 "50만 원 플랜, 대표님이 얼마나 남을까?" (수익 분석)
+        </h3>
+        <p class="text-xs text-slate-400">사각싱크볼 교체 1건 시공비(45만 원)만으로도 월 광고비 전액이 바로 회수됩니다.</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 font-bold">
+              <th class="py-3 px-3">구분</th>
+              <th class="py-3 px-3">월 투자 비용</th>
+              <th class="py-3 px-3">예상 유입 & 견적수</th>
+              <th class="py-3 px-3">예상 공사 계약수</th>
+              <th class="py-3 px-3 text-right text-yellow-400">대표님 예상 순매출 (월)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/80 font-medium">
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="py-3.5 px-3 font-bold text-slate-300">10만 원 플랜</td>
+              <td class="py-3.5 px-3 font-mono">100,000원</td>
+              <td class="py-3.5 px-3">월 20~30명 (견적 2~4건)</td>
+              <td class="py-3.5 px-3 font-bold text-white">1 ~ 2건</td>
+              <td class="py-3.5 px-3 text-right font-black text-emerald-400 font-mono">+ 약 50만 ~ 80만 원</td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="py-3.5 px-3 font-bold text-sky-400">30만 원 플랜</td>
+              <td class="py-3.5 px-3 font-mono">300,000원</td>
+              <td class="py-3.5 px-3">월 120~180명 (견적 8~12건)</td>
+              <td class="py-3.5 px-3 font-bold text-white">4 ~ 6건</td>
+              <td class="py-3.5 px-3 text-right font-black text-sky-400 font-mono">+ 약 200만 ~ 350만 원</td>
+            </tr>
+            <tr class="bg-yellow-500/10 border-2 border-yellow-500/50 rounded-xl">
+              <td class="py-4 px-3 font-black text-yellow-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-crown text-yellow-400 text-xs"></i>
+                <span>50만 원 플랜 (★)</span>
+              </td>
+              <td class="py-4 px-3 font-mono font-black text-white">500,000원</td>
+              <td class="py-4 px-3 font-bold text-yellow-300">월 350~500명+ (견적 20~35건)</td>
+              <td class="py-4 px-3 font-black text-yellow-400 text-base font-mono">12 ~ 20건+</td>
+              <td class="py-4 px-3 text-right font-black text-yellow-400 font-mono text-base sm:text-lg">
+                + 약 600만 ~ 1,200만 원+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2 text-slate-300">
+          <i class="fa-solid fa-circle-info text-yellow-400 text-sm"></i>
+          <span><strong>1위 광고의 힘:</strong> 공사가 급한 고객은 검색창 1~2등 업체에 80% 이상 바로 전화합니다.</span>
+        </div>
+        <span class="text-emerald-400 font-bold bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded-full flex-shrink-0">
+          ROI 수익률 약 1,200% 달성 가능
+        </span>
+      </div>
+
+    </div>
+
+    <!-- 5. 결론 및 화요일 미팅 액션 카드 -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border-2 border-yellow-500 text-center space-y-4 shadow-xl">
+      <div class="w-12 h-12 rounded-full bg-yellow-400 text-slate-950 flex items-center justify-center text-xl font-black mx-auto shadow-lg shadow-yellow-500/30">
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-black text-white">
+        "대표님, 화요일 저녁 미팅 때 이 시뮬레이터를 폰으로 직접 보여주세요!"
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+        대표님께 검색 광고 1등의 압도적인 차이를 눈앞에서 보여드리면, **50만 원 올인원 플랜**에 100% 흔쾌히 동의하실 것입니다.
+      </p>
+      <div class="pt-2 flex flex-wrap justify-center gap-3">
+        <a href="https://homemaster82.vercel.app" target="_blank" class="px-5 py-3 rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black text-sm transition shadow-lg flex items-center gap-2">
+          <i class="fa-solid fa-globe"></i>
+          <span>완성된 공식 홈페이지 열기</span>
+        </a>
+        <a href="admin.html" class="px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-yellow-400 border border-yellow-500/40 font-bold text-sm transition flex items-center gap-2">
+          <i class="fa-solid fa-tower-broadcast"></i>
+          <span>실시간 24시간 관제탑 열기</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ⚙️ 인터랙티브 시뮬레이션 스크립트 -->
+  <script>
+    let currentPlan = '50';
+    let currentPortal = 'naver';
+
+    const PLAN_DATA = {
+      '10': {
+        name: '10만 원 플랜 (기본 관제형)',
+        naver_badge: '일반 웹문서 하위 노출',
+        naver_results: `
+          <!-- 1. 타사 경쟁업체 파워링크 광고 (우리 사이트는 없음) -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm opacity-75">
+            <div class="flex items-center justify-between text-[11px] text-slate-500 mb-1">
+              <span class="bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">파워링크 광고</span>
+              <span>A사 싱크볼 전문</span>
+            </div>
+            <h4 class="font-bold text-blue-600 text-xs">인천/부평 전지역 사각싱크볼 당일 설치</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">타 경쟁업체 광고가 상단을 독점 중입니다.</p>
+          </div>
+
+          <!-- 2. 일반 지도 목록 -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-xs text-slate-800">목수의 홈케어마스터</span>
+              <span class="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-bold">일반 등록</span>
+            </div>
+            <p class="text-[11px] text-slate-600">인천 서구 · 인테리어/집수리</p>
+            <p class="text-[11px] text-slate-400">※ 상단 파워링크 광고가 없어 검색창 4~5위 아래로 밀려 노출됩니다.</p>
+          </div>
+        `,
+        google_results: `
+          <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm opacity-70">
+            <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold">스폰서 (타사 광고)</span>
+            <h4 class="font-bold text-blue-700 text-xs mt-1">인천 싱크대 리폼/집수리 24시</h4>
+            <p class="text-[11px] text-slate-500">타사 유료 광고가 구글 1페이지 상단을 차지합니다.</p>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm space-y-1">
+            <div class="flex items-center gap-1.5 text-[11px] text-slate-500">
+              <div class="w-4 h-4 rounded-full bg-yellow-400 text-slate-950 font-black text-[9px] flex items-center justify-center">木</div>
+              <span>homemaster82.vercel.app</span>
+            </div>
+            <h4 class="font-bold text-blue-800 text-xs">목수의 홈케어마스터 조인형 | 인테리어 · 집수리</h4>
+            <p class="text-[11px] text-slate-600 line-clamp-2">30년 목수 조인형 대표 직영 집수리 및 부분 인테리어 전문...</p>
+          </div>
+        `
+      },
+      '30': {
+        name: '30만 원 플랜 (지역 성장형)',
+        naver_badge: '파워링크 2~3위 노출',
+        naver_results: `
+          <!-- 타사 1위 -->
+          <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm opacity-60 text-xs">
+            <span class="bg-slate-100 text-slate-500 px-1 rounded text-[10px]">파워링크 1위</span>
+            <h4 class="font-bold text-slate-700 text-[11px]">B사 인테리어 집수리</h4>
+          </div>
+
+          <!-- 🌟 우리 업체 파워링크 2위 노출 -->
+          <div class="bg-white p-3.5 rounded-xl border-2 border-sky-400 shadow-md space-y-1.5">
+            <div class="flex items-center justify-between text-[11px]">
+              <span class="bg-sky-500 text-white px-2 py-0.5 rounded font-black text-[10px]">파워링크 2위</span>
+              <span class="text-sky-600 font-bold">010-9276-4245</span>
+            </div>
+            <h4 class="font-black text-blue-700 text-sm">[30년 목수 직영] 목수의 홈케어마스터</h4>
+            <p class="text-xs text-slate-700 font-medium">인천/부평 사각싱크볼 교체, 식세기장 리폼, 처진 문짝 대패 수리</p>
+            <div class="flex gap-2 pt-1">
+              <span class="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-bold">사각싱크볼</span>
+              <span class="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-bold">식세기장리폼</span>
+            </div>
+          </div>
+        `,
+        google_results: `
+          <!-- 구글 스폰서 광고 2위 -->
+          <div class="bg-white p-3.5 rounded-xl border-2 border-sky-400 shadow-md space-y-1">
+            <div class="flex items-center gap-1.5 text-[11px] text-slate-600">
+              <span class="bg-slate-900 text-white font-bold px-1.5 py-0.2 rounded text-[9px]">스폰서</span>
+              <div class="w-4 h-4 rounded-full bg-yellow-400 text-slate-950 font-black text-[9px] flex items-center justify-center">木</div>
+              <span>homemaster82.vercel.app</span>
+            </div>
+            <h4 class="font-black text-blue-800 text-sm">목수의 홈케어마스터 조인형 | 30년 목수 직영 집수리</h4>
+            <p class="text-xs text-slate-700">사각싱크볼 교체, 식세기장 리폼, 방문 대패 교정 무료 사진 견적!</p>
+          </div>
+        `
+      },
+      '50': {
+        name: '50만 원 플랜 (🔥 1위 독점 올인원)',
+        naver_badge: '🔥 네이버 & 구글 최상단 1위 독점 박제',
+        naver_results: `
+          <!-- 👑 네이버 파워링크 최상단 1위 독점 박제 -->
+          <div class="bg-white p-3.5 rounded-2xl border-2 border-amber-500 shadow-lg space-y-2 relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-gradient-to-l from-yellow-400 to-amber-500 text-slate-950 font-black text-[10px] px-3 py-0.5 rounded-bl-xl shadow">
+              👑 네이버 1위 독점 노출
+            </div>
+            
+            <div class="flex items-center gap-1.5 text-[11px] pt-1">
+              <span class="bg-naver-green text-white font-black px-2 py-0.5 rounded text-[10px]">파워링크 1위</span>
+              <span class="text-amber-600 font-bold text-xs">📞 010-9276-4245</span>
+            </div>
+
+            <div class="flex gap-2.5 items-start">
+              <div class="w-20 h-20 rounded-xl overflow-hidden border border-slate-300 flex-shrink-0 shadow-inner">
+                <img src="assets/images/sink_bellago/photo_6.jpg" alt="벨라고 싱크볼" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0 space-y-0.5">
+                <h4 class="font-black text-blue-700 text-sm hover:underline leading-snug">
+                  [30년 목수 직영] 목수의 홈케어마스터
+                </h4>
+                <p class="text-xs text-slate-800 font-bold line-clamp-2">
+                  사각싱크볼(벨라고/백조) 교체 · 식세기장 1cm 리폼 · 처진 문짝 대패질
+                </p>
+                <p class="text-[11px] text-emerald-600 font-bold">
+                  ★ 서울/인천/경기 전지역 24시간 사진 무료 견적
+                </p>
+              </div>
+            </div>
+
+            <!-- 서브링크 버튼들 -->
+            <div class="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-slate-100">
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-1.5 text-center text-[11px] font-bold text-slate-700">
+                🍳 사각싱크볼 교체
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-1.5 text-center text-[11px] font-bold text-slate-700">
+                🍽️ 식세기장 맞춤리폼
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-1.5 text-center text-[11px] font-bold text-slate-700">
+                🚪 처진 문짝 대패교정
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-1.5 text-center text-[11px] font-bold text-slate-700">
+                🧱 거실 아트월 평탄화
+              </div>
+            </div>
+          </div>
+
+          <!-- 🗺️ 네이버 스마트플레이스 1위 카드 -->
+          <div class="bg-white p-3 rounded-2xl border border-emerald-500/40 shadow space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-slate-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>네이버 지도 1위 배치</span>
+              </span>
+              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">플레이스 1등</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <div>
+                <h5 class="font-black text-slate-900">목수의 홈케어마스터 (조인형 대표)</h5>
+                <p class="text-[11px] text-slate-500">집수리/인테리어 · 인천/서울/경기 출장</p>
+                <p class="text-[11px] text-amber-500 font-bold">★ 5.0 (30년 목수 직영 방문)</p>
+              </div>
+              <a href="tel:010-9276-4245" class="bg-naver-green text-white font-black px-3 py-2 rounded-xl text-xs flex items-center gap-1 shadow">
+                <i class="fa-solid fa-phone"></i>
+                <span>전화</span>
+              </a>
+            </div>
+          </div>
+        `,
+        google_results: `
+          <!-- 👑 구글 스폰서 최상단 1위 독점 카드 -->
+          <div class="bg-white p-4 rounded-2xl border-2 border-yellow-500 shadow-xl space-y-2 relative">
+            <div class="flex items-center justify-between text-[11px] text-slate-600">
+              <div class="flex items-center gap-1.5">
+                <span class="bg-slate-900 text-white font-black px-2 py-0.5 rounded text-[10px]">스폰서 1위</span>
+                <div class="w-4 h-4 rounded-full bg-yellow-400 text-slate-950 font-black text-[9px] flex items-center justify-center">木</div>
+                <span class="font-bold">homemaster82.vercel.app</span>
+              </div>
+              <span class="text-blue-600 font-black">📞 010-9276-4245</span>
+            </div>
+
+            <h4 class="font-black text-blue-800 text-base leading-snug hover:underline">
+              목수의 홈케어마스터 조인형 | 30년 목수 직영 집수리 · 부분 인테리어
+            </h4>
+            
+            <p class="text-xs text-slate-700 font-medium">
+              타 업체가 거절한 까다로운 집수리 100% 해결! 사각싱크볼 교체, 식기세척기 하부장 리폼, 문짝 대패 교정, 거실 아트월 평탄화.
+            </p>
+
+            <div class="pt-2">
+              <img src="assets/images/og-thumbnail.jpg" alt="대표 썸네일" class="w-full rounded-xl border border-slate-200 shadow-sm">
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-2 text-[11px]">
+              <span class="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-lg">✓ 사각싱크볼 45만 원~</span>
+              <span class="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-lg">✓ 식세기장 1cm 맞춤리폼</span>
+              <span class="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-lg">✓ 사진 무료 견적</span>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    function selectPlan(plan) {
+      currentPlan = plan;
+      
+      // Update plan buttons active class
+      ['10', '30', '50'].forEach(p => {
+        const btn = document.getElementById(`plan-btn-${p}`);
+        if (p === plan) {
+          btn.classList.add('active');
+          if (p === '50') {
+            btn.classList.add('border-yellow-500');
+          } else if (p === '30') {
+            btn.classList.add('border-sky-400');
+          } else {
+            btn.classList.add('border-slate-500');
+          }
+        } else {
+          btn.classList.remove('active', 'border-yellow-500', 'border-sky-400', 'border-slate-500');
+          btn.classList.add('border-slate-800');
+        }
+      });
+
+      // Update badge
+      document.getElementById('current-selected-plan-badge').textContent = PLAN_DATA[plan].name;
+
+      // Update Mockups
+      renderMockups();
+    }
+
+    function switchPortal(portal) {
+      currentPortal = portal;
+      const nTab = document.getElementById('portal-tab-naver');
+      const gTab = document.getElementById('portal-tab-google');
+      const nView = document.getElementById('mockup-naver-view');
+      const gView = document.getElementById('mockup-google-view');
+
+      if (portal === 'naver') {
+        nTab.className = "px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-emerald-500 text-slate-950 shadow";
+        gTab.className = "px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-2";
+        nView.classList.remove('hidden');
+        gView.classList.add('hidden');
+      } else {
+        gTab.className = "px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-blue-600 text-white shadow";
+        nTab.className = "px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition flex items-center gap-2";
+        gView.classList.remove('hidden');
+        nView.classList.add('hidden');
+      }
+    }
+
+    function renderMockups() {
+      const data = PLAN_DATA[currentPlan];
+      document.getElementById('naver-results-container').innerHTML = data.naver_results;
+      document.getElementById('google-results-container').innerHTML = data.google_results;
+    }
+
+    // Initialize with 50K plan
+    selectPlan('50');
+
+    // 🔒 PIN 인증 검증 로직
+    function checkProposalPin(e) {
+      if (e) e.preventDefault();
+      const pin = document.getElementById('proposal-pin-input').value;
+      if (pin === '4245' || sessionStorage.getItem('homemaster_proposal_auth') === 'true') {
+        sessionStorage.setItem('homemaster_proposal_auth', 'true');
+        document.getElementById('proposal-pin-screen').classList.add('hidden');
+      } else {
+        document.getElementById('proposal-pin-error').classList.remove('hidden');
+      }
+    }
+
+    if (sessionStorage.getItem('homemaster_proposal_auth') === 'true' || sessionStorage.getItem('homemaster_admin_auth') === 'true') {
+      document.getElementById('proposal-pin-screen').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

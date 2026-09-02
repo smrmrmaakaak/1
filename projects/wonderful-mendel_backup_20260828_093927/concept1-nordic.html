@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | Concept 1: 노르딕 건축 매거진 스플릿 뷰</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            nordicDark: '#121417',
+            nordicWood: '#A47843',
+            nordicGold: '#D4AF37',
+            nordicSlate: '#1E232B',
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            serif: ['Cinzel', 'Playfair Display', 'serif'],
+            display: ['Syne', 'Pretendard', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .nordic-glass-card {
+      background: rgba(30, 35, 43, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .nordic-glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-[#121417] text-[#E2E4E8] antialiased">
+
+  <!-- Header -->
+  <header class="w-full bg-[#121417]/90 backdrop-blur-xl border-b border-white/[0.06] py-4 px-6 lg:px-12 flex items-center justify-between sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 border border-[#D4AF37] flex items-center justify-center text-[#D4AF37] font-serif font-black text-xl">
+        M
+      </div>
+      <div>
+        <span class="text-lg font-serif font-bold text-white tracking-widest uppercase">Master Carpenter</span>
+        <p class="text-[10px] text-slate-400 tracking-wider">HOMECARE & BESPOKE INTERIOR</p>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-semibold text-slate-300">
+      <a href="#portfolio" class="hover:text-[#D4AF37] transition">Portfolio</a>
+      <a href="#services" class="hover:text-[#D4AF37] transition">Services</a>
+      <a href="#process" class="hover:text-[#D4AF37] transition">Process</a>
+      <a href="#estimate" class="hover:text-[#D4AF37] transition text-[#D4AF37] font-bold">Estimate</a>
+    </nav>
+
+    <a href="tel:010-9276-4245" class="px-5 py-2 bg-[#A47843] hover:bg-[#8C6332] text-white text-xs tracking-wider uppercase font-bold transition shadow-lg">
+      Request Quote
+    </a>
+  </header>
+
+  <!-- Split Screen 50:50 Hero Section -->
+  <section class="max-w-[1600px] mx-auto px-6 lg:px-12 py-10 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+      
+      <!-- Left Side (Typography & 3-Step Quote Widget) -->
+      <div class="lg:col-span-6 flex flex-col justify-between space-y-8 py-4">
+        
+        <div class="space-y-6">
+          <div class="inline-block border-b-2 border-[#D4AF37] pb-1 text-xs tracking-widest text-[#D4AF37] uppercase font-bold">
+            ARCHITECTURAL CRAFTSMANSHIP & HOMECARE
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl font-display font-black text-white leading-[1.08] tracking-tight">
+            MASTER CARPENTER<br>
+            <span class="text-[#A47843]">HOMECARE</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl font-serif text-[#D4AF37] leading-snug">
+            Elevating Spaces Through Nordic Minimalism & 30-Year Architectural Craftsmanship.
+          </p>
+
+          <p class="text-sm text-slate-400 leading-relaxed max-w-xl">
+            타 업체가 포기한 원목 상판 30mm 정밀 컷팅부터 벨라고 사각싱크볼 교체, 도어 힌지 밸런싱, 아트월 석고보드 평탄화까지. 
+            거주 중 분진 없는 이중 보양과 하자 없는 완벽한 디테일 마감.
+          </p>
+        </div>
+
+        <!-- Floating Mini Before/After Card inside Left Column -->
+        <div class="nordic-glass-card p-4 rounded-xl border border-[#D4AF37]/30 max-w-lg">
+          <div class="flex items-center justify-between mb-2 text-xs font-bold text-[#D4AF37]">
+            <span>인천 부평 원목 사각싱크볼 현장</span>
+            <span>Before / After</span>
+          </div>
+          <div class="ba-container aspect-[16/9] rounded-lg" id="hero-ba-slider">
+            <img src="assets/images/sink_bellago/photo_6.jpg" alt="After" class="ba-image">
+            <div class="absolute bottom-2 right-2 bg-[#A47843] text-white text-[10px] font-bold px-2 py-0.5 rounded">AFTER</div>
+            <div class="ba-before-wrapper" id="hero-ba-before">
+              <img src="assets/images/sink_bellago/photo_1.jpg" alt="Before" class="ba-image">
+              <div class="absolute bottom-2 left-2 bg-red-800 text-white text-[10px] font-bold px-2 py-0.5 rounded">BEFORE</div>
+            </div>
+            <div class="ba-handle" id="hero-ba-handle">
+              <div class="ba-handle-button bg-[#121417] border border-[#D4AF37] text-[#D4AF37]">
+                <i class="fa-solid fa-left-right text-[10px]"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Step Horizontal Quote Widget -->
+        <div class="space-y-3 pt-4 border-t border-white/[0.08]" id="estimate">
+          <span class="text-xs tracking-widest text-slate-400 uppercase font-bold block">3-Step Photo Quote Widget</span>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="nordic-glass-card p-3 rounded-lg text-center cursor-pointer hover:border-[#D4AF37]" onclick="toggleEstimateService(this, '사각싱크볼 교체 & 상판 재단')">
+              <span class="text-xs text-[#D4AF37] font-mono block">01</span>
+              <span class="text-xs font-bold text-white block mt-0.5">사각싱크볼</span>
+            </div>
+            <div class="nordic-glass-card p-3 rounded-lg text-center cursor-pointer hover:border-[#D4AF37]" onclick="toggleEstimateService(this, '방문/욕실문 수리 및 교체')">
+              <span class="text-xs text-[#D4AF37] font-mono block">02</span>
+              <span class="text-xs font-bold text-white block mt-0.5">도어/필름</span>
+            </div>
+            <div class="nordic-glass-card p-3 rounded-lg text-center cursor-pointer hover:border-[#D4AF37]" onclick="toggleEstimateService(this, '아트월 철거 & 평탄화')">
+              <span class="text-xs text-[#D4AF37] font-mono block">03</span>
+              <span class="text-xs font-bold text-white block mt-0.5">아트월평탄화</span>
+            </div>
+          </div>
+          <button onclick="sendEstimateSMS()" class="w-full py-3 bg-[#A47843] hover:bg-[#8C6332] text-white font-bold text-xs tracking-wider uppercase transition shadow">
+            문자로 사진 전송 견적 접수 (010-9276-4245)
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right Side (Large Architectural Visual & 3 Floating Badge Cards) -->
+      <div class="lg:col-span-6 relative min-h-[500px] lg:min-h-[700px] rounded-2xl overflow-hidden border border-white/[0.1]">
+        <img src="assets/images/sink_bellago/photo_5.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80'" 
+             alt="Architectural Kitchen Transformation" class="w-full h-full object-cover">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#121417] via-transparent to-transparent"></div>
+
+        <!-- 3 Vertical Floating Glass Cards on Right Edge -->
+        <div class="absolute top-8 right-6 space-y-4 max-w-[240px] hidden sm:block">
+          
+          <div class="nordic-glass-card p-4 rounded-xl">
+            <span class="text-[10px] tracking-widest text-[#D4AF37] font-bold block uppercase">MASTER CRAFT</span>
+            <h4 class="text-sm font-bold text-white mt-1">30년 목공 장인 직영</h4>
+            <p class="text-[11px] text-slate-300 mt-1">원목·대리석 1mm 정밀 재단 및 타공</p>
+          </div>
+
+          <div class="nordic-glass-card p-4 rounded-xl">
+            <span class="text-[10px] tracking-widest text-[#D4AF37] font-bold block uppercase">CLEAN EXECUTION</span>
+            <h4 class="text-sm font-bold text-white mt-1">살림집 먼지 ZERO 보양</h4>
+            <p class="text-[11px] text-slate-300 mt-1">이중 비닐 커버링 & 집진기 흡입 시공</p>
+          </div>
+
+          <div class="nordic-glass-card p-4 rounded-xl">
+            <span class="text-[10px] tracking-widest text-[#D4AF37] font-bold block uppercase">TRUSTED QUALITY</span>
+            <h4 class="text-sm font-bold text-white mt-1">100% 책임 하자 보증</h4>
+            <p class="text-[11px] text-slate-300 mt-1">1,500+ 누적 시공 완료 및 평점 4.9</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.08] py-8 text-center text-xs text-slate-400 font-serif">
+    <p>목수의 홈케어마스터 | 대표: 조인형 | 문의: 010-9276-4245</p>
+    <p class="text-[10px] mt-1 text-slate-600">&copy; 2026 MASTER CARPENTER HOMECARE.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="switcher.js"></script>
+</body>
+</html>

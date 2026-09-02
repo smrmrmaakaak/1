@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | Concept 3: 3D 아이소메트릭 무중력 아일랜드</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            deepSpace: '#0B132B',
+            translucentGlass: 'rgba(28, 37, 65, 0.55)',
+            glowCyan: '#48CAE4',
+            glowGold: '#FFB703',
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            serif: ['Noto Serif KR', 'serif'],
+            display: ['Outfit', 'Pretendard', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .glass-capsule {
+      background: rgba(28, 37, 65, 0.45);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+    .glass-capsule:hover {
+      border-color: rgba(72, 202, 228, 0.6);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(72, 202, 228, 0.25);
+    }
+
+    .pill-badge {
+      background: rgba(28, 37, 65, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Floating Keyframes */
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(1deg); }
+    }
+    @keyframes float-tool {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-3deg); }
+    }
+
+    .floating-island {
+      animation: float-slow 5s infinite ease-in-out;
+    }
+    .floating-tool {
+      animation: float-tool 4s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-[#0B132B] text-slate-100 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="w-full bg-[#0B132B]/80 backdrop-blur-2xl border-b border-white/[0.08] py-4 px-6 lg:px-12 flex items-center justify-between sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl glass-capsule flex items-center justify-center text-amber-400 font-black">
+        <span class="material-symbols-outlined text-xl">architecture</span>
+      </div>
+      <div>
+        <span class="text-base font-black text-white tracking-wider font-display">MASTER CARPENTER</span>
+        <p class="text-[10px] text-cyan-300 font-mono">HOMECARE 3D BESPOKE</p>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-xs tracking-wider uppercase font-semibold text-slate-300">
+      <a href="#services" class="hover:text-cyan-300 transition">SERVICES</a>
+      <a href="#portfolio" class="hover:text-cyan-300 transition">OUR WORK</a>
+      <a href="#about" class="hover:text-cyan-300 transition">ABOUT US</a>
+      <a href="#estimate" class="hover:text-amber-400 transition">CONTACT</a>
+    </nav>
+
+    <a href="tel:010-9276-4245" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg">
+      GET FREE ESTIMATE
+    </a>
+  </header>
+
+  <!-- 3D Isometric Floating Canvas Scene -->
+  <main class="max-w-[1600px] mx-auto px-6 lg:px-12 py-10 w-full relative flex-1 flex flex-col justify-center">
+    
+    <!-- Background Curved Lines -->
+    <div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
+      <svg class="w-full h-full" viewBox="0 0 1440 700" fill="none">
+        <path d="M-100 300 C300 500 700 100 1100 400 C1300 550 1600 200 1800 350" stroke="#48CAE4" stroke-width="2"/>
+        <path d="M-100 450 C400 250 800 650 1200 300 C1400 450 1700 250 1900 400" stroke="#FFB703" stroke-width="1.5" stroke-dasharray="6 6"/>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      
+      <!-- Left Dock: Vertical Services Stack -->
+      <div class="lg:col-span-3 space-y-4" id="services">
+        <span class="text-xs text-slate-400 font-mono uppercase tracking-widest block">// SERVICES</span>
+        
+        <div class="glass-capsule p-5 rounded-2xl space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center">
+            <span class="material-symbols-outlined text-base">kitchen</span>
+          </div>
+          <h4 class="text-sm font-bold text-white font-display">Custom Cabinetry</h4>
+          <p class="text-[11px] text-slate-300">사각싱크볼 타공 & 상판 30mm 정밀 컷팅</p>
+          <a href="#estimate" class="inline-block text-[10px] font-bold text-cyan-300 hover:underline">LEARN MORE →</a>
+        </div>
+
+        <div class="glass-capsule p-5 rounded-2xl space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-400/20 text-cyan-300 flex items-center justify-center">
+            <span class="material-symbols-outlined text-base">door_front</span>
+          </div>
+          <h4 class="text-sm font-bold text-white font-display">Renovations</h4>
+          <p class="text-[11px] text-slate-300">도어 목공 수리 & 메탈 헤어라인 필름</p>
+          <a href="#estimate" class="inline-block text-[10px] font-bold text-cyan-300 hover:underline">LEARN MORE →</a>
+        </div>
+
+        <div class="glass-capsule p-5 rounded-2xl space-y-2.5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-400/20 text-emerald-300 flex items-center justify-center">
+            <span class="material-symbols-outlined text-base">build</span>
+          </div>
+          <h4 class="text-sm font-bold text-white font-display">Maintenance</h4>
+          <p class="text-[11px] text-slate-300">아트월 철거 평탄화 & 어린이집 보드</p>
+          <a href="#estimate" class="inline-block text-[10px] font-bold text-cyan-300 hover:underline">LEARN MORE →</a>
+        </div>
+      </div>
+
+      <!-- Center: Floating 3D Isometric Kitchen & Carpentry Tools Island -->
+      <div class="lg:col-span-5 flex items-center justify-center relative min-h-[420px]">
+        
+        <!-- Central 3D Kitchen Block -->
+        <div class="floating-island relative max-w-sm rounded-3xl overflow-hidden glass-capsule p-3 shadow-2xl border border-cyan-400/30">
+          <img src="assets/images/sink_bellago/photo_6.jpg" alt="3D Kitchen Island" class="w-full h-64 object-cover rounded-2xl shadow-inner">
+          <div class="p-3 text-center">
+            <span class="text-xs font-bold text-cyan-300">BESPOKE 3D CRAFTSMANSHIP</span>
+            <p class="text-[11px] text-slate-300 mt-0.5">30mm 현장 정밀 가공 사각싱크볼 완성 뷰</p>
+          </div>
+        </div>
+
+        <!-- Floating Tool Elements -->
+        <div class="floating-tool absolute -top-4 right-4 bg-slate-900/90 border border-amber-400/50 p-2.5 rounded-2xl shadow-xl flex items-center gap-2">
+          <i class="fa-solid fa-hammer text-amber-400 text-sm"></i>
+          <span class="text-[10px] font-mono text-white">1MM PRECISION</span>
+        </div>
+
+        <div class="floating-tool absolute -bottom-4 left-4 bg-slate-900/90 border border-cyan-400/50 p-2.5 rounded-2xl shadow-xl flex items-center gap-2">
+          <i class="fa-solid fa-shield text-cyan-400 text-sm"></i>
+          <span class="text-[10px] font-mono text-white">ZERO DUST</span>
+        </div>
+
+      </div>
+
+      <!-- Right Side: Headline + Pill Badges -->
+      <div class="lg:col-span-4 space-y-6">
+        
+        <div class="space-y-3">
+          <h1 class="text-3xl sm:text-4xl font-serif font-black text-white leading-tight">
+            Expert Carpentry &<br>
+            Luxury Homecare.<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400">
+              Crafted to Perfection.
+            </span>
+          </h1>
+
+          <div class="text-base text-cyan-300 font-bold font-display">
+            Hyper-Realistic 3D Craft
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            타 업체가 손대지 못한 까다로운 집수리, 30년 목수 장인이 1mm 오차 없이 정밀 시공합니다. 
+            살고 계신 집도 안심되는 비산 분진 제로 보양.
+          </p>
+        </div>
+
+        <!-- 3 Pill Badges -->
+        <div class="space-y-2">
+          <div class="pill-badge px-4 py-2 rounded-full text-xs font-bold text-emerald-300 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>MASTER CRAFTED (30년 목공 장인)</span>
+          </div>
+          <div class="pill-badge px-4 py-2 rounded-full text-xs font-bold text-cyan-300 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span>FULLY INSURED (100% 하자 책임 보증)</span>
+          </div>
+          <div class="pill-badge px-4 py-2 rounded-full text-xs font-bold text-amber-300 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span>5 ★ REVIEWS (1,500+ 시공 완료)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Capsule: INSTANT SMS ESTIMATE -->
+    <div class="mt-10 glass-capsule p-6 rounded-3xl max-w-4xl mx-auto w-full space-y-4" id="estimate">
+      <div class="flex items-center justify-between text-xs text-cyan-300 font-bold">
+        <span>INSTANT SMS ESTIMATE (3초 사진 견적)</span>
+        <span class="text-slate-400 font-mono">010-9276-4245</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <input type="text" id="input-region-3" placeholder="희망 지역 (예: 서울 구로, 인천 부평)" class="bg-black/40 border border-white/[0.15] rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+        
+        <div class="flex items-center gap-1.5 overflow-x-auto text-[11px]">
+          <span class="bg-amber-400/20 text-amber-300 px-3 py-2 rounded-xl cursor-pointer whitespace-nowrap">사각싱크볼</span>
+          <span class="bg-white/10 text-slate-200 px-3 py-2 rounded-xl cursor-pointer whitespace-nowrap">도어수리</span>
+          <span class="bg-white/10 text-slate-200 px-3 py-2 rounded-xl cursor-pointer whitespace-nowrap">아트월평탄화</span>
+        </div>
+
+        <button onclick="sendEstimateSMS()" class="py-2.5 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs tracking-wider transition shadow-lg">
+          Get Estimate Now →
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/[0.08] py-6 text-center text-xs text-slate-400">
+    <p>목수의 홈케어마스터 | 3D 아이소메트릭 무중력 에디션 | 문의: 010-9276-4245</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="switcher.js"></script>
+</body>
+</html>

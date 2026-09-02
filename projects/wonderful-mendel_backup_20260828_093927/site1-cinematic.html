@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 1. 시네마틱 다큐멘터리 에디션</title>
+  <meta name="description" content="타 업체가 포기한 까다로운 현장 전문 집수리 · 30년 목공 장인 조인형 대표 직영 (010-9276-4245)">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #060504;
+      color: #EDE8E3;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Gowun Batang', serif;
+    }
+    .cinematic-vignette {
+      background: radial-gradient(circle at center, transparent 40%, rgba(6, 5, 4, 0.85) 100%);
+    }
+    .gold-glow-btn {
+      background: linear-gradient(135deg, #E5A93C 0%, #C88419 100%);
+      color: #0A0806;
+      box-shadow: 0 10px 30px rgba(229, 169, 60, 0.35);
+      transition: all 0.3s ease;
+    }
+    .gold-glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(229, 169, 60, 0.5);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- 헤더 -->
+  <header class="fixed top-[45px] inset-x-0 z-40 bg-[#060504]/90 backdrop-blur-xl border-b border-white/[0.08] px-6 lg:px-16 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-400">
+        <span class="material-symbols-outlined text-2xl font-bold">carpenter</span>
+      </div>
+      <div>
+        <span class="text-xl font-black tracking-tight text-white serif-title">목수의 <span class="text-amber-400">홈케어마스터</span></span>
+        <p class="text-[11px] text-amber-200/60">30년 베테랑 목수 조인형 대표 직영</p>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-xs font-bold text-slate-300">
+      <a href="#scene-story" class="hover:text-amber-400 transition">장인의 기록</a>
+      <a href="#scene-impossible" class="hover:text-amber-400 transition">포기 현장 해결기</a>
+      <a href="#scene-services" class="hover:text-amber-400 transition">4대 전문 공정</a>
+      <a href="#scene-estimate" class="hover:text-amber-400 transition text-amber-400">3초 사진 견적</a>
+    </nav>
+
+    <a href="tel:010-9276-4245" class="gold-glow-btn px-5 py-2.5 rounded-full text-xs font-black flex items-center gap-2">
+      <i class="fa-solid fa-phone text-xs"></i>
+      <span>010-9276-4245</span>
+    </a>
+  </header>
+
+  <!-- 메인 씬 1: 와이드 풀스크린 시네마틱 오프닝 -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden" id="scene-story">
+    <!-- 배경 시공 사진 와이드 -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/sink_bellago/photo_5.jpg" alt="시네마틱 배경" class="w-full h-full object-cover brightness-40 scale-105 transition duration-1000">
+      <div class="absolute inset-0 cinematic-vignette"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060504] via-transparent to-[#060504]/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8 mt-12">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border border-amber-500/40 text-amber-400 text-xs sm:text-sm font-bold backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span>타 업체가 "철거하고 전체 새로 하라"고 했습니까?</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.15] tracking-tight serif-title">
+        "못 고치는 집은 없습니다.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400">
+          목수의 기술이 모자랄 뿐입니다
+        </span>"
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
+        사각싱크볼을 달고 싶은데 상판 규격이 안 맞는 주방, 처져서 닫히지 않는 문, 낡은 아트월.<br class="hidden sm:inline">
+        수백만 원 리모델링 권유에 속지 마세요. <strong>30년 목수의 1mm 정밀 손길</strong>로 완벽하게 살려냅니다.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="#scene-estimate" class="w-full sm:w-auto gold-glow-btn px-8 py-4 rounded-full text-base font-black flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-2xl">photo_camera</span>
+          <span>현장 사진 3장으로 3초 간편 견적 받기</span>
+        </a>
+        <a href="tel:010-9276-4245" class="w-full sm:w-auto px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-base font-bold backdrop-blur-md border border-white/20 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-amber-400 text-sm"></i>
+          <span>조인형 대표 직통 통화</span>
+        </a>
+      </div>
+
+      <!-- 4대 수치 -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 max-w-4xl mx-auto text-left">
+        <div class="bg-black/50 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
+          <span class="text-2xl sm:text-3xl font-black text-amber-400 font-mono block">1,500+</span>
+          <span class="text-xs text-slate-400 mt-1 block">누적 고난이도 해결</span>
+        </div>
+        <div class="bg-black/50 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
+          <span class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono block">100%</span>
+          <span class="text-xs text-slate-400 mt-1 block">책임 하자 무상 보증</span>
+        </div>
+        <div class="bg-black/50 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
+          <span class="text-2xl sm:text-3xl font-black text-amber-400 font-mono block">0%</span>
+          <span class="text-xs text-slate-400 mt-1 block">살림집 먼지 비산</span>
+        </div>
+        <div class="bg-black/50 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
+          <span class="text-2xl sm:text-3xl font-black text-orange-400 font-mono block">30년</span>
+          <span class="text-xs text-slate-400 mt-1 block">목수 외길 현장 노하우</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 씬 2: 타 업체 포기 현장 실화 기록 -->
+  <section class="py-24 max-w-7xl mx-auto px-6 lg:px-12 border-t border-white/10" id="scene-impossible">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/30">
+        실제 시공 기록
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white serif-title">
+        다른 설비 업체들이 포기하고 도망간 이유
+      </h2>
+      <p class="text-sm text-slate-400">
+        일반 시공 기사는 목공 톱날 제어 기술과 집진 노하우가 없어 나무나 상판을 자르지 못합니다.
+      </p>
+    </div>
+
+    <!-- 3개 실화 카드 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="bg-[#120F0D] border border-amber-500/30 p-8 rounded-3xl space-y-4 relative overflow-hidden">
+        <div class="text-amber-400 text-xs font-bold">기록 01 · 부평 원목 싱크대</div>
+        <h3 class="text-xl font-bold text-white serif-title">"상판이 쪼개지니 싱크대 전체를 바꾸세요"</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          타 업체 2곳에서 불가를 선언한 현장. 
+          조인형 대표가 <strong>특수 30mm 정밀 가공법</strong>으로 상판 파손율 0%로 벨라고 사각싱크볼 완벽 결합.
+        </p>
+        <div class="text-xs text-amber-400 font-bold pt-2 border-t border-white/10">
+          ➔ 고객 공사비 400만원 절감 종결
+        </div>
+      </div>
+
+      <div class="bg-[#120F0D] border border-amber-500/30 p-8 rounded-3xl space-y-4 relative overflow-hidden">
+        <div class="text-amber-400 text-xs font-bold">기록 02 · 마곡 아파트 방문</div>
+        <h3 class="text-xl font-bold text-white serif-title">"문틀 다 뜯어야 하니 300만원 듭니다"</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          문이 처져서 바닥에 긁힌다고 문틀 철거를 강요당한 현장. 
+          <strong>상하부 힌지 정밀 목공 교정</strong>으로 단 30분 만에 부드럽게 복원.
+        </p>
+        <div class="text-xs text-amber-400 font-bold pt-2 border-t border-white/10">
+          ➔ 철거 없이 30만원에 완벽 해결
+        </div>
+      </div>
+
+      <div class="bg-[#120F0D] border border-amber-500/30 p-8 rounded-3xl space-y-4 relative overflow-hidden">
+        <div class="text-amber-400 text-xs font-bold">기록 03 · 일산 살림집 거실</div>
+        <h3 class="text-xl font-bold text-white serif-title">"살고 계신 집이라 먼지 때문에 안 됩니다"</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          살림살이가 가득 찬 상태에서 아트월 철거 요청. 
+          <strong>이중 비닐 텐트 보양과 초강력 집진 컷팅</strong>으로 먼지 날림 제로 시공.
+        </p>
+        <div class="text-xs text-amber-400 font-bold pt-2 border-t border-white/10">
+          ➔ 이사 없이 살면서 당일 완료
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 씬 3: 4대 전문 시공 (사진 갤러리) -->
+  <section class="py-24 bg-[#0A0806] border-t border-white/10" id="scene-services">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-black text-white serif-title">
+          목수가 직접 시공하는 4대 핵심 분야
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-[#120F0D] rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/images/sink_bellago/photo_6.jpg" alt="사각싱크볼" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-amber-500 text-slate-950 font-black text-xs px-3 py-1 rounded-full">
+              주방 특화 1위
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-xl font-bold text-white serif-title">프리미엄 사각싱크볼 교체 & 상판 30mm 정밀 컷팅</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">벨라고/한스 사각싱크볼 맞춤 타공, 원목·인조대리석 현장 재단, 올스텐 악취차단 배수구</p>
+          </div>
+        </div>
+
+        <div class="bg-[#120F0D] rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between">
+          <div class="h-64 overflow-hidden relative">
+            <img src="assets/images/door_film/photo_1.jpg" alt="도어 수리" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-blue-500 text-white font-black text-xs px-3 py-1 rounded-full">
+              목공 & 필름
+            </div>
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-xl font-bold text-white serif-title">방문/욕실문 목공 수리 & 현관문 메탈 필름</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">처진 문짝 힌지 밸런싱 복원, 파손 부위 보수, 현관문 고급 메탈 인테리어 필름 랩핑</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 씬 4: 3초 간편 사진 견적 신청 -->
+  <section class="py-24 max-w-4xl mx-auto px-6 lg:px-12" id="scene-estimate">
+    <div class="bg-[#120F0D] border-2 border-amber-500/40 p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-2xl">
+      <span class="text-xs text-amber-400 font-bold uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full">
+        10분 내 조인형 대표 직접 상담
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-black text-white serif-title">
+        3초 사진 간편 견적 접수
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+        고장난 부분 사진 2~3장을 문자로 보내주시면 10분 내로 정확한 맞춤 견적을 드립니다.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto text-left">
+        <div>
+          <label class="text-xs text-slate-400 font-bold mb-1 block">출장 희망 지역</label>
+          <input type="text" id="cine-region" placeholder="예: 서울 구로, 인천 부평, 일산" class="w-full bg-black border border-white/20 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400">
+        </div>
+        <div>
+          <label class="text-xs text-slate-400 font-bold mb-1 block">희망 시공</label>
+          <select id="cine-service" class="w-full bg-black border border-white/20 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400">
+            <option>사각싱크볼 교체 & 상판 재단</option>
+            <option>방문/욕실문 수리 및 교체</option>
+            <option>아트월 철거 & 평탄화</option>
+            <option>인테리어 필름 랩핑</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="sendCineSMS()" class="w-full max-w-lg mx-auto gold-glow-btn py-4 rounded-2xl text-sm font-black flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-xl">send</span>
+        <span>문자로 사진 견적 보내기 (010-9276-4245)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="border-t border-white/10 py-12 text-center text-xs text-slate-500 space-y-2">
+    <p class="text-slate-300 font-bold">목수의 홈케어마스터 | 대표 시공: 조인형 | 기획: 황태민 작가 | 문의: 010-9276-4245</p>
+    <p>서울, 인천, 경기 수도권 전 지역 출장 시공</p>
+    <p class="text-[10px] pt-2 text-slate-600">&copy; 2026 목수의 홈케어마스터. 모든 권리 보유.</p>
+  </footer>
+
+  <script src="switcher.js"></script>
+  <script>
+    function sendCineSMS() {
+      const region = document.getElementById('cine-region').value.trim() || '미입력';
+      const service = document.getElementById('cine-service').value;
+      const msg = `[목수의 홈케어마스터 시공 견적 문의]\n\n1. 희망 시공: ${service}\n2. 지역: ${region}\n\n※ 현장 사진 2~3장을 첨부하여 보내주시면 10분 내로 안내해 드립니다.`;
+      const phone = '010-9276-4245';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = `sms:${phone}?body=${encodeURIComponent(msg)}`;
+      } else {
+        navigator.clipboard.writeText(msg).then(() => {
+          alert(`[문자 내용이 복사되었습니다]\n\n받는 사람: ${phone}\n\n붙여넣기 후 사진과 함께 문자를 보내주세요.`);
+          window.location.href = `tel:${phone}`;
+        });
+      }
+    }
+  </script>
+</body>
+</html>

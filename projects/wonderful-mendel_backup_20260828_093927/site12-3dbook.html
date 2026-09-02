@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 12. 인터랙티브 3D 실사 책 에디션</title>
+  <meta name="description" content="3D 실사 양장본 책을 넘기며 확인하는 30년 목수 장인의 집수리 실록">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Page Flip 3D Physics Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+
+  <!-- 폰트: Gowun Batang + Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #0A0806;
+      color: #2D241E;
+      font-family: 'Gowun Batang', 'Nanum Myeongjo', serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 3D 책 거치대 & 주변 스튜디오 앰비언스 */
+    .book-stage {
+      perspective: 2000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    /* 책 페이지 스타일 (실사 한지 & 고급 종이 텍스처) */
+    .page {
+      background: #F7F3E9;
+      background-image: 
+        radial-gradient(#E8DFC8 1px, transparent 1px),
+        linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.08) 100%);
+      background-size: 20px 20px, 100% 100%;
+      border: 1px solid #D8CCA8;
+      box-shadow: inset 0 0 30px rgba(180, 150, 110, 0.15);
+      overflow: hidden;
+    }
+
+    /* 양장본 가죽 표지 */
+    .page-cover {
+      background: #241A13 !important;
+      background-image: radial-gradient(#3A2A1E 15%, #18110B 90%) !important;
+      border: 4px solid #8B653B !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(0, 0, 0, 0.8) !important;
+      color: #F5E6D3 !important;
+    }
+
+    /* 금박 각인 효과 */
+    .gold-foil {
+      background: linear-gradient(135deg, #FFF6D6 0%, #F59E0B 50%, #B45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+    }
+
+    /* 인장 도장 */
+    .seal-stamp {
+      border: 2px solid #C92A2A;
+      color: #C92A2A;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      transform: rotate(-3deg);
+      display: inline-block;
+    }
+
+    .book-nav-btn {
+      background: rgba(36, 26, 19, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #E6E1DC;
+      transition: all 0.2s ease;
+    }
+    .book-nav-btn:hover {
+      background: #F59E0B;
+      color: #18110B;
+      font-weight: bold;
+      border-color: #F59E0B;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-900 selection:text-white">
+
+  <!-- 상단 헤더 -->
+  <header class="fixed top-[45px] inset-x-0 z-40 bg-[#0A0806]/90 backdrop-blur-xl border-b border-amber-500/20 px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-amber-400 text-2xl">menu_book</span>
+      <div>
+        <span class="text-base font-black text-white">목수의 홈케어마스터 <span class="text-amber-400">3D 장인 실록</span></span>
+        <p class="text-[10px] text-stone-400 font-sans">마우스로 책장 모서리를 넘겨보세요</p>
+      </div>
+    </div>
+
+    <!-- 챕터 네비게이션 -->
+    <div class="hidden md:flex items-center gap-2 text-xs font-sans">
+      <button onclick="flipTo(0)" class="book-nav-btn px-3 py-1.5 rounded-lg font-bold">1. 표지</button>
+      <button onclick="flipTo(1)" class="book-nav-btn px-3 py-1.5 rounded-lg font-bold">2. 목수 철학</button>
+      <button onclick="flipTo(2)" class="book-nav-btn px-3 py-1.5 rounded-lg font-bold">3. 부평 사각싱크볼</button>
+      <button onclick="flipTo(3)" class="book-nav-btn px-3 py-1.5 rounded-lg font-bold">4. 도어 & 아트월</button>
+      <button onclick="flipTo(4)" class="book-nav-btn px-3 py-1.5 rounded-lg font-bold">5. 3초 견적</button>
+    </div>
+
+    <a href="tel:010-9276-4245" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-black text-xs font-sans flex items-center gap-1.5 shadow-lg shadow-amber-500/20">
+      <i class="fa-solid fa-phone text-xs"></i>
+      <span>010-9276-4245</span>
+    </a>
+  </header>
+
+  <!-- 3D 책 스테이지 메인 -->
+  <main class="pt-24 pb-8 flex-1 flex flex-col justify-center items-center">
+    
+    <div class="text-center mb-4 space-y-1">
+      <div class="inline-flex items-center gap-1.5 text-xs text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 font-sans font-bold">
+        <span class="material-symbols-outlined text-sm">touch_app</span>
+        <span>책장 모서리를 클릭하거나 드래그하여 실제 책처럼 넘길 수 있습니다</span>
+      </div>
+    </div>
+
+    <!-- 3D FlipBook 컨테이너 -->
+    <div class="book-stage">
+      <div id="flipbook" class="shadow-2xl">
+        
+        <!-- [페이지 0: 가죽 양장본 표지] -->
+        <div class="page page-cover p-8 sm:p-12 flex flex-col justify-between items-center text-center">
+          <div class="space-y-2 pt-6">
+            <span class="text-xs tracking-widest text-amber-400/80 font-sans uppercase block">SINCE 1995 // 30 YEARS MASTER JOINERY</span>
+            <div class="w-16 h-16 mx-auto rounded-full border-2 border-amber-500/60 flex items-center justify-center text-3xl font-black text-amber-400">
+              木
+            </div>
+          </div>
+
+          <div class="space-y-4 my-auto">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black gold-foil leading-tight tracking-wider">
+              목수의<br>홈케어마스터<br>實錄
+            </h1>
+            <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto"></div>
+            <p class="text-xs sm:text-sm text-stone-300 font-sans tracking-wide">
+              타 업체가 포기한 까다로운 집수리 해결 기록
+            </p>
+          </div>
+
+          <div class="space-y-3 pb-4">
+            <span class="seal-stamp text-xs">조인형 匠人 實錄</span>
+            <p class="text-[11px] text-stone-400 font-sans">책장을 넘겨 실록을 열람하십시오 ▶</p>
+          </div>
+        </div>
+
+        <!-- [페이지 1: 서문 & 30년 장인 철학] -->
+        <div class="page p-6 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-[#D8CCA8] pb-2 text-xs text-[#7A6855]">
+              <span>序文 (서문)</span>
+              <span>제 1 장</span>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-black text-[#2D241E] leading-snug">
+              "못 고치는 집은 없습니다.<br>
+              목수의 기술이 모자랄 뿐입니다."
+            </h2>
+
+            <p class="text-xs sm:text-sm text-[#5A4B3C] leading-relaxed">
+              30년 동안 전국의 수많은 목공 및 집수리 현장을 누비며 지켜온 단 하나의 원칙입니다.
+              많은 업체들이 조금만 까다로워도 "전체 다 뜯고 새로 하라"며 수백만 원의 리모델링을 권유합니다.
+            </p>
+
+            <p class="text-xs sm:text-sm text-[#5A4B3C] leading-relaxed">
+              하지만 정밀한 1mm 손길과 나무의 결을 아는 목수라면, <strong>필요한 부분만 최소한으로 손대어 완벽하게 살려낼 수 있습니다.</strong>
+            </p>
+          </div>
+
+          <div class="bg-[#ECE5D8] p-4 rounded-xl border border-[#D5C7A3] text-xs space-y-1 font-sans">
+            <span class="font-bold text-[#2D241E] block">📜 조인형 대표의 3대 시공 원칙</span>
+            <p class="text-stone-600">• 1. 과도한 전체 공사 권유 절대 금지</p>
+            <p class="text-stone-600">• 2. 살림집 가구 이중 보양으로 먼지 0%</p>
+            <p class="text-stone-600">• 3. 시공 후 100% 무상 책임 하자 보증</p>
+          </div>
+        </div>
+
+        <!-- [페이지 2: 부평 원목 사각싱크볼 30mm 정밀 가공] -->
+        <div class="page p-6 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-[#D8CCA8] pb-2 text-xs text-[#7A6855]">
+              <span>實錄 其一 (실록 제1장)</span>
+              <span class="seal-stamp">완벽 해결</span>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-black text-[#2D241E]">
+              부평 원목 상판 사각싱크볼 정밀 타공
+            </h3>
+
+            <div class="aspect-video rounded-xl overflow-hidden border border-[#D5C7A3] shadow-md">
+              <img src="assets/images/sink_bellago/photo_6.jpg" alt="사각싱크볼 완성" class="w-full h-full object-cover">
+            </div>
+
+            <p class="text-xs text-[#5A4B3C] leading-relaxed">
+              <strong>현장 상황:</strong> 타 업체 2곳에서 원목 상판이 쪼개진다며 거부하고 400만원 싱크대 전체 교체를 요구했던 현장.<br>
+              <strong>목수 솔루션:</strong> 조인형 대표의 특수 30mm 목공 집진 컷팅 공법으로 상판 손상 0%로 벨라고 사각싱크볼 안착 성공!
+            </p>
+          </div>
+
+          <div class="text-[11px] text-[#7A6855] text-right font-sans">
+            누적 사각싱크볼 교체 500세대 돌파
+          </div>
+        </div>
+
+        <!-- [페이지 3: 도어 힌지 복원 & 아트월 평탄화] -->
+        <div class="page p-6 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-[#D8CCA8] pb-2 text-xs text-[#7A6855]">
+              <span>實錄 其二 (실록 제2장)</span>
+              <span class="seal-stamp">완벽 해결</span>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-black text-[#2D241E]">
+              마곡 도어 힌지 교정 & 아트월 평탄화
+            </h3>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="aspect-square rounded-lg overflow-hidden border border-[#D5C7A3]">
+                <img src="assets/images/door_film/photo_1.jpg" alt="도어" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-square rounded-lg overflow-hidden border border-[#D5C7A3]">
+                <img src="assets/images/kitchen_artwall/photo_4.jpg" alt="아트월" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <p class="text-xs text-[#5A4B3C] leading-relaxed">
+              <strong>도어 힌지:</strong> 300만원 문틀 교체 대신 30분 경첩 목공 밸런싱으로 30만원대 해결.<br>
+              <strong>아트월:</strong> 거주 중 비닐 텐트 보양 후 하루 만에 석고 2P 평탄화 완료.
+            </p>
+          </div>
+
+          <div class="text-[11px] text-[#7A6855] text-right font-sans">
+            마곡 · 일산 · 수도권 전 지역 출장
+          </div>
+        </div>
+
+        <!-- [페이지 4: 3초 사진 견적 접수대] -->
+        <div class="page p-6 sm:p-10 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-[#D8CCA8] pb-2 text-xs text-[#7A6855]">
+              <span>終章 (종장)</span>
+              <span>간편 견적</span>
+            </div>
+
+            <h3 class="text-xl font-black text-[#2D241E] text-center">
+              사진 2장으로 3초 간편 견적
+            </h3>
+
+            <p class="text-xs text-[#5A4B3C] text-center leading-relaxed font-sans">
+              고장 난 곳이나 수리가 필요한 부위 사진을 문자로 보내주시면, 조인형 대표가 직접 확인 후 10분 내로 견적을 안내해 드립니다.
+            </p>
+
+            <div class="bg-[#ECE5D8] p-5 rounded-2xl border border-[#D5C7A3] space-y-3 font-sans text-xs">
+              <div class="flex justify-between items-center font-bold text-[#2D241E]">
+                <span>직통 전화</span>
+                <span class="text-amber-700">010-9276-4245</span>
+              </div>
+              <div class="flex justify-between items-center text-stone-600">
+                <span>네이버 톡톡</span>
+                <a href="https://talk.naver.com/home_master82" target="_blank" class="text-emerald-700 underline">실시간 채팅 상담</a>
+              </div>
+              <div class="flex justify-between items-center text-stone-600">
+                <span>출장 지역</span>
+                <span>서울 · 경기 · 인천 전 지역</span>
+              </div>
+            </div>
+
+            <a href="sms:010-9276-4245?body=%5B%EB%AA%A9%EC%88%98%EC%9D%98%20%ED%99%88%EC%BC%80%EC%96%B4%EB%A7%88%EC%8A%A4%ED%84%B0%20%EC%8B%A4%EB%A1%9D%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%5D%20%ED%98%84%EC%9E%A5%20%EC%82%AC%EC%A7%84%20%EC%A0%84%EC%86%A1" class="block w-full text-center py-3.5 bg-[#241A13] hover:bg-[#3A2A1E] text-[#F5E6D3] font-bold text-xs rounded-xl shadow-lg font-sans transition">
+              문자로 사진 보내기 (010-9276-4245)
+            </a>
+          </div>
+
+          <div class="text-center text-[10px] text-[#7A6855] font-sans">
+            목수의 홈케어마스터 · 대표 조인형
+          </div>
+        </div>
+
+        <!-- [페이지 5: 뒤표지] -->
+        <div class="page page-cover p-8 flex flex-col justify-between items-center text-center">
+          <div class="pt-8">
+            <span class="text-xs text-amber-400 font-sans tracking-widest">목수의 홈케어마스터</span>
+          </div>
+          
+          <div class="space-y-2 my-auto">
+            <div class="w-12 h-12 mx-auto rounded-full border border-amber-500/40 flex items-center justify-center text-xl text-amber-400">
+              匠
+            </div>
+            <p class="text-xs text-stone-300 font-sans">정직한 기술과 장인의 손길로 보답합니다.</p>
+          </div>
+
+          <div class="pb-6 text-[10px] text-stone-400 font-sans">
+            &copy; 2026 MASTER CARPENTER.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 하단 페이지 넘김 컨트롤러 -->
+    <div class="flex items-center gap-4 mt-6">
+      <button onclick="prevPage()" class="book-nav-btn px-5 py-2.5 rounded-xl text-xs font-bold font-sans flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>이전 장</span>
+      </button>
+      <span id="page-indicator" class="text-xs text-amber-400 font-sans font-bold">1 / 6 장</span>
+      <button onclick="nextPage()" class="book-nav-btn px-5 py-2.5 rounded-xl text-xs font-bold font-sans flex items-center gap-2">
+        <span>다음 장</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-stone-800 py-6 text-center text-xs text-stone-500 font-sans">
+    <p>목수의 홈케어마스터 | 3D 인터랙티브 실사 책 에디션 | 010-9276-4245</p>
+  </footer>
+
+  <script src="switcher.js"></script>
+
+  <!-- 3D PageFlip 스크립트 -->
+  <script>
+    let pageFlip;
+
+    window.addEventListener('load', () => {
+      const isMobile = window.innerWidth < 768;
+      const width = isMobile ? window.innerWidth * 0.9 : 500;
+      const height = isMobile ? 600 : 680;
+
+      pageFlip = new St.PageFlip(document.getElementById('flipbook'), {
+        width: width,
+        height: height,
+        size: isMobile ? 'fixed' : 'fixed',
+        minWidth: 320,
+        maxWidth: 600,
+        minHeight: 480,
+        maxHeight: 750,
+        maxShadowOpacity: 0.5,
+        showCover: true,
+        mobileScrollSupport: false
+      });
+
+      pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+      pageFlip.on('flip', (e) => {
+        const total = pageFlip.getPageCount();
+        document.getElementById('page-indicator').textContent = `${e.data + 1} / ${total} 장`;
+      });
+    });
+
+    function nextPage() {
+      if (pageFlip) pageFlip.flipNext();
+    }
+
+    function prevPage() {
+      if (pageFlip) pageFlip.flipPrev();
+    }
+
+    function flipTo(pageIndex) {
+      if (pageFlip) pageFlip.flip(pageIndex);
+    }
+  </script>
+</body>
+</html>

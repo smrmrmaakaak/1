@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 2. 건축 CAD 청사진 & 정밀 도면 에디션</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #0A192F;
+      color: #E6F1FF;
+      font-family: 'Pretendard', sans-serif;
+      background-image: 
+        linear-gradient(to right, rgba(100, 255, 218, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 255, 218, 0.08) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .cad-border {
+      border: 1px solid rgba(100, 255, 218, 0.4);
+      background: rgba(10, 25, 47, 0.85);
+    }
+    .cad-btn {
+      background: #64FFDA;
+      color: #0A192F;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .cad-btn:hover {
+      background: #FFFFFF;
+      box-shadow: 0 0 20px #64FFDA;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-400 selection:text-black">
+
+  <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between border-b border-cyan-400/30">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 border border-cyan-400 flex items-center justify-center text-cyan-400 font-mono text-sm font-bold">
+        CAD
+      </div>
+      <div>
+        <span class="text-xl font-bold text-white font-mono tracking-wider">목수의 홈케어마스터 [정밀도면]</span>
+        <p class="text-xs text-cyan-300/70 font-mono">1MM 오차 제로 설계 시공 · 조인형 대표</p>
+      </div>
+    </div>
+
+    <a href="tel:010-9276-4245" class="cad-btn px-4 py-2 rounded text-xs font-mono">
+      전화 010-9276-4245
+    </a>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-16">
+    
+    <div class="cad-border p-8 sm:p-12 rounded-2xl space-y-6">
+      <div class="text-xs font-mono text-cyan-400">
+        [도면 번호: MC-2026-08] // 30년 목공 장인 정밀 시공 규격
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono leading-tight">
+        타 업체 불가 판정 현장<br>
+        <span class="text-cyan-400">1mm 정밀 계측 컷팅 공법</span>으로 완전 결합
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+        규격이 맞지 않는 싱크볼, 바닥에 닿는 문짝, 수평이 맞지 않는 아트월 벽면. 
+        레이저 수평 계측과 집진 컷팅 공법으로 전체 교체 없이 부분 정밀 수리를 완료합니다.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-cyan-400/20 text-center font-mono">
+        <div>
+          <span class="text-2xl font-bold text-cyan-400 block">±0.0mm</span>
+          <span class="text-[11px] text-slate-400">가공 허용 오차</span>
+        </div>
+        <div>
+          <span class="text-2xl font-bold text-cyan-400 block">30mm</span>
+          <span class="text-[11px] text-slate-400">특수 상판 절단 규격</span>
+        </div>
+        <div>
+          <span class="text-2xl font-bold text-cyan-400 block">0.0 PPM</span>
+          <span class="text-[11px] text-slate-400">살림집 비산 분진</span>
+        </div>
+        <div>
+          <span class="text-2xl font-bold text-cyan-400 block">100%</span>
+          <span class="text-[11px] text-slate-400">하자 책임 보증</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 청사진 도면형 3대 시공 섹션 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+      
+      <div class="cad-border p-6 rounded-xl space-y-3">
+        <span class="text-cyan-400 block">[공정 01: 주방 싱크]</span>
+        <h3 class="text-base font-bold text-white">사각싱크볼 30mm 정밀 타공</h3>
+        <p class="text-slate-400 leading-relaxed font-sans">
+          원목·대리석 상판 결 파손을 원천 차단하는 집진 컷팅으로 벨라고 사각싱크볼 완벽 안착.
+        </p>
+      </div>
+
+      <div class="cad-border p-6 rounded-xl space-y-3">
+        <span class="text-cyan-400 block">[공정 02: 도어 힌지]</span>
+        <h3 class="text-base font-bold text-white">문처짐 힌지 밸런싱 교정</h3>
+        <p class="text-slate-400 leading-relaxed font-sans">
+          문틀 철거 공사 없이 상하 힌지 정밀 목공 교정으로 30분 만에 부드럽게 복원.
+        </p>
+      </div>
+
+      <div class="cad-border p-6 rounded-xl space-y-3">
+        <span class="text-cyan-400 block">[공정 03: 거실 벽체]</span>
+        <h3 class="text-base font-bold text-white">아트월 석고 2P 평탄화</h3>
+        <p class="text-slate-400 leading-relaxed font-sans">
+          대리석 아트월 철거 후 수평 레이저 계측 목재 상작업 및 석고보드 평탄화 시공.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 청사진 견적 모듈 -->
+    <div class="cad-border p-8 rounded-2xl text-center space-y-4">
+      <h3 class="text-xl font-bold text-white font-mono">도면 기반 3초 사진 견적 접수</h3>
+      <p class="text-xs text-slate-400">현장 사진을 전송하시면 조인형 대표가 직접 검토 후 10분 내 회신합니다.</p>
+      <a href="sms:010-9276-4245?body=%5B%ED%99%88%EC%BC%80%EC%96%B4%EB%A7%88%EC%8A%A4%ED%84%B0%20%EC%A0%95%EB%B0%80%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%5D%20%ED%98%84%EC%9E%A5%20%EC%82%AC%EC%A7%84%20%EC%A0%84%EC%86%A1" class="cad-btn inline-block px-8 py-3.5 rounded text-xs">
+        문자로 사진 전송 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <script src="switcher.js"></script>
+</body>
+</html>

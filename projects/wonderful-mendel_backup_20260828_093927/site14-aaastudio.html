@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>목수의 홈케어마스터 | 14. 100% 정품 3D 스튜디오 & 리모델링 카탈로그</title>
+  <meta name="description" content="100% 정품 3D 모델 및 실물 인테리어 자재 실시간 360° 턴테이블 인스펙터">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js + OrbitControls + GLTFLoader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Pretendard & FontAwesome & Material Symbols -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; box-sizing: border-box; }
+    body {
+      background-color: #080706;
+      color: #F5F5F0;
+      font-family: 'Pretendard', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .viewport-3d-studio {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), inset 0 0 60px rgba(0, 0, 0, 0.8);
+      background-color: #120F0D;
+      touch-action: none;
+    }
+
+    .pill-btn {
+      background: rgba(28, 24, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #E6E1DC;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pill-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #F59E0B;
+      color: #FFFFFF;
+    }
+    .pill-btn.active {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #080706;
+      font-weight: 800;
+      border-color: #F59E0B;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+    }
+
+    .catalog-right-card {
+      background: linear-gradient(180deg, rgba(32, 28, 24, 0.85) 0%, rgba(20, 17, 14, 0.98) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+    .catalog-right-card:hover {
+      border-color: rgba(245, 158, 11, 0.6);
+      background: rgba(245, 158, 11, 0.15);
+      transform: translateX(4px);
+    }
+    .catalog-right-card.selected {
+      border-color: #F59E0B;
+      background: rgba(245, 158, 11, 0.25);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+    }
+
+    .gold-action-btn {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #080706;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+      transition: all 0.25s ease;
+    }
+    .gold-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.6);
+    }
+
+    .custom-scroll::-webkit-scrollbar { width: 5px; }
+    .custom-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .custom-scroll::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 4px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.6); }
+
+    .spinner-ring {
+      border: 3px solid rgba(245, 158, 11, 0.2);
+      border-top: 3px solid #F59E0B;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+  <!-- 헤더 (모바일 반응형 최적화) -->
+  <header class="fixed top-[42px] inset-x-0 z-40 bg-[#080706]/95 backdrop-blur-xl border-b border-amber-500/20 px-3 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-stone-950 font-black shadow-lg shadow-amber-500/20 shrink-0">
+        <span class="material-symbols-outlined text-xl sm:text-2xl">view_in_ar</span>
+      </div>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-xs sm:text-base font-black text-white">홈케어마스터 <span class="text-amber-400">3D 스튜디오</span></span>
+          <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-bold hidden sm:inline">1:1 실물 교체</span>
+        </div>
+        <p class="text-[10px] sm:text-[11px] text-stone-400 font-medium">30년 목수 조인형 대표 직영</p>
+      </div>
+    </div>
+
+    <!-- 스튜디오 조명 프리셋 (데스크톱) -->
+    <div class="hidden xl:flex items-center gap-1.5 bg-stone-950/90 p-1.5 rounded-2xl border border-stone-800 shadow-xl">
+      <button onclick="setStudioLighting('daylight')" id="btn-studio-daylight" class="pill-btn active px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>☀️ 정오 자연광</span>
+      </button>
+      <button onclick="setStudioLighting('sunset')" id="btn-studio-sunset" class="pill-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🌅 앰버 선셋</span>
+      </button>
+      <button onclick="setStudioLighting('night')" id="btn-studio-night" class="pill-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🌙 나이트 LED</span>
+      </button>
+      <button onclick="toggleTurntableAutoRotate()" id="btn-turntable-rotate" class="pill-btn active px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🔄 360° 회전</span>
+      </button>
+    </div>
+
+    <a href="tel:010-9276-4245" class="gold-action-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs flex items-center gap-1 shadow-lg shrink-0">
+      <i class="fa-solid fa-phone text-[10px] sm:text-xs"></i>
+      <span class="font-bold text-[11px] sm:text-xs">010-9276-4245</span>
+    </a>
+  </header>
+
+  <!-- 메인 2단 스튜디오 레이아웃 (모바일 순서: 3D 뷰포트 먼저 -> 아래에 카탈로그) -->
+  <main class="w-full px-2 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-4">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+      
+      <!-- ================= 1. 상단/좌측: 메인 3D 턴테이블 뷰포트 (8열) ================= -->
+      <div class="lg:col-span-8 h-[420px] sm:h-[540px] lg:h-[740px] flex flex-col">
+        
+        <div class="viewport-3d-studio flex-1" id="studio-viewport-box">
+          <canvas id="canvas-3d-studio" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+
+          <!-- 로딩 인디케이터 오버레이 -->
+          <div id="loading-spinner-overlay" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-30 flex flex-col items-center justify-center gap-3">
+            <div class="spinner-ring"></div>
+            <p class="text-xs font-bold text-amber-400 font-mono" id="loading-spinner-text">3D 실물 에셋 로딩 중...</p>
+          </div>
+
+          <!-- 현재 3D 검토 자재 정보 카드 (모바일 최적화) -->
+          <div class="absolute top-3 left-3 z-20 bg-stone-950/90 backdrop-blur-2xl border border-amber-500/50 p-2.5 sm:p-4 rounded-2xl max-w-[260px] sm:max-w-sm space-y-1 sm:space-y-2 shadow-2xl">
+            <div class="flex items-center justify-between gap-1.5">
+              <span class="bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] border border-amber-500/30" id="current-3d-cat">가구 & 좌석</span>
+              <span class="text-emerald-400 font-bold font-mono text-[10px] sm:text-xs" id="current-3d-save">220만원 절감</span>
+            </div>
+            <h3 class="text-xs sm:text-base font-black text-white truncate" id="current-3d-name">북미산 오크 원목 소파</h3>
+            <p class="text-[10px] sm:text-xs text-amber-300 font-mono line-clamp-1" id="current-3d-spec">가로 2,300mm × 950mm</p>
+            <p class="text-[9px] sm:text-[11px] text-stone-400 leading-tight line-clamp-2" id="current-3d-desc">실제 원목 조각과 리얼 천연 가죽 주름 PBR 질감</p>
+            <div class="flex items-center justify-between pt-1.5 border-t border-stone-800 text-[10px] sm:text-xs">
+              <span class="text-stone-400">시공가: <strong class="text-amber-400 font-mono text-xs sm:text-sm" id="current-3d-price">1,850,000원</strong></span>
+              <span class="bg-amber-500/20 text-amber-300 px-1.5 py-0.2 rounded text-[9px] font-mono" id="current-3d-filebadge">GLB 실물</span>
+            </div>
+          </div>
+
+          <!-- 하단 조작 바 -->
+          <div class="absolute bottom-3 right-3 z-20 flex items-center gap-1 sm:gap-2">
+            <button onclick="setFloorMaterial('oak')" class="pill-btn px-2.5 py-1 rounded-xl text-[10px] sm:text-xs font-bold">🪵 오크</button>
+            <button onclick="setFloorMaterial('marble')" class="pill-btn px-2.5 py-1 rounded-xl text-[10px] sm:text-xs font-bold">🏛️ 대리석</button>
+            <button onclick="setFloorMaterial('dark')" class="pill-btn px-2.5 py-1 rounded-xl text-[10px] sm:text-xs font-bold">🌙 다크</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 2. 하단/우측: 종합 리모델링 카탈로그 선택기 (4열) ================= -->
+      <div class="lg:col-span-4 bg-stone-950/90 border border-stone-800 rounded-3xl p-3 sm:p-4 flex flex-col h-[520px] lg:h-[740px] shadow-2xl">
+        
+        <div class="pb-3 border-b border-stone-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-400 text-lg">widgets</span>
+              <div>
+                <h3 class="text-xs sm:text-sm font-black text-white">리모델링 자재 & 3D 모델</h3>
+                <p class="text-[9px] sm:text-[10px] text-stone-400">클릭 즉시 턴테이블 위 1:1 실물 교체</p>
+              </div>
+            </div>
+            <span class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full" id="right-count-badge">44종</span>
+          </div>
+
+          <!-- 실시간 검색 -->
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs sm:text-sm">search</span>
+            <input type="text" id="right-search-input" oninput="filterRightCatalog()" placeholder="마루, 벽지, 아트월, 소파, 조명 검색..." class="w-full bg-stone-900 border border-stone-700/70 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 transition">
+          </div>
+
+          <!-- 카테고리 필터 칩 (가로 스크롤) -->
+          <div class="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 text-[11px]" id="right-cat-chips">
+            <button onclick="setRightCategory('전체')" class="pill-btn active px-2.5 py-1 rounded-lg font-bold shrink-0">전체</button>
+            <button onclick="setRightCategory('바닥재 & 마루')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🪵 바닥재</button>
+            <button onclick="setRightCategory('벽지 & 도장 & 페인트')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">📜 벽지/도장</button>
+            <button onclick="setRightCategory('아트월 & 루버 템바보드')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🧱 아트월</button>
+            <button onclick="setRightCategory('정품 가구 & 좌석')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🛋️ 가구</button>
+            <button onclick="setRightCategory('주방 가전 & 식기')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🍳 주방</button>
+            <button onclick="setRightCategory('플랜테리어 & 소품')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🌿 식물</button>
+            <button onclick="setRightCategory('럭셔리 조명 & 스탠드')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">💡 조명</button>
+          </div>
+        </div>
+
+        <!-- 카드 목록 (스크롤) -->
+        <div class="flex-1 overflow-y-auto custom-scroll space-y-2 py-2.5 pr-1" id="right-catalog-list"></div>
+
+        <!-- 하단 견적 문의 버튼 -->
+        <div class="pt-2 border-t border-stone-800">
+          <button onclick="sendQuoteToMaster()" class="gold-action-btn w-full py-2.5 sm:py-3 rounded-2xl text-xs font-black flex items-center justify-center gap-1.5 shadow-xl">
+            <span class="material-symbols-outlined text-sm">send</span>
+            <span>이 모델로 조인형 대표에게 사진 견적 접수</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="assets/data/catalog200.js"></script>
+  <script src="switcher.js"></script>
+
+  <script>
+    let studioScene, studioCamera, studioRenderer, studioControls;
+    let turntableMesh, currentLoadedModel = null;
+    let studioSun, studioFill, studioRim, studioAmbient;
+    let currentItem = null;
+    let autoRotateEnabled = true;
+
+    const GLB_CACHE = {};
+    const gltfLoader = new THREE.GLTFLoader();
+    const texLoader = new THREE.TextureLoader();
+    const studioEnv = texLoader.load('assets/textures/studio_env.jpg');
+    studioEnv.mapping = THREE.EquirectangularReflectionMapping;
+
+    function initStudio() {
+      const box = document.getElementById('studio-viewport-box');
+      const canvas = document.getElementById('canvas-3d-studio');
+
+      studioScene = new THREE.Scene();
+      studioScene.background = new THREE.Color(0x14110E);
+      studioScene.environment = studioEnv;
+
+      studioCamera = new THREE.PerspectiveCamera(40, box.clientWidth / box.clientHeight, 0.1, 100);
+      studioCamera.position.set(0, 2.5, 4.5);
+
+      studioRenderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+      studioRenderer.setSize(box.clientWidth, box.clientHeight);
+      studioRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      studioRenderer.shadowMap.enabled = true;
+      studioRenderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      studioRenderer.toneMapping = THREE.ACESFilmicToneMapping;
+      studioRenderer.toneMappingExposure = 1.35;
+
+      studioControls = new THREE.OrbitControls(studioCamera, studioRenderer.domElement);
+      studioControls.enableDamping = true;
+      studioControls.dampingFactor = 0.05;
+      studioControls.target.set(0, 0.8, 0);
+      studioControls.maxPolarAngle = Math.PI / 2 - 0.05;
+      studioControls.minDistance = 1.5;
+      studioControls.maxDistance = 15;
+      studioControls.autoRotate = true;
+      studioControls.autoRotateSpeed = 1.5;
+
+      // 턴테이블 바닥
+      const turntableGeo = new THREE.CylinderGeometry(2.2, 2.3, 0.15, 64);
+      const oakTex = texLoader.load('assets/textures/wood_diffuse.jpg');
+      oakTex.wrapS = THREE.RepeatWrapping; oakTex.wrapT = THREE.RepeatWrapping;
+      oakTex.repeat.set(2, 2);
+      const turntableMat = new THREE.MeshStandardMaterial({ map: oakTex, roughness: 0.35, metalness: 0.05 });
+      turntableMesh = new THREE.Mesh(turntableGeo, turntableMat);
+      turntableMesh.position.y = -0.075;
+      turntableMesh.receiveShadow = true;
+      studioScene.add(turntableMesh);
+
+      // 조명
+      studioAmbient = new THREE.AmbientLight(0xFFF2E6, 0.85);
+      studioScene.add(studioAmbient);
+
+      studioSun = new THREE.DirectionalLight(0xFFE8D0, 2.8);
+      studioSun.position.set(6, 10, 5);
+      studioSun.castShadow = true;
+      studioSun.shadow.mapSize.width = 2048;
+      studioSun.shadow.mapSize.height = 2048;
+      studioSun.shadow.bias = -0.0001;
+      studioScene.add(studioSun);
+
+      studioFill = new THREE.DirectionalLight(0x7FB5FF, 0.9);
+      studioFill.position.set(-6, 6, -5);
+      studioScene.add(studioFill);
+
+      studioRim = new THREE.PointLight(0xF59E0B, 2.2, 10);
+      studioRim.position.set(0, 4, -3);
+      studioScene.add(studioRim);
+
+      window.addEventListener('resize', onStudioResize);
+
+      // 🌟 [핵심] 첫 로드 시 실제 3D 모델을 선택하여 확실히 렌더링
+      const initialItem = CATALOG_200.find(i => i.glb) || CATALOG_200[0];
+      selectAndInspectItem(initialItem);
+      renderRightCatalog();
+      preloadAllModels();
+      animateStudio();
+    }
+
+    function preloadAllModels() {
+      CATALOG_200.forEach(item => {
+        if (item.glb && !GLB_CACHE[item.glb]) {
+          gltfLoader.load(`assets/models/${item.glb}`, (gltf) => {
+            gltf.scene.traverse((child) => {
+              if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+                if (child.material) {
+                  child.material.envMap = studioEnv;
+                  child.material.envMapIntensity = 1.2;
+                  child.material.needsUpdate = true;
+                }
+              }
+            });
+            GLB_CACHE[item.glb] = gltf.scene;
+          });
+        }
+      });
+    }
+
+    function autoFitModelToTurntable(model, targetSize = 2.3) {
+      const box = new THREE.Box3().setFromObject(model);
+      const size = box.getSize(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      if (maxDim > 0) {
+        const scale = targetSize / maxDim;
+        model.scale.set(scale, scale, scale);
+      }
+      const newBox = new THREE.Box3().setFromObject(model);
+      const center = newBox.getCenter(new THREE.Vector3());
+      model.position.x -= center.x;
+      model.position.z -= center.z;
+      model.position.y -= newBox.min.y;
+
+      const fittedBox = new THREE.Box3().setFromObject(model);
+      const fittedCenter = fittedBox.getCenter(new THREE.Vector3());
+      studioControls.target.set(0, Math.max(0.4, fittedCenter.y), 0);
+    }
+
+    function purgeCurrentModel() {
+      if (currentLoadedModel) {
+        studioScene.remove(currentLoadedModel);
+        currentLoadedModel.traverse((child) => {
+          if (child.isMesh) {
+            if (child.geometry) child.geometry.dispose();
+          }
+        });
+        currentLoadedModel = null;
+      }
+    }
+
+    function selectAndInspectItem(item) {
+      currentItem = item;
+
+      // UI 업데이트
+      document.getElementById('current-3d-cat').textContent = item.cat;
+      document.getElementById('current-3d-save').textContent = item.save ? `${item.save} 절감` : '절감 시공';
+      document.getElementById('current-3d-name').textContent = item.name;
+      document.getElementById('current-3d-spec').textContent = item.dimText || item.spec;
+      document.getElementById('current-3d-desc').textContent = item.desc;
+      document.getElementById('current-3d-price').textContent = item.price;
+      document.getElementById('current-3d-filebadge').textContent = item.glb || (item.type === 'floor' ? '바닥재 PBR' : item.type === 'wall' ? '벽지 PBR' : '아트월 PBR');
+
+      purgeCurrentModel();
+
+      const spinner = document.getElementById('loading-spinner-overlay');
+
+      // 1. 만약 3D 모델(GLB)인 경우
+      if (item.glb) {
+        if (GLB_CACHE[item.glb]) {
+          currentLoadedModel = GLB_CACHE[item.glb].clone(true);
+          autoFitModelToTurntable(currentLoadedModel, 2.3);
+          studioScene.add(currentLoadedModel);
+          if (spinner) spinner.classList.add('hidden');
+          return;
+        }
+
+        if (spinner) {
+          document.getElementById('loading-spinner-text').textContent = `${item.glb} 로딩 중...`;
+          spinner.classList.remove('hidden');
+        }
+
+        gltfLoader.load(`assets/models/${item.glb}`, (gltf) => {
+          purgeCurrentModel();
+          gltf.scene.traverse((child) => {
+            if (child.isMesh) {
+              child.castShadow = true;
+              child.receiveShadow = true;
+              if (child.material) {
+                child.material.envMap = studioEnv;
+                child.material.envMapIntensity = 1.2;
+                child.material.needsUpdate = true;
+              }
+            }
+          });
+
+          GLB_CACHE[item.glb] = gltf.scene;
+          currentLoadedModel = gltf.scene.clone(true);
+          autoFitModelToTurntable(currentLoadedModel, 2.3);
+          studioScene.add(currentLoadedModel);
+          if (spinner) spinner.classList.add('hidden');
+        }, undefined, (err) => {
+          if (spinner) spinner.classList.add('hidden');
+        });
+      } 
+      // 2. 만약 건축 자재(바닥재/벽지/아트월)인 경우 -> 3D 샘플 플라크 렌더링
+      else {
+        const plaqueGroup = new THREE.Group();
+        const plaqueTex = texLoader.load(item.tex);
+        plaqueTex.wrapS = THREE.RepeatWrapping;
+        plaqueTex.wrapT = THREE.RepeatWrapping;
+        plaqueTex.repeat.set(2, 2);
+
+        const bumpTex = item.bump ? texLoader.load(item.bump) : null;
+        const plaqueMat = new THREE.MeshStandardMaterial({
+          map: plaqueTex,
+          bumpMap: bumpTex,
+          bumpScale: 0.03,
+          roughness: item.rough || 0.35,
+          metalness: item.metal || 0.05,
+          color: item.color || 0xFFFFFF
+        });
+
+        // 3D 럭셔리 자재 샘플 슬랩
+        const slab = new THREE.Mesh(new THREE.BoxGeometry(1.6, 1.6, 0.08), plaqueMat);
+        slab.position.set(0, 0.9, 0);
+        slab.rotation.x = -Math.PI / 12;
+        slab.castShadow = true;
+        slab.receiveShadow = true;
+        plaqueGroup.add(slab);
+
+        // 스탠드 받침대
+        const standMat = new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.2, metalness: 0.8 });
+        const stand = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.1, 0.6), standMat);
+        stand.position.set(0, 0.05, 0);
+        stand.castShadow = true;
+        stand.receiveShadow = true;
+        plaqueGroup.add(stand);
+
+        currentLoadedModel = plaqueGroup;
+        studioScene.add(currentLoadedModel);
+        studioControls.target.set(0, 0.8, 0);
+        if (spinner) spinner.classList.add('hidden');
+      }
+    }
+
+    let activeRightCategory = '전체';
+
+    function renderRightCatalog() {
+      const list = document.getElementById('right-catalog-list');
+      list.innerHTML = '';
+
+      const q = (document.getElementById('right-search-input').value || '').trim().toLowerCase();
+
+      let filtered = CATALOG_200.filter(item => {
+        const matchCat = (activeRightCategory === '전체' || item.cat === activeRightCategory);
+        const matchQuery = !q || item.name.toLowerCase().includes(q) || item.brand.toLowerCase().includes(q) || item.spec.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || (item.dimText && item.dimText.toLowerCase().includes(q));
+        return matchCat && matchQuery;
+      });
+
+      filtered.forEach(item => {
+        const isSelected = currentItem && currentItem.id === item.id;
+        const card = document.createElement('div');
+        card.className = `catalog-right-card p-2.5 sm:p-3 rounded-2xl flex items-center justify-between gap-2.5 cursor-pointer ${isSelected ? 'selected' : ''}`;
+        card.onclick = () => {
+          selectAndInspectItem(item);
+          renderRightCatalog();
+        };
+
+        const iconName = item.type === 'floor' ? 'layers' : item.type === 'wall' ? 'wallpaper' : item.type === 'artwall' ? 'texture' : 'view_in_ar';
+        const typeBadge = item.type === 'floor' ? '바닥재' : item.type === 'wall' ? '벽지' : item.type === 'artwall' ? '아트월' : (item.glb || '3D 실물');
+
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-stone-900/90 border border-stone-700/60 flex items-center justify-center shrink-0 shadow-inner">
+              <span class="material-symbols-outlined text-amber-400 text-lg sm:text-xl">${iconName}</span>
+            </div>
+            <div class="space-y-0.5 min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.2 rounded text-[9px] font-bold font-mono truncate max-w-[110px]">${typeBadge}</span>
+                <span class="text-emerald-400 font-bold font-mono text-[9px] sm:text-[10px]">${item.save}</span>
+              </div>
+              <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
+              <p class="text-[9px] sm:text-[10px] text-amber-400/90 font-mono truncate">${item.dimText || item.spec}</p>
+            </div>
+          </div>
+
+          <div class="text-right shrink-0">
+            <span class="text-[10px] sm:text-[11px] font-mono font-bold text-amber-400 block">${item.price}</span>
+            <span class="text-[9px] font-bold ${isSelected ? 'text-amber-300' : 'text-stone-400'}">
+              ${isSelected ? '● 3D 뷰 중' : '선택 ➔'}
+            </span>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+
+      document.getElementById('right-count-badge').textContent = `${filtered.length}종`;
+    }
+
+    function setRightCategory(cat) {
+      activeRightCategory = cat;
+      const chips = document.getElementById('right-cat-chips').children;
+      for (let c of chips) {
+        c.classList.toggle('active', c.textContent.includes(cat.split(' ')[0]) || (cat === '전체' && c.textContent === '전체'));
+      }
+      renderRightCatalog();
+    }
+
+    function filterRightCatalog() {
+      renderRightCatalog();
+    }
+
+    function setFloorMaterial(type) {
+      if (type === 'oak') {
+        const tex = texLoader.load('assets/textures/wood_diffuse.jpg');
+        tex.wrapS = THREE.RepeatWrapping; tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(2, 2);
+        turntableMesh.material.map = tex;
+        turntableMesh.material.roughness = 0.35;
+        turntableMesh.material.needsUpdate = true;
+      } else if (type === 'marble') {
+        const tex = texLoader.load('assets/textures/marble_diffuse.jpg');
+        tex.wrapS = THREE.RepeatWrapping; tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(2, 2);
+        turntableMesh.material.map = tex;
+        turntableMesh.material.roughness = 0.08;
+        turntableMesh.material.needsUpdate = true;
+      } else if (type === 'dark') {
+        turntableMesh.material.map = null;
+        turntableMesh.material.color.setHex(0x181818);
+        turntableMesh.material.roughness = 0.2;
+        turntableMesh.material.needsUpdate = true;
+      }
+    }
+
+    function setStudioLighting(mode) {
+      document.querySelectorAll('#btn-studio-daylight, #btn-studio-sunset, #btn-studio-night').forEach(b => b && b.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-studio-${mode}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (mode === 'daylight') {
+        studioAmbient.color.setHex(0xFFF2E6); studioAmbient.intensity = 0.85;
+        studioSun.color.setHex(0xFFE8D0); studioSun.intensity = 2.8;
+        studioFill.color.setHex(0x7FB5FF); studioFill.intensity = 0.9;
+        studioRim.color.setHex(0xF59E0B); studioRim.intensity = 2.2;
+        studioScene.background.setHex(0x14110E);
+      } else if (mode === 'sunset') {
+        studioAmbient.color.setHex(0xFFA060); studioAmbient.intensity = 0.6;
+        studioSun.color.setHex(0xFF7722); studioSun.intensity = 3.5;
+        studioFill.color.setHex(0x884422); studioFill.intensity = 1.0;
+        studioRim.color.setHex(0xF59E0B); studioRim.intensity = 3.0;
+        studioScene.background.setHex(0x201008);
+      } else if (mode === 'night') {
+        studioAmbient.color.setHex(0x0A0D1A); studioAmbient.intensity = 0.25;
+        studioSun.color.setHex(0x335588); studioSun.intensity = 0.8;
+        studioFill.color.setHex(0x112255); studioFill.intensity = 0.6;
+        studioRim.color.setHex(0x60A5FA); studioRim.intensity = 3.5;
+        studioScene.background.setHex(0x05070B);
+      }
+    }
+
+    function toggleTurntableAutoRotate() {
+      autoRotateEnabled = !autoRotateEnabled;
+      studioControls.autoRotate = autoRotateEnabled;
+      document.getElementById('btn-turntable-rotate').classList.toggle('active', autoRotateEnabled);
+    }
+
+    function onStudioResize() {
+      const box = document.getElementById('studio-viewport-box');
+      studioCamera.aspect = box.clientWidth / box.clientHeight;
+      studioCamera.updateProjectionMatrix();
+      studioRenderer.setSize(box.clientWidth, box.clientHeight);
+    }
+
+    function animateStudio() {
+      requestAnimationFrame(animateStudio);
+      studioControls.update();
+      studioRenderer.render(studioScene, studioCamera);
+    }
+
+    function sendQuoteToMaster() {
+      if (!currentItem) return;
+      const msg = `[목수의 홈케어마스터 14번 3D 스튜디오 견적 문의]\n\n선택 모델: ${currentItem.name}\n- 카테고리: ${currentItem.cat}\n- 파일/규격: ${currentItem.glb || currentItem.dimText}\n- 예상 시공가: ${currentItem.price}\n\n※ 현장 사진과 함께 보내주시면 조인형 대표가 10분 내로 무료 견적서를 안내해 드립니다.`;
+      const phone = '010-9276-4245';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = `sms:${phone}?body=${encodeURIComponent(msg)}`;
+      } else {
+        navigator.clipboard.writeText(msg).then(() => {
+          alert(`[문자 내용이 복사되었습니다]\n\n받는 사람: ${phone}\n\n문자 메시지에 붙여넣기 후 사진과 함께 전송해주세요.`);
+          window.location.href = `tel:${phone}`;
+        });
+      }
+    }
+
+    window.addEventListener('load', initStudio);
+  </script>
+</body>
+</html>
