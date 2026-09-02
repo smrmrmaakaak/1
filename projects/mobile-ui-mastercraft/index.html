@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>📱 Mobile Mastercraft UI - 100% In-House Mobile Suite</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Fira+Code:wght@500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+
+<!-- Ambient Glow Background -->
+<div class="ambient-glow"></div>
+
+<div class="mobile-showcase-wrap">
+
+  <!-- Header -->
+  <header class="mobile-hero">
+    <div class="m-badge">
+      <span class="m-dot"></span>
+      <span>100% In-House Mobile Native Touch Suite</span>
+    </div>
+    <h1 class="m-title">
+      Mobile <span class="m-gradient">Mastercraft UI</span>
+    </h1>
+    <p class="m-desc">
+      손가락 터치 제스처, 실제 햅틱 진동 피드백, 스프링 바텀시트, 3D 자이로 틸트, Web Audio 패드를 탑재한 <strong>스마트폰 전용 6대 오리지널 컴포넌트</strong>입니다.
+    </p>
+    <div class="m-actions">
+      <a href="https://github.com/smrmrmaakaak/1" target="_blank" class="btn-m-primary">
+        📱 GitHub 저장소 소스코드
+      </a>
+      <button class="btn-m-sheet-open" onclick="openBottomSheet()">
+        ⚡ 제스처 바텀시트 열기
+      </button>
+    </div>
+  </header>
+
+  <!-- 6 Mobile Signature Components Showcase -->
+  <main class="mobile-grid">
+
+    <!-- [1] iOS 18 Dynamic Island Morph -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag apple">📱 1. iOS 다이내믹 아일랜드</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('island')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Dynamic Island Morph & Haptic</h2>
+      <p class="m-caption">터치 시 스프링 물리로 크기가 확장되며, 실제 스마트폰 햅틱 진동과 함께 미디어 플레이어로 모핑합니다.</p>
+      
+      <div class="m-stage island-stage">
+        <div class="m-island-pill" id="mobileIsland" onclick="toggleMobileIsland()">
+          <!-- Collapsed View -->
+          <div class="island-mini">
+            <span class="island-m-icon">🎧</span>
+            <span class="island-m-title">Haptic Sound</span>
+            <div class="island-sound-bars"><span></span><span></span><span></span></div>
+          </div>
+          <!-- Expanded View -->
+          <div class="island-full">
+            <div class="island-f-left">
+              <span style="font-size: 1.8rem;">🎧</span>
+              <div>
+                <div style="font-weight: 800; font-size: 0.95rem;">SMR Master Audio</div>
+                <div style="font-size: 0.72rem; color: #94a3b8;">Spatial 3D Sound • Active</div>
+              </div>
+            </div>
+            <button class="island-f-btn" onclick="event.stopPropagation(); triggerIslandHaptic();">
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="m-hint">💡 아일랜드 알약을 탭하여 햅틱 진동과 확장을 체험하세요</div>
+    </section>
+
+    <!-- [2] Mobile Antique Wax Seal Letter Opener -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag gold">📜 2. 모바일 황실 왁스 편지</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('wax')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Wax Seal Envelope Letter Opener</h2>
+      <p class="m-caption">모바일 화면에서 붉은 왁스 인장을 탭하면 햅틱 진동과 함께 편지봉투가 열리고 황실 비밀 칙서가 슬라이드 업됩니다.</p>
+      
+      <div class="m-stage wax-stage">
+        <div class="envelope-box" id="envelopeBox">
+          <div class="envelope-flap"></div>
+          <div class="envelope-letter" id="envelopeLetter">
+            <div style="font-weight: 900; color: #5a3311; font-size: 0.85rem; border-bottom: 1px dashed #8c5a2b; padding-bottom: 4px;">⚜ 황실 친서 ⚜</div>
+            <div style="font-size: 0.75rem; color: #3b200b; font-style: italic; margin-top: 6px;">"대표님의 모바일 프로젝트에 최고의 UI 영광이 함께하길."</div>
+          </div>
+          <div class="envelope-wax-btn" id="envWaxBtn" onclick="openEnvelopeLetter()">
+            <span>👑</span>
+          </div>
+        </div>
+      </div>
+      <div class="m-hint">💡 붉은 왁스 도장(👑)을 터치하여 편지를 열어보세요</div>
+    </section>
+
+    <!-- [3] Mobile Haptic Sound Synthesizer & Drum Pad -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag purple">🎛️ 3. 모바일 햅틱 사운드 패드</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('drum')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Web Audio Haptic Drum Pads</h2>
+      <p class="m-caption">스마트폰 터치 시 Web Audio API로 킥, 스네어, 하이햇 및 신디사이저 멜로디를 합성하며 햅틱 진동을 발생시킵니다.</p>
+      
+      <div class="m-stage drum-stage">
+        <div class="drum-pads-grid">
+          <button class="d-pad p-kick" onpointerdown="playDrumPad('kick', 80)">🥁 KICK</button>
+          <button class="d-pad p-snare" onpointerdown="playDrumPad('snare', 350)">💥 SNARE</button>
+          <button class="d-pad p-hihat" onpointerdown="playDrumPad('hihat', 800)">✨ HI-HAT</button>
+          <button class="d-pad p-lead" onpointerdown="playDrumPad('lead', 523)">🎹 LEAD</button>
+        </div>
+      </div>
+      <div class="m-hint">💡 패드를 손가락으로 연타하여 비트를 연주하세요</div>
+    </section>
+
+    <!-- [4] Mobile Touch Gold Scratch Lottery -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag gold">🪙 4. 모바일 터치 스크래치 복권</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('scratch')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Mobile Touch Gold Scratch</h2>
+      <p class="m-caption">모바일 터치 제스처에 최적화된 Canvas Scratch 알고리즘으로 70% 이상 긁으면 축하 햅틱과 함께 당첨 토스트가 뜹니다.</p>
+      
+      <div class="m-stage scratch-m-stage">
+        <div class="m-scratch-prize">
+          <div style="font-size: 2.2rem;">🏆</div>
+          <div style="font-weight: 900; font-size: 1.15rem; color: #ffd700;">1등: 모바일 마스터 VIP</div>
+          <div style="font-size: 0.75rem; color: #e2e8f0;">SMR Mobile Ultra Pass</div>
+        </div>
+        <canvas id="mobileScratchCanvas"></canvas>
+      </div>
+      <div class="m-hint">💡 손가락으로 골드 포일을 슥슥 긁어보세요</div>
+    </section>
+
+    <!-- [5] Linear Mobile 1px Laser Card & Action Sheet -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag cyan">⚡ 5. 모바일 1px 레이저 카드</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('laser')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Subpixel Laser & Mobile Action Sheet</h2>
+      <p class="m-caption">스마트폰 터치 좌표를 추적하는 네온 레이저와 클릭 시 올라오는 모바일 퀵 액션시트입니다.</p>
+      
+      <div class="m-stage laser-m-stage" id="mobileLaserStage">
+        <div class="m-laser-card" id="mobileLaserCard" onclick="openBottomSheet()">
+          <div class="m-laser-light"></div>
+          <div class="m-laser-inner">
+            <span class="m-laser-badge">1px Subpixel</span>
+            <div style="font-weight: 800; font-size: 1.05rem; margin-top: 6px;">Quick Action Sheet</div>
+            <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 4px;">카드를 탭하여 제스처 바텀시트를 호출하세요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-hint">💡 카드를 터치하여 바텀시트를 열어보세요</div>
+    </section>
+
+    <!-- [6] Apple Vision Frosted Floating Tabbar -->
+    <section class="m-card">
+      <div class="m-card-top">
+        <span class="m-tag emerald">💎 6. 비전프로 플로팅 탭바</span>
+        <button class="btn-m-code" onclick="openMobileCodeModal('tabbar')">💻 코드 복사</button>
+      </div>
+      <h2 class="m-heading">Vision Acrylic Floating Tabbar</h2>
+      <p class="m-caption">iOS 홈 화면 하단에 반투명 아크릴 블러로 떠있는 반응형 플로팅 탭바입니다.</p>
+      
+      <div class="m-stage tabbar-stage">
+        <nav class="vision-floating-tabbar">
+          <button class="v-tab active" onclick="switchTab(this, '홈')">
+            <span>🏠</span>
+            <small>Home</small>
+          </button>
+          <button class="v-tab" onclick="switchTab(this, '탐색')">
+            <span>🔍</span>
+            <small>Explore</small>
+          </button>
+          <button class="v-tab" onclick="switchTab(this, '보관함')">
+            <span>👑</span>
+            <small>Vault</small>
+          </button>
+          <button class="v-tab" onclick="switchTab(this, '설정')">
+            <span>⚙️</span>
+            <small>Settings</small>
+          </button>
+        </nav>
+      </div>
+      <div class="m-hint">💡 탭 아이콘을 눌러 실시간 활성화 모핑을 확인하세요</div>
+    </section>
+
+  </main>
+
+  <!-- Gesture-Driven Mobile Bottom Sheet -->
+  <div class="bottom-sheet-backdrop" id="sheetBackdrop" onclick="closeBottomSheet()">
+    <div class="bottom-sheet-dialog" id="sheetDialog" onclick="event.stopPropagation()">
+      <div class="sheet-drag-handle" id="sheetDragHandle"></div>
+      <div class="sheet-header">
+        <h3>⚡ 모바일 퀵 제스처 액션</h3>
+        <button class="btn-sheet-close" onclick="closeBottomSheet()">✕</button>
+      </div>
+      <div class="sheet-body">
+        <button class="sheet-action-item" onclick="triggerAction('공유하기')">
+          <span>📤</span>
+          <div>
+            <div style="font-weight: 700;">UI 컴포넌트 공유하기</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">모바일 네이티브 공유 다이얼로그 호출</div>
+          </div>
+        </button>
+        <button class="sheet-action-item" onclick="triggerAction('즐겨찾기 저장')">
+          <span>⭐</span>
+          <div>
+            <div style="font-weight: 700;">GitHub Star 남기기</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">smrmrmaakaak/1 저장소 바로가기</div>
+          </div>
+        </button>
+        <button class="sheet-action-item" onclick="triggerAction('햅틱 진동 테스트')">
+          <span>📳</span>
+          <div>
+            <div style="font-weight: 700;">강력한 햅틱 진동 (Haptic Pulse)</div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">스마트폰 모터 3연타 진동 발생</div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Code Modal -->
+  <div class="m-modal-overlay" id="mCodeModal">
+    <div class="m-modal-card">
+      <div class="m-modal-top">
+        <h3 id="mModalTitle">Mobile Component Code</h3>
+        <button class="m-modal-close" onclick="closeMobileCodeModal()">✕</button>
+      </div>
+      <div class="m-modal-tabs">
+        <button class="m-tab active" id="mTabHtml" onclick="switchMobileTab('html')">HTML</button>
+        <button class="m-tab" id="mTabCss" onclick="switchMobileTab('css')">CSS</button>
+        <button class="m-tab" id="mTabJs" onclick="switchMobileTab('js')">JS</button>
+      </div>
+      <div class="m-modal-code">
+        <pre><code id="mCodeView"></code></pre>
+      </div>
+      <div class="m-modal-bottom">
+        <button class="btn-m-copy-action" onclick="copyMobileCode()">📋 코드 복사 (Copy)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="m-toast" id="mToast">✨ Toast Message</div>
+
+  <!-- Footer -->
+  <footer class="m-footer">
+    <div>
+      <strong>📱 Mobile Mastercraft UI</strong> • 100% In-House by <a href="https://github.com/smrmrmaakaak" target="_blank">smrmrmaakaak</a>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/mobile_engine.js"></script>
+</body>
+</html>
