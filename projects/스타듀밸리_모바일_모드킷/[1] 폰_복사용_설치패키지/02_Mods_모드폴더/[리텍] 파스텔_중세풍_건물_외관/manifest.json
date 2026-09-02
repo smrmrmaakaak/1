@@ -1,0 +1,10 @@
+{
+  "Name": "[Retexture] Pastel Medieval Buildings",
+  "Author": "DewDesign",
+  "Version": "1.0.0",
+  "Description": "Replaces farm buildings and houses with charming pastel medieval textures.",
+  "UniqueID": "DewDesign.PastelBuildings",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Name": "Skip Fishing Minigame",
+  "Author": "DewMods",
+  "Version": "1.2.0",
+  "Description": "Skips the fishing minigame and immediately catches fish.",
+  "UniqueID": "DewMods.SkipFishingMinigame",
+  "EntryDll": "SkipFishingMinigame.dll",
+  "MinimumApiVersion": "4.0.0"
+}

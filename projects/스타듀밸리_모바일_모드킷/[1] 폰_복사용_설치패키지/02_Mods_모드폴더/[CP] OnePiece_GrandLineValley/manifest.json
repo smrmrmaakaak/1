@@ -1,0 +1,12 @@
+{
+  "Name": "One Piece: Grand Line Valley (원피스 RPG 모드)",
+  "Author": "Taemin & Antigravity",
+  "Version": "1.0.0",
+  "Description": "스타듀밸리 1.6 그랜드 라인 원피스 RPG 모드 (악마의 열매, 조로의 삼도류 명검, 미호크 흑도 요루, 밀짚모자 해적단)",
+  "UniqueID": "Taemin.OnePieceGrandLineValley",
+  "MinimumApiVersion": "4.0.0",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher",
+    "MinimumVersion": "2.3.0"
+  }
+}

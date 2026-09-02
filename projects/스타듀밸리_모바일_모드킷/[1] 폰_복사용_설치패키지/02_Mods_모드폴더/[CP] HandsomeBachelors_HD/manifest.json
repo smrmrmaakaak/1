@@ -1,0 +1,12 @@
+{
+  "Name": "Handsome Bachelors HD Portraits (남정네 고화질 리텍)",
+  "Author": "Taemin & Antigravity",
+  "Version": "1.0.0",
+  "Description": "카카오톡 원본 고화질 15종 미소년/미청년 남정네 일러스트 리텍스처 모드",
+  "UniqueID": "Taemin.HandsomeBachelorsHD",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

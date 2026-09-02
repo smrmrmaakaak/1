@@ -1,0 +1,10 @@
+{
+  "Name": "[Retexture] High Quality NPC Portraits Pack",
+  "Author": "DewDesign",
+  "Version": "1.0.0",
+  "Description": "Replaces all NPC portraits with beautiful high-resolution illustrations.",
+  "UniqueID": "DewDesign.PortraitPack",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

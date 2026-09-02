@@ -1,0 +1,281 @@
+{
+  "Format": "2.3.0",
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Mods/Taemin.OnePiece/Weapons",
+      "FromFile": "assets/Weapons/OnePieceWeapons.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/Taemin.OnePiece/Objects",
+      "FromFile": "assets/Objects/DevilFruits.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "OnePiece_GomuGomuFruit": {
+          "Name": "OnePiece_GomuGomuFruit",
+          "DisplayName": "{{i18n:item.gomugomu.name}}",
+          "Description": "{{i18n:item.gomugomu.desc}}",
+          "Type": "Basic",
+          "Category": -2,
+          "Price": 50000,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 0,
+          "Edibility": 100,
+          "IsDrink": false,
+          "Buffs": [
+            {
+              "BuffId": "OnePiece_GomuGomuBuff",
+              "Duration": 99999,
+              "CustomAttributes": {
+                "Defense": 10,
+                "Attack": 15,
+                "Speed": 2,
+                "Immunity": 5
+              }
+            }
+          ]
+        },
+        "OnePiece_MeraMeraFruit": {
+          "Name": "OnePiece_MeraMeraFruit",
+          "DisplayName": "{{i18n:item.meramera.name}}",
+          "Description": "{{i18n:item.meramera.desc}}",
+          "Type": "Basic",
+          "Category": -2,
+          "Price": 60000,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 1,
+          "Edibility": 100,
+          "IsDrink": false,
+          "Buffs": [
+            {
+              "BuffId": "OnePiece_MeraMeraBuff",
+              "Duration": 99999,
+              "CustomAttributes": {
+                "Attack": 25,
+                "Speed": 1,
+                "CriticalChance": 0.15
+              }
+            }
+          ]
+        },
+        "OnePiece_OpeOpeFruit": {
+          "Name": "OnePiece_OpeOpeFruit",
+          "DisplayName": "{{i18n:item.opeope.name}}",
+          "Description": "{{i18n:item.opeope.desc}}",
+          "Type": "Basic",
+          "Category": -2,
+          "Price": 100000,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 2,
+          "Edibility": 100,
+          "IsDrink": false,
+          "Buffs": [
+            {
+              "BuffId": "OnePiece_OpeOpeBuff",
+              "Duration": 99999,
+              "CustomAttributes": {
+                "MagneticRadius": 256,
+                "Defense": 8,
+                "Speed": 2
+              }
+            }
+          ]
+        },
+        "OnePiece_StrawHat": {
+          "Name": "OnePiece_StrawHat",
+          "DisplayName": "{{i18n:item.strawhat.name}}",
+          "Description": "{{i18n:item.strawhat.desc}}",
+          "Type": "Basic",
+          "Category": -2,
+          "Price": 1500,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 3
+        },
+        "OnePiece_RumbleBall": {
+          "Name": "OnePiece_RumbleBall",
+          "DisplayName": "{{i18n:item.rumbleball.name}}",
+          "Description": "{{i18n:item.rumbleball.desc}}",
+          "Type": "Basic",
+          "Category": -2,
+          "Price": 2000,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 4,
+          "Edibility": 80,
+          "IsDrink": false,
+          "Buffs": [
+            {
+              "BuffId": "OnePiece_RumbleBuff",
+              "Duration": 720,
+              "CustomAttributes": {
+                "Speed": 3,
+                "Attack": 10
+              }
+            }
+          ]
+        },
+        "OnePiece_WantedPoster": {
+          "Name": "OnePiece_WantedPoster",
+          "DisplayName": "{{i18n:item.wantedposter.name}}",
+          "Description": "{{i18n:item.wantedposter.desc}}",
+          "Type": "Basic",
+          "Category": -24,
+          "Price": 10000,
+          "Texture": "Mods/Taemin.OnePiece/Objects",
+          "SpriteIndex": 5
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Weapons",
+      "Entries": {
+        "OnePiece_WadoIchimonji": {
+          "Name": "OnePiece_WadoIchimonji",
+          "DisplayName": "{{i18n:weapon.wado.name}}",
+          "Description": "{{i18n:weapon.wado.desc}}",
+          "MinDamage": 60,
+          "MaxDamage": 85,
+          "Knockback": 1.5,
+          "Speed": 4,
+          "Precision": 10,
+          "Defense": 5,
+          "Type": 3,
+          "MineBaseLevel": -1,
+          "MineMinLevel": -1,
+          "ExtraSwingArea": 2,
+          "CritChance": 0.1,
+          "CritMultiplier": 3.5,
+          "Texture": "Mods/Taemin.OnePiece/Weapons",
+          "SpriteIndex": 0
+        },
+        "OnePiece_SandaiKitetsu": {
+          "Name": "OnePiece_SandaiKitetsu",
+          "DisplayName": "{{i18n:weapon.kitetsu.name}}",
+          "Description": "{{i18n:weapon.kitetsu.desc}}",
+          "MinDamage": 75,
+          "MaxDamage": 110,
+          "Knockback": 1.2,
+          "Speed": 2,
+          "Precision": 15,
+          "Defense": 0,
+          "Type": 3,
+          "MineBaseLevel": -1,
+          "MineMinLevel": -1,
+          "ExtraSwingArea": 1,
+          "CritChance": 0.25,
+          "CritMultiplier": 4.0,
+          "Texture": "Mods/Taemin.OnePiece/Weapons",
+          "SpriteIndex": 1
+        },
+        "OnePiece_Enma": {
+          "Name": "OnePiece_Enma",
+          "DisplayName": "{{i18n:weapon.enma.name}}",
+          "Description": "{{i18n:weapon.enma.desc}}",
+          "MinDamage": 120,
+          "MaxDamage": 180,
+          "Knockback": 2.2,
+          "Speed": 0,
+          "Precision": 20,
+          "Defense": 10,
+          "Type": 3,
+          "MineBaseLevel": -1,
+          "MineMinLevel": -1,
+          "ExtraSwingArea": 3,
+          "CritChance": 0.18,
+          "CritMultiplier": 4.5,
+          "Texture": "Mods/Taemin.OnePiece/Weapons",
+          "SpriteIndex": 2
+        },
+        "OnePiece_KokutoYoru": {
+          "Name": "OnePiece_KokutoYoru",
+          "DisplayName": "{{i18n:weapon.yoru.name}}",
+          "Description": "{{i18n:weapon.yoru.desc}}",
+          "MinDamage": 220,
+          "MaxDamage": 350,
+          "Knockback": 3.0,
+          "Speed": 3,
+          "Precision": 50,
+          "Defense": 20,
+          "Type": 3,
+          "MineBaseLevel": -1,
+          "MineMinLevel": -1,
+          "ExtraSwingArea": 5,
+          "CritChance": 0.35,
+          "CritMultiplier": 5.0,
+          "Texture": "Mods/Taemin.OnePiece/Weapons",
+          "SpriteIndex": 3
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [
+        "AdventureShop",
+        "Items"
+      ],
+      "Entries": {
+        "OnePiece_WadoIchimonji": {
+          "Id": "OnePiece_WadoIchimonji",
+          "ItemId": "(W)OnePiece_WadoIchimonji",
+          "Price": 15000
+        },
+        "OnePiece_SandaiKitetsu": {
+          "Id": "OnePiece_SandaiKitetsu",
+          "ItemId": "(W)OnePiece_SandaiKitetsu",
+          "Price": 25000
+        },
+        "OnePiece_Enma": {
+          "Id": "OnePiece_Enma",
+          "ItemId": "(W)OnePiece_Enma",
+          "Price": 50000
+        },
+        "OnePiece_KokutoYoru": {
+          "Id": "OnePiece_KokutoYoru",
+          "ItemId": "(W)OnePiece_KokutoYoru",
+          "Price": 100000
+        },
+        "OnePiece_GomuGomuFruit": {
+          "Id": "OnePiece_GomuGomuFruit",
+          "ItemId": "(O)OnePiece_GomuGomuFruit",
+          "Price": 50000
+        },
+        "OnePiece_MeraMeraFruit": {
+          "Id": "OnePiece_MeraMeraFruit",
+          "ItemId": "(O)OnePiece_MeraMeraFruit",
+          "Price": 60000
+        },
+        "OnePiece_OpeOpeFruit": {
+          "Id": "OnePiece_OpeOpeFruit",
+          "ItemId": "(O)OnePiece_OpeOpeFruit",
+          "Price": 100000
+        },
+        "OnePiece_StrawHat": {
+          "Id": "OnePiece_StrawHat",
+          "ItemId": "(O)OnePiece_StrawHat",
+          "Price": 1500
+        },
+        "OnePiece_RumbleBall": {
+          "Id": "OnePiece_RumbleBall",
+          "ItemId": "(O)OnePiece_RumbleBall",
+          "Price": 2000
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/CraftingRecipes",
+      "Entries": {
+        "OnePiece_WadoIchimonji": "335 10 336 5/Home/(W)OnePiece_WadoIchimonji/false/default/",
+        "OnePiece_SandaiKitetsu": "335 15 336 10/Home/(W)OnePiece_SandaiKitetsu/false/default/",
+        "OnePiece_Enma": "336 15 337 5/Home/(W)OnePiece_Enma/false/default/",
+        "OnePiece_KokutoYoru": "337 20 74 1/Home/(W)OnePiece_KokutoYoru/false/default/",
+        "OnePiece_StrawHat": "771 50/Home/(O)OnePiece_StrawHat/false/default/"
+      }
+    }
+  ]
+}

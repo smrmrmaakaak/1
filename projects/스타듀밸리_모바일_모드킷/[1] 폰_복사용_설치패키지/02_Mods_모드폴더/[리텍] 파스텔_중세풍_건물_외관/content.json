@@ -1,0 +1,10 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "EditImage",
+      "Target": "Buildings/houses, Buildings/Barn, Buildings/Coop, Buildings/Shed",
+      "FromFile": "assets/buildings_{{TargetWithoutPath}}.png"
+    }
+  ]
+}
