@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👑 SMR Original UI Suite - 100% In-House Masterpieces</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Fira+Code:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/apex.css">
+</head>
+<body>
+
+<!-- Quantum Background Canvas -->
+<canvas id="apexBgCanvas"></canvas>
+
+<div class="apex-container">
+  <!-- Hero Section -->
+  <header class="apex-hero">
+    <div class="apex-badge">
+      <span class="apex-badge-dot"></span>
+      <span>100% In-House Engineered • Zero External UI Library</span>
+    </div>
+    <h1 class="apex-hero-title">
+      SMR <span class="gold-gradient-text">Original UI Suite</span>
+    </h1>
+    <p class="apex-hero-sub">
+      외부 오픈소스 복사 없이, <strong>우리가 순수 웹 기술(CSS 3D, Web Audio API, Canvas 2D/WebGL, 물리 연산)로 직접 개발한 독보적인 8대 오리지널 UI 아티팩트</strong>입니다.
+    </p>
+
+    <!-- Controls / Quick Links -->
+    <div class="apex-hero-cta">
+      <a href="https://github.com/smrmrmaakaak/1" target="_blank" class="btn-apex-gold">
+        👑 GitHub 저장소 소스코드 보기
+      </a>
+      <button class="btn-apex-ghost" onclick="showToast('✨ 대표님의 100% 순수 오리지널 창작 UI 컬렉션입니다!')">
+        🛡️ 100% 자체 제작 인증
+      </button>
+    </div>
+  </header>
+
+  <!-- 8 In-House Master Components Grid -->
+  <main class="apex-grid">
+
+    <!-- [1] LabelleJian Antique 3D Master Gallery -->
+    <section class="apex-card medieval-gold-card">
+      <div class="card-header">
+        <span class="card-tag gold">🏛️ 1. 라벨르지안 앤틱 3D</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('antique3d')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">LabelleJian Antique 3D Turntable</h2>
+      <p class="card-caption">마우스로 360도 자유 회전하며 표면 유약 광택과 24K 순금박(Gold Leaf) 반사광을 실시간 렌더링하는 도자기 턴테이블입니다.</p>
+      
+      <div class="stage-box antique-stage" id="antiqueStage">
+        <div class="antique-porcelain-turntable" id="porcelainModel">
+          <div class="porcelain-body">
+            <div class="gold-leaf-filigree">⚜ LA BELLE JIAN ⚜</div>
+            <div class="porcelain-glaze-shine"></div>
+          </div>
+          <div class="turntable-base"></div>
+        </div>
+      </div>
+      <div class="stage-footer-hint">💡 도자기 위에 마우스를 올리고 좌우로 드래그하여 360도 회전하세요</div>
+    </section>
+
+    <!-- [2] Excalibur Royal Armory -->
+    <section class="apex-card medieval-gold-card">
+      <div class="card-header">
+        <span class="card-tag gold">⚔️ 2. 중세 엑스칼리버 검</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('excalibur')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Excalibur Magic Blade & Sparks</h2>
+      <p class="card-caption">마우스가 검에 닿으면 칼날을 타고 튀어오르는 실시간 물리 불꽃 스파크와 3차원 황금 마법진 파티클 인터랙션입니다.</p>
+      
+      <div class="stage-box excalibur-stage" id="excaliburStage">
+        <div class="excalibur-sword-wrap" id="excaliburSword">
+          <div class="sword-blade">
+            <div class="blade-rune">✦ ARTHURIAN ✦</div>
+          </div>
+          <div class="sword-guard"></div>
+          <div class="sword-hilt"></div>
+        </div>
+        <div class="magic-circle-base"></div>
+      </div>
+      <div class="stage-footer-hint">💡 마우스를 검에 올려 칼날의 불꽃 파티클을 튀겨보세요</div>
+    </section>
+
+    <!-- [3] Dynasty Imperial Decree & Wax Break -->
+    <section class="apex-card medieval-gold-card">
+      <div class="card-header">
+        <span class="card-tag gold">📜 3. 황실 칙서 & 왁스 파쇄</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('decree')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Imperial Decree & Wax Particle Engine</h2>
+      <p class="card-caption">인장을 클릭하면 실제 왁스 파편이 물리적으로 튀며 황실 칙서가 펼쳐지는 자체 제작 양피지 언롤링 엔진입니다.</p>
+      
+      <div class="stage-box decree-stage">
+        <div class="decree-scroll-card" id="decreeScrollCard">
+          <div class="decree-title">황 실 칙 서 (IMPERIAL CHARTER)</div>
+          <div class="decree-text" id="decreeTextLive">
+            "우리가 직접 짠 순수한 코드만이 영원히 빛나리라."
+          </div>
+          <div class="decree-seal-anchor">
+            <div class="pure-wax-seal" id="pureWaxSeal" onclick="breakPureWaxSeal()">
+              <span class="seal-mark">👑</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-footer-hint">💡 붉은 왁스 인장(👑)을 클릭해 봉인을 깨뜨려보세요</div>
+    </section>
+
+    <!-- [4] Deep-Space Quantum Reactor -->
+    <section class="apex-card cyber-neon-card">
+      <div class="card-header">
+        <span class="card-tag cyan">🌌 4. 심우주 양자 반응로</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('reactor')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Quantum Reactor Plasma Core</h2>
+      <p class="card-caption">순수 삼각함수 수학 공식(SDF)으로 계산된 초고온 플라즈마 자기장 코어가 실시간으로 박동하는 SF 반응로 위젯입니다.</p>
+      
+      <div class="stage-box reactor-stage" id="reactorStage">
+        <div class="reactor-magnetic-ring">
+          <div class="plasma-pulsing-core"></div>
+        </div>
+        <div class="reactor-status-hud">1.21 GIGAWATTS // STABLE</div>
+      </div>
+      <div class="stage-footer-hint">💡 마우스 거리에 따라 플라즈마 코어의 회전 속도가 가속됩니다</div>
+    </section>
+
+    <!-- [5] Cyber-Matrix Audio Synthesizer -->
+    <section class="apex-card cyber-neon-card">
+      <div class="card-header">
+        <span class="card-tag purple">🎛️ 5. 웹 오디오 신디사이저</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('synth')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">In-House Web Audio Synthesizer</h2>
+      <p class="card-caption">외부 음원 파일 없이, 브라우저의 Web Audio API로 실시간 신시사이저 주파수 음을 생성하고 파형을 캔버스에 그립니다.</p>
+      
+      <div class="stage-box synth-stage">
+        <canvas id="synthWaveCanvas"></canvas>
+        <div class="synth-keyboard-row">
+          <button class="synth-key" onmousedown="playSynthNote(261.63)">도 (C4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(293.66)">레 (D4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(329.63)">미 (E4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(349.23)">파 (F4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(392.00)">솔 (G4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(440.00)">라 (A4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(493.88)">시 (B4)</button>
+          <button class="synth-key" onmousedown="playSynthNote(523.25)">도 (C5)</button>
+        </div>
+      </div>
+      <div class="stage-footer-hint">💡 건반 버튼을 눌러 실제 합성된 순수 신디사이저 사운드를 연주하세요</div>
+    </section>
+
+    <!-- [6] Prismatic Crystal Glassmorphism -->
+    <section class="apex-card cyber-neon-card">
+      <div class="card-header">
+        <span class="card-tag emerald">💎 6. 프리즘 크리스탈 카드</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('crystal')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Prismatic Crystal Glass Card</h2>
+      <p class="card-caption">마우스 입사각에 따라 다이아몬드 커팅 테두리에서 7가지 무지개 스펙트럼 광선이 굴절되는 최고급 크리스탈 카드입니다.</p>
+      
+      <div class="stage-box crystal-stage" id="crystalStage">
+        <div class="crystal-card-wrap" id="crystalCard">
+          <div class="crystal-glass-surface">
+            <div class="crystal-icon">💎</div>
+            <div class="crystal-title">Pure Crystal 24K</div>
+            <div class="crystal-desc">Zero-dependency Prismatic Dispersion</div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-footer-hint">💡 마우스를 올려 각도별 무지개 빛 굴절을 확인하세요</div>
+    </section>
+
+    <!-- [7] Holographic Scratch & Win Lottery -->
+    <section class="apex-card medieval-gold-card">
+      <div class="card-header">
+        <span class="card-tag gold">🪙 7. 골드 스크래치 복권</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('scratch')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Gold Foil Scratch & Win Engine</h2>
+      <p class="card-caption">자체 제작된 Canvas Destination-out 알고리즘으로 골드 포일을 긁어내면 진짜 숨겨진 1등 당첨 메시지가 드러납니다.</p>
+      
+      <div class="stage-box scratch-stage">
+        <div class="scratch-under-content">
+          <div style="font-size: 2rem;">🏆</div>
+          <div style="font-weight: 800; font-size: 1.1rem; color: #d4af37;">1등 당첨: 1,000,000 P</div>
+          <div style="font-size: 0.75rem; color: #fff;">SMR UI Master Lifetime Pass</div>
+        </div>
+        <canvas id="goldScratchCanvas"></canvas>
+      </div>
+      <div class="stage-footer-hint">💡 마우스로 금빛 포일을 문질러 긁어내세요</div>
+    </section>
+
+    <!-- [8] Kinetic Cyber Decryptor -->
+    <section class="apex-card cyber-neon-card">
+      <div class="card-header">
+        <span class="card-tag red">⚡ 8. 사이버 암호 해독기</span>
+        <button class="btn-code-trigger" onclick="openSourceModal('decryptor')">💻 코드 복사</button>
+      </div>
+      <h2 class="card-heading">Neural Decryptor HUD Stream</h2>
+      <p class="card-caption">마우스를 올릴 때마다 0.02초 단위로 난수가 회전하며 실시간으로 복원되는 차세대 사이버펑크 텍스트 인터페이스입니다.</p>
+      
+      <div class="stage-box decryptor-stage">
+        <div class="decryptor-screen">
+          <div class="dec-target-line">[AUTH_LEVEL_9_OVERRIDE]</div>
+          <div class="dec-live-stream" id="decLiveStream" onmouseenter="triggerNeuralDecrypt()">
+            SMR_QUANTUM_CORE_INITIALIZED
+          </div>
+          <div class="dec-sub">> LATENCY: 0.04ms // CIPHER: AES-512-GCM</div>
+        </div>
+      </div>
+      <div class="stage-footer-hint">💡 초록색 텍스트 위에 마우스를 올려 암호 해독을 발동하세요</div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="apex-footer">
+    <div class="footer-left">
+      <strong>👑 SMR Original UI Suite</strong> • 100% In-House Engineered by <a href="https://github.com/smrmrmaakaak" target="_blank">smrmrmaakaak</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://github.com/smrmrmaakaak/1" target="_blank">GitHub Repo</a>
+      <a href="http://localhost:5500" target="_blank">Design Vault 300</a>
+      <a href="http://localhost:5600" target="_blank">Ultra UI Mastercraft</a>
+    </div>
+  </footer>
+</div>
+
+<!-- Source Code Modal -->
+<div class="source-modal-backdrop" id="sourceModal">
+  <div class="source-modal-dialog">
+    <div class="modal-header-bar">
+      <h3 id="modalArtifactTitle">Artifact Source Code</h3>
+      <button class="modal-close-btn" onclick="closeSourceModal()">✕</button>
+    </div>
+    <div class="modal-tab-bar">
+      <button class="tab-btn active" id="btnTabHtml" onclick="switchModalLang('html')">HTML</button>
+      <button class="tab-btn" id="btnTabCss" onclick="switchModalLang('css')">CSS</button>
+      <button class="tab-btn" id="btnTabJs" onclick="switchModalLang('js')">JavaScript</button>
+    </div>
+    <div class="modal-code-viewer">
+      <pre><code id="modalCodeDisplay"></code></pre>
+    </div>
+    <div class="modal-footer-bar">
+      <button class="btn-copy-gold" onclick="copyDisplayedCode()">📋 소스코드 복사 (Copy)</button>
+    </div>
+  </div>
+</div>
+
+<div class="apex-toast" id="apexToast">✨ 알림 메시지</div>
+
+<script src="js/engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,789 @@
+/* ==========================================================================
+   SMR Original UI Suite - Pure In-House Engineered Styles
+   Zero External Dependencies • 100% Original CSS3 Architecture
+   ========================================================================== */
+
+:root {
+  --bg-apex: #06080d;
+  --panel-bg: rgba(11, 15, 23, 0.88);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --gold-pure: #d4af37;
+  --gold-glow: #f59e0b;
+  --cyan-neon: #00f0ff;
+  --purple-neon: #c084fc;
+  --emerald-neon: #10b981;
+  --red-neon: #f43f5e;
+  --text-pure: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-apex);
+  color: var(--text-pure);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#apexBgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.apex-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.apex-hero {
+  text-align: center;
+  padding: 60px 20px 45px;
+}
+
+.apex-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-pure);
+  margin-bottom: 20px;
+}
+
+.apex-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold-pure);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold-pure);
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.apex-hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3));
+}
+
+.apex-hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.apex-hero-sub strong {
+  color: #fff;
+}
+
+.apex-hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-apex-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: #000;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-apex-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+}
+
+.btn-apex-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-apex-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   Component Grid
+   ========================================== */
+.apex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.apex-card {
+  background: var(--panel-bg);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+}
+
+.apex-card:hover {
+  transform: translateY(-4px);
+}
+
+.apex-card.medieval-gold-card {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.apex-card.medieval-gold-card:hover {
+  border-color: rgba(212, 175, 55, 0.8);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+}
+
+.apex-card.cyber-neon-card {
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.apex-card.cyber-neon-card:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.card-tag.gold { background: rgba(212, 175, 55, 0.15); color: var(--gold-pure); border: 1px solid rgba(212, 175, 55, 0.4); }
+.card-tag.cyan { background: rgba(0, 240, 255, 0.15); color: var(--cyan-neon); border: 1px solid rgba(0, 240, 255, 0.4); }
+.card-tag.purple { background: rgba(192, 132, 252, 0.15); color: var(--purple-neon); border: 1px solid rgba(192, 132, 252, 0.4); }
+.card-tag.emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald-neon); border: 1px solid rgba(16, 185, 129, 0.4); }
+.card-tag.red { background: rgba(244, 63, 94, 0.15); color: var(--red-neon); border: 1px solid rgba(244, 63, 94, 0.4); }
+
+.btn-code-trigger {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-code-trigger:hover {
+  background: var(--gold-pure);
+  color: #000;
+  border-color: var(--gold-pure);
+}
+
+.card-heading {
+  font-size: 1.18rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.card-caption {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   Stages (Playgrounds)
+   ========================================== */
+.stage-box {
+  height: 270px;
+  border-radius: 14px;
+  background: #020408;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-footer-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* [1] LabelleJian Antique 3D Stage */
+.antique-stage {
+  background: radial-gradient(circle, #1a1209 0%, #080502 100%);
+  perspective: 800px;
+}
+
+.antique-porcelain-turntable {
+  width: 140px;
+  height: 180px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+}
+
+.porcelain-body {
+  width: 120px;
+  height: 160px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #cbd5e1 70%, #94a3b8 100%);
+  border-radius: 60px 60px 20px 20px;
+  border: 3px solid #d4af37;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), inset -15px 0 25px rgba(0, 0, 0, 0.4), inset 15px 0 25px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-leaf-filigree {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #b8860b;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px #ffd700;
+  text-align: center;
+  z-index: 2;
+}
+
+.porcelain-glaze-shine {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
+  transform: skewX(-20deg);
+}
+
+.turntable-base {
+  width: 140px;
+  height: 16px;
+  background: linear-gradient(to bottom, #d4af37, #5c4728);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  margin-top: -8px;
+}
+
+/* [2] Excalibur Sword Stage */
+.excalibur-stage {
+  background: radial-gradient(circle, #1c0a06 0%, #050201 100%);
+  cursor: crosshair;
+}
+
+.excalibur-sword-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+.sword-hilt {
+  width: 10px;
+  height: 35px;
+  background: #3b200b;
+  border-radius: 3px;
+  border: 1px solid #d4af37;
+}
+
+.sword-guard {
+  width: 70px;
+  height: 10px;
+  background: linear-gradient(to right, #8a6c1e, #ffd700, #8a6c1e);
+  border-radius: 4px;
+  box-shadow: 0 0 10px #f59e0b;
+}
+
+.sword-blade {
+  width: 14px;
+  height: 140px;
+  background: linear-gradient(to right, #94a3b8, #ffffff, #64748b);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blade-rune {
+  font-size: 0.55rem;
+  font-family: 'Cinzel', serif;
+  writing-mode: vertical-rl;
+  color: #d4af37;
+  text-shadow: 0 0 8px #ffd700;
+  font-weight: 800;
+}
+
+.magic-circle-base {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px dashed #f59e0b;
+  border-radius: 50%;
+  animation: spinSlow 12s linear infinite;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+/* [3] Imperial Decree Stage */
+.decree-stage {
+  background: #0f0b07;
+  padding: 16px;
+}
+
+.decree-scroll-card {
+  width: 100%;
+  height: 100%;
+  background: #f4e4ba;
+  box-shadow: inset 0 0 25px rgba(139, 90, 43, 0.5), 0 8px 25px rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  padding: 20px;
+  font-family: 'Cinzel', serif;
+  color: #3b200b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.decree-title {
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #5a3311;
+  border-bottom: 1px dashed #8c5a2b;
+  padding-bottom: 6px;
+}
+
+.decree-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+.decree-seal-anchor {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pure-wax-seal {
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle at 35% 35%, #b91c1c, #450a0a);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+.pure-wax-seal:hover { transform: scale(1.1); }
+.pure-wax-seal.shattered { transform: scale(0.85) rotate(25deg); filter: grayscale(0.6); }
+
+/* [4] Quantum Reactor Stage */
+.reactor-stage {
+  background: #000;
+  flex-direction: column;
+}
+
+.reactor-magnetic-ring {
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--cyan-neon);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--cyan-neon), inset 0 0 20px var(--cyan-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseRing 3s infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 25px var(--cyan-neon); }
+  50% { transform: scale(1.08); box-shadow: 0 0 45px var(--cyan-neon); }
+}
+
+.plasma-pulsing-core {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ffffff, var(--cyan-neon), #3b82f6);
+  border-radius: 50%;
+  filter: blur(4px);
+  animation: coreSpin 2s linear infinite;
+}
+
+@keyframes coreSpin {
+  to { transform: rotate(360deg); }
+}
+
+.reactor-status-hud {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--cyan-neon);
+  margin-top: 14px;
+  letter-spacing: 1px;
+}
+
+/* [5] Web Audio Synthesizer Stage */
+.synth-stage {
+  background: #080a10;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+#synthWaveCanvas {
+  width: 100%;
+  height: 120px;
+  background: #040508;
+  border-radius: 8px;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.synth-keyboard-row {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.synth-key {
+  flex: 1;
+  background: #1e1b4b;
+  border: 1px solid var(--purple-neon);
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.synth-key:active {
+  background: var(--purple-neon);
+  color: #000;
+  transform: translateY(2px);
+}
+
+/* [6] Prismatic Crystal Card */
+.crystal-stage {
+  background: linear-gradient(135deg, #022c22, #083344, #172554);
+  perspective: 800px;
+}
+
+.crystal-card-wrap {
+  width: 220px;
+  height: 140px;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff007f, #00ffcc, #ffe600, #00f0ff);
+  background-size: 300% 300%;
+  animation: rainbowBorder 6s linear infinite;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+@keyframes rainbowBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.crystal-glass-surface {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.crystal-icon { font-size: 1.8rem; margin-bottom: 4px; }
+.crystal-title { font-weight: 800; font-size: 0.95rem; color: #fff; }
+.crystal-desc { font-size: 0.72rem; color: #a7f3d0; margin-top: 2px; }
+
+/* [7] Gold Scratch Stage */
+.scratch-stage {
+  background: #1e1b4b;
+  position: relative;
+}
+
+.scratch-under-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #090d16;
+  text-align: center;
+}
+
+#goldScratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+/* [8] Cyber Decryptor Stage */
+.decryptor-stage {
+  background: #050508;
+  padding: 16px;
+}
+
+.decryptor-screen {
+  width: 100%;
+  height: 100%;
+  background: #090a10;
+  border: 1px solid #f43f5e;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
+}
+
+.dec-target-line { font-size: 0.75rem; color: #ff007f; margin-bottom: 6px; }
+.dec-live-stream { font-size: 1rem; font-weight: 800; color: #00ffcc; cursor: pointer; text-shadow: 0 0 8px #00ffcc; }
+.dec-sub { font-size: 0.7rem; color: #94a3b8; margin-top: 8px; }
+
+/* ==========================================
+   Source Modal
+   ========================================== */
+.source-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(14px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.source-modal-backdrop.active { display: flex; }
+
+.source-modal-dialog {
+  background: #0a0d14;
+  border: 1px solid var(--gold-pure);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 850px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+}
+
+.modal-header-bar {
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.modal-tab-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: var(--gold-pure);
+  color: #000;
+  border-color: var(--gold-pure);
+}
+
+.modal-code-viewer {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+  background: #04060a;
+}
+
+.modal-code-viewer pre {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--gold-pure);
+  white-space: pre-wrap;
+}
+
+.modal-footer-bar {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-copy-gold {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: #000;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Toast */
+.apex-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--gold-pure);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.apex-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Footer */
+.apex-footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.apex-footer a {
+  color: var(--gold-pure);
+  text-decoration: none;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
