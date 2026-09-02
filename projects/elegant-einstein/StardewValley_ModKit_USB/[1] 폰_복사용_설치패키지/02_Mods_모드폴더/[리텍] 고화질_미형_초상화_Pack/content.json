@@ -1,0 +1,10 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Abigail, Portraits/Alex, Portraits/Elliott, Portraits/Harvey, Portraits/Leah, Portraits/Maru, Portraits/Penny, Portraits/Sam, Portraits/Sebastian, Portraits/Shane, Portraits/Haley, Portraits/Emily",
+      "FromFile": "assets/portraits_{{TargetWithoutPath}}.png"
+    }
+  ]
+}

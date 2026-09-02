@@ -1,0 +1,9 @@
+{
+  "Name": "Auto Korean Default",
+  "Author": "Antigravity",
+  "Version": "1.0.0",
+  "Description": "Automatically switches base game language to Korean on startup",
+  "UniqueID": "Antigravity.AutoKoreanDefault",
+  "EntryDll": "AutoKoreanDefault.dll",
+  "MinimumApiVersion": "4.0.0"
+}

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Stardew3D": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\gameplay\\overhaul\\Stardew3D\\Stardew3D.csproj"
+    },
+    "spaceshared sourcegen test": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\..\\Stardew3D\\Stardew3D\\Stardew3D.csproj"
+    }
+  }
+}

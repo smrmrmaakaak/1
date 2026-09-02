@@ -1,0 +1,12 @@
+{
+  "Name": "Handsome Bachelors HD Portraits",
+  "Author": "Antigravity",
+  "Version": "1.0.0",
+  "Description": "Ultra High-Definition handsome retexture portraits for Stardew Valley 1.6",
+  "UniqueID": "Antigravity.HandsomeBachelorsHD",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

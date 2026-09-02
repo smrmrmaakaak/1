@@ -1,0 +1,20 @@
+================================================================================
+ 📥 모바일 SMAPI 설치용 필수 파일 안내
+================================================================================
+
+현장 의뢰인 폰(갤럭시 Z 플립 3)에 깔아줄 모바일 SMAPI 런처와 설치 파일입니다.
+
+1. 공식 런처 APK:
+   - 파일명: SMAPI.Launcher.apk
+   - 역할: 안드로이드에서 스타듀밸리 모드를 실행해 주는 전용 런처 앱
+
+2. SMAPI 엔진 압축파일:
+   - 파일명: SMAPI.zip
+   - 역할: SMAPI Launcher 앱 실행 후 [Install SMAPI From Zip] 버튼을 눌러 선택하는 핵심 모드 엔진
+
+3. 다운로드 공식 링크:
+   - SMAPI 공식 위키: https://stardewvalleywiki.com/Modding:Installing_SMAPI_on_Android
+   - SMAPI Launcher 최신 릴리즈: https://github.com/ZaneYork/SMAPI-Android-Installer/releases
+
+* 이 폴더에 APK와 zip 파일을 넣어두고 폰의 Download 폴더로 복사하시면 됩니다!
+================================================================================

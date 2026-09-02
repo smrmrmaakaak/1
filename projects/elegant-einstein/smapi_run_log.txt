@@ -1,0 +1,247 @@
+[17:46:18 INFO  SMAPI] SMAPI v4.3.2.1 - 1762834431 with Stardew Valley 1.6.15.3 build 26177 on Android Unix 36.0.0.0
+[17:46:18 INFO  SMAPI] Launcher v1.1.7 - 1782643058
+[17:46:18 INFO  SMAPI] Mods go here: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods
+[17:46:18 TRACE SMAPI] Log started at 2026-08-25T08:46:18 UTC
+[17:46:18 TRACE SMAPI] Starting saves backup...
+[17:46:18 TRACE SMAPI] On ApplyHarmonyPatchAll()..
+[17:46:18 TRACE SMAPI] No saves found.
+[17:46:18 TRACE SMAPI] Done harmony.PatchAll()
+[17:46:18 TRACE SMAPI] MobileFarmChooserPatcher patched
+[17:46:18 INFO  SMAPI] You enabled developer mode, so the console will be much more verbose. You can disable it by installing the non-developer version of SMAPI.
+[17:46:18 DEBUG SMAPI] Waiting for game to launch...
+[17:46:19 TRACE game] Instance_Initialize() finished, elapsed = '00:00:00.0507248'
+[17:46:19 TRACE game] Instance_LoadContent() finished, elapsed = '00:00:00.1737906'
+[17:46:19 DEBUG SMAPI] Loading mod metadata...
+[17:46:19 DEBUG SMAPI] Loading mods...
+[17:46:19 TRACE SMAPI]    Content Patcher (from Mods/ContentPatcher/ContentPatcher.dll, ID: Pathoschild.ContentPatcher, assembly version: <unknown>)...
+[17:46:19 TRACE SMAPI]       Failed: its DLL 'ContentPatcher.dll' doesn't exist.
+[17:46:19 TRACE SMAPI]    Skip Fishing Minigame (from Mods/SkipFishingMinigame/SkipFishingMinigame.dll, ID: DewMods.SkipFishingMinigame, assembly version: <unknown>)...
+[17:46:19 TRACE SMAPI]       Failed: its DLL 'SkipFishingMinigame.dll' doesn't exist.
+[17:46:19 TRACE SMAPI]    Farm Type Manager (FTM) (from Mods/FarmTypeManager/FarmTypeManager.dll, ID: Esca.FarmTypeManager, assembly version: 1.26.1)...
+[17:46:19 TRACE SMAPI]       Failed: it needs the 'Content Patcher' mod, which couldn't be loaded.
+[17:46:19 TRACE SMAPI]    UI Info Suite 2 (from Mods/UIInfoSuite2/UIInfoSuite2.dll, ID: Annosz.UiInfoSuite2, assembly version: 2.3.7)...
+[17:46:19 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix Game1.get_locations method, Game1.onScreenMenus field, InventoryPage.hoveredItem field, Toolbar.hoverItem field...
+[17:46:19 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix GameMenu.exitTab (field => const), GameMenu.inventoryTab (field => const), GameMenu.mapTab (field => const), GameMenu.optionsTab (field => const), GameMenu.socialTab (field => const)...
+[17:46:19 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix IClickableMenu.drawHoverText (added missing optional parameters), IClickableMenu.drawTextureBox (added missing optional parameters)...
+[17:46:19 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix Replace Method: System.Int32 StardewValley.Audio.IAudioEngine::GetCategoryIndex(System.String), Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[]), Replace Method: System.Void StardewValley.ISoundBank::AddCue(Microsoft.Xna.Framework.Audio.CueDefinition), Replace Method: System.Void StardewValley.Menus.OptionsElement::draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,StardewValley.Menus.IClickableMenu)...
+[17:46:20 TRACE SMAPI]    Stardew Valley Expanded (from Mods/Stardew Valley Expanded/Stardew Valley Expanded Code/StardewValleyExpanded.dll, ID: FlashShifter.SVECode, assembly version: 1.15.9)...
+[17:46:20 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Game1.get_locations method...
+[17:46:20 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Game1.parseText (added missing optional parameters)...
+[17:46:20 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Replace Method: System.Boolean StardewValley.ICue::get_IsPitchBeingControlledByRPC(), Replace Method: System.Single StardewValley.ICue::get_Pitch(), Replace Method: System.Single StardewValley.ICue::get_Volume(), Replace Method: System.Void StardewValley.ICue::set_Pitch(System.Single), Replace Method: System.Void StardewValley.ICue::set_Volume(System.Single)...
+[17:46:20 TRACE SMAPI]       Detected game patcher in assembly StardewValleyExpanded.dll.
+[17:46:20 TRACE SMAPI]    Stardew Valley Expanded Farm Type Manager (from Mods/Stardew Valley Expanded/[FTM] Stardew Valley Expanded, ID: FlashShifter.SVE-FTM) [content pack]...
+[17:46:20 TRACE SMAPI]       Failed: it needs the 'Farm Type Manager (FTM)' mod, which couldn't be loaded.
+[17:46:20 TRACE SMAPI]    Stardew Valley Expanded (from Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded, ID: FlashShifter.StardewValleyExpandedCP) [content pack]...
+[17:46:20 TRACE SMAPI]       Failed: it needs the 'Stardew Valley Expanded Farm Type Manager' mod, which couldn't be loaded.
+[17:46:20 TRACE SMAPI]    SpaceCore (from Mods/SpaceCore/SpaceCore.dll, ID: spacechase0.SpaceCore, assembly version: 0.0.0)...
+[17:46:20 TRACE SMAPI]       Rewrote SpaceCore.dll for OS...
+[17:46:21 TRACE SMAPI]       Rewrote SpaceCore.dll to fix MenuWithInventory.heldItem field...
+[17:46:21 TRACE SMAPI]       Rewrote SpaceCore.dll to fix Replace Method: !!0 Force.DeepCloner.DeepClonerExtensions::DeepClone<System.Collections.Generic.List`1<StardewValley.GameData.GenericSpawnItemData>>(!!0), Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[])...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly SpaceCore.dll.
+[17:46:21 TRACE SMAPI]       Detected direct console access (System.Console type) in assembly SpaceCore.dll.
+[17:46:21 TRACE SMAPI]       Loading assembly 'SpaceCore.dll' (rewritten)...
+[17:46:21 TRACE SMAPI] Start SpaceCoreFix
+[17:46:21 TRACE SMAPI] Disable GatherLocals()
+[17:46:21 TRACE SMAPI] Done SpaceCoreFix
+[17:46:21 TRACE SMAPI] Start DisableQuickSave Fix..
+[17:46:21 TRACE SMAPI] Disable Game1.saveWholeBackup
+[17:46:21 TRACE SMAPI] Disable Game1.emergencyBackup()
+[17:46:21 TRACE SMAPI]    Polyamory Sweet Bed (from Mods/PolyamorySweet/PolyamorySweetBed/PolyamorySweetBed.dll, ID: ApryllForever.PolyamorySweetBed, assembly version: 1.0.0)...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetBed.dll.
+[17:46:21 TRACE SMAPI]    PolyamorySweet Kiss (from Mods/PolyamorySweet/PolyamorySweetKiss/PolyamorySweetKiss.dll, ID: ApryllForever.PolyamorySweetKiss, assembly version: 1.0.0)...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetKiss.dll.
+[17:46:21 TRACE SMAPI]    Polyamory Sweet Love (from Mods/PolyamorySweet/PolyamorySweetLove/PolyamorySweetLove.dll, ID: ApryllForever.PolyamorySweetLove, assembly version: 1.0.0)...
+[17:46:21 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Game1.get_locations method, SocialPage.drawNPCSlotHeart method...
+[17:46:21 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Game1.parseText (added missing optional parameters)...
+[17:46:21 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[])...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetLove.dll.
+[17:46:21 TRACE SMAPI]    PolyamorySweet Rooms (from Mods/PolyamorySweet/PolyamorySweetRooms/PolyamorySweetRooms.dll, ID: ApryllForever.PolyamorySweetRooms, assembly version: 1.0.0)...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetRooms.dll.
+[17:46:21 TRACE SMAPI]    Polyamory Sweet Wedding (from Mods/PolyamorySweet/PolyamorySweetWedding/PolyamorySweetWedding.dll, ID: ApryllForever.PolyamorySweetWedding, assembly version: 1.0.0)...
+[17:46:21 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetWedding.dll.
+[17:46:21 TRACE SMAPI]    (CP) Polyamory Sweet! (from Mods/PolyamorySweet/[CP] Polyamory Sweet, ID: ApryllForever.CPPolyamorySweet) [content pack]...
+[17:46:21 TRACE SMAPI]       Failed: it needs the 'Content Patcher' mod, which couldn't be loaded.
+[17:46:21 INFO  SMAPI] Loaded 8 mods:
+[17:46:21 INFO  SMAPI]    Polyamory Sweet Bed 1.6.1 by ApryllForever | Bed part of the Polyamory Sweet!
+[17:46:21 INFO  SMAPI]    Polyamory Sweet Love 1.6.1 by ApryllForever | Love part of the Polyamory Sweet!
+[17:46:21 INFO  SMAPI]    Polyamory Sweet Wedding 1.6.1 by ApryllForever | Wedding part of the Polyamory Sweet!
+[17:46:21 INFO  SMAPI]    PolyamorySweet Kiss 1.6.1 by ApryllForever | Polyamory Affection! Hugs and kisses!
+[17:46:21 INFO  SMAPI]    PolyamorySweet Rooms 1.6.1 by ApryllForever | Rooms!
+[17:46:21 INFO  SMAPI]    SpaceCore 1.29.0 by spacechase0 | The space-iest of cores. (Framework mod)
+[17:46:21 INFO  SMAPI]    Stardew Valley Expanded 1.15.11 by FlashShifter, Esca, and kittycatcasey | Adds coded elements to the game
+[17:46:21 INFO  SMAPI]    UI Info Suite 2 2.3.7 by Annosz | Adds a useful information to the user interface. Based on Cdaragorn's excellent UI Info Suite.
+
+[17:46:21 ERROR SMAPI]    Skipped mods
+[17:46:21 ERROR SMAPI]    --------------------------------------------------
+[17:46:21 ERROR SMAPI]       These mods could not be added to your game.
+
+[17:46:21 ERROR SMAPI]       - Content Patcher 2.3.0 because its DLL 'ContentPatcher.dll' doesn't exist.
+
+[17:46:21 ERROR SMAPI]       - Farm Type Manager (FTM) 1.26.1 because it needs the 'Content Patcher' mod, which couldn't be loaded.
+[17:46:21 ERROR SMAPI]       - Stardew Valley Expanded Farm Type Manager 1.15.11 because it needs the 'Farm Type Manager (FTM)' mod, which couldn't be loaded.
+
+[17:46:21 ERROR SMAPI]       - (CP) Polyamory Sweet! 1.6.1 because it needs the 'Content Patcher' mod, which couldn't be loaded.
+[17:46:21 ERROR SMAPI]       - Skip Fishing Minigame 1.2.0 because its DLL 'SkipFishingMinigame.dll' doesn't exist.
+[17:46:21 ERROR SMAPI]       - Stardew Valley Expanded 1.15.11 because it needs the 'Stardew Valley Expanded Farm Type Manager' mod, which couldn't be loaded.
+
+[17:46:21 INFO  SMAPI]    Patched game code
+[17:46:21 INFO  SMAPI]    --------------------------------------------------
+[17:46:21 INFO  SMAPI]       These mods directly change the game code. They're more likely to cause errors or bugs in-game; if
+[17:46:21 INFO  SMAPI]       your game has issues, try removing these first. Otherwise you can ignore this warning.
+
+[17:46:21 INFO  SMAPI]       - Polyamory Sweet Bed
+[17:46:21 INFO  SMAPI]       - Polyamory Sweet Love
+[17:46:21 INFO  SMAPI]       - Polyamory Sweet Wedding
+[17:46:21 INFO  SMAPI]       - PolyamorySweet Kiss
+[17:46:21 INFO  SMAPI]       - PolyamorySweet Rooms
+[17:46:21 INFO  SMAPI]       - SpaceCore
+[17:46:21 INFO  SMAPI]       - Stardew Valley Expanded
+
+[17:46:21 TRACE SMAPI]    Direct console access
+[17:46:21 TRACE SMAPI]    --------------------------------------------------
+[17:46:21 TRACE SMAPI]       These mods access the SMAPI console window directly. This is more fragile, and their output may not
+[17:46:21 TRACE SMAPI]       be logged by SMAPI.
+
+[17:46:21 TRACE SMAPI]       - SpaceCore
+
+[17:46:21 DEBUG SMAPI] Launching mods...
+[17:46:21 ERROR Stardew Valley Expanded] Mod crashed on entry and might not work correctly. Technical details:
+AggregateException: One or more errors occurred. (Object reference not set to an instance of an object)
+ ---> NullReferenceException: Object reference not set to an instance of an object
+   at StardewValleyExpanded.ModEntry.Entry(IModHelper helper)
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.<>c__DisplayClass13_0.<TryStartModEntry>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__292_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.TryStartModEntry(IMod mod)
+   at StardewModdingAPI.Framework.SCore.LoadMods(IModMetadata[] mods, JsonHelper jsonHelper, ContentCoordinator contentCore, ModDatabase modDatabase)
+[17:46:21 TRACE SMAPI] call GatherLocals() for android
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_PlaySound'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ShowHudMessage'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_PlayEvent'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_DamageCurrentFarmer'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ApplyBuff'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_OpenGuidebook'.
+[17:46:21 TRACE game] Registered event command: damageFarmer
+[17:46:21 TRACE game] Registered event command: giveHat
+[17:46:21 TRACE game] Registered event command: setDating
+[17:46:21 TRACE game] Registered event command: setEngaged
+[17:46:21 TRACE game] Registered event command: totemWarpEffect
+[17:46:21 TRACE game] Registered event command: setActorScale
+[17:46:21 TRACE game] Registered event command: cycleActorColors
+[17:46:21 TRACE game] Registered event command: flash
+[17:46:21 TRACE game] Registered event command: setRaining
+[17:46:21 TRACE game] Registered event command: screenShake
+[17:46:21 TRACE game] Registered event command: setZoom
+[17:46:21 TRACE game] Registered event command: smoothZoom
+[17:46:21 TRACE game] Registered event command: switchEventFull
+[17:46:21 TRACE game] Registered event command: reSetUpCharacters
+[17:46:21 TRACE game] Registered trigger type for Data/Triggers: spacechase0.SpaceCore_OnItemUsed.
+[17:46:21 TRACE game] Registered trigger type for Data/Triggers: spacechase0.SpaceCore_OnItemEaten.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_TriggerSpawnGroup'.
+[17:46:21 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ClearSetPiecesFromSpawnable'.
+[17:46:22 ERROR SpaceCore] Mod crashed on entry and might not work correctly. Technical details:
+AggregateException: One or more errors occurred. (Patching exception in method null)
+ ---> HarmonyLib.HarmonyException: Patching exception in method null
+ ---> ArgumentException: Undefined target method for patch method static System.Boolean SpaceCore.VanillaAssetExpansion.FarmerAlwaysAcceptVirtualCurrencyPatch1::Prefix(StardewValley.Item item, System.Boolean& __result)
+   at HarmonyLib.PatchClassProcessor.PatchWithAttributes(MethodBase& lastOriginal, Boolean unpatch)
+   at HarmonyLib.PatchClassProcessor.Patch()
+   --- End of inner exception stack trace ---
+   at HarmonyLib.PatchClassProcessor.ReportException(Exception exception, MethodBase original)
+   at HarmonyLib.PatchClassProcessor.Patch()
+   at HarmonyLib.Harmony.<PatchAll>b__10_1(Type type)
+   at HarmonyLib.CollectionExtensions.Do[Type](IEnumerable`1 sequence, Action`1 action)
+   at HarmonyLib.CollectionExtensions.DoIf[Type](IEnumerable`1 sequence, Func`2 condition, Action`1 action)
+   at HarmonyLib.Harmony.PatchAll(Assembly assembly)
+   at HarmonyLib.Harmony.PatchAll()
+   at Spacechase.Shared.Patching.HarmonyPatcher.Apply(Mod mod, IPatcher[] patchers)
+   at SpaceCore.SpaceCore.Entry(IModHelper helper)
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.<>c__DisplayClass13_0.<TryStartModEntry>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__292_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.TryStartModEntry(IMod mod)
+   at StardewModdingAPI.Framework.SCore.LoadMods(IModMetadata[] mods, JsonHelper jsonHelper, ContentCoordinator contentCore, ModDatabase modDatabase)
+[17:46:22 TRACE SMAPI]    Found mod-provided API (SpaceCore.Api).
+[17:46:22 TRACE game] Registered event command: MermaidSheetOpacity
+[17:46:22 TRACE SMAPI]    Found mod-provided API (PolyamorySweetBed.PolyamorySweetBedAPI).
+[17:46:22 TRACE SMAPI]    Found mod-provided API (PolyamorySweetKiss.KissingAPI).
+[17:46:22 TRACE Polyamory Sweet Love] got string!
+[17:46:22 TRACE Polyamory Sweet Love] got int!
+[17:46:22 TRACE SMAPI]    Found mod-provided API (PolyamorySweetLove.PolyamorySweetLoveAPI).
+[17:46:22 TRACE SMAPI]    Found mod-provided API (PolyamorySweetRooms.SweetRoomsAPI).
+[17:46:22 DEBUG SMAPI] Mods loaded and ready!
+[17:46:23 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "So...I heard you secretly gave {0} a gift today$n#$b#$c 0.5#Wonderful!$h#Thank you!$h"
+[17:46:23 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.
+[17:46:23 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.
+[17:46:24 TRACE SMAPI] Starting load cueModificationData...
+[17:46:24 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
+[17:46:24 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "So...I heard you secretly gave {0} a gift today$n#$b#$c 0.5#Wonderful!$h#Thank you!$h"
+[17:46:24 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.
+[17:46:24 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.
+[17:46:24 INFO  SMAPI] Type 'help' for help, or 'help <cmd>' for a command's usage
+[17:46:24 TRACE UI Info Suite 2] Registered Sound: Annosz.UiInfoSuite2.sounds.LevelUp
+[17:46:24 TRACE SpaceCore] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/TextureOverrides'.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/CraftingRecipeOverrides'.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/CookingRecipeOverrides'.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/VirtualCurrencyData'.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/WearableData'.
+[17:46:24 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/TriggerActionExtensionData'.
+[17:46:24 ERROR SpaceCore] Tried to map a mod-provided API to interface 'SpaceShared.APIs.ISpaceCoreApi', which isn't compatible with the actual mod API.
+
+Technical details: ArgumentException: Unhandled proxy/conversion method for info: ProxyInfo{target: TypeInfo{context: spacechase0.SpaceCore, type: SpaceCore.Api, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}, proxy: TypeInfo{context: spacechase0.SpaceCore, type: SpaceShared.APIs.ISpaceCoreApi, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+ ---> ArgumentException: The ISpaceCoreApi interface defines method GetProfessionId which doesn't exist in the API or depends on an interface that cannot be mapped!
+   at Nanoray.Pintail.ProxyManagerConfiguration`1.<>c[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].<.cctor>b__41_4(ProxyInfo`1 proxyInfo, MethodInfo proxyMethod)
+   at Nanoray.Pintail.InterfaceOrDelegateProxyFactory`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Prepare(ProxyManager`1 manager, String typeName)
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   --- End of inner exception stack trace ---
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   at Nanoray.Pintail.IProxyManagerExtensions.ObtainProxy[String,ISpaceCoreApi](IProxyManager`1 self, Object instance, String targetContext, String proxyContext)
+   at StardewModdingAPI.Framework.Reflection.InterfaceProxyFactory.CreateProxy[ISpaceCoreApi](Object instance, String sourceModId, String targetModId)
+   at StardewModdingAPI.Framework.ModHelpers.ModRegistryHelper.GetApi[ISpaceCoreApi](String uniqueID)
+[17:46:24 TRACE PolyamorySweet Kiss] Kissing audio path: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/PolyamorySweet/PolyamorySweetKiss/assets/kiss.wav
+[17:46:24 TRACE Polyamory Sweet Love] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[17:46:24 ERROR Polyamory Sweet Love] Tried to map a mod-provided API to interface 'SpaceShared.APIs.ISpaceCoreApi', which isn't compatible with the actual mod API.
+
+Technical details: ArgumentException: Unhandled proxy/conversion method for info: ProxyInfo{target: TypeInfo{context: spacechase0.SpaceCore, type: SpaceCore.Api, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}, proxy: TypeInfo{context: ApryllForever.PolyamorySweetLove, type: SpaceShared.APIs.ISpaceCoreApi, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+ ---> ArgumentException: The ISpaceCoreApi interface defines method GetProfessionId which doesn't exist in the API or depends on an interface that cannot be mapped!
+   at Nanoray.Pintail.ProxyManagerConfiguration`1.<>c[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].<.cctor>b__41_4(ProxyInfo`1 proxyInfo, MethodInfo proxyMethod)
+   at Nanoray.Pintail.InterfaceOrDelegateProxyFactory`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Prepare(ProxyManager`1 manager, String typeName)
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   --- End of inner exception stack trace ---
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   at Nanoray.Pintail.IProxyManagerExtensions.ObtainProxy[String,ISpaceCoreApi](IProxyManager`1 self, Object instance, String targetContext, String proxyContext)
+   at StardewModdingAPI.Framework.Reflection.InterfaceProxyFactory.CreateProxy[ISpaceCoreApi](Object instance, String sourceModId, String targetModId)
+   at StardewModdingAPI.Framework.ModHelpers.ModRegistryHelper.GetApi[ISpaceCoreApi](String uniqueID)
+[17:46:24 ERROR Polyamory Sweet Love] This mod failed in the GameLoop.GameLaunched event. Technical details: 
+NullReferenceException: Object reference not set to an instance of an object
+   at PolyamorySweetLove.ModEntry.GameLoop_GameLaunched(Object sender, GameLaunchedEventArgs e)
+   at StardewModdingAPI.Framework.Events.ManagedEvent`1[[StardewModdingAPI.Events.GameLaunchedEventArgs, StardewModdingAPI, Version=4.3.2.0, Culture=neutral, PublicKeyToken=null]].Raise(GameLaunchedEventArgs args)
+[17:46:24 TRACE PolyamorySweet Rooms] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[17:46:24 ERROR PolyamorySweet Rooms] Tried to map a mod-provided API to interface 'SpaceShared.APIs.ISpaceCoreApi', which isn't compatible with the actual mod API.
+
+Technical details: ArgumentException: Unhandled proxy/conversion method for info: ProxyInfo{target: TypeInfo{context: spacechase0.SpaceCore, type: SpaceCore.Api, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}, proxy: TypeInfo{context: ApryllForever.PolyamorySweetRooms, type: SpaceShared.APIs.ISpaceCoreApi, SpaceCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null}}
+ ---> ArgumentException: The ISpaceCoreApi interface defines method GetProfessionId which doesn't exist in the API or depends on an interface that cannot be mapped!
+   at Nanoray.Pintail.ProxyManagerConfiguration`1.<>c[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].<.cctor>b__41_4(ProxyInfo`1 proxyInfo, MethodInfo proxyMethod)
+   at Nanoray.Pintail.InterfaceOrDelegateProxyFactory`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Prepare(ProxyManager`1 manager, String typeName)
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   --- End of inner exception stack trace ---
+   at Nanoray.Pintail.ProxyManager`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].ObtainProxyFactory(ProxyInfo`1 proxyInfo)
+   at Nanoray.Pintail.IProxyManagerExtensions.ObtainProxy[String,ISpaceCoreApi](IProxyManager`1 self, Object instance, String targetContext, String proxyContext)
+   at StardewModdingAPI.Framework.Reflection.InterfaceProxyFactory.CreateProxy[ISpaceCoreApi](Object instance, String sourceModId, String targetModId)
+   at StardewModdingAPI.Framework.ModHelpers.ModRegistryHelper.GetApi[ISpaceCoreApi](String uniqueID)
+[17:46:24 ERROR PolyamorySweet Rooms] This mod failed in the GameLoop.GameLaunched event. Technical details: 
+NullReferenceException: Object reference not set to an instance of an object
+   at PolyamorySweetRooms.ModEntry.GameLoop_GameLaunched(Object sender, GameLaunchedEventArgs e)
+   at StardewModdingAPI.Framework.Events.ManagedEvent`1[[StardewModdingAPI.Events.GameLaunchedEventArgs, StardewModdingAPI, Version=4.3.2.0, Culture=neutral, PublicKeyToken=null]].Raise(GameLaunchedEventArgs args)
+[17:46:24 TRACE Polyamory Sweet Wedding] Accessed mod-provided API (PolyamorySweetLove.PolyamorySweetLoveAPI) for Polyamory Sweet Love.
+[17:46:24 TRACE Polyamory Sweet Wedding] PolyamorySweetLove API loaded

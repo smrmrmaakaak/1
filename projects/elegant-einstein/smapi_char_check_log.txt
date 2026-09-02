@@ -1,0 +1,1036 @@
+[18:00:35 INFO  SMAPI] SMAPI v4.3.2.1 - 1762834431 with Stardew Valley 1.6.15.3 build 26177 on Android Unix 36.0.0.0
+[18:00:35 INFO  SMAPI] Launcher v1.1.7 - 1782643058
+[18:00:35 INFO  SMAPI] Mods go here: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods
+[18:00:35 TRACE SMAPI] Log started at 2026-08-25T09:00:35 UTC
+[18:00:35 TRACE SMAPI] Starting saves backup...
+[18:00:35 TRACE SMAPI] On ApplyHarmonyPatchAll()..
+[18:00:35 TRACE SMAPI] No saves found.
+[18:00:35 TRACE SMAPI] Done harmony.PatchAll()
+[18:00:35 TRACE SMAPI] MobileFarmChooserPatcher patched
+[18:00:35 INFO  SMAPI] You enabled developer mode, so the console will be much more verbose. You can disable it by installing the non-developer version of SMAPI.
+[18:00:35 DEBUG SMAPI] Waiting for game to launch...
+[18:00:35 TRACE game] Instance_Initialize() finished, elapsed = '00:00:00.0686014'
+[18:00:36 TRACE game] Instance_LoadContent() finished, elapsed = '00:00:00.2683871'
+[18:00:36 DEBUG SMAPI] Loading mod metadata...
+[18:00:36 DEBUG SMAPI] Loading mods...
+[18:00:36 TRACE SMAPI]    Content Patcher (from Mods/ContentPatcher/ContentPatcher.dll, ID: Pathoschild.ContentPatcher, assembly version: 0.0.0)...
+[18:00:36 TRACE SMAPI]       Rewrote ContentPatcher.dll for OS...
+[18:00:37 TRACE SMAPI]       Rewrote ContentPatcher.dll to fix Replace Method: !!0 Force.DeepCloner.DeepClonerExtensions::DeepClone<T>(!!0), Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[])...
+[18:00:37 TRACE SMAPI]    Farm Type Manager (FTM) (from Mods/FarmTypeManager/FarmTypeManager.dll, ID: Esca.FarmTypeManager, assembly version: 1.26.1)...
+[18:00:37 TRACE SMAPI]       Rewrote FarmTypeManager.dll to fix Farmer.couldInventoryAcceptThisItem (added missing optional parameters)...
+[18:00:37 TRACE SMAPI]       Detected game patcher in assembly FarmTypeManager.dll.
+[18:00:37 TRACE SMAPI] start FarmTypeManagerFix
+[18:00:37 TRACE SMAPI] Start patching fix
+[18:00:37 TRACE SMAPI] Applying Harmony patch "FarmTypeManagerFix": prefixing SDV method "Monster.findPlayer".
+[18:00:37 TRACE SMAPI] Applying Harmony patch "FarmTypeManagerFix": postfixing SDV method "Monster.findPlayer".
+[18:00:37 TRACE SMAPI] done FarmTypeManagerFix
+[18:00:37 TRACE SMAPI] Start DisableQuickSave Fix..
+[18:00:37 TRACE SMAPI] Disable Game1.saveWholeBackup
+[18:00:37 TRACE SMAPI] Disable Game1.emergencyBackup()
+[18:00:37 TRACE SMAPI]    Skip Fishing Minigame (from Mods/SkipFishingMinigame/SkipFishingMinigame.dll, ID: DewMods.SkipFishingMinigame, assembly version: 0.0.0)...
+[18:00:37 TRACE SMAPI]       Rewrote SkipFishingMinigame.dll for OS...
+[18:00:37 TRACE SMAPI]       Detected game patcher in assembly SkipFishingMinigame.dll.
+[18:00:37 TRACE SMAPI]    UI Info Suite 2 (from Mods/UIInfoSuite2/UIInfoSuite2.dll, ID: Annosz.UiInfoSuite2, assembly version: 2.3.7)...
+[18:00:38 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix Game1.get_locations method, Game1.onScreenMenus field, InventoryPage.hoveredItem field, Toolbar.hoverItem field...
+[18:00:38 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix GameMenu.exitTab (field => const), GameMenu.inventoryTab (field => const), GameMenu.mapTab (field => const), GameMenu.optionsTab (field => const), GameMenu.socialTab (field => const)...
+[18:00:38 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix IClickableMenu.drawHoverText (added missing optional parameters), IClickableMenu.drawTextureBox (added missing optional parameters)...
+[18:00:38 TRACE SMAPI]       Rewrote UIInfoSuite2.dll to fix Replace Method: System.Int32 StardewValley.Audio.IAudioEngine::GetCategoryIndex(System.String), Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[]), Replace Method: System.Void StardewValley.ISoundBank::AddCue(Microsoft.Xna.Framework.Audio.CueDefinition), Replace Method: System.Void StardewValley.Menus.OptionsElement::draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,StardewValley.Menus.IClickableMenu)...
+[18:00:38 TRACE SMAPI]    Stardew Valley Expanded (from Mods/Stardew Valley Expanded/Stardew Valley Expanded Code/StardewValleyExpanded.dll, ID: FlashShifter.SVECode, assembly version: 1.15.9)...
+[18:00:38 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Game1.get_locations method...
+[18:00:38 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Game1.parseText (added missing optional parameters)...
+[18:00:38 TRACE SMAPI]       Rewrote StardewValleyExpanded.dll to fix Replace Method: System.Boolean StardewValley.ICue::get_IsPitchBeingControlledByRPC(), Replace Method: System.Single StardewValley.ICue::get_Pitch(), Replace Method: System.Single StardewValley.ICue::get_Volume(), Replace Method: System.Void StardewValley.ICue::set_Pitch(System.Single), Replace Method: System.Void StardewValley.ICue::set_Volume(System.Single)...
+[18:00:38 TRACE SMAPI]       Detected game patcher in assembly StardewValleyExpanded.dll.
+[18:00:38 TRACE SMAPI]    Stardew Valley Expanded Farm Type Manager (from Mods/Stardew Valley Expanded/[FTM] Stardew Valley Expanded, ID: FlashShifter.SVE-FTM) [content pack]...
+[18:00:38 TRACE SMAPI]    Stardew Valley Expanded (from Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded, ID: FlashShifter.StardewValleyExpandedCP) [content pack]...
+[18:00:38 TRACE SMAPI]    SpaceCore (from Mods/SpaceCore/SpaceCore.dll, ID: spacechase0.SpaceCore, assembly version: 0.0.0)...
+[18:00:38 TRACE SMAPI]       Rewrote SpaceCore.dll for OS...
+[18:00:38 TRACE SMAPI]       Rewrote SpaceCore.dll to fix MenuWithInventory.heldItem field...
+[18:00:38 TRACE SMAPI]       Rewrote SpaceCore.dll to fix Replace Method: !!0 Force.DeepCloner.DeepClonerExtensions::DeepClone<System.Collections.Generic.List`1<StardewValley.GameData.GenericSpawnItemData>>(!!0), Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[])...
+[18:00:38 TRACE SMAPI]       Detected game patcher in assembly SpaceCore.dll.
+[18:00:38 TRACE SMAPI]       Detected direct console access (System.Console type) in assembly SpaceCore.dll.
+[18:00:38 TRACE SMAPI]       Loading assembly 'SpaceCore.dll' (rewritten)...
+[18:00:38 TRACE SMAPI] Start SpaceCoreFix
+[18:00:38 TRACE SMAPI] Disable GatherLocals()
+[18:00:38 TRACE SMAPI] Done SpaceCoreFix
+[18:00:38 TRACE SMAPI]    Polyamory Sweet Bed (from Mods/PolyamorySweet/PolyamorySweetBed/PolyamorySweetBed.dll, ID: ApryllForever.PolyamorySweetBed, assembly version: 1.0.0)...
+[18:00:38 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetBed.dll.
+[18:00:38 TRACE SMAPI]    PolyamorySweet Kiss (from Mods/PolyamorySweet/PolyamorySweetKiss/PolyamorySweetKiss.dll, ID: ApryllForever.PolyamorySweetKiss, assembly version: 1.0.0)...
+[18:00:38 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetKiss.dll.
+[18:00:38 TRACE SMAPI]    Polyamory Sweet Love (from Mods/PolyamorySweet/PolyamorySweetLove/PolyamorySweetLove.dll, ID: ApryllForever.PolyamorySweetLove, assembly version: 1.0.0)...
+[18:00:39 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Game1.get_locations method, SocialPage.drawNPCSlotHeart method...
+[18:00:39 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Game1.parseText (added missing optional parameters)...
+[18:00:39 TRACE SMAPI]       Rewrote PolyamorySweetLove.dll to fix Replace Method: System.Void Microsoft.Xna.Framework.Graphics.Texture2D::GetData<Microsoft.Xna.Framework.Color>(!!0[])...
+[18:00:39 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetLove.dll.
+[18:00:39 TRACE SMAPI]    PolyamorySweet Rooms (from Mods/PolyamorySweet/PolyamorySweetRooms/PolyamorySweetRooms.dll, ID: ApryllForever.PolyamorySweetRooms, assembly version: 1.0.0)...
+[18:00:39 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetRooms.dll.
+[18:00:39 TRACE SMAPI]    Polyamory Sweet Wedding (from Mods/PolyamorySweet/PolyamorySweetWedding/PolyamorySweetWedding.dll, ID: ApryllForever.PolyamorySweetWedding, assembly version: 1.0.0)...
+[18:00:39 TRACE SMAPI]       Detected game patcher in assembly PolyamorySweetWedding.dll.
+[18:00:39 TRACE SMAPI]    (CP) Polyamory Sweet! (from Mods/PolyamorySweet/[CP] Polyamory Sweet, ID: ApryllForever.CPPolyamorySweet) [content pack]...
+[18:00:39 TRACE SMAPI]    Auto Korean Default (from Mods/AutoKoreanDefault/AutoKoreanDefault.dll, ID: Antigravity.AutoKoreanDefault, assembly version: 0.0.0)...
+[18:00:39 TRACE SMAPI]       Rewrote AutoKoreanDefault.dll for OS...
+[18:00:39 INFO  SMAPI] Loaded 12 mods:
+[18:00:39 INFO  SMAPI]    Auto Korean Default 1.0.0 by Antigravity | Automatically switches base game language to Korean on startup
+[18:00:39 INFO  SMAPI]    Content Patcher 2.3.0 by Pathoschild | Loads content packs which edit game data, images, and maps without changing the game files.
+[18:00:39 INFO  SMAPI]    Farm Type Manager (FTM) 1.26.1 by Esca | Allows custom spawning of content from each farm type: forage, large objects, ore, and monsters
+[18:00:39 INFO  SMAPI]    Polyamory Sweet Bed 1.6.1 by ApryllForever | Bed part of the Polyamory Sweet!
+[18:00:39 INFO  SMAPI]    Polyamory Sweet Love 1.6.1 by ApryllForever | Love part of the Polyamory Sweet!
+[18:00:39 INFO  SMAPI]    Polyamory Sweet Wedding 1.6.1 by ApryllForever | Wedding part of the Polyamory Sweet!
+[18:00:39 INFO  SMAPI]    PolyamorySweet Kiss 1.6.1 by ApryllForever | Polyamory Affection! Hugs and kisses!
+[18:00:39 INFO  SMAPI]    PolyamorySweet Rooms 1.6.1 by ApryllForever | Rooms!
+[18:00:39 INFO  SMAPI]    Skip Fishing Minigame 1.2.0 by DewMods | Skips the fishing minigame and immediately catches fish.
+[18:00:39 INFO  SMAPI]    SpaceCore 1.29.0 by spacechase0 | The space-iest of cores. (Framework mod)
+[18:00:39 INFO  SMAPI]    Stardew Valley Expanded 1.15.11 by FlashShifter, Esca, and kittycatcasey | Adds coded elements to the game
+[18:00:39 INFO  SMAPI]    UI Info Suite 2 2.3.7 by Annosz | Adds a useful information to the user interface. Based on Cdaragorn's excellent UI Info Suite.
+
+[18:00:39 INFO  SMAPI] Loaded 3 content packs:
+[18:00:39 INFO  SMAPI]    (CP) Polyamory Sweet! 1.6.1 by ApryllForever | for Content Patcher | Polyamory Stuff!
+[18:00:39 INFO  SMAPI]    Stardew Valley Expanded 1.15.11 by FlashShifter | for Content Patcher | An expansive fanmade mod for ConcernedApe's Stardew Valley.
+[18:00:39 INFO  SMAPI]    Stardew Valley Expanded Farm Type Manager 1.15.11 by FlashShifter | for Farm Type Manager (FTM) | This FTM pack is for SVE!
+
+[18:00:39 INFO  SMAPI]    Patched game code
+[18:00:39 INFO  SMAPI]    --------------------------------------------------
+[18:00:39 INFO  SMAPI]       These mods directly change the game code. They're more likely to cause errors or bugs in-game; if
+[18:00:39 INFO  SMAPI]       your game has issues, try removing these first. Otherwise you can ignore this warning.
+
+[18:00:39 INFO  SMAPI]       - Farm Type Manager (FTM)
+[18:00:39 INFO  SMAPI]       - Polyamory Sweet Bed
+[18:00:39 INFO  SMAPI]       - Polyamory Sweet Love
+[18:00:39 INFO  SMAPI]       - Polyamory Sweet Wedding
+[18:00:39 INFO  SMAPI]       - PolyamorySweet Kiss
+[18:00:39 INFO  SMAPI]       - PolyamorySweet Rooms
+[18:00:39 INFO  SMAPI]       - Skip Fishing Minigame
+[18:00:39 INFO  SMAPI]       - SpaceCore
+[18:00:39 INFO  SMAPI]       - Stardew Valley Expanded
+
+[18:00:39 TRACE SMAPI]    Direct console access
+[18:00:39 TRACE SMAPI]    --------------------------------------------------
+[18:00:39 TRACE SMAPI]       These mods access the SMAPI console window directly. This is more fragile, and their output may not
+[18:00:39 TRACE SMAPI]       be logged by SMAPI.
+
+[18:00:39 TRACE SMAPI]       - SpaceCore
+
+[18:00:39 DEBUG SMAPI]    No update keys
+[18:00:39 DEBUG SMAPI]    --------------------------------------------------
+[18:00:39 DEBUG SMAPI]       These mods have no update keys in their manifest. SMAPI may not notify you about updates for these
+[18:00:39 DEBUG SMAPI]       mods. Consider notifying the mod authors about this problem.
+
+[18:00:39 DEBUG SMAPI]       - Auto Korean Default
+[18:00:39 DEBUG SMAPI]       - Skip Fishing Minigame
+
+[18:00:39 DEBUG SMAPI] Launching mods...
+[18:00:39 TRACE SMAPI]    Found mod-provided API (ContentPatcher.Framework.ContentPatcherAPI).
+[18:00:39 TRACE Farm Type Manager (FTM)] Applying Harmony patch "HarmonyPatch_DisableFurniturePickup": postfixing 3 implementations of SDV method "Furniture.canBeRemoved(Farmer)".
+[18:00:39 TRACE Farm Type Manager (FTM)] Applying Harmony patch "HarmonyPatch_InstantKillImmunity": prefixing SDV method "HungryFrogCompanion.tongueReachedMonster".
+[18:00:39 TRACE Farm Type Manager (FTM)] Applying Harmony patch "HarmonyPatch_StunImmunity": prefixing SDV method "DebuffingProjectile.behaviorOnCollisionWithMonster".
+[18:00:39 TRACE Farm Type Manager (FTM)] Applying Harmony patch "HarmonyPatch_ToggleExtraLoot": postfixing 12 implementations of SDV method "Monster.getExtraDropitems()".
+[18:00:39 TRACE Farm Type Manager (FTM)] Applying Harmony patch "HarmonyPatch_UpdateCursorOverPlacedItem": postfixing SDV method "Utility.canGrabSomethingFromHere(int, int, Farmer)".
+[18:00:39 INFO  Skip Fishing Minigame] Skip Fishing Minigame loaded successfully!
+[18:00:39 INFO  Stardew Valley Expanded] Starting Installation Checker...
+[18:00:39 INFO  Stardew Valley Expanded] (Installation Checker provided by shekurika and moe)
+[18:00:39 TRACE Stardew Valley Expanded] Number of dependencies to check: 5
+[18:00:39 TRACE Stardew Valley Expanded] InstallationChecker checking SMAPI...
+[18:00:39 TRACE Stardew Valley Expanded] SMAPI is loaded and up to date.
+[18:00:39 TRACE Stardew Valley Expanded] InstallationChecker checking Content Patcher...
+[18:00:39 TRACE Stardew Valley Expanded] Content Patcher is loaded and up to date.
+[18:00:39 TRACE Stardew Valley Expanded] InstallationChecker checking Farm Type Manager (FTM)...
+[18:00:39 TRACE Stardew Valley Expanded] Farm Type Manager (FTM) is loaded and up to date.
+[18:00:39 TRACE Stardew Valley Expanded] InstallationChecker checking [CP] Stardew Valley Expanded...
+[18:00:39 TRACE Stardew Valley Expanded] [CP] Stardew Valley Expanded is loaded and up to date.
+[18:00:39 TRACE Stardew Valley Expanded] InstallationChecker checking [FTM] Stardew Valley Expanded...
+[18:00:39 TRACE Stardew Valley Expanded] [FTM] Stardew Valley Expanded is loaded and up to date.
+[18:00:39 TRACE Stardew Valley Expanded] Number of missing mods: 0
+[18:00:39 TRACE Stardew Valley Expanded] Number of out of date mods: 0
+[18:00:39 INFO  Stardew Valley Expanded] Installation check completed. Everything seems fine!
+[18:00:39 TRACE Stardew Valley Expanded] Replacing sound cue "AmbientLocationSounds.engine" with a wrapper for volume control.
+[18:00:39 TRACE game] Registered event command: SVE_BadlandsDeath
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "DisableShadowAttacks": postfixing SDV method "AdventureGuild.killListLine(string, int, int)".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony Patch: HarmonyPatch_Mountain
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FarmComputerLocations": postfixing SDV method "Farm.getTotalCrops()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FarmComputerLocations": postfixing SDV method "Farm.getTotalCropsReadyForHarvest()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FarmComputerLocations": postfixing SDV method "Farm.getTotalUnwateredCrops()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FarmComputerLocations": postfixing SDV method "Farm.getTotalOpenHoeDirt()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FarmComputerLocations": postfixing SDV method "Farm.getTotalGreenhouseCropsReadyForHarvest()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_PiggyBank": postfixing SDV method "Object_checkForAction(Farmer, bool)".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_FixDesertBusWarp": transpiling SDV method "Desert.resetLocalState()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_DesertSecretNoteTile": prefixing SDV method "Desert.checkForBuriedItem(int, int, bool, bool, Farmer)".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_DesertFishingItems": postfixing SDV method "Desert.getFish".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_CustomGrangeJudging": prefixing SDV method "Event.initiateGrangeJudging()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_CustomGrangeJudging": postfixing SDV method "Event.interpretGrangeResults()".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_MovieTheaterNPCs": postfixing SDV method "MovieTheater.checkAction(Location, Rectangle, Farmer)".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_MovieTheaterNPCs": transpiling SDV method "Utility.CheckForCharacterAtTile(Vector2, Farmer)".
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "HarmonyPatch_DestroyableBushesSVE": postfixing SDV method "Bush.isDestroyable(GameLocation, Vector2)".
+[18:00:39 TRACE Stardew Valley Expanded] Try fix TMXLLoadMapFacingDirection_ApplyPatch
+[18:00:39 TRACE Stardew Valley Expanded] Applying Harmony patch "Sve_TXMLMapFacingDir_warpFarmer": prefixing SDV method "Game1.warpFarmer(LocationRequest, int, int, int, bool)".
+[18:00:39 ERROR Stardew Valley Expanded] Mod crashed on entry and might not work correctly. Technical details:
+AggregateException: One or more errors occurred. (Null method for FlashShifter.SVECode)
+ ---> NullReferenceException: Null method for FlashShifter.SVECode
+   at HarmonyLib.PatchProcessor.Patch()
+   at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer)
+   at StardewModdingAPI.Mobile.Mods.SveFix.TMXLLoadMapFacingDirection_ApplyPatch(Harmony harmony, IMonitor monitor)
+   at DMD<>?-1300483309.StardewValleyExpanded.HarmonyPatch_TMXLLoadMapFacingDirection.ApplyPatch_Patch1(Harmony harmony, IMonitor monitor)
+   at StardewValleyExpanded.ModEntry.Entry(IModHelper helper)
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.<>c__DisplayClass13_0.<TryStartModEntry>b__0()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__292_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at StardewModdingAPI.Mobile.AndroidModLoaderManager.TryStartModEntry(IMod mod)
+   at StardewModdingAPI.Framework.SCore.LoadMods(IModMetadata[] mods, JsonHelper jsonHelper, ContentCoordinator contentCore, ModDatabase modDatabase)
+[18:00:39 TRACE SMAPI] call GatherLocals() for android
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_PlaySound'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ShowHudMessage'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_PlayEvent'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_DamageCurrentFarmer'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ApplyBuff'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_OpenGuidebook'.
+[18:00:39 TRACE game] Registered event command: damageFarmer
+[18:00:39 TRACE game] Registered event command: giveHat
+[18:00:39 TRACE game] Registered event command: setDating
+[18:00:39 TRACE game] Registered event command: setEngaged
+[18:00:39 TRACE game] Registered event command: totemWarpEffect
+[18:00:39 TRACE game] Registered event command: setActorScale
+[18:00:39 TRACE game] Registered event command: cycleActorColors
+[18:00:39 TRACE game] Registered event command: flash
+[18:00:39 TRACE game] Registered event command: setRaining
+[18:00:39 TRACE game] Registered event command: screenShake
+[18:00:39 TRACE game] Registered event command: setZoom
+[18:00:39 TRACE game] Registered event command: smoothZoom
+[18:00:39 TRACE game] Registered event command: switchEventFull
+[18:00:39 TRACE game] Registered event command: reSetUpCharacters
+[18:00:39 TRACE game] Registered trigger type for Data/Triggers: spacechase0.SpaceCore_OnItemUsed.
+[18:00:39 TRACE game] Registered trigger type for Data/Triggers: spacechase0.SpaceCore_OnItemEaten.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_TriggerSpawnGroup'.
+[18:00:39 TRACE game] Registered trigger action handler 'spacechase0.SpaceCore_ClearSetPiecesFromSpawnable'.
+[18:00:40 TRACE SpaceCore] NPC.draw: inserting mul at 36
+[18:00:40 TRACE SpaceCore] NPC.draw: inserting mul at 42
+[18:00:40 TRACE SpaceCore] NPC.draw: inserting mul at 47
+[18:00:40 TRACE SpaceCore] NPC.draw: replacing Color.White at 139
+[18:00:40 TRACE SpaceCore] NPC.draw: replacing Color.White at 277
+[18:00:40 TRACE SpaceCore] NPC.draw: inserting vec2 mul at 303
+[18:00:40 TRACE SpaceCore] NPC.draw: replacing SpriteBatch.Draw at 324
+[18:00:40 TRACE SpaceCore] NPC.DrawBreathing: replacing Color.White at 283
+[18:00:40 TRACE SpaceCore] NPC.DrawBreathing: inserting vec2 mul/add at 308
+[18:00:40 TRACE SpaceCore] NPC.DrawBreathing: replacing Draw at 329
+[18:00:40 TRACE SpaceCore] Found crafting recipe constructor in Void setupRecipes(System.Collections.Generic.List`1[System.String])!
+[18:00:40 TRACE SpaceCore] Found first newobj for ClickableTextureComponent in Void setupRecipes(System.Collections.Generic.List`1[System.String]); storing potential override w/ recipeLocal=StardewValley.CraftingRecipe (5)
+[18:00:40 ERROR SpaceCore] Failed to apply 'SpaceCore.Patches.ForgeMenuPatcher' patcher; some features may not work correctly. Technical details:
+System.InvalidProgramException: Invalid IL code in DMD<>?-1300483309:StardewValley.Menus.ForgeMenu.draw_Patch1 (StardewValley.Menus.ForgeMenu,Microsoft.Xna.Framework.Graphics.SpriteBatch): IL_04b1: call      0x0a000039
+
+
+   at HarmonyLib.PatchFunctions.UpdateWrapper(MethodBase original, PatchInfo patchInfo)
+   at HarmonyLib.PatchProcessor.Patch()
+   at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer)
+   at SpaceCore.Patches.ForgeMenuPatcher.Apply(Harmony harmony, IMonitor monitor)
+   at Spacechase.Shared.Patching.HarmonyPatcher.Apply(Mod mod, IPatcher[] patchers)
+[18:00:40 ERROR SpaceCore] Failed to apply 'SpaceCore.Patches.Game1Patcher' patcher; some features may not work correctly. Technical details:
+System.InvalidOperationException: Can't find method StardewValley.Game1.warpFarmer(StardewValley.LocationRequest, System.Int32, System.Int32, System.Int32, System.Boolean) to patch.
+   at Spacechase.Shared.Patching.PatchHelper.RequireMethod[Game1](String name, Type[] parameters, Type[] generics)
+   at Spacechase.Shared.Patching.BasePatcher.RequireMethod[Game1](String name, Type[] parameters, Type[] generics)
+   at SpaceCore.Patches.Game1Patcher.Apply(Harmony harmony, IMonitor monitor)
+   at Spacechase.Shared.Patching.HarmonyPatcher.Apply(Mod mod, IPatcher[] patchers)
+[18:00:41 WARN  SpaceCore] GetLoadEnumeratorMethods: Found 5 transpiler targets, expected 4
+[18:00:41 TRACE SpaceCore] 	<getLoadEnumerator>b__4 Void <getLoadEnumerator>b__4()
+[18:00:41 TRACE SpaceCore] 	<getLoadEnumerator>b__1 Void <getLoadEnumerator>b__1()
+[18:00:41 TRACE SpaceCore] 	MoveNext Boolean MoveNext()
+[18:00:41 TRACE SpaceCore] 	<FindSaveGames>g__TryReadSaveInfo|64_2 StardewValley.Farmer <FindSaveGames>g__TryReadSaveInfo|64_2(System.String, System.Exception ByRef, <>c__DisplayClass64_1 ByRef)
+[18:00:41 TRACE SpaceCore] 	<FindSaveGames>g__TryReadSaveData|64_3 StardewValley.Farmer <FindSaveGames>g__TryReadSaveData|64_3(System.String, System.Exception ByRef, <>c__DisplayClass64_1 ByRef)
+[18:00:41 ERROR SpaceCore] Failed to apply 'SpaceCore.Patches.SerializationPatcher' patcher; some features may not work correctly. Technical details:
+System.ArgumentNullException: Value cannot be null. (Parameter 'types')
+   at System.Type.GetMethod(String name, BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
+   at System.Type.GetMethod(String name, BindingFlags bindingAttr, Binder binder, Type[] types, ParameterModifier[] modifiers)
+   at HarmonyLib.AccessTools.<>c__DisplayClass50_0.<Method>b__1(Type t)
+   at HarmonyLib.AccessTools.FindIncludingBaseTypes[MethodInfo](Type type, Func`2 func)
+   at HarmonyLib.AccessTools.Method(Type type, String name, Type[] parameters, Type[] generics)
+   at SpaceCore.Patches.SerializationPatcher.Apply(Harmony harmony, IMonitor monitor)
+   at Spacechase.Shared.Patching.HarmonyPatcher.Apply(Mod mod, IPatcher[] patchers)
+[18:00:41 ERROR SpaceCore] Failed to apply 'SpaceCore.Patches.SkillBuffPatcher' patcher; some features may not work correctly. Technical details:
+System.InvalidOperationException: Can't find method StardewValley.Menus.IClickableMenu.drawHoverText(Microsoft.Xna.Framework.Graphics.SpriteBatch, System.Text.StringBuilder, Microsoft.Xna.Framework.Graphics.SpriteFont, System.Int32, System.Int32, System.Int32, System.String, System.Int32, System.String[], StardewValley.Item, System.Int32, System.String, System.Int32, System.Int32, System.Int32, System.Single, StardewValley.CraftingRecipe, System.Collections.Generic.List`1[[StardewValley.Item, StardewValley, Version=1.6.15.3, Culture=neutral, PublicKeyToken=null]], Microsoft.Xna.Framework.Graphics.Texture2D, System.Nullable`1[[Microsoft.Xna.Framework.Rectangle, MonoGame.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Nullable`1[[Microsoft.Xna.Framework.Color, MonoGame.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Nullable`1[[Microsoft.Xna.Framework.Color, MonoGame.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Single, System.Int32, System.Int32) to patch.
+   at Spacechase.Shared.Patching.PatchHelper.RequireMethod[IClickableMenu](String name, Type[] parameters, Type[] generics)
+   at Spacechase.Shared.Patching.BasePatcher.RequireMethod[IClickableMenu](String name, Type[] parameters, Type[] generics)
+   at SpaceCore.Patches.SkillBuffPatcher.Apply(Harmony harmony, IMonitor monitor)
+   at Spacechase.Shared.Patching.HarmonyPatcher.Apply(Mod mod, IPatcher[] patchers)
+[18:00:41 TRACE SMAPI]    Found mod-provided API (SpaceCore.Api).
+[18:00:41 TRACE game] Registered event command: MermaidSheetOpacity
+[18:00:42 TRACE SMAPI]    Found mod-provided API (PolyamorySweetBed.PolyamorySweetBedAPI).
+[18:00:42 TRACE SMAPI]    Found mod-provided API (PolyamorySweetKiss.KissingAPI).
+[18:00:42 TRACE Polyamory Sweet Love] got string!
+[18:00:42 TRACE Polyamory Sweet Love] got int!
+[18:00:42 TRACE SMAPI]    Found mod-provided API (PolyamorySweetLove.PolyamorySweetLoveAPI).
+[18:00:42 TRACE SMAPI]    Found mod-provided API (PolyamorySweetRooms.SweetRoomsAPI).
+[18:00:42 INFO  Auto Korean Default] Setting game language to Korean (ko)...
+[18:00:42 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGING from 'en' to 'ko'
+[18:00:42 TRACE game] Loading manifest...
+[18:00:42 TRACE game] EnsureManifestInitialized() finished, elapsed = '00:00:00.0240226'
+[18:00:42 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/TextureOverrides.ko-KR'.
+[18:00:42 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "그래서...오늘 {0}에게 비밀리 선물을 줬다고 들었어$n#$b#$c 0.5#멋져!$h#고마워!$h"
+[18:00:42 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:42 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:42 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGED from 'en' to 'ko'
+[18:00:42 INFO  Auto Korean Default] Game language set to Korean successfully!
+[18:00:42 DEBUG SMAPI] Mods loaded and ready!
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/Dungeons.ko-KR'.
+[18:00:44 TRACE SMAPI] Starting load cueModificationData...
+[18:00:44 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
+[18:00:44 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "그래서...오늘 {0}에게 비밀리 선물을 줬다고 들었어$n#$b#$c 0.5#멋져!$h#고마워!$h"
+[18:00:44 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:44 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:44 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGING from 'ko' to 'en'
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/TextureOverrides'.
+[18:00:44 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "So...I heard you secretly gave {0} a gift today$n#$b#$c 0.5#Wonderful!$h#Thank you!$h"
+[18:00:44 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.
+[18:00:44 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.
+[18:00:44 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "So...I heard you secretly gave {0} a gift today$n#$b#$c 0.5#Wonderful!$h#Thank you!$h"
+[18:00:44 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.
+[18:00:44 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.
+[18:00:44 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGED from 'ko' to 'en'
+[18:00:44 INFO  SMAPI] Type 'help' for help, or 'help <cmd>' for a command's usage
+[18:00:44 TRACE Farm Type Manager (FTM)] Optional API not found: Generic Mod Config Menu (GMCM).
+[18:00:44 TRACE Farm Type Manager (FTM)] API not found: Expanded Preconditions Utility (EPU).
+[18:00:44 TRACE Farm Type Manager (FTM)] API not found: Dynamic Game Assets (DGA).
+[18:00:44 TRACE Farm Type Manager (FTM)] Accessed mod-provided API (ContentPatcher.Framework.ContentPatcherAPI) for Content Patcher.
+[18:00:44 TRACE Farm Type Manager (FTM)] API found: Content Patcher (CP).
+[18:00:44 TRACE Farm Type Manager (FTM)] Mod not found: Monsters The Framework (MTF).
+[18:00:44 TRACE Farm Type Manager (FTM)] Optional API not found: Item Extensions.
+[18:00:44 TRACE UI Info Suite 2] Registered Sound: Annosz.UiInfoSuite2.sounds.LevelUp
+[18:00:44 TRACE SpaceCore] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[18:00:44 TRACE SpaceCore] Accessed mod-provided API (ContentPatcher.Framework.ContentPatcherAPI) for Content Patcher.
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/CraftingRecipeOverrides'.
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/CookingRecipeOverrides'.
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/VirtualCurrencyData'.
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/WearableData'.
+[18:00:44 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/TriggerActionExtensionData'.
+[18:00:44 TRACE PolyamorySweet Kiss] Kissing audio path: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/PolyamorySweet/PolyamorySweetKiss/assets/kiss.wav
+[18:00:44 TRACE Polyamory Sweet Love] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[18:00:44 TRACE game] Registered trigger action handler 'Mermaid_Hug'.
+[18:00:44 TRACE PolyamorySweet Rooms] Accessed mod-provided API (SpaceCore.Api) for SpaceCore.
+[18:00:44 TRACE SMAPI] PolyamorySweet Rooms loaded asset 'ApryllForever.PolyamorySweetRooms/dict'.
+[18:00:44 TRACE Polyamory Sweet Wedding] Accessed mod-provided API (PolyamorySweetLove.PolyamorySweetLoveAPI) for Polyamory Sweet Love.
+[18:00:44 TRACE Polyamory Sweet Wedding] PolyamorySweetLove API loaded
+[18:00:44 INFO  Auto Korean Default] Setting game language to Korean (ko)...
+[18:00:44 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGING from 'en' to 'ko'
+[18:00:44 TRACE game] LocalizedContentManager.CurrentLanguageCode CHANGED from 'en' to 'ko'
+[18:00:44 INFO  Auto Korean Default] Game language set to Korean successfully!
+[18:00:45 TRACE Content Patcher] Farm Type Manager (FTM) added a custom token with prefix 'Esca.FarmTypeManager/': NumberOfMonsters.
+[18:00:45 TRACE Content Patcher] SpaceCore added 4 custom tokens with prefix 'spacechase0.SpaceCore/': BooksellerInTown, CurrentEventId, CurrentlyInEvent, QuestionsAsked.
+[18:00:45 TRACE game] Registered trigger action handler 'Pathoschild.ContentPatcher_MigrateIds'.
+[18:00:49 TRACE Content Patcher] Requested cache invalidation for all assets matching a predicate.
+[18:00:49 TRACE SMAPI] Content Patcher edited LooseSprites/Cursors.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited LooseSprites/Cursors.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited LooseSprites/Cursors.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "그래서...오늘 {0}에게 비밀리 선물을 줬다고 들었어$n#$b#$c 0.5#멋져!$h#고마워!$h"
+[18:00:50 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:50 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:50 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Objects (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Objects (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/BigCraftables (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/CraftingRecipes (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/CookingRecipes (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/NPCGiftTastes.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/NPCGiftTastes.ko-KR (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Crops (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Crops (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Characters (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Characters (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Weapons (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Buildings (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/FarmAnimals (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/FruitTrees (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Locations.
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Locations (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/Locations (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/LocationContexts (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/JukeboxTracks (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Starting load cueModificationData...
+[18:00:50 TRACE SMAPI] Content Patcher edited Data/AudioChanges (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Invalidated 23 asset names (Data/AudioChanges, Data/BigCraftables, Data/Boots.ko-KR, Data/Buildings, Data/Characters, Data/CookingRecipes, Data/CraftingRecipes, Data/Crops, Data/FarmAnimals, Data/FruitTrees, Data/Furniture, Data/JukeboxTracks, Data/LocationContexts, Data/Locations, Data/NPCGiftTastes, Data/NPCGiftTastes.ko-KR, Data/Objects, Data/TriggerActions, Data/Weapons, LooseSprites/Cursors, LooseSprites/Cursors.ko-KR, Strings/StringsFromCSFiles, Strings/StringsFromCSFiles.ko-KR).
+Propagated 23 core assets (Data/AudioChanges, Data/BigCraftables, Data/Boots.ko-KR, Data/Buildings, Data/Characters, Data/CookingRecipes, Data/CraftingRecipes, Data/Crops, Data/FarmAnimals, Data/FruitTrees, Data/Furniture, Data/JukeboxTracks, Data/LocationContexts, Data/Locations, Data/NPCGiftTastes, Data/NPCGiftTastes.ko-KR, Data/Objects, Data/TriggerActions, Data/Weapons, LooseSprites/Cursors, LooseSprites/Cursors.ko-KR, Strings/StringsFromCSFiles, Strings/StringsFromCSFiles.ko-KR).
+[18:00:50 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "그래서...오늘 {0}에게 비밀리 선물을 줬다고 들었어$n#$b#$c 0.5#멋져!$h#고마워!$h"
+[18:00:50 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:50 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.ko-KR.
+[18:00:50 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:00:50 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the '(CP) Polyamory Sweet!' content pack).
+[18:00:50 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_CrimsonSands, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/CrimsonSands.ogg' in 108.187ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_OminousCavern, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/OminousCavern.ogg' in 58.7478ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_EnchantedWaltz, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/EnchantedWaltz.ogg' in 26.4005ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_SDV_FireplaceSound, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/SDV_Fireplace.ogg' in 18.4504ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_SDV_FireplaceMusic, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/SDV_Fireplace.ogg' in 15.4458ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_CamillasTower, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/CamillasTower.ogg' in 52.6167ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_Lament, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/Lament.ogg' in 23.7882ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_HaruhiViolinSolo, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/HaruhiViolinSolo.ogg' in 13.94ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_NewMagicLearned, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/NewMagicLearned.ogg' in 10.8828ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_Nexus, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/Nexus.ogg' in 42.617ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_CastleVillageOutpostAmbience, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/CastleVillageOutpostAmbience.ogg' in 34.2858ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_CastleVillageOutpostMusic, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/CastleVillageOutpostAmbience.ogg' in 30.9663ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_GrenvilleFalls, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/GrenvilleFalls.ogg' in 61.9047ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_Atlantis, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/Atlantis.ogg' in 52.3268ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_DistantTrain, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/DistantTrain.ogg' in 5.2597ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_GrampletonTrainStationArrival, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/GrampletonTrainStationArrival.ogg' in 9.1312ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_GrampletonTrainStationAmbience, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/GrampletonTrainStationAmbience.ogg' in 15.3452ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_Taxi, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/Taxi.ogg' in 13.1193ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_Aerobics_Looped, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/SDV_Aerobics_Looped.ogg' in 8.9455ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_BusDrivingOnHighway, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/BusDrivingOnHighway.ogg' in 8.6079ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ZCCC_Applause, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ZCCC_Applause.ogg' in 6.8461ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ZCCC_Cheering, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ZCCC_Cheering.ogg' in 6.1364ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ZCCC_Crowd_Ambience, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ZCCC_Crowd_Ambience.ogg' in 28.9946ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ZuzuCity_Ambience, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ZuzuCity_Ambience.ogg' in 24.6907ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_SDVMagicalShoes, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/SDVMagicalShoes.ogg' in 24.3664ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_FirstSlashTheme, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/FirstSlashTheme.ogg' in 16.7032ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_StardewValleyExpandedTrailer, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/StardewValleyExpandedTrailer.ogg' in 65.1381ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_TruckStartUp, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/TruckStartUp.ogg' in 7.5552ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_TruckOnHighway, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/TruckOnHighway.ogg' in 9.8152ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_GrampletonCoastline, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/GrampletonCoastline.ogg' in 26.8786ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_HighlandsTheme, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/HighlandsTheme.ogg' in 38.1724ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_HighlandsTheme_Rain, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/HighlandsTheme_Rain.ogg' in 38.8625ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_CrystalCavern, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/CrystalCavern.ogg' in 30.2251ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ForbiddenMaze, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ForbiddenMaze.ogg' in 74.2706ms
+[18:00:51 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_LovelyDay, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/LovelyDay.ogg' in 23.0902ms
+[18:00:52 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ForbiddenMaze_Ambient, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ForbiddenMaze_Ambient.ogg' in 75.127ms
+[18:00:52 TRACE SMAPI] Done taskOnMainThread: 'Apply CueModify key: FlashShifter.StardewValleyExpandedCP_ChurningLava_Ambient, filePath[0]: /storage/emulated/0/Android/data/abc.smapi.gameloader/files/Mods/Stardew Valley Expanded/[CP] Stardew Valley Expanded/assets/Music/ChurningLavaAmbient.ogg' in 16.6578ms
+[18:00:52 TRACE SMAPI] Context: locale set to ko (ko-KR).
+[18:00:52 TRACE SMAPI] Content Patcher edited Data/TriggerActions (for the 'Stardew Valley Expanded' content pack).
+[18:01:02 TRACE SMAPI] Try StartTask name: 'Farm_SpaceCheck' on Android SModHook
+[18:01:02 TRACE SMAPI] Starting Task On Background id: 'Farm_SpaceCheck'
+[18:01:02 TRACE SMAPI] Completed Task On Background id: Farm_SpaceCheck in 0.5405ms
+[18:01:04 TRACE SMAPI] Content Patcher edited Data/Furniture (for the 'Stardew Valley Expanded' content pack).
+[18:01:04 TRACE SMAPI] Content Patcher edited Data/Boots.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:01:04 TRACE SMAPI] Content Patcher edited Strings/UI.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:01:04 TRACE SMAPI] Content Patcher edited Strings/UI.ko-KR (for the '(CP) Polyamory Sweet!' content pack).
+[18:01:08 TRACE SMAPI] Content Patcher edited Strings/1_6_Strings.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:02 TRACE Polyamory Sweet Love] Log Hourly of Checking for extra spouses in 0 friends
+[18:02:02 TRACE Polyamory Sweet Love] Of Logging Hourly of reloaded 0 spouses for aa 8366771507680549438
+[18:02:02 TRACE Content Patcher] Requested cache invalidation for all assets matching a predicate.
+[18:02:02 TRACE SMAPI] Content Patcher edited TileSheets/ChairTiles (for the 'Stardew Valley Expanded' content pack).
+[18:02:02 TRACE Polyamory Sweet Love] NPC.cs.3985 is set to "그래서...오늘 {0}에게 비밀리 선물을 줬다고 들었어$n#$b#$c 0.5#멋져!$h#고마워!$h"
+[18:02:02 TRACE SMAPI] Polyamory Sweet Love edited Strings/StringsFromCSFiles.ko-KR.
+[18:02:02 TRACE SMAPI] Polyamory Sweet Wedding edited Strings/StringsFromCSFiles.ko-KR.
+[18:02:02 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:02 TRACE SMAPI] Content Patcher edited Strings/StringsFromCSFiles.ko-KR (for the '(CP) Polyamory Sweet!' content pack).
+[18:02:02 TRACE SMAPI] Invalidated 2 asset names (Strings/StringsFromCSFiles.ko-KR, TileSheets/ChairTiles).
+Propagated 2 core assets (Strings/StringsFromCSFiles.ko-KR, TileSheets/ChairTiles).
+[18:02:02 TRACE SMAPI] Content Patcher edited LooseSprites/emojis (for the 'Stardew Valley Expanded' content pack).
+[18:02:02 TRACE SMAPI] Content Patcher edited Data/Machines (for the 'Stardew Valley Expanded' content pack).
+[18:02:02 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/ObjectExtensionData.ko-KR'.
+[18:02:03 TRACE SMAPI] Content Patcher edited Maps/farmhouse_tiles (for the 'Stardew Valley Expanded' content pack).
+[18:02:03 TRACE SMAPI] Content Patcher edited Maps/spring_town.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:03 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_SVE_Tilesheet2' (for the 'Stardew Valley Expanded' content pack).
+[18:02:03 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_z_extras' (for the 'Stardew Valley Expanded' content pack).
+[18:02:03 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_SVEbuildingShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:03 TRACE SMAPI] Content Patcher loaded asset 'Maps/Town' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher edited Maps/Town (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher edited Maps/spring_town.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_SVE_Tilesheet2' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_z_extras' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_SVEbuildingShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaFurniture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaWallsAndFloors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/JoshHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaFurniture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaWallsAndFloors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/HaleyHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/SamHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaCraftables' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaSpringObjects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Blacksmith' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaCraftables' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaSpringObjects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/ManorHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/SeedShop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Arcade_Couch' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Saloon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Arcade_Couch' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Trailer' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Hospital' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/HarveyRoom' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Beach' (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher edited Data/Fish (for the 'Stardew Valley Expanded' content pack).
+[18:02:04 TRACE SMAPI] Content Patcher loaded asset 'Maps/Beach-NightMarket' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/Mountain' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher edited Maps/Mountain (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/ScienceHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/SebastianRoom' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/zGrandpasFarm_CanopyShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/zGrandpasFarm_UnderCanopyShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/Forest' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher edited Maps/Forest (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/zGrandpasFarm_CanopyShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:05 TRACE SMAPI] Content Patcher loaded asset 'Maps/zGrandpasFarm_UnderCanopyShadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_WizardTowerLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/WizardHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/WizardHouse (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_WizardTowerLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_FireLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/AnimalShop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_FireLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/LeahHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/BusStop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/BusStop (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Mine' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Desert' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Club' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/SandyHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/ArchaeologyHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/ArchaeologyHouse (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/WizardHouseBasement' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/NpcExtensionData.ko-KR'.
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/AdventureGuild' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_RedBaneberry_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Woods' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_RedBaneberry_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Railroad' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/Railroad (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/WitchSwamp (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/WitchHut (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Maps/WitchWarpCave (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/Summit' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher loaded asset 'Maps/FishShop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:06 TRACE SMAPI] Content Patcher edited Data/Bundles.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/JojaMart' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/SkullCave (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/Backwoods' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/Backwoods (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/Trailer_big' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/MovieTheater_TileSheet (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/MovieTheater' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/MovieTheater_TileSheet (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Data/MoviesReactions (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_S_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/Island_S (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_S_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_SE_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/Island_SE (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_SE_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_W_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:07 TRACE SMAPI] Content Patcher edited Maps/Island_W (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_Island_W_CoralReefs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/FurnitureExtensionData.ko-KR'.
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_CalderaLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher edited Maps/Caldera (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_CalderaLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/MasteryCave' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Desert-Festival' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AuroraVineyardRefurbished.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AuroraVineyardCellarRefurbished.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrandpasShedRuins.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrandpasShed.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_TownEast.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_CrimsonLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_Shadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_WarpLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FakeEnchantedGrove.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_CrimsonLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_Shadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:08 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_WarpLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_Colors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FakeEnchantedGrove2.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/EnchantedGrove_Colors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_WillyRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_MarnieShed.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AndyHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AndyCellar.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SusanHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/BathroomTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_JenkinsHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/BathroomTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_OliviaCellar.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SophiaHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SophiaCellar.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/CrimsonBadlandsMap' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_CrimsonBadlandsMap.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/CrimsonBadlandsMap' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_MovieTheaterScreen_ClaireEvent.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_CastleVillage_DayEnd_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/AuroraVineyardPicture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AuroraVineyardPictureMap.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/AuroraVineyardPicture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/StardustFarmPicture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_StardustFarmPictureMap.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/StardustFarmPicture' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/CastleVillage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GaldoranVoid.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/CastleVillage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Claire_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Martin_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Camilla_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Alesia_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Isaac_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Lance_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Jadu_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Apples_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Peaches_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Charlie_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Morgan_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Scarlett_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Sandy_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ApplesRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GunthersRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Countryside_BusStop_Bus.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Countryside_BusStop_NoBus.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Countryside_ClaireHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ClaireHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_JojaEmporium.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher edited Maps/Custom_JojaEmporium.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_mine' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GuntherExpedition1.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_mine' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/GuntherExpedition2_Shadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GuntherExpedition2.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/GuntherExpedition2_Shadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonFields_Small.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_BusStop_NoBus.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SakuraVineyardCottageInterior.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaCursors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:09 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Highway.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaCursors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Sawyer_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Jolyne_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Edmund_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Gale_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Gertrude_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Brock_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Cordelia_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Freya_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Cassandra_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Emin_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Brianna_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Drake_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HighlandsDwarf_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_MorrisHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher edited Maps/Custom_MorrisHouse.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForestWest_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ForestWestOld.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForestWest_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:10 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_LanceSecretWarp.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/summer_z_extras' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Krobus_WarpRoom.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/VoidDen_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_VoidDen.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/VoidDen_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_GrampletonSuburbsTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ScarlettHouse.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_GrampletonSuburbsTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/HanksGarage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HanksGarage.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/HanksGarage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_WoodsCompat.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_ValleyBackdrop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_VictorSummit.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_ValleyBackdrop' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AuroraVineyard.ko-KR' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_DayEnd_WarpRoom' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheetRuins' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheet_MaskEffect' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Atlantis' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheetRuins' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/AtlantisTilesheet_MaskEffect' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_RailwayTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_DesertRailway' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_RailwayTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_EnchantedGrove' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher edited Maps/Custom_EnchantedGrove (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/FirstSlashGuildBuilding' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FirstSlashGuestRoom' (for the 'Stardew Valley Expanded' content pack).
+[18:02:11 TRACE SMAPI] Content Patcher loaded asset 'Maps/FirstSlashGuildBuilding' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/Lighthouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonCoast' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/Lighthouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/GrampletonTrainStationTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonTrainStation' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/GrampletonTrainStationTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrenvilleFalls' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_LightingTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:12 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_OreTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:13 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_ShadowTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:13 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HighlandsCavernPrison' (for the 'Stardew Valley Expanded' content pack).
+[18:02:13 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_LightingTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:13 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_OreTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/HighlandsCavern_ShadowTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HighlandsCavernPrisonEvent' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/IridiumQuarry' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/IridiumQuarry_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_IridiumQuarry' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/IridiumQuarry' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/IridiumQuarry_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/JojaPetStore' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_JojaPetStore' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/JojaPetStore' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SakuraVineyardTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SakuraVineyard' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SakuraVineyardTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SakuraVineyardCellar' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SakuraVineyardCottage' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SakuraVineyardDiningRoomTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SakuraVineyardDiningRoom' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SakuraVineyardDiningRoomTilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SpriteSpringCave_Effects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SpriteSpringCave' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/SpriteSpringCave_Effects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_TreasureCave' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher edited Maps/Custom_TreasureCave (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Void' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Entrance_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:14 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_Entrance' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Entrance_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_FoodCourt_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_FoodCourt' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_FoodCourt_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_MainHall_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_MainHall' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_MainHall_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Stage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_Stage' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Stage_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_VendorFloor_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_VendorFloor' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_VendorFloor_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZuzuCityStreet_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZuzuCityStreet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZuzuCityStreet_Tilesheet' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HighlandsOutpost' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher edited Maps/Custom_HighlandsOutpost (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Outpost_CrimsonLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_CastleVillageOutpost' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher edited Maps/Custom_CastleVillageOutpost (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Outpost_CrimsonLight' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FirstSlashGuild' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher edited Maps/Custom_FirstSlashGuild (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FirstSlashHallway' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher edited Maps/Custom_FirstSlashHallway (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_WizardBasementLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_WizardBasement' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_WizardBasementLights' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/CherryBlossomPetals' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Courtyard_NPCs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ZCCC_Courtyard' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/CherryBlossomPetals' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/ZCCC_Courtyard_NPCs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SVESummit' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_AdventurerSummit' (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher edited Maps/Custom_AdventurerSummit (for the 'Stardew Valley Expanded' content pack).
+[18:02:15 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_BlueMoonVineyard' (for the 'Stardew Valley Expanded' content pack).
+[18:02:16 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForbiddenMaze_Darkness' (for the 'Stardew Valley Expanded' content pack).
+[18:02:16 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForbiddenMaze_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:16 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ForbiddenMaze' (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher edited Maps/Custom_ForbiddenMaze (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForbiddenMaze_Darkness' (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher loaded asset 'Maps/ForbiddenMaze_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HenchmanBackyard' (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher edited Maps/Custom_HenchmanBackyard (for the 'Stardew Valley Expanded' content pack).
+[18:02:17 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HenchmanHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/summer_SVE_Tilesheet2' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/summer_z_extras' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_DinoIsland_South' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/summer_SVE_Tilesheet2' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/DinoIsland_North_Mask' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_DinoIsland_North' (for the 'Stardew Valley Expanded' content pack).
+[18:02:18 TRACE SMAPI] Content Patcher loaded asset 'Maps/DinoIsland_North_Mask' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_CastleVillage' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_RedEyes' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_CrimsonBadlands' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_CastleVillage' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/z_RedEyes' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_FableReef' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher edited Maps/Custom_FableReef (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaFloors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrandpasShedGreenhouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:19 TRACE SMAPI] Content Patcher loaded asset 'Maps/VanillaFloors' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ForestWest' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher edited Maps/Custom_ForestWest (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Garden' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher edited Maps/Custom_Garden (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonSuburbs' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher edited Maps/Custom_GrampletonSuburbs (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonSuburbsTrainStation' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrampletonSuburbsOutskirts' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GoGoatRanch' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GoGoatRanch_Interior' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_GrandpasShedOutside' (for the 'Stardew Valley Expanded' content pack).
+[18:02:20 TRACE SMAPI] Content Patcher edited Maps/Custom_GrandpasShedOutside (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Maps/Highlands_CanopyTreeShadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_Highlands' (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher edited Maps/Custom_Highlands (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Maps/Highlands_CanopyTreeShadows' (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Mods/FlashShifter.StardewValleyExpandedCP/SVEFruitTrees' (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_HighlandsCavern' (for the 'Stardew Valley Expanded' content pack).
+[18:02:21 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_DiamondCavern' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/JunimoWoods_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_JunimoWoods' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/JunimoWoods_Shadow' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_MorrisModernHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_MorrisProperty' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/spring_MorrisModernHouse' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/ShearwaterBridgeConeBarricade' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_ShearwaterBridge' (for the 'Stardew Valley Expanded' content pack).
+[18:02:22 TRACE SMAPI] Content Patcher loaded asset 'Maps/ShearwaterBridgeConeBarricade' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Maps/SpriteSpring_Effects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Maps/Custom_SpriteSpring2' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Maps/SpriteSpring_Effects' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] SpaceCore loaded asset 'spacechase0.SpaceCore/FarmExtensionData.ko-KR'.
+[18:02:23 TRACE SMAPI] Content Patcher edited Characters/Wizard (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher edited Portraits/Wizard (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher edited Portraits/Sandy (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Victor' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Victor' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Olivia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Olivia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Andy' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Andy' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Susan' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Susan' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Sophia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Sophia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher edited Portraits/Sophia (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/MarlonFay' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/MarlonFay' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Peaches' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Peaches' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/HighlandsDwarf' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/HighlandsDwarf' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/HankSVE' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/HankSVE' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Treyvon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Treyvon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Claire' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Claire' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Camilla' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Camilla' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Sawyer' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Sawyer' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Gale' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Gale' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Brianna' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Brianna' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Drake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Drake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Edmund' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Edmund' (for the 'Stardew Valley Expanded' content pack).
+[18:02:23 TRACE SMAPI] Content Patcher loaded asset 'Characters/Gertrude' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Gertrude' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Brock' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Brock' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Cordelia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Cordelia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Freya' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Freya' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Cassandra' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Cassandra' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Emin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Emin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/ScarlettFake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/ScarlettFake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/GuntherSilvian' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher edited Characters/GuntherSilvian (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/GuntherSilvian' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Martin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Martin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/MorrisTod' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/MorrisTod' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Isaac' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Isaac' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Alesia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Alesia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Jolyne' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Jolyne' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/Jadu' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/Jadu' (for the 'Stardew Valley Expanded' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Characters/MermaidLantana' (for the '(CP) Polyamory Sweet!' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher loaded asset 'Portraits/MermaidLantana' (for the '(CP) Polyamory Sweet!' content pack).
+[18:02:24 TRACE SMAPI] Content Patcher edited Data/Quests.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:26 TRACE SpaceCore] Event: OnBlankSave
+[18:02:26 TRACE game] setGameMode( 'playingGameMode (3)' )
+[18:02:26 TRACE SMAPI] Content Patcher edited Data/ChairTiles (for the 'Stardew Valley Expanded' content pack).
+[18:02:27 TRACE Farm Type Manager (FTM)] Day is ending. Processing save data and object expiration settings.
+[18:02:27 TRACE SMAPI] Try StartTask name: 'NewDay' on Android SModHook
+[18:02:27 TRACE SMAPI] Starting Task On Background id: 'NewDay'
+[18:02:27 TRACE SMAPI] Content Patcher edited Data/SpecialOrders (for the 'Stardew Valley Expanded' content pack).
+[18:02:27 TRACE SMAPI] Content Patcher edited Strings/SpecialOrderStrings.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:27 TRACE SMAPI] Content Patcher edited Data/mail.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Data/WildTrees (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/MorrisTod' (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/MorrisTod (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/MorrisTod' (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/MorrisTod (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Evelyn.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Evelyn (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/George.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/George (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Alex.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Alex (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Emily.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Emily (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Haley.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Haley (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Jodi.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Jodi (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Sam.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Sam (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Vincent.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Vincent (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Clint.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Clint (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Lewis.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Lewis (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Abigail.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/schedules/Abigail (for the 'Stardew Valley Expanded' content pack).
+[18:02:28 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Caroline.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Caroline (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Pierre.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Pierre (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Gus.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Gus (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Pam.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Pam (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Penny.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Penny (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Harvey.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Harvey (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Elliott.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Elliott (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Demetrius.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Demetrius (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Maru.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Maru (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Robin.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Robin (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Sebastian.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Sebastian (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Linus.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Linus (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Wizard.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Wizard' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Wizard (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Jas.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Jas (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Marnie.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Marnie (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Shane.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Shane (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Leah.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Leah (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Dwarf.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Krobus.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Krobus' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Sandy.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Sandy' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Sandy (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Gunther' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Gunther (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/GuntherSilvian' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/GuntherSilvian (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/GuntherSilvian' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/GuntherSilvian (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Marlon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/MarlonFay' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/MarlonFay (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/MarlonFay' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/MarlonFay (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Willy.ko-KR (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Willy (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Andy' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Andy (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Andy' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Andy (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Susan' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Susan (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Susan' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Susan (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Victor' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Victor (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Victor' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Victor (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Olivia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Olivia (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Olivia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Olivia (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Sophia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Sophia (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Sophia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Sophia (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Claire' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Claire (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Claire' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Claire (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Martin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Martin (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Martin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Martin (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Camilla' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Camilla (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Camilla' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Alesia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Alesia (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Alesia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Isaac' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Isaac (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Isaac' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Jadu' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Jadu (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Jadu' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/schedules/Jadu (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Peaches' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Peaches (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Peaches' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/ScarlettFake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/ScarlettFake (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/ScarlettFake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Sawyer' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Sawyer (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Sawyer' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Jolyne' (for the 'Stardew Valley Expanded' content pack).
+[18:02:29 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Jolyne (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Jolyne' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Edmund' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Edmund (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Edmund' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Gale' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Gale (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Gale' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Gertrude' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Gertrude (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Gertrude' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Brock' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Brock (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Brock' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Cordelia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Cordelia (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Cordelia' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Freya' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Freya (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Freya' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Cassandra' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Cassandra (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Cassandra' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Emin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Emin (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Emin' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Brianna' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Brianna (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Brianna' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Drake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Drake (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Drake' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/HighlandsDwarf' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/HighlandsDwarf (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/HighlandsDwarf' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/HankSVE' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/HankSVE (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/HankSVE' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/Treyvon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher edited Characters/Dialogue/Treyvon (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/Treyvon' (for the 'Stardew Valley Expanded' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/Dialogue/MermaidLantana' (for the '(CP) Polyamory Sweet!' content pack).
+[18:02:30 TRACE SMAPI] Content Patcher loaded asset 'Characters/schedules/MermaidLantana' (for the '(CP) Polyamory Sweet!' content pack).
+[18:02:30 TRACE SpaceCore] Event: ShowNightEndMenus
+[18:02:30 DEBUG SpaceCore] Doing skill menus
+[18:02:30 TRACE SMAPI] Completed Task On Background id: NewDay in 3018.5996ms
+[18:02:30 TRACE SMAPI] Context: before save creation.
+[18:02:30 TRACE SpaceCore] Reinitializing serializers for 4 mod types...
+[18:02:30 TRACE SMAPI] Try StartTask name: 'Save' on Android SModHook
+[18:02:30 TRACE SMAPI] Starting Task On Background id: 'Save'
+[18:02:30 TRACE SMAPI] Content Patcher edited Strings/Events.ko-KR (for the 'Stardew Valley Expanded' content pack).

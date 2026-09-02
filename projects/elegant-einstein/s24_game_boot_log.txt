@@ -1,0 +1,345 @@
+--------- beginning of main
+08-26 01:16:42.621  2746  6600 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 23533, isSameBssidAndFreq true
+08-26 01:16:42.623  2746  3946 I SemWifiLinkQualityMonitor: Link stat: 1289 / 64 / 1.33 (89) / 78 / -56.0 || 100.0 : 78.00 / G (B) || 6c80455e2412: 0.178 / 44.862 / N / V || N N / 0 0 / N -77.0 / N -1 0.000 0.000 / N / X 16 / 254428472 0 0 || 2026-08-26 01:16:41  / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0
+08-26 01:16:42.626  2746  3948 I SemInsManager: 6c80455e2 | X,6,7,3,31,0,0,0,0,N,N,N,0 | X, X, X | X,X,X,X,X
+08-26 01:16:42.644 22498 22498 I adbd    : adbd service requested 'shell,v2,raw:input tap 500 1000'
+08-26 01:16:42.725  2746  4376 D InputDispatcher: Inject motion (21096/2000): action=0x0, time=254428575000000, f=0x0, d=0 dsdx=1.000000 dtdx=0.000000
+08-26 01:16:42.727  2746  3751 I InputDispatcher: Delivering touch to (4115): action: 0x4, f=0x0, d=0, '321eb4d', t=1 
+08-26 01:16:42.727  2746  3751 I InputDispatcher: Delivering touch to (7798): action: 0x4, f=0x0, d=0, '5e545a0', t=1 
+08-26 01:16:42.727  2746  3751 I InputDispatcher: Delivering touch to (21022): action: 0x0, f=0x0, d=0, '16dfae8', t=1 
+--------- beginning of system
+08-26 01:16:42.728  2746  3751 D PowerManagerService: [api] userActivityFromNative : touch displayId=0 eventTime=254428575
+08-26 01:16:42.728  2746  3015 I GestureDetector: obtain mCurrentDownEvent. id: -477287388 caller: com.android.server.wm.SystemGesturesPointerEventListener.onPointerEvent:17 com.android.server.wm.PointerEventDispatcher.onInputEvent:51 android.view.InputEventReceiver.dispatchInputEvent:369 
+08-26 01:16:42.728  2746  3751 D PowerManagerService: UserActivityStateListenerState: 1
+08-26 01:16:42.728  2746  3015 I GestureDetector: obtain mCurrentDownEvent. id: -477287388 caller: com.android.server.wm.SystemPerformancePointerEventListener.onPointerEvent:13 com.android.server.wm.PointerEventDispatcher.onInputEvent:51 android.view.InputEventReceiver.dispatchInputEvent:369 
+08-26 01:16:42.729 21022 21022 I VRI[LauncherActivity]@5d3d71f: ViewPostIme pointer 0
+08-26 01:16:42.730 21022 21022 I VRI[LauncherActivity]@5d3d71f: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[LauncherActivity]@5d3d71f
+08-26 01:16:42.729  7798  7798 I [GR]_BackTapSensorManager: BackTapAccelerometer already listening
+08-26 01:16:42.729  7059  7059 I SemDvfsHyPerManager: acquire hyper - TATouchBoost/7059@30, type = -999
+08-26 01:16:42.730  7798  7798 I [GR]_BackTapAccelerometer: sensor paused for 498ms
+08-26 01:16:42.731  2746  4376 D InputDispatcher: Inject motion (21096/2000): action=0x1, time=254428575000000, f=0x0, d=0 dsdx=1.000000 dtdx=0.000000
+08-26 01:16:42.731  2746  3751 I InputDispatcher: Delivering touch to (21022): action: 0x1, f=0x0, d=0, '16dfae8', t=1 
+08-26 01:16:42.731 21022 21022 I VRI[LauncherActivity]@5d3d71f: ViewPostIme pointer 1
+08-26 01:16:42.731  4715  4715 I HoneySpace.InputConsumerFactory: checkMultiFingerGesture: returning NO_OP - gesture disabled or blocked
+08-26 01:16:42.731  4715  4715 I HoneySpace.GestureInputHandler: inputConsumers = [com.honeyspace.gesture.inputconsumer.InputConsumer$Companion$NO_OP$1@b614d23]
+08-26 01:16:42.732  2746  3015 I GestureDetector: obtain mCurrentMotionEventRaw. action: 1 id: -625190116
+08-26 01:16:42.732  2746  3015 I GestureDetector: obtain mCurrentMotionEventRaw. action: 1 id: -625190116
+08-26 01:16:42.732  4715  4715 I HoneySpace.InputSession: inputConsumers = NO_OP
+08-26 01:16:42.732  1772  1901 I HYPER-HAL: [RequestManager.cpp]acquire(): Acquired ID : 25130535  [7059 / 30]    HINT :      list : [TABoost / 1] [TIMEOUT / 1500] 
+08-26 01:16:42.732  4715  4715 I HoneySpace.InputSession: open
+08-26 01:16:42.733  7059  7059 I SemDvfsHyPerManager: acquire hyper - TA_TOUCH_SHARE/7059@31, type = -999
+08-26 01:16:42.733  4715  4715 I HoneySpace.GestureInputHandler: reset
+08-26 01:16:42.733  4715  4715 I HoneySpace.InputSession: close
+08-26 01:16:42.733  1879  1879 I SurfaceFlinger: [abc.smapi.gameloader/crc64e91f1276c636690c.LauncherActivity$_21022#110329] setFrameRateCategory: HighHint
+08-26 01:16:42.734  1772  1901 I HYPER-HAL: [RequestManager.cpp]acquire(): Acquired ID : 25137626  [7059 / 31]    HINT : TA_TOUCH_SHARE    list : [TIMEOUT / 1500] 
+08-26 01:16:42.739  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 0
+08-26 01:16:42.747  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:42.894  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10319(com.example.homemaster82), SUCCESS, 7ms
+08-26 01:16:42.925  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:16:43.028  2746  3015 I GestureDetector: handleMessage TAP
+08-26 01:16:43.029  2746  2746 I GestureDetector: handleMessage TAP
+08-26 01:16:43.079  2746  4376 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:16:43.080  2746  4376 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:43.082  2746  4376 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:16:43.082  2746  4376 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:43.294  1761 11295 I sensors-hal: handle_sns_std_sensor_event:409, [SSC_LIGHT] P: 325(325),c:23,b:179,m:13,cl:14,l:325,s:272,l0:50464,l1:64,s0:40500,s1:0,acl:1,opr:0.22,f(r):91,u(bl):100,if:0,wi:2,si:0,po:185(N:0)
+08-26 01:16:43.297  7798  7798 I [GR]_BackTapAccelerometer: nMinorPeaks = 0
+08-26 01:16:43.297  7798  7798 I [GR]_BackTapAccelerometer: Edge Tap detected
+08-26 01:16:43.362  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:43.362  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:43.362  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:43.362  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:43.372  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.84, current:0.333593, soc:0.4, temperature:26.0, status:2, timestamp:1787674603372, voltage_chg:null}
+08-26 01:16:43.372  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:43.434  2746  4080 I Pageboost: Launcher App Execution
+08-26 01:16:43.532  2746  5310 I NSLocationMonitor: getGPSUsingApps() called
+08-26 01:16:43.532  5297  5346 I NSLocationManager_FLP: getGPSUsingApps, No change
+08-26 01:16:43.535  2746  5310 W Binder  : Outgoing transactions from this process must be FLAG_ONEWAY
+08-26 01:16:43.535  2746  5310 W Binder  : java.lang.Throwable
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.BinderProxy.transact(BinderProxy.java:575)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.bluetooth.IBluetoothGatt$Stub$Proxy.getAdvertisingSetUids(IBluetoothGatt.java:992)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.bluetooth.BluetoothAdapter.getAdvertisingSetUids(BluetoothAdapter.java:1995)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.bluetooth.BluetoothAdapter.getHWUsingApps(BluetoothAdapter.java:2266)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at com.android.server.am.mars.filter.filter.BlueToothConnectedFilter.updateBTUsingPackages(qb/111681109 8a2772898477f7cc112f6ac514b611258fb1e5c3f2206b0d202f25701684a852:22)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at com.android.server.am.FreecessController.freeze(qb/111681109 8a2772898477f7cc112f6ac514b611258fb1e5c3f2206b0d202f25701684a852:126)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleLcdOnFreeze(qb/111681109 8a2772898477f7cc112f6ac514b611258fb1e5c3f2206b0d202f25701684a852:55)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at com.android.server.am.FreecessHandler$MainHandler.handleMessage(qb/111681109 8a2772898477f7cc112f6ac514b611258fb1e5c3f2206b0d202f25701684a852:1686)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.Handler.dispatchMessage(Handler.java:132)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.Looper.dispatchMessage(Looper.java:358)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.Looper.loopOnce(Looper.java:288)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.Looper.loop(Looper.java:392)
+08-26 01:16:43.535  2746  5310 W Binder  : 	at android.os.HandlerThread.run(HandlerThread.java:139)
+08-26 01:16:43.535  4359 31747 V BtGatt.GattService: ***** CURRENT BLE ADVERTISING APPS *****
+08-26 01:16:43.536  4359 31747 V BtGatt.GattService: ***** CURRENT BLE CONNECTED APPS *****
+08-26 01:16:43.537  4359 31747 V ScanController: ***** CURRENT BLE SCANNING APPS *****
+08-26 01:16:43.537  4359 31747 V BtGatt.GattService: loggingList: com.google.android.gms: 10279
+08-26 01:16:43.538  4359 31747 V BtGatt.GattService: loggingList: com.samsung.android.mcfserver: 10136
+08-26 01:16:43.538  4359 31747 V BtGatt.GattService: loggingList: android.uid.system: 1000
+08-26 01:16:43.538  4359 31747 V BtGatt.GattService: loggingList: android.uid.bcmgr: 5006
+08-26 01:16:43.543  2746  5310 D MARs:ActiveTrafficFilter: filter : com.samsung.android.app.cameraassistant(0)
+08-26 01:16:43.543  2746  5310 D FreecessHandler: skipping freeze com.samsung.android.app.cameraassistant(10530) result : 8
+08-26 01:16:43.600  2746  4376 D PowerManagerService: [api] setMasterBrightnessLimit : lowerLimit : -1  upperLimit : 1275  mMasterBrightnessLimitPeriod : 200 (uid: 1000 pid: 7059)
+08-26 01:16:43.601  2746  3247 D PowerManagerService: [api] BrightnessLimitRunnable done
+08-26 01:16:43.602  2746  3194 D BatteryExternalStatsWorker: update stats : update-network-download (6)
+08-26 01:16:43.602  2746  3194 D BatteryExternalStatsWorker: Fetch WiFi data
+08-26 01:16:43.602  2746  3194 D BatteryExternalStatsWorker: Update Rail Energy data
+08-26 01:16:43.615  2746  3194 D BatteryExternalStatsWorker: mStats lock released
+08-26 01:16:43.635  2746  3194 D BatteryExternalStatsWorker: Update wifi state
+08-26 01:16:43.635  2746  3194 D BatteryExternalStatsWorker: done updateExternalStatsLocked
+08-26 01:16:43.888  1772 21018 I HYPER-HAL: [RequestManager.cpp]releaseLocked(): Released ID : 25088010
+08-26 01:16:43.939  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:16:44.060  2746  3181 I ActivityManager: Changes in 10128 15 to 19, 256 to 0
+08-26 01:16:44.071  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 1
+08-26 01:16:44.079  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:44.175  1761 11569 I sensors-hal: handle_sns_client_event:375, [0][333036] accel_sample [ 0.335, -0.077,  9.854] 409264808644320
+08-26 01:16:44.235  1772 21100 I HYPER-HAL: [RequestManager.cpp]releaseLocked(): Released ID : 25130535
+08-26 01:16:44.237  1772 21101 I HYPER-HAL: [RequestManager.cpp]releaseLocked(): Released ID : 25137626
+08-26 01:16:44.321 29164 29164 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.presencemanager.service.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+08-26 01:16:44.324 29164 29164 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.presencemanager.service.INTERNAL_IDENTITY dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+08-26 01:16:44.363  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:44.363  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:44.363  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:44.364  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:44.375  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.839, current:0.361718, soc:0.4, temperature:26.0, status:2, timestamp:1787674604375, voltage_chg:null}
+08-26 01:16:44.375  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:44.413  1245  1245 D io_stats: !@   8,0 r 78133604 1530203868 w 21443163 287560116 d 2194502 193276116 f 809744 2059709 iot 13501072 0 th 0 0 0 pt 0 inp 0 0 254430.263
+08-26 01:16:44.414  1245  1245 D io_stats: !@ Read_top(KB): .gms.persistent(29164) 476 tes.accubattery(23411) 388 mapi.gameloader(21022) 300
+08-26 01:16:44.414  1245  1245 D io_stats: !@ Write_top(KB): f2fs_ckpt-254:6(1383) 684 kworker/u16:4(19573) 544 .gms.persistent(29164) 8
+08-26 01:16:44.462  2746  3766 D SemInputMotionEventDispatcher: registerMotionEventListener: already registered: com.samsung.android.hardware.secinputdev.taas.ExternalApi$5@9e08809
+08-26 01:16:44.709  2746  3740 D ActivityManager: freezing 20876 com.samsung.android.samsungpassautofill
+08-26 01:16:44.714  2746  3740 D ActivityManager: FCA:FCA recordedFileRss = 0, and changeinRss = 52140
+08-26 01:16:44.720  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+08-26 01:16:44.724  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+08-26 01:16:44.724  2746  3849 D InetDiagMessage: Destroyed live tcp sockets for uids={10233} in 9ms
+08-26 01:16:44.934  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap start for non-activity com.sec.android.diagmonagent(pid 7049) action:7 adj:-800 type:3
+08-26 01:16:44.967  2746 26508 D PerProcessNandswapNative: enable WriteBooster
+08-26 01:16:44.984  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap end for non-activity com.sec.android.diagmonagent(pid 7049) ret:18580193280 adj:-800
+08-26 01:16:44.988  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap start for non-activity .qms(pid 4393) action:7 adj:-800 type:3
+08-26 01:16:45.000  2746 26508 D PerProcessNandswapNative: enable WriteBooster
+08-26 01:16:45.006  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap end for non-activity .qms(pid 4393) ret:18142523392 adj:-800
+08-26 01:16:45.008  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap start for non-activity com.sec.imsservice(pid 4405) action:7 adj:-800 type:3
+08-26 01:16:45.035 29164 29164 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+08-26 01:16:45.059  2746 26508 D PerProcessNandswapNative: enable WriteBooster
+08-26 01:16:45.059  2746  3181 I ActivityManager: Changes in 10533 15 to 19, 256 to 0
+08-26 01:16:45.067  5297  5371 I RequestManager_FLP: onOpChanged, op=0 / packageName=com.sec.android.app.camera
+08-26 01:16:45.069  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 1
+08-26 01:16:45.078  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:45.081  2746 26508 D PerProcessNandswap$NandswapHandler: nandswap end for non-activity com.sec.imsservice(pid 4405) ret:21439102976 adj:-800
+08-26 01:16:45.083  2746  5037 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:16:45.083  2746  5037 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:45.084  2746  5037 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:16:45.084  2746  5037 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:45.088 23411 24157 V U.Notification: Posting new notification, elapsed=16026
+08-26 01:16:45.089 23411 24157 I NotificationManager: com.digibites.accubattery: notify(305230424, null, Notification(channel=status-channel-2 shortcut=null contentView=null vibrate=null sound=null defaults=0 flags=ONGOING_EVENT color=0x00000000 groupKey=status vis=PUBLIC semFlags=0x0 semPriority=0 semMissedCount=0 semScenarioType=0)) as user
+08-26 01:16:45.093  2746  5037 E NotificationService: isPkgBlocked = true
+08-26 01:16:45.093  2746  5037 E NotificationService: isRecordBlocked = false
+08-26 01:16:45.093  2746  5037 E NotificationService: Suppressing notification from package com.digibites.accubattery by user request.
+08-26 01:16:45.296  1797  5081 I StatsHandler: [avcD_370] Stats: Pending(0) i/p-done(0) Works: Q: 108/Done 96|Work-Rate: Q(0.0/s Avg=0.0/s) Done(0.000/s Avg=0.028/s)| Stream: 30.00fps 724.2Kbps
+08-26 01:16:45.297  1797  5081 I StatsHandler: [avcD_370] Mem-usage:  [In-1D: 11 bufs 88.000 MB] [1D-3009: 31 bufs 0.484 MB] [2D-3010: 20 bufs 28.594 MB] | Total: 117.078 MB
+08-26 01:16:45.364  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:45.364  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:45.364  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:45.364  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:45.375  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.828, current:0.361718, soc:0.4, temperature:26.0, status:2, timestamp:1787674605375, voltage_chg:null}
+08-26 01:16:45.376  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:45.445  5297  5371 I RequestManager_FLP: onOpChanged, op=0 / packageName=com.sec.android.app.launcher
+08-26 01:16:45.450  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+08-26 01:16:45.452  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+08-26 01:16:45.452  2746  3849 D InetDiagMessage: Destroyed live tcp sockets for uids={10280} in 4ms
+08-26 01:16:45.452 21022 21107 D ProfileInstaller: Installing profile for abc.smapi.gameloader
+08-26 01:16:45.454  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+08-26 01:16:45.456  2746  3849 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+08-26 01:16:45.456  2746  3849 D InetDiagMessage: Destroyed live tcp sockets for uids={20280} in 4ms
+08-26 01:16:45.647  2746  6600 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 23534, isSameBssidAndFreq true
+08-26 01:16:45.649  2746  3946 I SemWifiLinkQualityMonitor: Link stat: 802 / 42 / 1.05 (68) / 104 / -55.0 || 100.0 : 104.00 / 0.5 : 0.96 / 0.55 : 0.05 / G (G) || 6c80455e2412: 0.153 / 52.321 / N / V || N N / 0 0 / N -77.0 / N -1 0.000 0.000 / N / X 16 / 254431498 0 0 || 2026-08-26 01:16:44  / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0
+08-26 01:16:45.653  2746  3948 I SemInsManager: 6c80455e2 | X,6,7,3,31,0,0,0,0,N,N,N,0 | X, X, X | X,X,X,X,X
+08-26 01:16:45.729  2746  3247 D PowerManagerService: UserActivityStateListenerState: 0
+08-26 01:16:45.732 21022 21022 I VRI[LauncherActivity]@5d3d71f: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[LauncherActivity]@5d3d71f
+08-26 01:16:45.736  1879  1879 I SurfaceFlinger: [abc.smapi.gameloader/crc64e91f1276c636690c.LauncherActivity$_21022#110329] setFrameRateCategory: NoPreference
+08-26 01:16:45.741  1879  1879 E SurfaceFlinger: Can't find HRR max refresh rate by policy with the same group 1440
+08-26 01:16:45.744  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 1
+08-26 01:16:45.752  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [                 contacts = {contacts=417, raw_contacts=655, data=3467, account={secphone(1)=0, sim(2)=0, sim2(3)=0, agg(4)=0, google(5)=417, google(6)=0, google(7)=1, google(8)=0, google(9)=0, google(10)=0, google(11)=0, google(12)=0, samsung(13)=0, mobileservice(14)=0, com.microsoft.msa.ltw(16)=0, com.duolingo(17)=0, org.thoughtcrime.securesms(18)=88, com.kakao.sdk.kakaotalk.sso.account(23)=0, com.microsoft.appmanager(24)=0, app.revanced(26)=0, com.forshared.files(38)=0, duo(40)=149, www.instagram.com(41)=0, google(42)=0, google(43)=0, www.instagram.barcelona(44)=0, google(45)=0, google(46)=0, google(47)=0, google(48)=0, google(49)=0, com.nhn.android.naveraccount(51)=0, com.nhn.android.naveraccount(53)=0, google(54)=0, ai.x.grok(58)=0, google(59)=0, google(60)=0}, trash=0, trash_acc={}, trash_sync=0, database=contacts2.db} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [               aggregated = {[40]=2, [5,18,40]=33, [5,18]=54, [5,40]=114, [5,7,18]=1, [5]=215} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [                  request = {ALL(0)={avg=11, cnt=4, dur=45, ops={query=2, delete=2}}, com.kakao.talk(24732)={avg=14, cnt=2, dur=29, ops={query=2}}, acore(26272)={avg=8, cnt=2, dur=16, ops={delete=2}}} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [                    calls = {types={[100]=3, [200]=128, [300]=99, [500]=15, [1000]=1980, [1250]=258, [1300]=15, [1850]=2}, database=calllog.db} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [                  profile = {contacts=0, raw_contacts=0, data=0, account={secphone(1)=0, sim(2)=0, sim2(3)=0, agg(4)=0, google(5)=0, google(6)=0, google(7)=0, google(8)=0, google(9)=0, google(10)=0, google(11)=0, google(12)=0, samsung(13)=0, mobileservice(14)=0, com.microsoft.msa.ltw(16)=0, com.duolingo(17)=0, org.thoughtcrime.securesms(18)=0, com.kakao.sdk.kakaotalk.sso.account(23)=0, com.microsoft.appmanager(24)=0, app.revanced(26)=0, com.forshared.files(38)=0, duo(40)=0, www.instagram.com(41)=0, google(42)=0, google(43)=0, www.instagram.barcelona(44)=0, google(45)=0, google(46)=0, google(47)=0, google(48)=0, google(49)=0, com.nhn.android.naveraccount(51)=0, com.nhn.android.naveraccount(53)=0, google(54)=0, ai.x.grok(58)=0, google(59)=0, google(60)=0}, trash=0, trash_acc={}, trash_sync=0, database=profile.db} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [               sa_profile = {contacts=1, raw_contacts=1, data=2, account={secphone(1)=1, sim(2)=0, sim2(3)=0, agg(4)=0, google(5)=0, google(6)=0, google(7)=0, google(8)=0, google(9)=0, google(10)=0, google(11)=0, google(12)=0, samsung(13)=0, mobileservice(14)=0, com.microsoft.msa.ltw(16)=0, com.duolingo(17)=0, org.thoughtcrime.securesms(18)=0, com.kakao.sdk.kakaotalk.sso.account(23)=0, com.microsoft.appmanager(24)=0, app.revanced(26)=0, com.forshared.files(38)=0, duo(40)=0, www.instagram.com(41)=0, google(42)=0, google(43)=0, www.instagram.barcelona(44)=0, google(45)=0, google(46)=0, google(47)=0, google(48)=0, google(49)=0, com.nhn.android.naveraccount(51)=0, com.nhn.android.naveraccount(53)=0, google(54)=0, ai.x.grok(58)=0, google(59)=0, google(60)=0}, trash=0, trash_acc={}, trash_sync=0, database=profile_sa.db} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: [                      etc = {binders=0, country_iso=KR, version=15.8.31, db_version=2008, db_size=2, db_wal_size=0, csc=KOO/KOR, sec_enabled=false, is_roaming=false} ]
+08-26 01:16:45.827 26272 26458 V CpEventLog(u0): [P] cp_state: ------------------------------------------------------------------------------
+08-26 01:16:45.842 21499 21499 I wpa_supplicant: Heartbeat 426
+08-26 01:16:46.175  1761 11569 I sensors-hal: handle_sns_client_event:375, [0][333993] accel_sample [ 0.345, -0.077,  9.901] 409266808769059
+08-26 01:16:46.335  1761 11295 I sensors-hal: handle_sns_std_sensor_event:409, [SSC_LIGHT] P: 306(306),c:23,b:179,m:13,cl:14,l:305,s:266,l0:47456,l1:64,s0:39500,s1:0,acl:1,opr:0.22,f(r):91,u(bl):100,if:0,wi:2,si:0,po:185(N:0)
+08-26 01:16:46.365  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:46.365  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:46.365  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:46.366  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:46.373  2746  3891 D UsbStatsMonitor: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 214748364802
+08-26 01:16:46.376  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.838, current:0.308593, soc:0.4, temperature:26.0, status:2, timestamp:1787674606376, voltage_chg:null}
+08-26 01:16:46.377  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:46.415  1245  1245 D io_stats: !@   8,0 r 78133761 1530210288 w 21443425 287598132 d 2194510 193276244 f 809752 2059712 iot 13501216 0 th 0 0 0 pt 0 inp 0 0 254432.265
+08-26 01:16:46.718  2746  3740 D ActivityManager: FCA:Reclamation for pid: 20876
+08-26 01:16:46.825  1871  1889 D HeatmapThread: Updated plugType via uevent: 2
+08-26 01:16:46.828  1816  1816 I seh_thermal_service: getTemperaturesWithType SehTemperatureType: 3
+08-26 01:16:46.829  2746  5037 D [SS]BattFunctions: [sendRemainingChargingTimeChangedIntent]remainingChargingTime:26253 ,mLastRemainingChargingTime:26210
+08-26 01:16:46.829  1801  1801 I sehhealth-service: updateLrpSysfs: write: 288
+08-26 01:16:46.829  2746 10596 V [SS]SleepChargingTimeController: [isActivated]mSleepChargingStatus isNowSessionTime False => false
+08-26 01:16:46.832  1801  1906 E BatteryDump: !@new_battery_dump : 3838,308,400,1500,40,260,250,279,260,0,287,279,0,Charging,NO_CHARGING,Normal,Good,USB_CDP,2,Normal,0,0,9291,0x8000,0x10010000,0x0,0,0,0000,0000,00000000,0,0,0,0,827,3809,4028,990,0,
+08-26 01:16:46.832  4115  4115 I AODBatteryManager: updateBatteryData: ACTION_BATTERY_CHANGED: false, isSleepModeChanged:false ,isRemainingTimeChanged: true, isUSBRestriction: false
+08-26 01:16:46.832  4115  4115 I ChargingInfoManager: removeMessages: 
+08-26 01:16:46.832  4115  4115 W AODAlarmTimer_HIDE_CHARGING_INFO_TIMER: stop : not yet started 
+08-26 01:16:46.832  4115  4115 I ChargingInfoManager: updateChargingInfo: newState = AOD ChargingInfo [mState=BATTERY_AND_REMAIN_TIME, mIsCharging=true, mIsPlugged=true, mIsFullyCharged=false, mIsBatteryProtectMode=false, mBetteryLevel=40, mBetteryProtectModeType4, mIsSlowChargingtrue], oldState = AOD ChargingInfo [mState=BATTERY_AND_REMAIN_TIME, mIsCharging=true, mIsPlugged=true, mIsFullyCharged=false, mIsBatteryProtectMode=false, mBetteryLevel=40, mBetteryProtectModeType4, mIsSlowChargingtrue]
+08-26 01:16:46.832  4115  4115 D PowerUI : Remaining charging time : 26253
+08-26 01:16:46.832  4115  4115 D PowerUI : Charging time is changed, check charging notification
+08-26 01:16:46.835  4115  4115 D PowerUI.Notification: showChargingNotice - Battery Level : 40 -> 40, Charging Type : 8 -> 8, Charging Time : 26210 -> 26253, Maximum protection : false -> false, Maximum threshold : 95 -> 95
+08-26 01:16:46.839  4115  4115 I NotificationManager: com.android.systemui: notify(2114586824, charging_state, Notification(channel=CHR shortcut=null contentView=null vibrate=null sound=null defaults=0 flags=ONGOING_EVENT|ONLY_ALERT_ONCE color=0x00000000 category=sys groupKey=CHARGING vis=PUBLIC semFlags=0x0 semPriority=0 semMissedCount=0 semScenarioType=0)) as user
+08-26 01:16:46.841  2746  5037 W PermissionService: getPermissionFlags: Unknown user -1
+08-26 01:16:46.841  2746  5037 W PermissionService: getPermissionFlags: Unknown user -1
+08-26 01:16:46.904  2239  2595 I CameraService: onUidStateChanged: uid=10279, procState is changed. (3 -> 4)
+08-26 01:16:47.009  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10319(com.example.homemaster82), SUCCESS, 3ms
+08-26 01:16:47.049  2746  2746 I Telecom : SamsungTelecomServiceImpl : isInManagedCall - callingPackage : android / callingUser : UserHandle{0} / hasCrossUserAccess : true
+08-26 01:16:47.067  4715  5059 I HoneySpace.NotificationListener: onNotificationPosted com.android.systemui: -1|com.android.systemui|2114586824|charging_state|10049: 0
+08-26 01:16:47.068  4715  5059 I HoneySpace.NotificationListener: invalid notification: com.android.systemui UserHandle{-1}: canShowBadge is false
+08-26 01:16:47.069  4715 11521 I HoneySpace.BadgeDataSourceImpl: Get notification count. PK(p='com.kakao.talk', u=UserHandle{0}) - forceBadgeCount: false, notification listener: 600, badge provider: 908
+08-26 01:16:47.069  4715 29482 I HoneySpace.BadgeDataSourceImpl: Get notification count. PK(p='com.kakao.talk', u=UserHandle{0}) - forceBadgeCount: false, notification listener: 600, badge provider: 908
+08-26 01:16:47.071  4115  4115 D SubscreenNotificationListCoordinator: onAfterRenderList() isSubScreen = false, pluginLockMode = 0, doNotShowOnCover = false
+08-26 01:16:47.071  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.072  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.073  4115  4115 I LockscreenNotificationIconsOnlyController: onNotificationInfoUpdated 0
+08-26 01:16:47.073  4115  4115 I AODNotificationManager: updateNotification() 
+08-26 01:16:47.075  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 1
+08-26 01:16:47.083  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:47.084  2746  5993 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:16:47.084  2746  5993 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:47.086  2746  5993 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:16:47.087  2746  5993 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:16:47.265  4115  4115 D Bubbles : onEntryUpdated : shouldBubbleUp=false ,key=-1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.266  2746  5993 W MediaSessionRecord: Ignoring call to destroyed session
+08-26 01:16:47.267  2746  5993 W MediaSessionRecord: Ignoring call to destroyed session
+08-26 01:16:47.267  4115  4115 D InterruptionStateProvider:  no Heads up : edgelighting enabled app. -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.268  4115  4115 I {OngoingActivityController}: onEntryUpdated and OA data is empty. So update latest task info
+08-26 01:16:47.270  4115  4115 I {OngoingActivityDataHelper}: setBaseActivityComponentName:ComponentInfo{abc.smapi.gameloader/crc64e91f1276c636690c.LauncherActivity}
+08-26 01:16:47.280  4115  4115 D SubscreenNotificationListCoordinator: onAfterRenderList() isSubScreen = false, pluginLockMode = 0, doNotShowOnCover = false
+08-26 01:16:47.281  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.282  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.284  4115  4115 W RefactorFlag: New code path expects SceneContainerFlag to be enabled.
+08-26 01:16:47.285  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.285  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.287  4115  4115 I LockscreenNotificationIconsOnlyController: onNotificationInfoUpdated 0
+08-26 01:16:47.287  4115  4115 I AODNotificationManager: updateNotification() 
+08-26 01:16:47.300  4115  4727 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+08-26 01:16:47.302  4115  4727 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+08-26 01:16:47.308  4115  4115 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+08-26 01:16:47.326  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.326  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.326  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.327  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.330  4115  4115 D S.S.N.  : entryViewBound parent :-1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.331  4115  4115 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+08-26 01:16:47.335  4115  4115 D SubscreenNotificationListCoordinator: onAfterRenderList() isSubScreen = false, pluginLockMode = 0, doNotShowOnCover = false
+08-26 01:16:47.335  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.336  4115  4115 I DateTimeView: getTimeFormat
+08-26 01:16:47.338  4115  4115 W RefactorFlag: New code path expects SceneContainerFlag to be enabled.
+08-26 01:16:47.338  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.338  4115  4115 D ExpandableNotifRow: mMaxSmallHeight different before reInflateViews mMaxSmallHeight: 331 mTempSmallHeight:0 -1|com.android.systemui|2114586824|charging_state|10049
+08-26 01:16:47.339  4115  4115 I LockscreenNotificationIconsOnlyController: onNotificationInfoUpdated 0
+08-26 01:16:47.339  4115  4115 I AODNotificationManager: updateNotification() 
+08-26 01:16:47.365  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:47.366  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:47.366  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:47.366  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:47.377  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.837, current:-0.040625, soc:0.4, temperature:26.0, status:2, timestamp:1787674607377, voltage_chg:null}
+08-26 01:16:47.377  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:47.574 28198 28279 I PlayCommon: [468] Preparing logs for uploading
+08-26 01:16:47.580 28198 28279 I PlayCommon: [468] Connecting to server: https://play.googleapis.com/play/log?format=raw&proto_v2=true
+08-26 01:16:47.608  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10278(com.android.vending), SUCCESS, 22ms
+08-26 01:16:47.758 22498 22498 I adbd    : adbd service requested 'shell,v2,raw:screencap -p /sdcard/s24_game_started.png'
+08-26 01:16:47.859 28198 28279 I PlayCommon: [468] Successfully uploaded logs.
+08-26 01:16:47.990  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:16:48.039  1761  4052 I sensors-hal: handle_sns_client_event:190, auto_rotation_debug_2 mode,255, type,1,0 acc,0.335,-0.086,9.863, ar,0, ver,15, pedo,1,e,1,i,3
+08-26 01:16:48.159  1761 11569 I sensors-hal: handle_sns_client_event:375, [0][334950] accel_sample [ 0.335, -0.086,  9.892] 409268808896143
+08-26 01:16:48.176 21118 21118 W libbinder.BackendUnifiedServiceManager: Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: SurfaceFlingerAIDL
+08-26 01:16:48.176 21118 21118 W libbinder.BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+08-26 01:16:48.176 21118 21118 W libbinder.BackendUnifiedServiceManager: Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: edmnativehelper
+08-26 01:16:48.177  2746  5993 I EDMNativeHelperService: isScreenCaptureEnabled
+08-26 01:16:48.178  2746  5993 D RestrictionPolicy: isScreenCaptureEnabled : ret=true userId=0
+08-26 01:16:48.179 21118 21118 W libbinder.ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+08-26 01:16:48.179 21118 21118 I SurfaceComposerClient: captureDisplay:Display-4630946315032985731
+08-26 01:16:48.181  1879  4804 I SurfaceFlinger: Capture layer list: 	 abc.smapi.gameloader/crc64e91f1276c636690c.LauncherActivity$_21022#110329(preserveDisplayColors:0)
+08-26 01:16:48.182  1879  4804 I SurfaceFlinger: Capture layer list: 	 $_7798#125(preserveDisplayColors:0)
+08-26 01:16:48.182  1879  4804 I SurfaceFlinger: Capture layer list: 	 StatusBar$_4115#90(preserveDisplayColors:0)
+08-26 01:16:48.182  1879  4804 I SurfaceFlinger: Capture layer list: 	 NavigationBar0$_4115#86(preserveDisplayColors:0)
+08-26 01:16:48.182  1879  2039 D SurfaceFlinger: [SEC_SF_EFFECTS] drawLayersInternal,1337, Rendering layer ScreenCaptureFillLayer at index 0
+08-26 01:16:48.183  1879  2039 D SurfaceFlinger: [SEC_SF_EFFECTS] drawLayersInternal,1337, Rendering layer abc.smapi.gameloader/crc64e91f1276c636690c.LauncherActivity$_21022#110329 at index 1
+08-26 01:16:48.183  1879  2039 D SurfaceFlinger: [SEC_SF_EFFECTS] drawLayersInternal,1337, Rendering layer $_7798#125 at index 2
+08-26 01:16:48.183  1879  2039 D SurfaceFlinger: [SEC_SF_EFFECTS] drawLayersInternal,1337, Rendering layer StatusBar$_4115#90 at index 3
+08-26 01:16:48.183  1879  2039 D SurfaceFlinger: [SEC_SF_EFFECTS] drawLayersInternal,1337, Rendering layer NavigationBar0$_4115#86 at index 4
+08-26 01:16:48.224  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 1
+08-26 01:16:48.226 12568 12568 I DWBDigitalWellbeingAppl: onTrimMemory(): level = 40
+08-26 01:16:48.226 12568 12590 I DWBLocalPkgRepositoryIm: clearCache
+08-26 01:16:48.226 12568 12590 I DWBCacheFlow: clear : lock before
+08-26 01:16:48.226 12568 12590 I DWBCacheFlow: clear : lock start
+08-26 01:16:48.226 12568 12590 I DWBCacheFlow: clear : lock end and subscriptionCount : 0
+08-26 01:16:48.232  1879  4804 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:16:48.268 21118 21123 I AdrenoUtils: <ReadGpuID:357>: Reading chip ID through GSL
+08-26 01:16:48.269 21118 21118 W qdgralloc: Failed to load libubwcp.so
+08-26 01:16:48.285  6908 17857 W MediaProvider: isAppCloneUserPair for user 0: false
+08-26 01:16:48.302  2746  5993 D SyncManager: userId - 0 auto - true
+08-26 01:16:48.303 28393 28418 I MediaSyncer: generation: Generation(added=142824, modified=142825)
+08-26 01:16:48.328 29164 20969 I NetworkScheduler.Stats: (REDACTED) Task %s/%s started execution. cause:%s exec_start_elapsed_seconds: %s
+08-26 01:16:48.332 29164 20968 I NetworkScheduler.Stats: (REDACTED) Task %s/%s finished executing. cause:%s result: %s elapsed_millis: %s uptime_millis: %s exec_start_elapsed_seconds: %s
+08-26 01:16:48.367  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:16:48.367  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:16:48.367  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:16:48.368  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:16:48.378  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.811, current:-0.040625, soc:0.4, temperature:26.0, status:2, timestamp:1787674608378, voltage_chg:null}
+08-26 01:16:48.378  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:16:48.415  1245  1245 D io_stats: !@   8,0 r 78136885 1530245000 w 21443439 287598176 d 2194510 193276244 f 809755 2059715 iot 13501480 0 th 0 0 0 pt 0 inp 0 3 254434.266
+08-26 01:16:48.416  1245  1245 D io_stats: !@ Read_top(KB): sh(21118) 20868 rs.media.module(6908) 9052 kworker/u16:4(19573) 7312
+08-26 01:16:48.416  1245  1245 D io_stats: !@ Write_top(KB): kworker/u16:4(19573) 29480 kworker/u16:1(15051) 7936 mapi.gameloader(21022) 224
+08-26 01:16:48.423 28393 28418 I MediaSyncer: loaded: 120ms, Success(maxMediaId=0, maxGenAdded=-9223372036854775808, maxGenModified=142835, count=0)
+08-26 01:16:48.433  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10536(com.suno.android), SUCCESS, 4ms
+08-26 01:16:48.435  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10536(com.suno.android), SUCCESS, 0ms
+08-26 01:16:48.436 10053 10289 E AndroidLog: message=Connection failed
+08-26 01:16:48.436 10053 10289 E AndroidLog: message= Error uploading events from batch file
+08-26 01:16:48.436 10053 10289 E AndroidLog:  fileUrl="/data/user/0/com.suno.android/app_segment-disk-queue/suno-18659"
+08-26 01:16:48.436 10053 10289 E AndroidLog:  msg=Connection failed
+08-26 01:16:48.498  2746  3982 D WifiConnectivityMonitor.NetworkStatsAnalyzer: Backhaul result - RSSI:-55, CE:23, PE:23, TI:33, PTI:33, TW:0, PTW:0, Tx:276, Rx:301, TxS:263, RxS:289, RESULT:true, IC:0, ICT:5, WC:0, WCT:5, R:163, RC:0, IE:0, EC:0
+08-26 01:16:48.526  2746  5993 I ActivityManager: Broadcasting: Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x400000 }
+08-26 01:16:48.528  2746  5993 I ActivityManager: Enqueued broadcast Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x400000 }: 0
+08-26 01:16:48.531  6908  6908 I MediaServiceV2: Creating work for intent Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x1400010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaServiceV2 }
+08-26 01:16:48.531  6908  6908 I MediaServiceV2: Work enqueued for intent: Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x1400010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaServiceV2 }
+08-26 01:16:48.532  2746  3014 I ActivityManager: Broadcast completed: result=0
+08-26 01:16:48.549  6908  7195 W JobInfo : Requested important-while-foreground flag for job14205 is ignored and takes no effect
+08-26 01:16:48.549  6908  7195 D WM-SystemJobScheduler: Scheduling work ID e2e054ae-11d1-4e83-8fc1-da2d690300b1Job ID 14205
+08-26 01:16:48.549  2746  5993 W JobScheduler.Concurrency: Had fewer than 16 in existence
+08-26 01:16:48.552  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: 74c41c76-f492-4659-98c9-d6741e2abb97}. Requires device idle.
+08-26 01:16:48.552  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: b0dd6664-b3ee-419d-a1ac-fb103c90796d}. Requires device idle.
+08-26 01:16:48.552  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: c2ec06e6-0a3b-44c4-9ec8-929e971c4805}. Requires device idle.
+08-26 01:16:48.552  6908  7195 D WM-GreedyScheduler: Starting work for e2e054ae-11d1-4e83-8fc1-da2d690300b1
+08-26 01:16:48.552  6908  7195 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=e2e054ae-11d1-4e83-8fc1-da2d690300b1, generation=0)
+08-26 01:16:48.553  6908  6908 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=e2e054ae-11d1-4e83-8fc1-da2d690300b1, generation=0)
+08-26 01:16:48.553  6908  6908 D WM-WorkerWrapper: Starting work for com.android.providers.media.MediaServiceV2
+08-26 01:16:48.554  6908  7195 D WM-Processor: Work WorkGenerationalId(workSpecId=e2e054ae-11d1-4e83-8fc1-da2d690300b1, generation=0) is already enqueued for processing
+08-26 01:16:48.554  6908 21141 I MediaServiceV2: Work initiated for action [ android.intent.action.MEDIA_SCANNER_SCAN_FILE ]
+08-26 01:16:48.560  6908 21141 I Kumiho-Kumiho: getPackageName: com.google.android.providers.media.module
+08-26 01:16:48.561  6908 21141 I Kumiho-Kumiho: getPackageName: com.google.android.providers.media.module
+08-26 01:16:48.570  6908 21141 I MediaServiceV2: Work ended for action [ android.intent.action.MEDIA_SCANNER_SCAN_FILE ]
+08-26 01:16:48.571  6908  7189 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=e2e054ae-11d1-4e83-8fc1-da2d690300b1, tags={ com.android.providers.media.MediaServiceV2 } ]
+08-26 01:16:48.572 28393 28418 I MediaSyncer: generation: Generation(added=142824, modified=142835)
+08-26 01:16:48.572  2746  4297 D SyncManager: userId - 0 auto - true
+08-26 01:16:48.573  6908  6908 D WM-Processor: Processor e2e054ae-11d1-4e83-8fc1-da2d690300b1 executed; reschedule = false
+08-26 01:16:48.573  6908  6908 D WM-SystemJobService: e2e054ae-11d1-4e83-8fc1-da2d690300b1 executed on JobScheduler
+08-26 01:16:48.578  6908  7189 D WM-GreedyScheduler: Cancelling work ID e2e054ae-11d1-4e83-8fc1-da2d690300b1
+08-26 01:16:48.578 22498 22498 I adbd    : adbd service requested 'sync:'
+08-26 01:16:48.581  6908  7189 D WM-GreedyScheduler: Ignoring {WorkSpec: 74c41c76-f492-4659-98c9-d6741e2abb97}. Requires device idle.
+08-26 01:16:48.581  6908  7189 D WM-GreedyScheduler: Ignoring {WorkSpec: b0dd6664-b3ee-419d-a1ac-fb103c90796d}. Requires device idle.
+08-26 01:16:48.581  6908  7189 D WM-GreedyScheduler: Ignoring {WorkSpec: c2ec06e6-0a3b-44c4-9ec8-929e971c4805}. Requires device idle.
+08-26 01:16:48.593  6908  7195 D WM-SystemJobScheduler: Scheduling work ID 34c395cd-b9c3-4184-ad64-da8ebc0832fbJob ID 14206
+08-26 01:16:48.595  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: 74c41c76-f492-4659-98c9-d6741e2abb97}. Requires device idle.
+08-26 01:16:48.595  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: b0dd6664-b3ee-419d-a1ac-fb103c90796d}. Requires device idle.
+08-26 01:16:48.595  6908  7195 D WM-GreedyScheduler: Ignoring {WorkSpec: c2ec06e6-0a3b-44c4-9ec8-929e971c4805}. Requires device idle.
+08-26 01:16:48.615 22498 22498 I adbd    : adbd service requested 'shell,v2:export ANDROID_LOG_TAGS=''; exec logcat '-d''
+08-26 01:16:48.652 28393 28418 I MediaSyncer: loaded: 80ms, Success(maxMediaId=22732, maxGenAdded=142835, maxGenModified=142836, count=1)
+08-26 01:16:48.654  2746  5037 D SyncManager: userId - 0 auto - true
+08-26 01:16:48.656 28393 28409 W SefInterface$Companion: This file doesn't have SEF

@@ -1,0 +1,24 @@
+{
+    "VerboseLogging": [],
+    "CheckForUpdates": false,
+    "CheckContentIntegrity": false,
+    "DeveloperMode": false,
+    "ListenForConsoleInput": false,
+    "RewriteMods": true,
+    "FixHarmony": true,
+    "UseCaseInsensitivePaths": true,
+    "ParanoidWarnings": null,
+    "UseBetaChannel": null,
+    "GitHubProjectName": "Pathoschild/SMAPI",
+    "WebApiBaseUrl": "https://smapi.io/api/",
+    "BlacklistUrl": "https://smapi.io/SMAPI.blacklist.json",
+    "LogNetworkTraffic": false,
+    "LogTechnicalDetailsForBrokenMods": false,
+    "SuppressHarmonyDebugMode": true,
+    "SuppressUpdateChecks": [
+        "SMAPI.ConsoleCommands",
+        "SMAPI.SaveBackup"
+    ],
+    "ModsToLoadEarly": [],
+    "ModsToLoadLate": []
+}

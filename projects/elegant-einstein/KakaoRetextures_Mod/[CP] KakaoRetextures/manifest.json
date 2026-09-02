@@ -1,0 +1,11 @@
+{
+  "Name": "KakaoTalk Custom Retextures",
+  "Author": "Kakao Custom",
+  "Version": "1.0.0",
+  "Description": "Custom character portrait retextures for Alex, Sam, Sebastian, Harvey, Wizard, Elliott, Linus, Pierre, Shane, Leah",
+  "UniqueID": "Kakao.CustomRetextures",
+  "MinimumApiVersion": "4.0.0",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

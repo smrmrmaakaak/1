@@ -1,0 +1,95 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Alex",
+      "FromFile": "assets/Alex.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Alex_Winter",
+      "FromFile": "assets/Alex_Winter.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Elliott",
+      "FromFile": "assets/Elliott.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey",
+      "FromFile": "assets/Harvey.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey_Beach",
+      "FromFile": "assets/Harvey_Beach.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey_Winter",
+      "FromFile": "assets/Harvey_Winter.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Linus",
+      "FromFile": "assets/Linus.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Pierre",
+      "FromFile": "assets/Pierre.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam",
+      "FromFile": "assets/Sam.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam_Beach",
+      "FromFile": "assets/Sam_Beach.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam_Winter",
+      "FromFile": "assets/Sam_Winter.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian",
+      "FromFile": "assets/Sebastian.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian_Beach",
+      "FromFile": "assets/Sebastian_Beach.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian_Winter",
+      "FromFile": "assets/Sebastian_Winter.png",
+      "PatchMode": "Replace"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Shane",
+      "FromFile": "assets/Shane.png",
+      "PatchMode": "Replace"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Name": "Stardew Valley Expanded",
+  "Author": "FlashShifter, Esca, and kittycatcasey",
+  "Version": "1.15.11",
+  "Description": "Adds coded elements to the game",
+  "UniqueID": "FlashShifter.StardewValleyExpandedCP.Code",
+  "EntryDll": "StardewValleyExpanded.dll",
+  "MinimumApiVersion": "4.0.0"
+}

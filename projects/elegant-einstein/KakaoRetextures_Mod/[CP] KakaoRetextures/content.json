@@ -1,0 +1,124 @@
+{
+  "Format": "2.3.0",
+  "Changes": [
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Alex",
+      "FromFile": "assets/Alex.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Alex_Beach",
+      "FromFile": "assets/Alex_Beach.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Alex_Winter",
+      "FromFile": "assets/Alex_Winter.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam",
+      "FromFile": "assets/Sam.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam_Beach",
+      "FromFile": "assets/Sam_Beach.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sam_Winter",
+      "FromFile": "assets/Sam_Winter.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian",
+      "FromFile": "assets/Sebastian.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian_Beach",
+      "FromFile": "assets/Sebastian_Beach.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Sebastian_Winter",
+      "FromFile": "assets/Sebastian_Winter.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey",
+      "FromFile": "assets/Harvey.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey_Beach",
+      "FromFile": "assets/Harvey_Beach.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Harvey_Winter",
+      "FromFile": "assets/Harvey_Winter.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Wizard",
+      "FromFile": "assets/Wizard.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Leah",
+      "FromFile": "assets/Leah.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Shane",
+      "FromFile": "assets/Shane.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Shane_Beach",
+      "FromFile": "assets/Shane_Beach.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    },
+    {
+      "Action": "EditImage",
+      "Target": "Portraits/Shane_Winter",
+      "FromFile": "assets/Shane_Winter.png",
+      "PatchMode": "Replace",
+      "Priority": "Late"
+    }
+  ]
+}

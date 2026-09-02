@@ -1,0 +1,18 @@
+{
+  "Name": "SpaceCore",
+  "Author": "spacechase0",
+  "Version": "1.29.0",
+  "Description": "The space-iest of cores. (Framework mod)",
+  "UniqueID": "spacechase0.SpaceCore",
+  "EntryDll": "SpaceCore.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [
+    "Nexus:1348"
+  ],
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher",
+      "IsRequired": false
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+--------- beginning of main
+08-26 01:14:26.460  1735  1922 I minksocket: MinkIPC MESSAGE: ( 1735:1922 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007b66331730 sock = 16, client with node 0 port 5eff went down
+08-26 01:14:26.460  1735  1928 I minksocket: MinkIPC MESSAGE: ( 1735:1928 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007b66332390 sock = 23, client with node 0 port 5eff went down
+08-26 01:14:26.460  1882  1882 I vendor.rmt_storage: rmt_storage_disconnect_cb: clnt_h=0x1bb conn_h=0xb4000074d000c4b0
+08-26 01:14:26.536  1761  1761 I sensors-hal: set_config:64, no need to adjust sample_period_ns due to reporting_mode = 2
+08-26 01:14:26.536  1761  1761 I sensors-hal: batch:363, android.sensor.light/51, period=200000000, max_latency=0 request completed
+08-26 01:14:26.537  1761  1761 I sensors-hal: activate:300, android.sensor.light/51 en=1
+08-26 01:14:26.537  1761  1761 I sensors-hal: acquire_qsh_interface:139, acquire_qsh_interface with sensor_id 30 , conn_type 0 
+08-26 01:14:26.537  1761  1761 I sensors-hal: acquire_qsh_interface:145, returning _shared_instance[SHARED_ON_CHANGE_NO_WAKEUP].conn - non-wakeup
+08-26 01:14:26.537  1761  1761 I sensors-hal: acquire_shared_instance:173, re-use existing connection for type 0 
+08-26 01:14:26.537  1761  1761 I sensors-hal: register_cb:304, suid(low=3046173514946711665,high=5156882063447517846) is new. register callbacks
+08-26 01:14:26.537  1761  1761 I sensors-hal: send_sensor_config_request:645, dt=ambient_light: convert sample_period=200000000 to batch_period=200000
+08-26 01:14:26.537  1761  1761 I sensors-hal: send_sync_sensor_request:508, send sync request
+08-26 01:14:26.537  1761  1761 I sensors-hal: send_sync_sensor_request:518, send_sync_sensor_request before send_request for ambient_light with SUID low=3046173514946711665 high=5156882063447517846
+08-26 01:14:26.537  1761  1761 I sensors-hal: send_sync_sensor_request:537, wait for notification of response
+08-26 01:14:26.538  1761  4052 I sensors-hal: qsh_conn_resp_cb:935, resp_value = 0 for ambient_light 
+08-26 01:14:26.538  1761  1761 I sensors-hal: send_sync_sensor_request:543, takes 1 ms to receive the response with 0
+08-26 01:14:26.538  1761  1761 I sensors-hal: activate:330, android.sensor.light/51 en=1 completed
+08-26 01:14:26.539  2746  7301 D SensorService: resetSensorStateForIdleUID uid= 10535 , ident = 0xb400007141d59f70
+08-26 01:14:26.539  1761  1761 I sensors-hal: activate:300, android.sensor.light/51 en=0
+08-26 01:14:26.539  1761  1761 I sensors-hal: send_sync_sensor_request:508, send sync request
+08-26 01:14:26.539  1761  1761 I sensors-hal: send_sync_sensor_request:518, send_sync_sensor_request before send_request for ambient_light with SUID low=3046173514946711665 high=5156882063447517846
+08-26 01:14:26.539  1761  1761 I sensors-hal: send_sync_sensor_request:537, wait for notification of response
+08-26 01:14:26.540  1761  4052 I sensors-hal: qsh_conn_resp_cb:935, resp_value = 0 for ambient_light 
+08-26 01:14:26.540  1761  1761 I sensors-hal: send_sync_sensor_request:543, takes 0 ms to receive the response with 0
+08-26 01:14:26.540  1761  1761 I sensors-hal: activate:330, android.sensor.light/51 en=0 completed
+08-26 01:14:26.540 18491 18787 D SensorManager: registerListener :: 51, STK33F11 Light Ambient Light Sensor Non-wakeup, 200000, 0, 
+08-26 01:14:26.543  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfoList:2
+08-26 01:14:26.560  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.563  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.565  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.567  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.568  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfoList:2
+08-26 01:14:26.570  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.572  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.574  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.576  4079  4091 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:com.forshared.files:getActiveSubscriptionInfo:2
+08-26 01:14:26.589  4079  4091 D SlicePurchaseController-0: Premium capabilities unsupported because slicing upsell is disabled on the device.
+08-26 01:14:26.589  4079  4091 D SlicePurchaseController-0: Premium capabilities unsupported by the device.
+08-26 01:14:26.596  2746  4270 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.598  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.599  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.601  2746  4270 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.602  2746  4270 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.604  2746  4270 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.605  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.608  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.610  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.612  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.621  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:14:26.622  2746  4270 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+08-26 01:14:26.624  2746  7301 W WifiService: Permission violation - getScanResults not allowed for uid=10535, packageName=com.forshared.files, reason=java.lang.SecurityException: UID 10535 has no location permission
+--------- beginning of system
+08-26 01:14:26.647  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:3
+08-26 01:14:26.647  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:26.650  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:14:26.650  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:26.651  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:1
+08-26 01:14:26.651  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:26.652  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:5
+08-26 01:14:26.652  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:26.662  4079  4224 D EuiccConnector: handleMessage: E msg.what=105
+08-26 01:14:26.663  4079  4224 D EuiccConnector: processMsg: ConnectedState
+08-26 01:14:26.664  4079  4224 D EuiccConnector: handleMessage: X
+08-26 01:14:26.666 16645 19588 I SLPASVC : +onGetEuiccInfo(1)                                                                                  [at com.samsung.euicc.service.EuiccServiceImpl.onGetEuiccInfo(EuiccServiceImpl.java:802)]
+08-26 01:14:26.667 16645 19588 I SLPASVC : cached info                                                                                         [at com.samsung.euicc.service.EuiccServiceImpl.onGetEuiccInfo(EuiccServiceImpl.java:804)]
+08-26 01:14:26.668  4079  4224 D EuiccConnector: handleMessage: E msg.what=6
+08-26 01:14:26.668  4079  4224 D EuiccConnector: processMsg: ConnectedState
+08-26 01:14:26.668  4079  4224 D EuiccConnector: handleMessage: X
+08-26 01:14:26.679  2746  6600 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 23488, isSameBssidAndFreq true
+08-26 01:14:26.681  2746  3946 I SemWifiLinkQualityMonitor: Link stat: 1485 / 74 / 1.18 (72) / 117 / -61.0 || 100.0 : 117.00 / 0.5 : 0.85 / 0.55 : 0.05 / G (G) || 6c80455e2412: 0.144 / 55.497 / N / V || N N / 0 0 / N -77.0 / N -1 0.000 0.000 / N / X 16 / 254292530 0 0 || 2026-08-26 01:14:26  / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0
+08-26 01:14:26.684  2746  3948 I SemInsManager: 6c80455e2 | X,6,7,3,31,0,0,0,0,N,N,N,0 | X, X, X | X,X,X,X,X
+08-26 01:14:26.792  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:14:26.792  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:26.794  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:14:26.794  2746  4270 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:27.088 18491 18787 D SensorManager: unregisterListener
+08-26 01:14:27.172 18491 18787 W JobInfo : Job 'com.forshared.files/com.opensignal.sdk.data.task.NoOpJobService#1122115566' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+08-26 01:14:27.172  2746  4270 W JobInfo : Job 'com.forshared.files/com.opensignal.sdk.data.task.NoOpJobService#1122115566' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+08-26 01:14:27.177  2746  7301 W JobScheduler: Job didn't exist in JobStore: f046c5 #u0a535/1122115566 com.forshared.files/com.opensignal.sdk.data.task.NoOpJobService
+08-26 01:14:27.180  2746  4270 I ActivityManager: Changes in 10535 10 to 19, 384 to 0
+08-26 01:14:27.190  1879  2016 I SurfaceFlinger: Current= 120, Period= 120, Distance= 0
+08-26 01:14:27.198  1879  2016 I SurfaceFlinger: Current= 120, Period= 120, Distance= 120
+08-26 01:14:27.205  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:14:27.205  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:14:27.205  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:14:27.206  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:14:27.215  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.832, current:0.208593, soc:0.4, temperature:26.0, status:2, timestamp:1787674467215, voltage_chg:null}
+08-26 01:14:27.215  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:14:27.220 29164 14977 I FusedLocation: (REDACTED) getLastLocation() noteOp denied for %s
+08-26 01:14:27.628  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:14:27.764 22498 22498 I adbd    : adbd_auth: loading keys from /data/misc/adb/adb_keys
+08-26 01:14:28.096  1761 11569 I sensors-hal: handle_sns_client_event:375, [0][267960] accel_sample [ 0.321, -0.086,  9.949] 409128801205147
+08-26 01:14:28.189  5297  5371 I RequestManager_FLP: onOpChanged, op=0 / packageName=com.forshared.files
+08-26 01:14:28.207  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:14:28.207  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:14:28.207  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:14:28.207  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:14:28.218  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.84, current:0.171093, soc:0.4, temperature:26.0, status:2, timestamp:1787674468218, voltage_chg:null}
+08-26 01:14:28.219  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:14:28.328  1245  1245 D io_stats: !@   8,0 r 78071934 1529386224 w 21434394 287319740 d 2193791 193078028 f 809175 2058890 iot 13492980 0 th 0 0 0 pt 0 inp 0 0 254294.178
+08-26 01:14:28.328  1245  1245 D io_stats: !@ Read_top(KB): forshared.files(18491) 6224 oid.apps.photos(18825) 3500 kworker/u16:13(10507) 160
+08-26 01:14:28.328  1245  1245 D io_stats: !@ Write_top(KB): rmt_storage(1882) 4096 kworker/u16:13(10507) 856 forshared.files(18491) 740
+08-26 01:14:28.414  1761 11295 I sensors-hal: handle_sns_std_sensor_event:409, [SSC_LIGHT] P: 522(522),c:23,b:179,m:13,cl:14,l:523,s:424,l0:79808,l1:128,s0:63000,s1:0,acl:1,opr:0.22,f(r):91,u(bl):100,if:0,wi:2,si:0,po:185(N:0)
+08-26 01:14:28.420  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10536(com.suno.android), SUCCESS, 6ms
+08-26 01:14:28.423  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10536(com.suno.android), SUCCESS, 0ms
+08-26 01:14:28.425 10053 10289 E AndroidLog: message=Connection failed
+08-26 01:14:28.426 10053 10289 E AndroidLog: message= Error uploading events from batch file
+08-26 01:14:28.426 10053 10289 E AndroidLog:  fileUrl="/data/user/0/com.suno.android/app_segment-disk-queue/suno-18659"
+08-26 01:14:28.426 10053 10289 E AndroidLog:  msg=Connection failed
+08-26 01:14:28.446  2746  3982 D WifiConnectivityMonitor.NetworkStatsAnalyzer: Backhaul result - RSSI:-59, CE:23, PE:23, TI:33, PTI:33, TW:4, PTW:4, Tx:186, Rx:204, TxS:179, RxS:196, RESULT:true, IC:0, ICT:5, WC:0, WCT:5, R:120, RC:0, IE:0, EC:0
+08-26 01:14:28.636  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:14:28.795  2746  7301 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:14:28.795  2746  7301 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:28.798  2746  7301 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:14:28.799  2746  7301 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:29.208  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:14:29.208  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:14:29.208  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:14:29.209  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:14:29.220  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.843, current:0.341406, soc:0.4, temperature:26.0, status:2, timestamp:1787674469220, voltage_chg:null}
+08-26 01:14:29.220  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:14:29.645  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:14:29.704  2746  6600 D SemWifiUsabilityStatsMonitor: onWifiUsabilityStats - seqNum 23489, isSameBssidAndFreq true
+08-26 01:14:29.706  2746  3946 I SemWifiLinkQualityMonitor: Link stat: 546 / 24 / 1.00 (27) / 130 / -60.0 || 100.0 : 130.00 / 0.5 : 1.00 / 0.55 : 0.04 / G (G) || 6c80455e2412: 0.137 / 58.459 / N / V || N N / 0 0 / N -77.0 / N -1 0.000 0.000 / N / X 16 / 254295555 0 0 || 2026-08-26 01:14:29  / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0 / 0: 0 0 0 0 0 0
+08-26 01:14:29.711  2746  3948 I SemInsManager: 6c80455e2 | X,6,7,3,31,0,0,0,0,N,N,N,0 | X, X, X | X,X,X,X,X
+08-26 01:14:30.116  2746  5310 I NSLocationMonitor: getGPSUsingApps() called
+08-26 01:14:30.117  5297  5346 I NSLocationManager_FLP: getGPSUsingApps, No change
+08-26 01:14:30.122  4359  8202 V BtGatt.GattService: ***** CURRENT BLE ADVERTISING APPS *****
+08-26 01:14:30.122  4359  8202 V BtGatt.GattService: ***** CURRENT BLE CONNECTED APPS *****
+08-26 01:14:30.123  4359  8202 V ScanController: ***** CURRENT BLE SCANNING APPS *****
+08-26 01:14:30.123  4359  8202 V BtGatt.GattService: loggingList: com.google.android.gms: 10279
+08-26 01:14:30.123  4359  8202 V BtGatt.GattService: loggingList: com.samsung.android.mcfserver: 10136
+08-26 01:14:30.124  4359  8202 V BtGatt.GattService: loggingList: android.uid.system: 1000
+08-26 01:14:30.124  4359  8202 V BtGatt.GattService: loggingList: android.uid.bcmgr: 5006
+08-26 01:14:30.128  2746  5310 D FreecessHandler: skipping freeze com.samsung.android.app.cameraassistant(10530) result : 2
+08-26 01:14:30.144  1761 11569 I sensors-hal: handle_sns_client_event:375, [0][268917] accel_sample [ 0.354, -0.072,  9.882] 409130801339783
+08-26 01:14:30.209  2746  9571 D BSOHChargingDataCollector:  BSOH Sys-servce ... 
+08-26 01:14:30.209  2746  9571 D BSOHChargingDataCollector: performBatteryWork++
+08-26 01:14:30.209  2746  9571 D BSOHChargingDataCollector: performBatteryWork battery com.android.server.bsoh.device.PrimeBattery@c2be66f
+08-26 01:14:30.209  2746  9571 D BSOHChargingDataCollector: primeBatt readVoltage from sysFsBattVolt,  path : /sys/class/power_supply/battery/batt_voltage_now
+08-26 01:14:30.220  2746  9571 D BSOHChargingDataCollector: 0 	 BattData addData data : BattData { voltage:3.843, current:0.341406, soc:0.4, temperature:26.0, status:2, timestamp:1787674470220, voltage_chg:null}
+08-26 01:14:30.220  2746  9571 D BSOHChargingDataCollector: performBatteryWork--
+08-26 01:14:30.277  1797  5081 I StatsHandler: [avcD_370] Stats: Pending(0) i/p-done(0) Works: Q: 108/Done 96|Work-Rate: Q(0.0/s Avg=0.0/s) Done(0.000/s Avg=0.029/s)| Stream: 30.00fps 724.2Kbps
+08-26 01:14:30.277  1797  5081 I StatsHandler: [avcD_370] Mem-usage:  [In-1D: 11 bufs 88.000 MB] [1D-3009: 31 bufs 0.484 MB] [2D-3010: 20 bufs 28.594 MB] | Total: 117.078 MB
+08-26 01:14:30.329  1245  1245 D io_stats: !@   8,0 r 78071943 1529386268 w 21434448 287320564 d 2193791 193078028 f 809175 2058890 iot 13493000 0 th 0 0 0 pt 0 inp 0 0 254296.179
+08-26 01:14:30.522  2746  3741 D ActivityManager: Received BROADCAST intent 0x33515ae Key{broadcastIntent pkg=com.example.homemaster82 intent=xflg=0x4 cmp=com.example.homemaster82/.AlarmReceiver flags=0x4000000 u=0} requestCode=1001 sent=0 from uid 1000
+08-26 01:14:30.530  2746  4003 D NetdEventListenerService: DNS Requested by 120, 10319(com.example.homemaster82), SUCCESS, 3ms
+08-26 01:14:30.655  2746  3978 D SemWifiSwitchForIndividualAppsService: isSkipNetworkCondition - result:2
+08-26 01:14:30.760 22498 22498 I adbd    : adbd service requested 'shell,v2:export ANDROID_LOG_TAGS=''; exec logcat '-d' '-t' '150''
+08-26 01:14:30.799  2746  7295 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:2
+08-26 01:14:30.799  2746  7295 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
+08-26 01:14:30.801  2746  7295 I BatteryService_BatteryPropertiesRegistrar: [getProperty]id:4
+08-26 01:14:30.801  2746  7295 I BatteryService_BatteryPropertiesRegistrar: [getProperty]prop.long:-9223372036854775808 ,prop.string:null
