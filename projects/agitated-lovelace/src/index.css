@@ -1,0 +1,59 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-[#0b0d13] text-slate-100 font-sans antialiased overflow-hidden select-none;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.25), inset 0 0 15px rgba(0, 243, 255, 0.1);
+}
+
+.glow-box-purple {
+  box-shadow: 0 0 25px rgba(157, 0, 255, 0.25), inset 0 0 15px rgba(157, 0, 255, 0.1);
+}
+
+/* S24 Ultra Titanium Frame Border */
+.titanium-border {
+  background: linear-gradient(135deg, #495057 0%, #212529 35%, #343a40 70%, #1a1d20 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* OLED Deep Blacks */
+.amoled-black {
+  background-color: #000000;
+}
