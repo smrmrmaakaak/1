@@ -1,0 +1,2798 @@
+{
+  "copenhagen_blue_fluted": {
+    "id": "copenhagen_blue_fluted",
+    "category": "copenhagen",
+    "category_name": "🇩🇰 로얄 코펜하겐",
+    "title_ko": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)",
+    "title_en": "Royal Copenhagen Blue Fluted Full Lace & Half Lace Set",
+    "brand": "Royal Copenhagen",
+    "flag": "🇩🇰",
+    "era": "20th Century (Denmark)",
+    "origin": "Denmark",
+    "material": "Hand-Painted Fine Porcelain & Coblat Underglaze",
+    "desc": "덴마크 왕실 도자기 로얄 코펜하겐의 정수인 블루 플루티드(Blue Fluted) 풀레이스 커피포트(No.1030)와 하프레이스 티팟(No.258) 세트입니다. 시그니처 3개 파도 물결 백스탬프와 블루 핸드페인팅이 완벽 보존되어 있습니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_00.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_00.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_01.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_01.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_02.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_02.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_03.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_03.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_04.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_04.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_05.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_05.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_06.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_06.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_07.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_07.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로얄 코펜하겐 블루 플루티드 풀레이스 커피포트 & 하프레이스 티팟 (No. 1030 / 258)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/copenhagen_blue_fluted/rgba_08.png",
+        "depth": "antique_collections/copenhagen_blue_fluted/depth_08.png",
+        "normal": "antique_collections/copenhagen_blue_fluted/normal_08.png"
+      }
+    ]
+  },
+  "lladro_nao_sweet_dreams": {
+    "id": "lladro_nao_sweet_dreams",
+    "category": "lladro",
+    "category_name": "🌷 스페인 야드로 & 나오",
+    "title_ko": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)",
+    "title_en": "Nao by Lladró #1429 'Sweet Dreams' Mother & Child",
+    "brand": "Nao by Lladró",
+    "flag": "🇪🇸",
+    "era": "Late 20th Century",
+    "origin": "Spain (Valencia)",
+    "material": "Handcrafted Porcelain with Soft Pastel Glaze",
+    "desc": "어머니의 품에서 잠든 아이의 평화로운 순간을 야드로 특유의 나른하고 따뜻한 파스텔 유약과 유려한 곡선 조형미로 빚어낸 명품 모자상입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_00.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_00.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_01.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_01.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_02.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_02.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_03.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_03.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_04.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_04.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_05.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_05.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_06.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_06.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_07.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_07.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_08.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_08.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_09.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_09.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_10.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_10.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "스페인 나오 1429 모자상 '달콤한 꿈' (Sweet Dreams)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/lladro_nao_sweet_dreams/rgba_11.png",
+        "depth": "antique_collections/lladro_nao_sweet_dreams/depth_11.png",
+        "normal": "antique_collections/lladro_nao_sweet_dreams/normal_11.png"
+      }
+    ]
+  },
+  "lladro_gres_venus": {
+    "id": "lladro_gres_venus",
+    "category": "lladro",
+    "category_name": "🌷 스페인 야드로 & 나오",
+    "title_ko": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)",
+    "title_en": "Lladró Gres #2256 'Venus at the Well' Masterpiece",
+    "brand": "Lladró",
+    "flag": "🇪🇸",
+    "era": "c.1980s",
+    "origin": "Spain (Valencia)",
+    "material": "Sculpted Gres Stoneware Porcelain",
+    "desc": "야드로의 프리미엄 라인인 그레스(Gres) 스톤웨어 소재로 제작되어 대리석 같은 깊은 무광 텍스처와 고대 그리스 비너스의 우아한 나체 조형미를 재현한 대형 조각상입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_00.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_00.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_01.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_01.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_02.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_02.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_03.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_03.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_04.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_04.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_05.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_05.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_06.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_06.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_07.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_07.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_08.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_08.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_09.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_09.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_10.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_10.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_11.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_11.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_11.png"
+      },
+      {
+        "id": 12,
+        "name": "각도 13: Macro 4",
+        "tag": "Macro 4",
+        "desc": "스페인 야드로 그레스 2256 '우물가의 비너스' (Venus at the Well)의 실물 초정밀 디테일 (Macro 4)",
+        "rgba": "antique_collections/lladro_gres_venus/rgba_12.png",
+        "depth": "antique_collections/lladro_gres_venus/depth_12.png",
+        "normal": "antique_collections/lladro_gres_venus/normal_12.png"
+      }
+    ]
+  },
+  "lladro_las_meninas": {
+    "id": "lladro_las_meninas",
+    "category": "lladro",
+    "category_name": "🌷 스페인 야드로 & 나오",
+    "title_ko": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작",
+    "title_en": "Lladró Limited Edition #1812 'Las Meninas' Infanta Margarita",
+    "brand": "Lladró",
+    "flag": "🇪🇸",
+    "era": "Limited Edition",
+    "origin": "Spain (Valencia)",
+    "material": "Hand-Painted Fine Art Porcelain & Gold Filigree",
+    "desc": "디에고 벨라스케스의 불후의 명작 '시녀들(Las Meninas)' 속 마르가리타 왕녀를 기념비적인 스케일로 입체 조각화한 야드로 역사상 가장 희귀한 한정판 초대작입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_00.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_00.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_01.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_01.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_02.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_02.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_03.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_03.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_04.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_04.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_05.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_05.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_06.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_06.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_07.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_07.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_08.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_08.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_09.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_09.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "스페인 야드로 한정판 1812 '라스 메니냐스' 마르가리타 공주 초대작의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/lladro_las_meninas/rgba_10.png",
+        "depth": "antique_collections/lladro_las_meninas/depth_10.png",
+        "normal": "antique_collections/lladro_las_meninas/normal_10.png"
+      }
+    ]
+  },
+  "rex_shepherd_boy": {
+    "id": "rex_shepherd_boy",
+    "category": "lladro",
+    "category_name": "🌷 스페인 야드로 & 나오",
+    "title_ko": "스페인 렉스 발렌시아 1029 목동 소년상",
+    "title_en": "Rex Valencia #1029 Shepherd Boy Figurine",
+    "brand": "Rex Valencia",
+    "flag": "🇪🇸",
+    "era": "c.1970s",
+    "origin": "Spain (Valencia)",
+    "material": "Fine Glazed Porcelain",
+    "desc": "스페인 발렌시아 도자기 전통의 목가적인 감성을 담아낸 목동 소년 조각상입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_00.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_00.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_01.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_01.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_02.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_02.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_03.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_03.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_04.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_04.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_05.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_05.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "스페인 렉스 발렌시아 1029 목동 소년상의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/rex_shepherd_boy/rgba_06.png",
+        "depth": "antique_collections/rex_shepherd_boy/depth_06.png",
+        "normal": "antique_collections/rex_shepherd_boy/normal_06.png"
+      }
+    ]
+  },
+  "doulton_princess_jennifer": {
+    "id": "doulton_princess_jennifer",
+    "category": "doulton",
+    "category_name": "👑 영국 로열둘튼",
+    "title_ko": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)",
+    "title_en": "Royal Doulton 'Princess Jennifer' (HN 3382)",
+    "brand": "Royal Doulton",
+    "flag": "🇬🇧",
+    "era": "c.1991",
+    "origin": "England",
+    "material": "Fine Bone China & Hand-Painted Enamel",
+    "desc": "영국 로열둘튼의 우아한 왕실 레이디 컬렉션 중 하나로, 풍성한 드레스 자락과 섬세한 얼굴 페인팅이 돋보이는 명작 피겨린입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_00.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_00.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_01.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_01.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_02.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_02.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_03.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_03.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_04.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_04.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열둘튼 제니퍼 공주 피겨린 (HN 3382)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/doulton_princess_jennifer/rgba_05.png",
+        "depth": "antique_collections/doulton_princess_jennifer/depth_05.png",
+        "normal": "antique_collections/doulton_princess_jennifer/normal_05.png"
+      }
+    ]
+  },
+  "aynsley_orchard_yellow": {
+    "id": "aynsley_orchard_yellow",
+    "category": "aynsley",
+    "category_name": "🌹 영국 앤슬리",
+    "title_ko": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트",
+    "title_en": "Aynsley Orchard Gold Canary Yellow Teacup & Saucer",
+    "brand": "Aynsley",
+    "flag": "🇬🇧",
+    "era": "Mid 20th Century",
+    "origin": "England (Aynsley)",
+    "material": "Fine Bone China & 24K Hand-Gilded Gold",
+    "desc": "풍요로운 과일 정원을 핸드페인팅으로 수놓고 화사한 카나리아 옐로우와 24K 순금 장정을 두른 영국 앤슬리의 불멸의 시그니처 티잔 세트입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_00.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_00.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_01.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_01.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_02.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_02.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_03.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_03.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_04.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_04.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_05.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_05.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_06.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_06.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_07.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_07.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_08.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_08.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "앤슬리 오차드 골드 옐로우 티잔 & 소서 세트의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/aynsley_orchard_yellow/rgba_09.png",
+        "depth": "antique_collections/aynsley_orchard_yellow/depth_09.png",
+        "normal": "antique_collections/aynsley_orchard_yellow/normal_09.png"
+      }
+    ]
+  },
+  "aynsley_orchard_ruby": {
+    "id": "aynsley_orchard_ruby",
+    "category": "aynsley",
+    "category_name": "🌹 영국 앤슬리",
+    "title_ko": "앤슬리 오차드 골드 루비 크림슨 티잔 세트",
+    "title_en": "Aynsley Orchard Gold Ruby Crimson Teacup Set",
+    "brand": "Aynsley",
+    "flag": "🇬🇧",
+    "era": "Mid 20th Century",
+    "origin": "England (Aynsley)",
+    "material": "Fine Bone China & 24K Hand-Gilded Gold",
+    "desc": "귀족적인 루비 크림슨 컬러와 24K 금박 내벽, 무르익은 과일 부케가 조화를 이루는 프리미엄 티웨어입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "앤슬리 오차드 골드 루비 크림슨 티잔 세트의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/aynsley_orchard_ruby/rgba_00.png",
+        "depth": "antique_collections/aynsley_orchard_ruby/depth_00.png",
+        "normal": "antique_collections/aynsley_orchard_ruby/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "앤슬리 오차드 골드 루비 크림슨 티잔 세트의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/aynsley_orchard_ruby/rgba_01.png",
+        "depth": "antique_collections/aynsley_orchard_ruby/depth_01.png",
+        "normal": "antique_collections/aynsley_orchard_ruby/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "앤슬리 오차드 골드 루비 크림슨 티잔 세트의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/aynsley_orchard_ruby/rgba_02.png",
+        "depth": "antique_collections/aynsley_orchard_ruby/depth_02.png",
+        "normal": "antique_collections/aynsley_orchard_ruby/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "앤슬리 오차드 골드 루비 크림슨 티잔 세트의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/aynsley_orchard_ruby/rgba_03.png",
+        "depth": "antique_collections/aynsley_orchard_ruby/depth_03.png",
+        "normal": "antique_collections/aynsley_orchard_ruby/normal_03.png"
+      }
+    ]
+  },
+  "rococo_dancing_lovers": {
+    "id": "rococo_dancing_lovers",
+    "category": "rococo",
+    "category_name": "🏛️ 유럽 로코코 포슬린",
+    "title_ko": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린",
+    "title_en": "Rococo Crown Hallmark Standing Dancing Lovers",
+    "brand": "European Rococo",
+    "flag": "👑",
+    "era": "19th Century",
+    "origin": "Germany / Austria",
+    "material": "Hard-Paste Porcelain & Hand-Painted Enamels",
+    "desc": "18세기 궁정 살롱의 화려한 무도회를 배경으로 춤을 추는 귀족 연인의 역동적인 모션과 레이스 드레스가 수놓아진 피겨린입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_00.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_00.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_01.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_01.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_02.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_02.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_03.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_03.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_04.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_04.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_05.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_05.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_06.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_06.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로코코 왕관각인 스탠딩 댄싱 연인 피겨린의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/rococo_dancing_lovers/rgba_07.png",
+        "depth": "antique_collections/rococo_dancing_lovers/depth_07.png",
+        "normal": "antique_collections/rococo_dancing_lovers/normal_07.png"
+      }
+    ]
+  },
+  "rococo_mandolin_lovers": {
+    "id": "rococo_mandolin_lovers",
+    "category": "rococo",
+    "category_name": "🏛️ 유럽 로코코 포슬린",
+    "title_ko": "로코코 만돌린 연주 시팅 귀족 연인 피겨린",
+    "title_en": "Rococo Sitting Noble Lovers with Mandolin",
+    "brand": "European Rococo",
+    "flag": "👑",
+    "era": "19th Century",
+    "origin": "Germany / Austria",
+    "material": "Hard-Paste Porcelain & Hand-Painted Enamels",
+    "desc": "정원에서 만돌린을 연주하며 사랑을 속삭이는 로코코 궁정 연인의 낭만적인 한때를 표현한 작품입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_00.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_00.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_01.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_01.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_02.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_02.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_03.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_03.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_04.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_04.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_05.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_05.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로코코 만돌린 연주 시팅 귀족 연인 피겨린의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/rococo_mandolin_lovers/rgba_06.png",
+        "depth": "antique_collections/rococo_mandolin_lovers/depth_06.png",
+        "normal": "antique_collections/rococo_mandolin_lovers/normal_06.png"
+      }
+    ]
+  },
+  "chardin_spinning_top_frame": {
+    "id": "chardin_spinning_top_frame",
+    "category": "art_frame",
+    "category_name": "🖼️ 명화 액자 & 자수공예",
+    "title_ko": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자",
+    "title_en": "Jean-Siméon Chardin 'Boy with a Top' Gold Gilt Frame",
+    "brand": "Classic Art",
+    "flag": "🖼️",
+    "era": "18th Century Masterpiece",
+    "origin": "France",
+    "material": "Oil on Canvas & 24K Hand-Carved Gilt Wood Frame",
+    "desc": "루브르 박물관 소장작인 프랑스 18세기 거장 샤르댕의 대표작 '팽이를 돌리는 소년'을 앤틱 24K 수작업 골드 액자에 담아낸 마스터피스입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_00.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_00.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_01.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_01.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_02.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_02.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_03.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_03.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_04.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_04.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_05.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_05.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_06.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_06.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_07.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_07.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "장 바티스트 샤르댕 '팽이를 돌리는 소년' (1738) 골드 유화 액자의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/chardin_spinning_top_frame/rgba_08.png",
+        "depth": "antique_collections/chardin_spinning_top_frame/depth_08.png",
+        "normal": "antique_collections/chardin_spinning_top_frame/normal_08.png"
+      }
+    ]
+  },
+  "sevres_bleu_celeste_sconces": {
+    "id": "sevres_bleu_celeste_sconces",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍",
+    "title_en": "Sèvres Bleu Céleste Ormolu Bronze Wall Sconces Pair",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1870)",
+    "origin": "France (Sèvres)",
+    "material": "Bleu Céleste Porcelain & Heavy Ormolu Gilt Bronze",
+    "desc": "루이 15세의 궁정 색채인 블루 셀레스테(천상의 푸른빛) 포슬린에 촛대 형태의 24K 오르몰루 주물 브론즈가 결합된 왕실 벽등 한 쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_00.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_00.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_01.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_01.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_02.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_02.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_03.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_03.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_04.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_04.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_05.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_05.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 블루 셀레스테 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_bleu_celeste_sconces/rgba_06.png",
+        "depth": "antique_collections/sevres_bleu_celeste_sconces/depth_06.png",
+        "normal": "antique_collections/sevres_bleu_celeste_sconces/normal_06.png"
+      }
+    ]
+  },
+  "sevres_rose_sconces": {
+    "id": "sevres_rose_sconces",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍",
+    "title_en": "Sèvres Rose Pompadour Ormolu Bronze Wall Sconces Pair",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1875)",
+    "origin": "France (Sèvres)",
+    "material": "Rose Pompadour Porcelain & Ormolu Gilt Bronze",
+    "desc": "퐁파두르 부인이 사랑했던 환상적인 핑크 에나멜 유약과 궁정 여인 핸드페인팅 메달리온이 장식된 최고급 오르몰루 2구 벽등 1쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_00.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_00.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_01.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_01.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_02.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_02.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_03.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_03.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_04.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_04.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_05.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_05.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_06.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_06.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_07.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_07.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_08.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_08.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_09.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_09.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_10.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_10.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 브론즈 벽등 1쌍의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/sevres_rose_sconces/rgba_11.png",
+        "depth": "antique_collections/sevres_rose_sconces/depth_11.png",
+        "normal": "antique_collections/sevres_rose_sconces/normal_11.png"
+      }
+    ]
+  },
+  "sevres_boudoir_lamp": {
+    "id": "sevres_boudoir_lamp",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프",
+    "title_en": "Sèvres Royal Blue Ormolu 2-Light Boudoir Table Lamp",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1880)",
+    "origin": "France (Sèvres)",
+    "material": "Cobalt Porcelain & 24K Ormolu Bronze Mount",
+    "desc": "프랑스 왕실 귀부인의 침실(Boudoir)을 밝히던 2구 오르몰루 브론즈 촛대 스탠드로, 코발트 블루 항아리 바디와 정교한 사자발 받침대가 돋보입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_00.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_00.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_01.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_01.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_02.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_02.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_03.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_03.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_04.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_04.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_05.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_05.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_06.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_06.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "세브르 블루 포슬린 오르몰루 2구 부두아 탁상 램프의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/sevres_boudoir_lamp/rgba_07.png",
+        "depth": "antique_collections/sevres_boudoir_lamp/depth_07.png",
+        "normal": "antique_collections/sevres_boudoir_lamp/normal_07.png"
+      }
+    ]
+  },
+  "sevres_rose_box": {
+    "id": "sevres_rose_box",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)",
+    "title_en": "Sèvres Rose Pompadour Ormolu Hinged Jewelry Box (14cm)",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1880)",
+    "origin": "France (Sèvres)",
+    "material": "Rose Pompadour Porcelain & 24K Ormolu Bronze",
+    "desc": "프랑스 왕실 세브르의 독보적인 로즈 퐁파두르 핑크 유약에 24K 오르몰루 브론즈 마운트와 플로럴 핸드페인팅이 결합된 최고급 힌지 주얼리 박스입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_00.png",
+        "depth": "antique_collections/sevres_rose_box/depth_00.png",
+        "normal": "antique_collections/sevres_rose_box/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_01.png",
+        "depth": "antique_collections/sevres_rose_box/depth_01.png",
+        "normal": "antique_collections/sevres_rose_box/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_02.png",
+        "depth": "antique_collections/sevres_rose_box/depth_02.png",
+        "normal": "antique_collections/sevres_rose_box/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_03.png",
+        "depth": "antique_collections/sevres_rose_box/depth_03.png",
+        "normal": "antique_collections/sevres_rose_box/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_04.png",
+        "depth": "antique_collections/sevres_rose_box/depth_04.png",
+        "normal": "antique_collections/sevres_rose_box/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_05.png",
+        "depth": "antique_collections/sevres_rose_box/depth_05.png",
+        "normal": "antique_collections/sevres_rose_box/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_06.png",
+        "depth": "antique_collections/sevres_rose_box/depth_06.png",
+        "normal": "antique_collections/sevres_rose_box/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_07.png",
+        "depth": "antique_collections/sevres_rose_box/depth_07.png",
+        "normal": "antique_collections/sevres_rose_box/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_08.png",
+        "depth": "antique_collections/sevres_rose_box/depth_08.png",
+        "normal": "antique_collections/sevres_rose_box/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_09.png",
+        "depth": "antique_collections/sevres_rose_box/depth_09.png",
+        "normal": "antique_collections/sevres_rose_box/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "세브르 로즈 퐁파두르 오르몰루 힌지 직사각 보석함 (14cm)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/sevres_rose_box/rgba_10.png",
+        "depth": "antique_collections/sevres_rose_box/depth_10.png",
+        "normal": "antique_collections/sevres_rose_box/normal_10.png"
+      }
+    ]
+  },
+  "sevres_blue_box": {
+    "id": "sevres_blue_box",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)",
+    "title_en": "Sèvres Bleu de Roi Hand-Painted Hinged Jewelry Box (13cm)",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1870)",
+    "origin": "France (Sèvres)",
+    "material": "Bleu de Roi Porcelain & Ormolu Bronze Mount",
+    "desc": "왕의 파랑(Bleu de Roi) 에나멜과 화려한 24K 금박 스크롤, 프랑스 궁정 화원의 플로럴 부케 핸드페인팅이 어우러진 럭셔리 힌지 보석함입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_00.png",
+        "depth": "antique_collections/sevres_blue_box/depth_00.png",
+        "normal": "antique_collections/sevres_blue_box/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_01.png",
+        "depth": "antique_collections/sevres_blue_box/depth_01.png",
+        "normal": "antique_collections/sevres_blue_box/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_02.png",
+        "depth": "antique_collections/sevres_blue_box/depth_02.png",
+        "normal": "antique_collections/sevres_blue_box/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_03.png",
+        "depth": "antique_collections/sevres_blue_box/depth_03.png",
+        "normal": "antique_collections/sevres_blue_box/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_04.png",
+        "depth": "antique_collections/sevres_blue_box/depth_04.png",
+        "normal": "antique_collections/sevres_blue_box/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_05.png",
+        "depth": "antique_collections/sevres_blue_box/depth_05.png",
+        "normal": "antique_collections/sevres_blue_box/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_06.png",
+        "depth": "antique_collections/sevres_blue_box/depth_06.png",
+        "normal": "antique_collections/sevres_blue_box/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_07.png",
+        "depth": "antique_collections/sevres_blue_box/depth_07.png",
+        "normal": "antique_collections/sevres_blue_box/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_08.png",
+        "depth": "antique_collections/sevres_blue_box/depth_08.png",
+        "normal": "antique_collections/sevres_blue_box/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_09.png",
+        "depth": "antique_collections/sevres_blue_box/depth_09.png",
+        "normal": "antique_collections/sevres_blue_box/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/sevres_blue_box/rgba_10.png",
+        "depth": "antique_collections/sevres_blue_box/depth_10.png",
+        "normal": "antique_collections/sevres_blue_box/normal_10.png"
+      }
+    ]
+  },
+  "sevres_rose_compote_tazza": {
+    "id": "sevres_rose_compote_tazza",
+    "category": "sevres",
+    "category_name": "⚜️ 프랑스 세브르 왕실포슬린",
+    "title_ko": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)",
+    "title_en": "Sèvres Rose Pompadour Royal Portrait Compote Tazza Pair",
+    "brand": "Sèvres",
+    "flag": "🇫🇷",
+    "era": "19th Century (c.1870)",
+    "origin": "France (Sèvres)",
+    "material": "Porcelain, 24K Gold Filigree & Miniature Portrait",
+    "desc": "상단 원형 트레이에 궁정 왕실 여인의 정밀 초상화가 그려지고 로즈 퐁파두르 유약과 금박 스크롤이 수놓아진 23cm 컴포트 타짜 1쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_00.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_00.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_01.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_01.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_02.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_02.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_03.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_03.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_04.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_04.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_05.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_05.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "세브르 로즈 퐁파두르 왕실 여인 초상화 컴포트 타짜 1쌍 (23cm)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/sevres_rose_compote_tazza/rgba_06.png",
+        "depth": "antique_collections/sevres_rose_compote_tazza/depth_06.png",
+        "normal": "antique_collections/sevres_rose_compote_tazza/normal_06.png"
+      }
+    ]
+  },
+  "london_art_union_tazza": {
+    "id": "london_art_union_tazza",
+    "category": "rococo",
+    "category_name": "🏛️ 유럽 로코코 포슬린",
+    "title_ko": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이",
+    "title_en": "London Art Union Vienna Style Ormolu Bronze Compote",
+    "brand": "London Art Union",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1880)",
+    "origin": "England / Austria",
+    "material": "Ormolu Gilt Bronze & Hand-Painted Porcelain",
+    "desc": "빅토리아 시대 영국 런던 아트 유니온 발행의 비엔나 스타일 명화 포슬린과 오르몰루 브론즈 투각 프레임이 결합된 센터피스 트레이입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/london_art_union_tazza/rgba_00.png",
+        "depth": "antique_collections/london_art_union_tazza/depth_00.png",
+        "normal": "antique_collections/london_art_union_tazza/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/london_art_union_tazza/rgba_01.png",
+        "depth": "antique_collections/london_art_union_tazza/depth_01.png",
+        "normal": "antique_collections/london_art_union_tazza/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/london_art_union_tazza/rgba_02.png",
+        "depth": "antique_collections/london_art_union_tazza/depth_02.png",
+        "normal": "antique_collections/london_art_union_tazza/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/london_art_union_tazza/rgba_03.png",
+        "depth": "antique_collections/london_art_union_tazza/depth_03.png",
+        "normal": "antique_collections/london_art_union_tazza/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "런던 아트 유니온 비엔나풍 오르몰루 브론즈 컴포트 트레이의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/london_art_union_tazza/rgba_04.png",
+        "depth": "antique_collections/london_art_union_tazza/depth_04.png",
+        "normal": "antique_collections/london_art_union_tazza/normal_04.png"
+      }
+    ]
+  },
+  "victorian_petit_point_floral": {
+    "id": "victorian_petit_point_floral",
+    "category": "art_frame",
+    "category_name": "🖼️ 명화 액자 & 자수공예",
+    "title_ko": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자",
+    "title_en": "Victorian Petit Point Floral Bouquet Gold Oval Frame",
+    "brand": "Victorian Craft",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1890)",
+    "origin": "England / France",
+    "material": "Hand-Stitched Silk Petit Point & Gilt Wood Frame",
+    "desc": "1인치당 수백 번의 실크 바늘땀을 손으로 놓아 완성한 쁘띠포앙(Petit Point) 장미 꽃다발 자수 명작입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_00.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_00.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_01.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_01.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_02.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_02.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_03.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_03.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_04.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_04.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "빅토리안 플로럴 부케 쁘띠포앙 자수 골드 오벌 액자의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/victorian_petit_point_floral/rgba_05.png",
+        "depth": "antique_collections/victorian_petit_point_floral/depth_05.png",
+        "normal": "antique_collections/victorian_petit_point_floral/normal_05.png"
+      }
+    ]
+  },
+  "victorian_petit_point_lovers": {
+    "id": "victorian_petit_point_lovers",
+    "category": "art_frame",
+    "category_name": "🖼️ 명화 액자 & 자수공예",
+    "title_ko": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍",
+    "title_en": "Victorian Petit Point Court Lovers Square Frames Pair",
+    "brand": "Victorian Craft",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1895)",
+    "origin": "England / France",
+    "material": "Silk Petit Point Embroidery & Antique Gilt Frame",
+    "desc": "로코코 궁정 귀족 연인의 만남과 구애 장면을 극세사 실크 쁘띠포앙 자수로 표현한 대형 스퀘어 액자 한 쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/victorian_petit_point_lovers/rgba_00.png",
+        "depth": "antique_collections/victorian_petit_point_lovers/depth_00.png",
+        "normal": "antique_collections/victorian_petit_point_lovers/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/victorian_petit_point_lovers/rgba_01.png",
+        "depth": "antique_collections/victorian_petit_point_lovers/depth_01.png",
+        "normal": "antique_collections/victorian_petit_point_lovers/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/victorian_petit_point_lovers/rgba_02.png",
+        "depth": "antique_collections/victorian_petit_point_lovers/depth_02.png",
+        "normal": "antique_collections/victorian_petit_point_lovers/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/victorian_petit_point_lovers/rgba_03.png",
+        "depth": "antique_collections/victorian_petit_point_lovers/depth_03.png",
+        "normal": "antique_collections/victorian_petit_point_lovers/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "빅토리안 로코코 궁정 연인 쁘띠포앙 자수 스퀘어 액자 1쌍의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/victorian_petit_point_lovers/rgba_04.png",
+        "depth": "antique_collections/victorian_petit_point_lovers/depth_04.png",
+        "normal": "antique_collections/victorian_petit_point_lovers/normal_04.png"
+      }
+    ]
+  },
+  "worcester_greek_goddess": {
+    "id": "worcester_greek_goddess",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)",
+    "title_en": "Royal Worcester 1890s Classical Greek Goddesses Pair",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1890)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory Porcelain & 24K Gilt Drapery",
+    "desc": "영국 왕실 도자기 로열우스터 전성기의 블러시 아이보리 포슬린과 24K 금박 드레이퍼리가 완벽한 균형을 이루는 고전 그리스 여신 입체 조각상 1쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_00.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_00.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_01.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_01.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_02.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_02.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_03.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_03.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_04.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_04.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_05.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_05.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_06.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_06.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_07.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_07.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_08.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_08.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_09.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_09.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_10.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_10.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_11.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_11.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_11.png"
+      },
+      {
+        "id": 12,
+        "name": "각도 13: Macro 4",
+        "tag": "Macro 4",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Macro 4)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_12.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_12.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_12.png"
+      },
+      {
+        "id": 13,
+        "name": "각도 14: Backstamp",
+        "tag": "Backstamp",
+        "desc": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)의 실물 초정밀 디테일 (Backstamp)",
+        "rgba": "antique_collections/worcester_greek_goddess/rgba_13.png",
+        "depth": "antique_collections/worcester_greek_goddess/depth_13.png",
+        "normal": "antique_collections/worcester_greek_goddess/normal_13.png"
+      }
+    ]
+  },
+  "worcester_paradise_bird_ewer": {
+    "id": "worcester_paradise_bird_ewer",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍",
+    "title_en": "Royal Worcester 1882 Aesthetic Bird of Paradise Ewers Pair",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Aesthetic Period (1882)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory & Raised 24K Gold Enamels",
+    "desc": "19세기 후반 에스테틱 운동(Aesthetic Movement)과 자포니즘의 정수로, 화려한 극락조와 연꽃 모티프가 24K 양각 금박으로 수놓아진 귀족적인 에워 한 쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_00.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_00.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_01.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_01.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_02.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_02.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_03.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_03.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_04.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_04.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_05.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_05.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_06.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_06.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 1882년 에스테틱 극락조 자포니즘 골드 에워 화병 1쌍의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_paradise_bird_ewer/rgba_07.png",
+        "depth": "antique_collections/worcester_paradise_bird_ewer/depth_07.png",
+        "normal": "antique_collections/worcester_paradise_bird_ewer/normal_07.png"
+      }
+    ]
+  },
+  "worcester_hadley_siblings": {
+    "id": "worcester_hadley_siblings",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)",
+    "title_en": "Royal Worcester 1890s James Hadley Pastoral Siblings Centerpieces",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1890)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory Porcelain & Bronze Green Enamels",
+    "desc": "로열우스터의 전설적인 수석 조각가 제임스 해들리(James Hadley)의 걸작으로, 커다란 바구니를 들고 있는 소년과 소녀의 순수한 표정이 살아 숨 쉬는 대형 센터피스 1쌍입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_00.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_00.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_01.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_01.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_02.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_02.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_03.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_03.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_04.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_04.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_05.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_05.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_06.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_06.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_07.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_07.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_08.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_08.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_09.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_09.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_10.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_10.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_11.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_11.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_11.png"
+      },
+      {
+        "id": 12,
+        "name": "각도 13: Macro 4",
+        "tag": "Macro 4",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Macro 4)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_12.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_12.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_12.png"
+      },
+      {
+        "id": 13,
+        "name": "각도 14: Backstamp",
+        "tag": "Backstamp",
+        "desc": "로열우스터 1890s 해들리 바구니를 든 전원 남매 센터피스 1쌍 (No. 96)의 실물 초정밀 디테일 (Backstamp)",
+        "rgba": "antique_collections/worcester_hadley_siblings/rgba_13.png",
+        "depth": "antique_collections/worcester_hadley_siblings/depth_13.png",
+        "normal": "antique_collections/worcester_hadley_siblings/normal_13.png"
+      }
+    ]
+  },
+  "worcester_warwick_vase": {
+    "id": "worcester_warwick_vase",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)",
+    "title_en": "Royal Worcester Warwick Castle Reticulated Potpourri Vase (32cm)",
+    "brand": "Grainger Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1895)",
+    "origin": "England (Grainger Royal Worcester)",
+    "material": "Reticulated Pierced Fine Bone China",
+    "desc": "장인의 정밀한 수작업 레이스 투각 넥과 돔 리드, 정면의 워릭 캐슬(Warwick Castle) 풍경화 및 후면 제비 세밀화가 수놓아진 32cm 대형 마스터피스입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_00.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_00.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_01.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_01.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_02.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_02.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_03.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_03.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_04.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_04.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_05.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_05.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_06.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_06.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_07.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_07.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_08.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_08.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_09.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_09.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_10.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_10.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_11.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_11.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_11.png"
+      },
+      {
+        "id": 12,
+        "name": "각도 13: Macro 4",
+        "tag": "Macro 4",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Macro 4)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_12.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_12.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_12.png"
+      },
+      {
+        "id": 13,
+        "name": "각도 14: Backstamp",
+        "tag": "Backstamp",
+        "desc": "로열우스터 워릭캐슬 레이스 투각 대형 포푸리 화병 (32cm)의 실물 초정밀 디테일 (Backstamp)",
+        "rgba": "antique_collections/worcester_warwick_vase/rgba_13.png",
+        "depth": "antique_collections/worcester_warwick_vase/depth_13.png",
+        "normal": "antique_collections/worcester_warwick_vase/normal_13.png"
+      }
+    ]
+  },
+  "worcester_painted_fruit_demitasse": {
+    "id": "worcester_painted_fruit_demitasse",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트",
+    "title_en": "Royal Worcester Painted Fruit 24K All-Gold Demitasse Cups Pair",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "c.1920s",
+    "origin": "England (Royal Worcester)",
+    "material": "Bone China, 24K Solid Gold Interior, Hand-Painted Fruit",
+    "desc": "찻잔 내부 전체를 24K 순금으로 도금하고 외벽에 농익은 복숭아와 청포도를 붓자국 하나 없이 세밀하게 묘사한 로열우스터의 최고가 시그니처 컬렉션입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_00.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_00.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_01.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_01.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_02.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_02.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_03.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_03.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_04.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_04.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_05.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_05.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_06.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_06.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 페인티드 프루츠 24K 올골드 내부 데미타스 2인조 세트의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_painted_fruit_demitasse/rgba_07.png",
+        "depth": "antique_collections/worcester_painted_fruit_demitasse/depth_07.png",
+        "normal": "antique_collections/worcester_painted_fruit_demitasse/normal_07.png"
+      }
+    ]
+  },
+  "worcester_cherry_blossom_vase": {
+    "id": "worcester_cherry_blossom_vase",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)",
+    "title_en": "Royal Worcester Aesthetic Cherry Blossoms & Bluebird Vase",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1885)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory Porcelain & 24K Raised Gilt",
+    "desc": "화사하게 만개한 벚꽃 가지 위에 앉은 파랑새와 24K 입체 금박 링 핸들이 동양의 정취를 극대화한 빅토리안 자포니즘 화병입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_00.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_00.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_01.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_01.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_02.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_02.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_03.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_03.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_04.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_04.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_05.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_05.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_06.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_06.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_07.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_07.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_08.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_08.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 에스테틱 벚꽃과 파랑새 자포니즘 골드화병 (No. 871)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_cherry_blossom_vase/rgba_09.png",
+        "depth": "antique_collections/worcester_cherry_blossom_vase/depth_09.png",
+        "normal": "antique_collections/worcester_cherry_blossom_vase/normal_09.png"
+      }
+    ]
+  },
+  "worcester_moorish_ewer": {
+    "id": "worcester_moorish_ewer",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)",
+    "title_en": "Royal Worcester Moorish Arabesque Gilt Pierced Ewer (41cm)",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1885)",
+    "origin": "England (Royal Worcester)",
+    "material": "Moorish Pierced Porcelain & Heavy 24K Gold Relief",
+    "desc": "빅토리아 시대 이슬람 무어 양식의 정교한 아라베스크 오픈워크 투각 손잡이와 24K 금박 부조가 돋보이는 41cm 초대형 왕실 에워 화병입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_00.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_00.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_01.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_01.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_02.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_02.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_03.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_03.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_04.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_04.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_05.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_05.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_06.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_06.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_07.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_07.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_08.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_08.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_09.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_09.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_10.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_10.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_11.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_11.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_11.png"
+      },
+      {
+        "id": 12,
+        "name": "각도 13: Macro 4",
+        "tag": "Macro 4",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Macro 4)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_12.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_12.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_12.png"
+      },
+      {
+        "id": 13,
+        "name": "각도 14: Backstamp",
+        "tag": "Backstamp",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Backstamp)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_13.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_13.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_13.png"
+      },
+      {
+        "id": 14,
+        "name": "각도 15: Top View",
+        "tag": "Top View",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Top View)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_14.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_14.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_14.png"
+      },
+      {
+        "id": 15,
+        "name": "각도 16: Detail",
+        "tag": "Detail",
+        "desc": "로열우스터 빅토리안 무어풍 아라베스크 부조 초대형 골드화병 (41cm)의 실물 초정밀 디테일 (Detail)",
+        "rgba": "antique_collections/worcester_moorish_ewer/rgba_15.png",
+        "depth": "antique_collections/worcester_moorish_ewer/depth_15.png",
+        "normal": "antique_collections/worcester_moorish_ewer/normal_15.png"
+      }
+    ]
+  },
+  "worcester_chrysanthemum_vase": {
+    "id": "worcester_chrysanthemum_vase",
+    "category": "worcester",
+    "category_name": "👑 영국 로열우스터",
+    "title_ko": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)",
+    "title_en": "Royal Worcester 1880s Japonisme Chrysanthemum Reticulated Vase",
+    "brand": "Royal Worcester",
+    "flag": "🇬🇧",
+    "era": "Victorian Period (c.1886)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory Porcelain, Reticulated Neck & Floral Miniature",
+    "desc": "만개한 핑크와 퍼플 국화 세밀화와 정교한 투각 넥 및 돔 피니얼이 결합된 30cm 명품 화병입니다.",
+    "photos": [
+      {
+        "id": 0,
+        "name": "각도 1: Front View",
+        "tag": "Front View",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Front View)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_00.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_00.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_00.png"
+      },
+      {
+        "id": 1,
+        "name": "각도 2: Hero 45°",
+        "tag": "Hero 45°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Hero 45°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_01.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_01.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_01.png"
+      },
+      {
+        "id": 2,
+        "name": "각도 3: Right 60°",
+        "tag": "Right 60°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Right 60°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_02.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_02.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_02.png"
+      },
+      {
+        "id": 3,
+        "name": "각도 4: Side 90°",
+        "tag": "Side 90°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Side 90°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_03.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_03.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_03.png"
+      },
+      {
+        "id": 4,
+        "name": "각도 5: Rear 135°",
+        "tag": "Rear 135°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Rear 135°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_04.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_04.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_04.png"
+      },
+      {
+        "id": 5,
+        "name": "각도 6: Back 180°",
+        "tag": "Back 180°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Back 180°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_05.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_05.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_05.png"
+      },
+      {
+        "id": 6,
+        "name": "각도 7: Rear 225°",
+        "tag": "Rear 225°",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Rear 225°)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_06.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_06.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_06.png"
+      },
+      {
+        "id": 7,
+        "name": "각도 8: Left Side",
+        "tag": "Left Side",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Left Side)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_07.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_07.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_07.png"
+      },
+      {
+        "id": 8,
+        "name": "각도 9: Hero Left",
+        "tag": "Hero Left",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Hero Left)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_08.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_08.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_08.png"
+      },
+      {
+        "id": 9,
+        "name": "각도 10: Macro 1",
+        "tag": "Macro 1",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Macro 1)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_09.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_09.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_09.png"
+      },
+      {
+        "id": 10,
+        "name": "각도 11: Macro 2",
+        "tag": "Macro 2",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Macro 2)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_10.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_10.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_10.png"
+      },
+      {
+        "id": 11,
+        "name": "각도 12: Macro 3",
+        "tag": "Macro 3",
+        "desc": "로열우스터 1880s 자포니즘 국화세밀화 투각넥 골드화병 (30cm, No. 1133)의 실물 초정밀 디테일 (Macro 3)",
+        "rgba": "antique_collections/worcester_chrysanthemum_vase/rgba_11.png",
+        "depth": "antique_collections/worcester_chrysanthemum_vase/depth_11.png",
+        "normal": "antique_collections/worcester_chrysanthemum_vase/normal_11.png"
+      }
+    ]
+  }
+}

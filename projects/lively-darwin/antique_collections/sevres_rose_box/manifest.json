@@ -1,0 +1,113 @@
+{
+  "info": {
+    "id": "sevres_rose_box",
+    "title_ko": "세브르 로즈 퐁파두르 오르몰루 힌지 보석함 (14cm)",
+    "title_en": "Sèvres Rose Pompadour Ormolu Hinged Jewelry Box",
+    "era": "19th Century (c.1880)",
+    "origin": "France (Sèvres)",
+    "material": "Rose Pompadour Porcelain & 24K Ormolu Bronze",
+    "desc": "프랑스 왕실 세브르의 독보적인 로즈 퐁파두르 핑크 유약에 24K 오르몰루 브론즈 마운트와 플로럴 핸드페인팅이 결합된 최고급 힌지 주얼리 박스입니다.",
+    "folder": "06_프랑스_세브르_왕실포슬린_컬렉션\\07_세브르_로즈퐁파두르_오르몰루_직사각_힌지보석함_14cm"
+  },
+  "photos": [
+    {
+      "id": 0,
+      "name": "View 1",
+      "rgba": "antique_collections/sevres_rose_box/rgba_00.png",
+      "depth": "antique_collections/sevres_rose_box/depth_00.png",
+      "normal": "antique_collections/sevres_rose_box/normal_00.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 1,
+      "name": "View 2",
+      "rgba": "antique_collections/sevres_rose_box/rgba_01.png",
+      "depth": "antique_collections/sevres_rose_box/depth_01.png",
+      "normal": "antique_collections/sevres_rose_box/normal_01.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 2,
+      "name": "View 3",
+      "rgba": "antique_collections/sevres_rose_box/rgba_02.png",
+      "depth": "antique_collections/sevres_rose_box/depth_02.png",
+      "normal": "antique_collections/sevres_rose_box/normal_02.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 3,
+      "name": "View 4",
+      "rgba": "antique_collections/sevres_rose_box/rgba_03.png",
+      "depth": "antique_collections/sevres_rose_box/depth_03.png",
+      "normal": "antique_collections/sevres_rose_box/normal_03.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 4,
+      "name": "View 5",
+      "rgba": "antique_collections/sevres_rose_box/rgba_04.png",
+      "depth": "antique_collections/sevres_rose_box/depth_04.png",
+      "normal": "antique_collections/sevres_rose_box/normal_04.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 5,
+      "name": "View 6",
+      "rgba": "antique_collections/sevres_rose_box/rgba_05.png",
+      "depth": "antique_collections/sevres_rose_box/depth_05.png",
+      "normal": "antique_collections/sevres_rose_box/normal_05.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 6,
+      "name": "View 7",
+      "rgba": "antique_collections/sevres_rose_box/rgba_06.png",
+      "depth": "antique_collections/sevres_rose_box/depth_06.png",
+      "normal": "antique_collections/sevres_rose_box/normal_06.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 7,
+      "name": "View 8",
+      "rgba": "antique_collections/sevres_rose_box/rgba_07.png",
+      "depth": "antique_collections/sevres_rose_box/depth_07.png",
+      "normal": "antique_collections/sevres_rose_box/normal_07.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 8,
+      "name": "View 9",
+      "rgba": "antique_collections/sevres_rose_box/rgba_08.png",
+      "depth": "antique_collections/sevres_rose_box/depth_08.png",
+      "normal": "antique_collections/sevres_rose_box/normal_08.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 9,
+      "name": "View 10",
+      "rgba": "antique_collections/sevres_rose_box/rgba_09.png",
+      "depth": "antique_collections/sevres_rose_box/depth_09.png",
+      "normal": "antique_collections/sevres_rose_box/normal_09.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 10,
+      "name": "View 11",
+      "rgba": "antique_collections/sevres_rose_box/rgba_10.png",
+      "depth": "antique_collections/sevres_rose_box/depth_10.png",
+      "normal": "antique_collections/sevres_rose_box/normal_10.png",
+      "width": 1536,
+      "height": 2048
+    }
+  ]
+}

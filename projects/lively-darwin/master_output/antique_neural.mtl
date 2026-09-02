@@ -1,0 +1,4 @@
+newmtl Mat_Porcelain
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+map_Kd antique_neural_diffuse.png

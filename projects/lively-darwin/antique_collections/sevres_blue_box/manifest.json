@@ -1,0 +1,113 @@
+{
+  "info": {
+    "id": "sevres_blue_box",
+    "title_ko": "세브르 블루 포슬린 핸드페인팅 힌지 보석함 (13cm)",
+    "title_en": "Sèvres Bleu de Roi Hand-Painted Hinged Jewelry Box",
+    "era": "19th Century (c.1870)",
+    "origin": "France (Sèvres)",
+    "material": "Bleu de Roi Porcelain, Ormolu Bronze, Floral Miniature",
+    "desc": "왕의 파랑(Bleu de Roi) 에나멜과 화려한 24K 금박 스크롤, 프랑스 궁정 화원의 플로럴 부케 핸드페인팅이 어우러진 럭셔리 힌지 보석함입니다.",
+    "folder": "06_프랑스_세브르_왕실포슬린_컬렉션\\05_세브르_블루포슬린_핸드페인팅_힌지_주얼리박스_13cm"
+  },
+  "photos": [
+    {
+      "id": 0,
+      "name": "View 1",
+      "rgba": "antique_collections/sevres_blue_box/rgba_00.png",
+      "depth": "antique_collections/sevres_blue_box/depth_00.png",
+      "normal": "antique_collections/sevres_blue_box/normal_00.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 1,
+      "name": "View 2",
+      "rgba": "antique_collections/sevres_blue_box/rgba_01.png",
+      "depth": "antique_collections/sevres_blue_box/depth_01.png",
+      "normal": "antique_collections/sevres_blue_box/normal_01.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 2,
+      "name": "View 3",
+      "rgba": "antique_collections/sevres_blue_box/rgba_02.png",
+      "depth": "antique_collections/sevres_blue_box/depth_02.png",
+      "normal": "antique_collections/sevres_blue_box/normal_02.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 3,
+      "name": "View 4",
+      "rgba": "antique_collections/sevres_blue_box/rgba_03.png",
+      "depth": "antique_collections/sevres_blue_box/depth_03.png",
+      "normal": "antique_collections/sevres_blue_box/normal_03.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 4,
+      "name": "View 5",
+      "rgba": "antique_collections/sevres_blue_box/rgba_04.png",
+      "depth": "antique_collections/sevres_blue_box/depth_04.png",
+      "normal": "antique_collections/sevres_blue_box/normal_04.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 5,
+      "name": "View 6",
+      "rgba": "antique_collections/sevres_blue_box/rgba_05.png",
+      "depth": "antique_collections/sevres_blue_box/depth_05.png",
+      "normal": "antique_collections/sevres_blue_box/normal_05.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 6,
+      "name": "View 7",
+      "rgba": "antique_collections/sevres_blue_box/rgba_06.png",
+      "depth": "antique_collections/sevres_blue_box/depth_06.png",
+      "normal": "antique_collections/sevres_blue_box/normal_06.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 7,
+      "name": "View 8",
+      "rgba": "antique_collections/sevres_blue_box/rgba_07.png",
+      "depth": "antique_collections/sevres_blue_box/depth_07.png",
+      "normal": "antique_collections/sevres_blue_box/normal_07.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 8,
+      "name": "View 9",
+      "rgba": "antique_collections/sevres_blue_box/rgba_08.png",
+      "depth": "antique_collections/sevres_blue_box/depth_08.png",
+      "normal": "antique_collections/sevres_blue_box/normal_08.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 9,
+      "name": "View 10",
+      "rgba": "antique_collections/sevres_blue_box/rgba_09.png",
+      "depth": "antique_collections/sevres_blue_box/depth_09.png",
+      "normal": "antique_collections/sevres_blue_box/normal_09.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 10,
+      "name": "View 11",
+      "rgba": "antique_collections/sevres_blue_box/rgba_10.png",
+      "depth": "antique_collections/sevres_blue_box/depth_10.png",
+      "normal": "antique_collections/sevres_blue_box/normal_10.png",
+      "width": 1536,
+      "height": 2048
+    }
+  ]
+}

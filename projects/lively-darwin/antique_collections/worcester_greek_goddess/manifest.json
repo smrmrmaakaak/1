@@ -1,0 +1,140 @@
+{
+  "info": {
+    "id": "worcester_greek_goddess",
+    "title_ko": "로열우스터 1890s 고전 그리스 여인 골드 조각상 1쌍 (No. 2/57)",
+    "title_en": "Royal Worcester 1890s Classical Greek Goddesses Pair",
+    "era": "Victorian Period (c.1890)",
+    "origin": "England (Royal Worcester)",
+    "material": "Blush Ivory Porcelain & 24K Gilt Drapery",
+    "desc": "영국 왕실 도자기 로열우스터 전성기의 블러시 아이보리 포슬린과 24K 금박 드레이퍼리가 완벽한 균형을 이루는 고전 그리스 여신 입체 조각상 1쌍입니다.",
+    "folder": "09_영국_로열우스터_왕실포슬린_컬렉션\\01_로열우스터_1890s_고전그리스여인_골드조각상_1쌍_2-57"
+  },
+  "photos": [
+    {
+      "id": 0,
+      "name": "View 1",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_00.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_00.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_00.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 1,
+      "name": "View 2",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_01.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_01.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_01.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 2,
+      "name": "View 3",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_02.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_02.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_02.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 3,
+      "name": "View 4",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_03.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_03.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_03.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 4,
+      "name": "View 5",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_04.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_04.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_04.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 5,
+      "name": "View 6",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_05.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_05.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_05.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 6,
+      "name": "View 7",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_06.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_06.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_06.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 7,
+      "name": "View 8",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_07.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_07.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_07.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 8,
+      "name": "View 9",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_08.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_08.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_08.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 9,
+      "name": "View 10",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_09.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_09.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_09.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 10,
+      "name": "View 11",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_10.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_10.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_10.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 11,
+      "name": "View 12",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_11.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_11.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_11.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 12,
+      "name": "View 13",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_12.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_12.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_12.png",
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "id": 13,
+      "name": "View 14",
+      "rgba": "antique_collections/worcester_greek_goddess/rgba_13.png",
+      "depth": "antique_collections/worcester_greek_goddess/depth_13.png",
+      "normal": "antique_collections/worcester_greek_goddess/normal_13.png",
+      "width": 1536,
+      "height": 2048
+    }
+  ]
+}
