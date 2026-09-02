@@ -1,0 +1,483 @@
+{
+  "$schema": "https://labellejean.antique/schemas/v1/classification_manifest.json",
+  "version": "1.0.0",
+  "generatedAt": "2026-09-02T02:21:13.353111+00:00",
+  "pipeline": {
+    "name": "antique-5angle-classifier",
+    "version": "1.0.0",
+    "executionMode": "automated-heuristic-v1"
+  },
+  "product": {
+    "id": "prod-lladro-gres-2256-venus",
+    "itemSlug": "venus",
+    "brand": "Lladró",
+    "brandCode": "lladro_nao",
+    "bookId": "book-1",
+    "modelNumber": "2256",
+    "koreanTitle": "우물가의 비너스와 평화의 비둘기",
+    "materialType": "gres_terracotta"
+  },
+  "directories": {
+    "sourceDir": "public/artifacts/lladro_gres_venus",
+    "studioMasterOutputDir": "public/artifacts/lladro_gres_venus/studio_master",
+    "catalogAssetDir": "public/assets/lladro_nao"
+  },
+  "summary": {
+    "totalScannedImages": 13,
+    "classifiedAnglesCount": 5,
+    "unassignedImagesCount": 8,
+    "allCanonicalAnglesFound": true,
+    "overallConfidence": 0.972,
+    "validationStatus": "VALID"
+  },
+  "classifiedAngles": {
+    "HERO_FRONT": {
+      "angleIndex": 1,
+      "canonicalTag": "HERO_FRONT",
+      "angleTag": "HERO 01 • 전신 스튜디오 화보",
+      "macroRatio": "MASTER",
+      "defaultCaption": "소더비 경매 룩북 전신 3/4 스튜디오 마스터 화보",
+      "source": {
+        "filename": "KakaoTalk_20260901_071003816_04.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_04.jpg",
+        "sha256": "d70e477e2351c482e43cc0dcc2c8f73e783c3fe9e03497f17d82b4fd32f1b26c",
+        "fileSizeBytes": 1284228,
+        "width": 2252,
+        "height": 4000,
+        "aspectRatio": 0.563,
+        "exifOrientationApplied": 1
+      },
+      "targetOutput": {
+        "filename": "venus_01_hero_front.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/studio_master/venus_01_hero_front.jpg",
+        "targetDimensions": [
+          1400,
+          1800
+        ],
+        "format": "JPEG",
+        "targetQuality": 95
+      },
+      "classification": {
+        "confidence": 0.977,
+        "heuristicScores": {
+          "verticalContinuity": 1.0,
+          "frontalCentering": 0.958,
+          "sharpness": 1.0,
+          "doveHighlight": 1.0
+        },
+        "matchedRule": "full_body_standing_frontal_symmetry"
+      },
+      "enhancementDirectives": {
+        "mattingRequired": true,
+        "preserveAuthenticFrame": false,
+        "mattingModel": "isnet-general-use",
+        "boundaryMorphology": {
+          "erodeSize": 1,
+          "gaussianBlur": 0.5
+        },
+        "backdrop": {
+          "style": "sothebys_dark_slate_charcoal_radial",
+          "centerColorHex": "#2A2F35",
+          "midColorHex": "#1A1D20",
+          "outerColorHex": "#0A0B0D",
+          "spotlightPosition": [
+            0.5,
+            0.42
+          ],
+          "spotlightRadii": [
+            0.55,
+            0.7
+          ]
+        },
+        "contactShadow": {
+          "enabled": true,
+          "contactOpacity": 0.85,
+          "diffuseOpacity": 0.45,
+          "offsetY": 8
+        },
+        "textureEnhancement": {
+          "unsharpRadius": 1.8,
+          "unsharpPercent": 120,
+          "unsharpThreshold": 2
+        }
+      }
+    },
+    "SIDE_PROFILE": {
+      "angleIndex": 2,
+      "canonicalTag": "SIDE_PROFILE",
+      "angleTag": "PROFILE 03 • 측면 실루엣 화보",
+      "macroRatio": "PROFILE",
+      "defaultCaption": "물 긷는 비너스 측면 실루엣 및 암포라 항아리",
+      "source": {
+        "filename": "KakaoTalk_20260901_071003816_06.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_06.jpg",
+        "sha256": "eaae158cdbf8c955c412c21f88b164d89bd3035d94735ecc52af0ff997c9b74b",
+        "fileSizeBytes": 1072377,
+        "width": 2252,
+        "height": 4000,
+        "aspectRatio": 0.563,
+        "exifOrientationApplied": 1
+      },
+      "targetOutput": {
+        "filename": "venus_02_side_profile.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/studio_master/venus_02_side_profile.jpg",
+        "targetDimensions": [
+          1400,
+          1800
+        ],
+        "format": "JPEG",
+        "targetQuality": 95
+      },
+      "classification": {
+        "confidence": 0.952,
+        "heuristicScores": {
+          "lateralAsymmetry": 0.895,
+          "cxOffset": 0.086,
+          "profileFraming": 1.0
+        },
+        "matchedRule": "lateral_silhouette_amphora_profile"
+      },
+      "enhancementDirectives": {
+        "mattingRequired": true,
+        "preserveAuthenticFrame": false,
+        "mattingModel": "isnet-general-use",
+        "boundaryMorphology": {
+          "erodeSize": 1,
+          "gaussianBlur": 0.5
+        },
+        "backdrop": {
+          "style": "sothebys_dark_slate_charcoal_radial"
+        },
+        "contactShadow": {
+          "enabled": true,
+          "contactOpacity": 0.85,
+          "diffuseOpacity": 0.45,
+          "offsetY": 8
+        },
+        "textureEnhancement": {
+          "unsharpRadius": 1.8,
+          "unsharpPercent": 120,
+          "unsharpThreshold": 2
+        }
+      }
+    },
+    "PORTRAIT_TORSO": {
+      "angleIndex": 3,
+      "canonicalTag": "PORTRAIT_TORSO",
+      "angleTag": "PORTRAIT 02 • 상체 & 이목구비",
+      "macroRatio": "PORTRAIT",
+      "defaultCaption": "비너스 이목구비 및 평화의 비둘기 클로즈업",
+      "source": {
+        "filename": "KakaoTalk_20260901_071003816_05.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_05.jpg",
+        "sha256": "d63aa061177fce216691a80eaf42db20d59031c8a74fa92835bf4e3c9a832917",
+        "fileSizeBytes": 1083260,
+        "width": 2252,
+        "height": 4000,
+        "aspectRatio": 0.563,
+        "exifOrientationApplied": 1
+      },
+      "targetOutput": {
+        "filename": "venus_03_portrait_torso.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/studio_master/venus_03_portrait_torso.jpg",
+        "targetDimensions": [
+          1400,
+          1800
+        ],
+        "format": "JPEG",
+        "targetQuality": 95
+      },
+      "classification": {
+        "confidence": 0.98,
+        "heuristicScores": {
+          "upperBodyFocus": 1.0,
+          "topOffset": 0.977,
+          "cropRatio": 1.0
+        },
+        "matchedRule": "upper_torso_facial_macro_crop"
+      },
+      "enhancementDirectives": {
+        "mattingRequired": true,
+        "preserveAuthenticFrame": false,
+        "mattingModel": "isnet-general-use",
+        "boundaryMorphology": {
+          "erodeSize": 1,
+          "gaussianBlur": 0.5
+        },
+        "backdrop": {
+          "style": "sothebys_dark_slate_charcoal_radial"
+        },
+        "contactShadow": {
+          "enabled": false
+        },
+        "textureEnhancement": {
+          "unsharpRadius": 1.8,
+          "unsharpPercent": 120,
+          "unsharpThreshold": 2
+        }
+      }
+    },
+    "REAR_SCULPTURE": {
+      "angleIndex": 4,
+      "canonicalTag": "REAR_SCULPTURE",
+      "angleTag": "REAR 04 • 후면 조각 화보",
+      "macroRatio": "REAR",
+      "defaultCaption": "후면 드레이프 주름 및 벽돌 우물 테라코타 질감",
+      "source": {
+        "filename": "KakaoTalk_20260901_071003816_10.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_10.jpg",
+        "sha256": "cf4bdbd47b4f2fe53674ed95dfc5a645f2eb98ed8d1223c16f6d122f0c3d68eb",
+        "fileSizeBytes": 969104,
+        "width": 2252,
+        "height": 4000,
+        "aspectRatio": 0.563,
+        "exifOrientationApplied": 1
+      },
+      "targetOutput": {
+        "filename": "venus_04_rear_sculpture.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/studio_master/venus_04_rear_sculpture.jpg",
+        "targetDimensions": [
+          1400,
+          1800
+        ],
+        "format": "JPEG",
+        "targetQuality": 95
+      },
+      "classification": {
+        "confidence": 0.96,
+        "heuristicScores": {
+          "hairCascade": 1.0,
+          "doveAbsence": 0.917,
+          "rearContinuity": 1.0
+        },
+        "matchedRule": "rear_drapery_cascades_brick_well"
+      },
+      "enhancementDirectives": {
+        "mattingRequired": true,
+        "preserveAuthenticFrame": false,
+        "mattingModel": "isnet-general-use",
+        "boundaryMorphology": {
+          "erodeSize": 1,
+          "gaussianBlur": 0.5
+        },
+        "backdrop": {
+          "style": "sothebys_dark_slate_charcoal_radial"
+        },
+        "contactShadow": {
+          "enabled": true,
+          "contactOpacity": 0.85,
+          "diffuseOpacity": 0.45,
+          "offsetY": 8
+        },
+        "textureEnhancement": {
+          "unsharpRadius": 1.8,
+          "unsharpPercent": 120,
+          "unsharpThreshold": 2
+        }
+      }
+    },
+    "BASE_BACKSTAMP": {
+      "angleIndex": 5,
+      "canonicalTag": "BASE_BACKSTAMP",
+      "angleTag": "STAMP 05 • 정품 백스탬프 각인",
+      "macroRatio": "HALLMARK",
+      "defaultCaption": "LLADRÓ DAISA 1993 공식 종꽃 백스탬프 & #2256 각인",
+      "source": {
+        "filename": "KakaoTalk_20260901_071003816_01.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_01.jpg",
+        "sha256": "d14b7bf5bd14c5518e14d81815bc1e1b7bf9a32135e5f20522198f725042a0e1",
+        "fileSizeBytes": 1195048,
+        "width": 2252,
+        "height": 4000,
+        "aspectRatio": 0.563,
+        "exifOrientationApplied": 1
+      },
+      "targetOutput": {
+        "filename": "venus_05_backstamp.jpg",
+        "relativePath": "public/artifacts/lladro_gres_venus/studio_master/venus_05_backstamp.jpg",
+        "targetDimensions": [
+          1400,
+          1800
+        ],
+        "format": "JPEG",
+        "targetQuality": 95
+      },
+      "classification": {
+        "confidence": 0.99,
+        "heuristicScores": {
+          "blueMarkScore": 1.0,
+          "hallmarkEdgeScore": 1.0,
+          "strokeDensity": 0.407,
+          "whitePenalty": 0.989
+        },
+        "matchedRule": "underside_base_stamp_and_hallmark_text"
+      },
+      "enhancementDirectives": {
+        "mattingRequired": false,
+        "preserveAuthenticFrame": true,
+        "textureEnhancement": {
+          "unsharpRadius": 1.5,
+          "unsharpPercent": 130,
+          "unsharpThreshold": 1
+        },
+        "frameVignette": {
+          "enabled": true,
+          "opacity": 0.35,
+          "innerRadius": 0.65,
+          "outerRadius": 0.98
+        }
+      }
+    }
+  },
+  "unassignedPhotos": [
+    {
+      "filename": "KakaoTalk_20260901_071003816.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 06 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "SIDE_PROFILE",
+          "score": 0.9
+        },
+        {
+          "angle": "PORTRAIT_TORSO",
+          "score": 0.536
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_02.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_02.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 07 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "PORTRAIT_TORSO",
+          "score": 0.9
+        },
+        {
+          "angle": "SIDE_PROFILE",
+          "score": 0.497
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_03.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_03.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 08 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "SIDE_PROFILE",
+          "score": 0.9
+        },
+        {
+          "angle": "BASE_BACKSTAMP",
+          "score": 0.703
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_07.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_07.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 09 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "HERO_FRONT",
+          "score": 0.836
+        },
+        {
+          "angle": "BASE_BACKSTAMP",
+          "score": 0.684
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_08.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_08.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 10 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "HERO_FRONT",
+          "score": 0.895
+        },
+        {
+          "angle": "PORTRAIT_TORSO",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_09.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_09.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 11 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "HERO_FRONT",
+          "score": 0.89
+        },
+        {
+          "angle": "SIDE_PROFILE",
+          "score": 0.503
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071003816_11.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071003816_11.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 12 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "HERO_FRONT",
+          "score": 0.9
+        },
+        {
+          "angle": "PORTRAIT_TORSO",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "filename": "KakaoTalk_20260901_071028050.jpg",
+      "relativePath": "public/artifacts/lladro_gres_venus/KakaoTalk_20260901_071028050.jpg",
+      "catalogRole": "RAW_SUPPLEMENTARY",
+      "suggestedAngleTag": "RAW 13 • 실물 원본 보관",
+      "macroRatio": "RAW",
+      "topCandidates": [
+        {
+          "angle": "HERO_FRONT",
+          "score": 0.87
+        },
+        {
+          "angle": "SIDE_PROFILE",
+          "score": 0.527
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "isValid": true,
+    "requiredAnglesPresent": [
+      "HERO_FRONT",
+      "SIDE_PROFILE",
+      "PORTRAIT_TORSO",
+      "REAR_SCULPTURE",
+      "BASE_BACKSTAMP"
+    ],
+    "missingAngles": [],
+    "duplicateAssignments": [],
+    "warnings": []
+  }
+}
