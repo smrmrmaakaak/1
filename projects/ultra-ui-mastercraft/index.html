@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚔️ Ultra UI Mastercraft - Crafted by smrmrmaakaak</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Fira+Code:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+
+<!-- Interactive Particle Starfield Canvas -->
+<canvas id="bgCanvas"></canvas>
+
+<div class="app-container">
+  <!-- Header / Hero Section -->
+  <header class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>Official smrmrmaakaak UI Mastercraft Collection</span>
+    </div>
+    <h1 class="hero-title">
+      Crafting the <span class="gradient-text">Next-Gen Web</span>
+    </h1>
+    <p class="hero-desc">
+      전 세계 어디에도 없던 <strong>중세 고전 3D 마도서, 황실 왁스 인장, Linear 1px 레이저 보더, 애플 비전프로 아크릴 글래스, 실시간 유체 셰이더</strong>를 직접 조작하고 소스코드를 1초 만에 복사하세요.
+    </p>
+
+    <!-- Quick GitHub CTA -->
+    <div class="hero-cta-group">
+      <a href="https://github.com/smrmrmaakaak/1" target="_blank" class="btn-github">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub Repository 보기
+      </a>
+      <button class="btn-copy-all" onclick="showToast('⭐ GitHub 저장소에 즐겨찾기(Star)를 남겨주세요!')">
+        ⭐ Star on GitHub
+      </button>
+    </div>
+  </header>
+
+  <!-- Showcase Grid of 6 Master Components -->
+  <main class="showcase-grid">
+
+    <!-- [Component 1] 3D Grimoire Spellbook -->
+    <section class="comp-card medieval-border" id="cardGrimoire">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge gold">👑 Medieval 3D</span>
+          <h2 class="comp-title">3D Grimoire Spellbook (고대 마도서 펼침)</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('grimoire')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">마우스를 올리거나 드래그하면 3차원으로 책장이 펼쳐지며, 황금빛 룬 문자가 입체 발광하는 중세 연금술 마도서입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage grimoire-stage" id="grimoireStage">
+        <div class="grimoire-3d-wrap" id="grimoireBook">
+          <div class="book-cover front-cover">
+            <div class="book-inner-border">
+              <div class="rune-symbol">⛧</div>
+              <div class="book-title-cinzel">LIBER ARCANUM</div>
+              <div class="book-sub">Alchemy of Sol</div>
+            </div>
+          </div>
+          <div class="book-spine"></div>
+          <div class="book-cover back-cover"></div>
+          <div class="book-pages-block"></div>
+        </div>
+      </div>
+      <div class="stage-hint">💡 마우스를 책 위에 올려 3D 회전 각도를 확인하세요</div>
+    </section>
+
+    <!-- [Component 2] Royal Wax Seal & Parchment -->
+    <section class="comp-card medieval-border" id="cardWaxSeal">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge gold">👑 Medieval Antique</span>
+          <h2 class="comp-title">Royal Wax Seal & Charter (황실 왁스 인장)</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('wax-seal')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">물리 왁스 도장을 클릭하면 인장이 파쇄되며 황실 칙서의 봉인이 해제되는 실제 체험형 앤틱 인터랙션입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage parchment-stage">
+        <div class="parchment-scroll" id="parchmentScroll">
+          <div class="decree-header">⚜ IMPERIAL DECREE ⚜</div>
+          <div class="decree-body" id="decreeBodyText">
+            "짐이 명하노니, 이 코드를 복사하는 모든 개발자에게 버그 없는 축복과 눈부신 UI 영광이 깃들지어다."
+          </div>
+          <div class="decree-seal-wrap">
+            <div class="wax-seal-btn" id="interactiveSeal" onclick="toggleSealBreak()">
+              <div class="wax-inner-emblem">♛</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-hint">💡 붉은 왁스 인장(♛)을 클릭하여 봉인을 해제해 보세요</div>
+    </section>
+
+    <!-- [Component 3] Linear 1px Laser Border & Bento Spotlight -->
+    <section class="comp-card tech-border" id="cardLaserBento">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge cyan">⚡ Linear Dark</span>
+          <h2 class="comp-title">1px Laser Border & Bento Spotlight</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('laser-bento')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">마우스 좌표를 추적하는 원형 스포트라이트와 1픽셀 모서리를 고속으로 순환하는 네온 레이저 빔 보더입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage laser-stage" id="laserStage">
+        <div class="laser-card-demo" id="laserCardDemo">
+          <div class="laser-beam-tracer"></div>
+          <div class="bento-content">
+            <div class="bento-top-row">
+              <span class="laser-badge">1px Subpixel</span>
+              <span class="laser-status"><span class="pulse-green"></span> Live Tracking</span>
+            </div>
+            <div class="bento-main-text">Dynamic Spotlight Core</div>
+            <p class="bento-sub-text">마우스의 이동 궤적에 맞춰 자연스러운 방사형 그라데이션 광원이 카드를 비춥니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stage-hint">💡 마우스를 카드 안에서 움직여 스포트라이트를 확인하세요</div>
+    </section>
+
+    <!-- [Component 4] Fluid Lens Distortion Canvas -->
+    <section class="comp-card tech-border" id="cardFluidLens">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge purple">🌌 WebGL / Canvas</span>
+          <h2 class="comp-title">Fluid Lens Ripple (유체 렌즈 왜곡)</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('fluid-lens')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">마우스가 지나간 자리에 실시간 액체 파동 굴절과 무지개 프리즘 광선이 일렁이는 WebGL 셰이더입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage fluid-stage" id="fluidStage">
+        <canvas id="fluidCanvasDemo"></canvas>
+        <div class="fluid-overlay-text">INTERACTIVE FLUID MESH</div>
+      </div>
+      <div class="stage-hint">💡 캔버스 위에서 마우스를 빠르게 문질러 물결 파동을 만드세요</div>
+    </section>
+
+    <!-- [Component 5] Apple Vision Pro Acrylic Glass & Dynamic Island -->
+    <section class="comp-card tech-border" id="cardVisionGlass">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge emerald">🔮 Apple Vision</span>
+          <h2 class="comp-title">Vision Acrylic Glass & Dynamic Island</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('vision-glass')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">리얼 아크릴 굴절 테두리와 클릭 시 스프링 물리로 확장되는 iOS 다이내믹 아일랜드 캡슐입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage glass-stage">
+        <!-- Dynamic Island -->
+        <div class="dynamic-island-pill" id="dynIslandPill" onclick="toggleDynamicIsland()">
+          <div class="island-collapsed">
+            <span class="island-icon">🎧</span>
+            <span class="island-title">Now Playing</span>
+            <div class="island-wave-bars">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="island-expanded">
+            <div class="island-exp-left">
+              <span style="font-size: 1.8rem;">🎧</span>
+              <div>
+                <div style="font-weight: 800; font-size: 0.95rem;">AirPods Max</div>
+                <div style="font-size: 0.75rem; color: #94a3b8;">Master Sound Active</div>
+              </div>
+            </div>
+            <button class="island-btn" onclick="event.stopPropagation(); showToast('🎵 재생 모드 전환!');">Pause</button>
+          </div>
+        </div>
+
+        <!-- Vision Pro Glass Card -->
+        <div class="vision-pro-card">
+          <div class="vision-glass-title">Apple Vision Pro UI</div>
+          <div class="vision-glass-desc">Ultra-clear frosted acrylic with 3D refractive border</div>
+        </div>
+      </div>
+      <div class="stage-hint">💡 상단 아일랜드 알약을 클릭하여 확장/축소해 보세요</div>
+    </section>
+
+    <!-- [Component 6] Cyberpunk Glitch & Decrypt Terminal -->
+    <section class="comp-card tech-border" id="cardGlitchTerminal">
+      <div class="comp-header">
+        <div>
+          <span class="comp-badge red">🤖 Cyberpunk HUD</span>
+          <h2 class="comp-title">Cyber Glitch & Decrypt Terminal</h2>
+        </div>
+        <button class="btn-copy-code" onclick="openCodeModal('glitch-terminal')">💻 코드 복사</button>
+      </div>
+      <p class="comp-desc">클릭하면 해커 암호가 실시간으로 풀리는 디코딩 시퀀스와 레이더 타겟팅 조준선 HUD입니다.</p>
+      
+      <!-- Interactive Stage -->
+      <div class="stage cyber-stage">
+        <div class="terminal-box">
+          <div class="terminal-bar">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <div class="terminal-title">TERMINAL // SYSTEM_AUTH</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-log">> INITIALIZING NEURAL_LINK... OK</div>
+            <div class="terminal-glitch-text" id="cyberGlitchText" onclick="runCyberDecrypt()">
+              [CLICK TO DECRYPT ACCESS_TOKEN]
+            </div>
+            <div class="terminal-status">> STATUS: <span style="color: #00ffcc;">ONLINE</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-hint">💡 초록색 암호 문장을 클릭하여 해독 시퀀스를 발동하세요</div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>⚔️ Ultra UI Mastercraft</strong> • Crafted by <a href="https://github.com/smrmrmaakaak" target="_blank">smrmrmaakaak</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/smrmrmaakaak/1" target="_blank">GitHub Repo</a>
+        <a href="http://localhost:5500" target="_blank">Design Vault 300</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Code Modal Popup -->
+<div class="code-modal-overlay" id="codeModal">
+  <div class="code-modal-box">
+    <div class="modal-top">
+      <h3 id="modalComponentTitle">Component Source Code</h3>
+      <button class="btn-close-modal" onclick="closeCodeModal()">✕</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabBtnHtml" onclick="switchCodeTab('html')">HTML</button>
+      <button class="modal-tab" id="tabBtnCss" onclick="switchCodeTab('css')">CSS</button>
+      <button class="modal-tab" id="tabBtnJs" onclick="switchCodeTab('js')">JavaScript</button>
+    </div>
+    <div class="code-body">
+      <pre><code id="codeSnippetBox"></code></pre>
+    </div>
+    <div class="modal-bottom">
+      <button class="btn-copy-action" onclick="copyCurrentModalCode()">📋 코드 복사 (Copy)</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-popup" id="toastBox">✨ Toast Message</div>
+
+<script src="js/components.js"></script>
+</body>
+</html>
