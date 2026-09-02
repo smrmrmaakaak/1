@@ -1,6 +1,6 @@
 
 /* ==========================================================================
-   Design Vault 300 Interactive Logic (Fast Search, Filters, Pagination, Modal)
+   Design Vault 300 Interactive Logic with Real-time Live Visual Previews
    ========================================================================== */
 
 let currentCategory = 'all';
@@ -60,20 +60,30 @@ function renderGrid() {
 
   grid.innerHTML = pageItems.map(item => {
     const isMedieval = item.categoryId === 'medieval';
+    const previewStage = getLivePreviewHTML(item, false);
+
     return `
       <article class="vault-card ${isMedieval ? 'medieval-card' : ''}" onclick="openDetailModal(${item.id})">
         <div class="card-top">
           <span class="card-cat-badge" style="${isMedieval ? 'color: var(--gold); border-color: rgba(212,175,55,0.4);' : ''}">${item.categoryName.split(' ')[0]} ${item.tags[0]}</span>
           <span class="card-stars">★ ${item.stars.toLocaleString()}</span>
         </div>
+        
+        <!-- Live Visual Preview Stage -->
+        <div class="card-preview-container" style="margin-bottom: 14px;">
+          ${previewStage}
+        </div>
+
         <h3 class="card-title-text">${item.title}</h3>
         <p class="card-desc-text">${item.desc}</p>
+        
         <div class="card-tags">
           ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
         </div>
+        
         <div class="card-footer">
           <span>📦 ${item.repo}</span>
-          <button class="btn-open" onclick="event.stopPropagation(); openDetailModal(${item.id})">코드/프리뷰</button>
+          <button class="btn-open" onclick="event.stopPropagation(); openDetailModal(${item.id})">👀 실시간 라이브 뷰</button>
         </div>
       </article>
     `;
@@ -93,21 +103,46 @@ function renderPagination() {
   if (infoEl) infoEl.innerText = `Page ${currentPage} / ${totalPages} (${filteredItems.length} items)`;
 }
 
+let currentModalItem = null;
+
+function switchModalTab(tabName) {
+  const liveTab = document.getElementById("modalTabLive");
+  const codeTab = document.getElementById("modalTabCode");
+  const btnLive = document.getElementById("btnTabLive");
+  const btnCode = document.getElementById("btnTabCode");
+
+  if (tabName === 'live') {
+    liveTab.style.display = 'block';
+    codeTab.style.display = 'none';
+    btnLive.classList.add('active');
+    btnCode.classList.remove('active');
+  } else {
+    liveTab.style.display = 'none';
+    codeTab.style.display = 'block';
+    btnLive.classList.remove('active');
+    btnCode.classList.add('active');
+  }
+}
+
 function openDetailModal(id) {
   const item = DESIGN_VAULT_300.find(x => x.id === id);
   if (!item) return;
+  currentModalItem = item;
 
   const modal = document.getElementById("detailModal");
   const titleEl = document.getElementById("modalTitle");
   const descEl = document.getElementById("modalDesc");
   const codeEl = document.getElementById("modalCode");
   const repoEl = document.getElementById("modalRepo");
+  const liveStageEl = document.getElementById("modalLiveStage");
 
   titleEl.innerText = item.title;
   descEl.innerText = item.desc;
   codeEl.innerText = `${item.codeHtml}\n\n${item.codeCss}`;
   repoEl.innerText = `GitHub: https://github.com/${item.repo}`;
+  liveStageEl.innerHTML = getLivePreviewHTML(item, true);
 
+  switchModalTab('live');
   modal.classList.add("active");
 }
 

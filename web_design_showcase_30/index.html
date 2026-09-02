@@ -23,7 +23,7 @@
     </div>
     <h1 class="hero-title">Grand Web Design Vault 300</h1>
     <p class="hero-subtitle">
-      전 세계 최고의 웹 디자인, 3D WebGL 시네마틱 인터랙션 및 중세 고전 앤틱 아카이브 300선을 한곳에서 탐색하고 코드를 복사하세요.
+      전 세계 최고의 웹 디자인, 3D WebGL 시네마틱 인터랙션 및 중세 고전 앤틱 300선의 <strong>실시간 라이브 비주얼</strong>을 바로 보고 코드를 복사하세요.
     </p>
 
     <!-- Stats Bar -->
@@ -38,7 +38,7 @@
       </div>
       <div class="stat-item">
         <div class="stat-num" style="color: #10b981;">100%</div>
-        <div class="stat-label">Live Source Code Ready</div>
+        <div class="stat-label">Real-time Visual Preview</div>
       </div>
     </div>
   </header>
@@ -73,7 +73,7 @@
 
   <!-- Grid Display -->
   <main class="vault-grid" id="vaultGrid">
-    <!-- Rendered dynamically by vault.js -->
+    <!-- Rendered dynamically with live visual stages -->
   </main>
 
   <!-- Pagination -->
@@ -91,11 +91,28 @@
       <h3 id="modalTitle" style="font-size: 1.25rem; font-weight: 800;">Design Detail</h3>
       <button style="background: transparent; border: none; color: #fff; font-size: 1.4rem; cursor: pointer;" onclick="closeDetailModal()">✕</button>
     </div>
+
+    <!-- Modal Tabs -->
+    <div class="modal-tabs">
+      <button class="modal-tab-btn active" id="btnTabLive" onclick="switchModalTab('live')">👀 실시간 라이브 뷰어 (Live Stage)</button>
+      <button class="modal-tab-btn" id="btnTabCode" onclick="switchModalTab('code')">💻 소스코드 (HTML / CSS)</button>
+    </div>
+
     <div class="modal-content-scroll">
       <p id="modalDesc" style="color: var(--text-body); margin-bottom: 16px;"></p>
       <div style="margin-bottom: 12px; font-weight: 700; color: var(--primary);" id="modalRepo"></div>
-      <pre class="code-viewer"><code id="modalCode"></code></pre>
+
+      <!-- Live Stage Tab -->
+      <div id="modalTabLive" style="margin-bottom: 16px;">
+        <div id="modalLiveStage" style="width:100%; border:1px solid var(--border); border-radius:12px; overflow:hidden;"></div>
+      </div>
+
+      <!-- Code Tab -->
+      <div id="modalTabCode" style="display:none;">
+        <pre class="code-viewer"><code id="modalCode"></code></pre>
+      </div>
     </div>
+    
     <div style="padding: 16px 28px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 12px;">
       <button class="btn-open" onclick="copyCurrentCode()">📋 원본 코드 복사 (Copy)</button>
       <button class="btn-open" style="background: rgba(255,255,255,0.1); color: #fff; border-color: var(--border);" onclick="closeDetailModal()">닫기</button>
@@ -107,6 +124,7 @@
 
 <!-- Scripts -->
 <script src="js/database_300.js"></script>
+<script src="js/preview_engine.js"></script>
 <script src="js/vault.js"></script>
 </body>
 </html>
