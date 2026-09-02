@@ -55,6 +55,7 @@ function renderGrid() {
   if (pageItems.length === 0) {
     grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-body); font-size: 1.1rem;">🔍 검색 결과가 없습니다.</div>';
     renderPagination();
+  bindAllInteractiveWidgets();
     return;
   }
 
@@ -144,6 +145,7 @@ function openDetailModal(id) {
 
   switchModalTab('live');
   modal.classList.add("active");
+  setTimeout(bindAllInteractiveWidgets, 50);
 }
 
 function closeDetailModal() {
