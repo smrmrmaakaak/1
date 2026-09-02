@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별을 따다 - 인터랙티브 악보 & 연주기</title>
+  <script src="https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --accent: #F59E0B;
+      --bg: #0F172A;
+      --card-bg: rgba(30, 41, 59, 0.85);
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .header-left h1 {
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #F8FAFC;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      padding: 3px 8px;
+      border-radius: 20px;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .header-info {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+    button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+    button.secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .container {
+      max-width: 1240px;
+      margin: 24px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+    }
+    .sheet-card {
+      background: #FFFFFF;
+      color: #1E293B;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      overflow-x: auto;
+      min-height: 800px;
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .panel h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .section-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #CBD5E1;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      text-align: left;
+      cursor: pointer;
+      display: block;
+      transition: all 0.15s;
+    }
+    .section-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: #6366F1;
+      color: #FFFFFF;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-muted); }
+    .stat-val { font-weight: 600; color: #F1F5F9; }
+    
+    #audio-controls {
+      margin-top: 14px;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 12px;
+      border-radius: 8px;
+    }
+    
+    /* Playback Active Highlight */
+    .abcjs-highlight {
+      fill: #4F46E5 !important;
+      stroke: #4F46E5 !important;
+    }
+    .abcjs-cursor {
+      stroke: #EF4444;
+      stroke-width: 2.5;
+    }
+    
+    @media print {
+      header, .sidebar, .controls { display: none !important; }
+      body { background: white; color: black; padding: 0; }
+      .container { display: block; max-width: 100%; margin: 0; padding: 0; }
+      .sheet-card { box-shadow: none; padding: 0; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>별을 따다 <span class="badge">F Major (바장조)</span></h1>
+      <div class="header-info">템포: ♩=99 BPM • 박자: 4/4 • 3단 피아노/보컬 총보 (멜로디 + 가사 + 코드 + 피아노 양손 반주)</div>
+    </div>
+    <div class="controls">
+      <button id="btnPlay" onclick="togglePlay()">▶ 실시간 연주</button>
+      <button class="secondary" onclick="window.print()">🖨️ 인쇄 / PDF 저장</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Main Sheet Music Area -->
+    <main class="sheet-card" id="sheetContainer">
+      <div id="paper"></div>
+    </main>
+
+    <!-- Sidebar Tools -->
+    <aside class="sidebar">
+      <div class="panel">
+        <h3>📍 곡 구간 바로가기</h3>
+        <div class="section-btn-grid">
+          <button class="section-btn" onclick="seekToMeasure(1)">🎹 Intro (1마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(9)">⭐ Chorus 1 (9마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(21)">🌿 Verse 1 (21마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(29)">❄️ Verse 2 (29마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(45)">🌟 Chorus 2 (45마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(53)">🌉 Bridge (53마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(61)">✨ Final Chorus (61마디)</button>
+          <button class="section-btn" onclick="seekToMeasure(69)">🌙 Outro (69마디)</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>🔊 오디오 컨트롤</h3>
+        <div id="audio-controls">
+          <div id="midi-player"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>📊 곡 분석 요약</h3>
+        <div class="stat-row">
+          <span class="stat-label">조성 (Key)</span>
+          <span class="stat-val">F Major (1 Flat)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">템포 (BPM)</span>
+          <span class="stat-val">99.0 BPM</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">박자 (Meter)</span>
+          <span class="stat-val">4/4 박자</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">총 마디 수</span>
+          <span class="stat-val">75 마디 (3분 02초)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">악기 구성</span>
+          <span class="stat-val">Vocal + Piano Grand Staff</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>💾 파일 다운로드</h3>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <a href="별을_따다.mid" download style="text-decoration:none;">
+            <button class="secondary" style="width:100%; justify-content:center;">🎹 MIDI 파일 다운로드</button>
+          </a>
+          <a href="별을_따다.musicxml" download style="text-decoration:none;">
+            <button class="secondary" style="width:100%; justify-content:center;">🎼 MusicXML 파일 다운로드</button>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const abcString = `X:1
+T:별을 따다
+C:작사/작곡 황태민
+M:4/4
+L:1/4
+Q:1/4=99
+K:F
+%%score (V1) (V2 V3)
+V:V1 name="Vocal" clef=treble
+V:V2 name="Piano RH" clef=treble
+V:V3 name="Piano LH" clef=bass
+% Measure 1
+[V:V1] "F"z4 |
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] F,,2 C,2 |
+% Measure 2
+[V:V1] "C/E"z4 |
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] E,,2 C,2 |
+% Measure 3
+[V:V1] "Dm7"z4 |
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 4
+[V:V1] "Am/C"z4 |
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] C,,2 A,,2 |
+% Measure 5
+[V:V1] "Bb"z4 |
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 6
+[V:V1] "F/A"z4 |
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 7
+[V:V1] "Gm7"z4 |
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 8
+[V:V1] z2 C1 C1 |
+w: 하 늘
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 9
+[V:V1] "F"C1 D1 C1 A,1 |
+w: 에 서 별 을
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,2 C,2 |
+% Measure 10
+[V:V1] "C/E"G,1 F,1 F,1 G,1 |
+w: 따 다 하 늘
+[V:V2] [G2c2e2]2 [G2c2e2]2 |
+[V:V3] E,,2 C,2 |
+% Measure 11
+[V:V1] "Dm7"F,1 E,1 D,1 C,1 |
+w: 에 서 달 을
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 12
+[V:V1] "Am/C"D,2 _B,1 C1 |
+w: 따 다 두 손
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] C,,2 A,,2 |
+% Measure 13
+[V:V1] "Bb"C1 A,1 G,1 F,1 |
+w: 에 담 아 줄
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 14
+[V:V1] "F/A"F,2 F,1 G,1 |
+w: 게 요 아 름
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 15
+[V:V1] "Gm7"A,1 C1 D1 C1 |
+w: 다 운 그 대
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 16
+[V:V1] "C7"A,1 F,1 G,2 |
+w: 모 습 바 라
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 17
+[V:V1] "Bb"G,1 A,1 _B,1 A,1 |
+w: 보 면 행 복
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 18
+[V:V1] "C/Bb"G,2 F,2 |
+w: 하 죠
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] _B,,,2 E,,2 |
+% Measure 19
+[V:V1] "Am7"A,2 C2 |
+w: 내 사
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 20
+[V:V1] "Dm7"D2 C1 A,1 |
+w: 랑 아 름
+[V:V2] [F2A2d2]2 [F2A2d2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 21
+[V:V1] "Gm7"G,1 F,1 G,1 A,1 |
+w: 다 운 날 들
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 22
+[V:V1] "C7"_B,1 A,1 G,1 F,1 |
+w: 이 여 천 천
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 23
+[V:V1] "Am7"E,1 F,1 G,2 |
+w: 히 내 게 와
+[V:V2] [C2E2A2]2 [C2E2A2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 24
+[V:V1] "Dm7"F,2 F,1 G,1 |
+w: 요 사 라
+[V:V2] [F2A2d2]2 [F2A2d2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 25
+[V:V1] "Bb"A,1 C1 D1 C1 |
+w: 지 지 말 아
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 26
+[V:V1] "C7"_B,1 A,1 G,1 F,1 |
+w: 요 내 품 에 
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 27
+[V:V1] "F"F,4 |
+w: 안
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,,2 C,,2 |
+% Measure 28
+[V:V1] z2 C1 C1 |
+w: 차 가
+[V:V2] [G2_B2e2]2 [G2_B2e2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 29
+[V:V1] "F"C1 D1 C1 A,1 |
+w: 운 바 람 끝
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,,2 C,,2 |
+% Measure 30
+[V:V1] "C/E"G,1 F,1 G,1 A,1 |
+w: 에 도 당 신
+[V:V2] [G2c2e2]2 [G2c2e2]2 |
+[V:V3] E,,2 C,2 |
+% Measure 31
+[V:V1] "Dm7"_B,1 A,1 G,1 F,1 |
+w: 만 은 따 뜻
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 32
+[V:V1] "Am/C"G,2 F,1 G,1 |
+w: 해 요 이 름
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] C,,2 A,,2 |
+% Measure 33
+[V:V1] "Bb"A,1 C1 D1 C1 |
+w: 만 불 러 도
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 34
+[V:V1] "F/A"D1 C1 _B,1 A,1 |
+w: 마 음 이 먼
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 35
+[V:V1] "Gm7"G,2 F,2 |
+w: 저 달 려
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 36
+[V:V1] "C7"F,2 F,1 G,1 |
+w: 가 요 어 느
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 37
+[V:V1] "Bb"A,1 _B,1 C1 D1 |
+w: 날 문 득 돌
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 38
+[V:V1] "C/Bb"C2 _B,1 A,1 |
+w: 아 보 면 내
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] _B,,,2 E,,2 |
+% Measure 39
+[V:V1] "Am7"G,1 F,1 G,1 F,1 |
+w: 가 늘 여 기 
+[V:V2] [C2E2A2]2 [C2E2A2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 40
+[V:V1] "Dm7"F,2 F1 E1 |
+w: 있 을 게
+[V:V2] [F2A2d2]2 [F2A2d2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 41
+[V:V1] "Gm7"D1 C1 D1 C1 |
+w: 물 마 저 맑
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 42
+[V:V1] "C7"A,1 G,1 F,2 |
+w: 게 웃 음 으
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 43
+[V:V1] "F"F,2 G,2 |
+w: 로 바 꿔
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,,2 C,,2 |
+% Measure 44
+[V:V1] "C7"F,2 C1 C1 |
+w: 요 하 늘
+[V:V2] [G2_B2e2]2 [G2_B2e2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 45
+[V:V1] "F"C1 D1 C1 A,1 |
+w: 에 서 별 을
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,,2 C,,2 |
+% Measure 46
+[V:V1] "C/E"G,1 F,1 F,1 G,1 |
+w: 따 다 하 늘
+[V:V2] [G2c2e2]2 [G2c2e2]2 |
+[V:V3] E,,2 C,2 |
+% Measure 47
+[V:V1] "Dm7"F,1 E,1 D,1 C,1 |
+w: 에 서 달 을
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 48
+[V:V1] "Am/C"D,2 _B,1 C1 |
+w: 따 다 마 음
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] C,,2 A,,2 |
+% Measure 49
+[V:V1] "Bb"C1 A,1 G,1 F,1 |
+w: 에 담 아 올
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 50
+[V:V1] "F/A"F,2 A,1 C1 |
+w: 게 요 사 랑
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 51
+[V:V1] "Gm7"D1 C1 A,1 F,1 |
+w: 스 러 운 눈
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 52
+[V:V1] "C7"G,2 A,1 C1 |
+w: 동 자 여 내 
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 53
+[V:V1] "Dm"D1 E1 F2 |
+w: 사 랑 멀 리
+[V:V2] [F2A2d2]2 [F2A2d2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 54
+[V:V1] "Am7"F1 E1 D1 C1 |
+w: 서 헤 매 던 
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 55
+[V:V1] "Bb"D1 C1 _B,1 A,1 |
+w: 날 도 이 제
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 56
+[V:V1] "F/A"G,1 F,1 F,1 G,1 |
+w: 는 안 아 줄
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 57
+[V:V1] "Gm7"A,1 _B,1 C1 D1 |
+w: 게 요 어 둠
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 58
+[V:V1] "Am7"C2 _B,1 C1 |
+w: 이 길 을 막
+[V:V2] [C2E2A2]2 [C2E2A2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 59
+[V:V1] "Bb"D1 C1 A,1 G,1 |
+w: 아 도 당 신 
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 60
+[V:V1] "C7"G,2 C1 C1 |
+w: 곁 으 로 갈
+[V:V2] [G2_B2e2]2 [G2_B2e2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 61
+[V:V1] "F"C1 D1 C1 A,1 |
+w: 게 요 하 늘
+[V:V2] [A2c2f2]2 [A2c2f2]2 |
+[V:V3] F,,,2 C,,2 |
+% Measure 62
+[V:V1] "C/E"G,1 F,1 F,1 G,1 |
+w: 에 서 별 을
+[V:V2] [G2c2e2]2 [G2c2e2]2 |
+[V:V3] E,,2 C,2 |
+% Measure 63
+[V:V1] "Dm7"F,1 E,1 D,1 C,1 |
+w: 따 다 하 늘
+[V:V2] [F2A2c2]2 [F2A2c2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 64
+[V:V1] "Am/C"D,2 _B,1 C1 |
+w: 에 서 달 을
+[V:V2] [E2A2c2]2 [E2A2c2]2 |
+[V:V3] C,,2 A,,2 |
+% Measure 65
+[V:V1] "Bb"C1 A,1 G,1 F,1 |
+w: 따 다 두 손
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 66
+[V:V1] "F/A"F,2 F,1 G,1 |
+w: 에 담 아 줄
+[V:V2] [C2F2A2]2 [C2F2A2]2 |
+[V:V3] A,,,2 F,,2 |
+% Measure 67
+[V:V1] "Gm7"A,1 C1 D1 C1 |
+w: 게 요 아 름
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 68
+[V:V1] "C7"A,1 F,1 G,2 |
+w: 다 운 그 대
+[V:V2] [_B,2E2G2]2 [_B,2E2G2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 69
+[V:V1] "Bb"G,1 A,1 _B,1 A,1 |
+w: 모 습 나 를
+[V:V2] [D2F2_B2]2 [D2F2_B2]2 |
+[V:V3] _B,,,2 F,,2 |
+% Measure 70
+[V:V1] "C/Bb"G,2 F,2 |
+w: 숨 쉬
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] _B,,,2 E,,2 |
+% Measure 71
+[V:V1] "Am7"F,4 |
+w: 죠
+[V:V2] [E2G2c2]2 [E2G2c2]2 |
+[V:V3] A,,,2 E,,2 |
+% Measure 72
+[V:V1] "Dm7"G,2 A,1 F,1 |
+w: 영 원 히 
+[V:V2] [F2A2d2]2 [F2A2d2]2 |
+[V:V3] D,,2 A,,2 |
+% Measure 73
+[V:V1] "Gm7"F,4 |
+w: ...
+[V:V2] [_B,2D2F2]2 [_B,2D2F2]2 |
+[V:V3] G,,,2 D,,2 |
+% Measure 74
+[V:V1] "C7sus4"z4 |
+[V:V2] [_B,2C2F2]2 [_B,2C2F2]2 |
+[V:V3] C,,2 G,,2 |
+% Measure 75
+[V:V1] "Fmaj7"F,4 |
+[V:V2] [A2c2e2]2 [A2c2e2]2 |
+[V:V3] F,,,2 C,,2 |
+`;
+
+    let visualObj;
+    let synthControl;
+
+    function renderScore() {
+      visualObj = ABCJS.renderAbc("paper", abcString, {
+        responsive: "resize",
+        scale: 1.05,
+        staffwidth: 820,
+        wrap: { minSpacing: 1.8, maxSpacing: 2.8, preferredMeasuresPerLine: 4 },
+        add_classes: true
+      })[0];
+
+      if (ABCJS.synth.supportsAudio()) {
+        synthControl = new ABCJS.synth.SynthController();
+        synthControl.load("#midi-player", null, {
+          displayLoop: false,
+          displayRestart: true,
+          displayPlay: true,
+          displayProgress: true,
+          displayWarp: true
+        });
+
+        const createSynth = new ABCJS.synth.CreateSynth();
+        createSynth.init({ visualObj: visualObj }).then(() => {
+          synthControl.setTune(visualObj, false, { chordsOff: false }).then(() => {
+            console.log("Audio ready!");
+          });
+        });
+      }
+    }
+
+    function togglePlay() {
+      const playBtn = document.querySelector(".abcjs-midi-start");
+      if (playBtn) {
+        playBtn.click();
+      }
+    }
+
+    function seekToMeasure(mNum) {
+      const el = document.querySelector(`.abcjs-m${mNum - 1}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.style.fill = '#4F46E5';
+        setTimeout(() => el.style.fill = '', 1500);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderScore();
+    });
+  </script>
+</body>
+</html>
