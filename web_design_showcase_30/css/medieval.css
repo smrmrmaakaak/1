@@ -1,0 +1,301 @@
+﻿/* ==========================================================================
+   Medieval, Gothic & Classical Antique Design System Styles
+   ========================================================================== */
+
+/* 1. Medieval Parchment & Wax Seal */
+.parchment-container {
+  background: #f4e8c1;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4), rgba(184, 148, 97, 0.4)),
+    linear-gradient(to bottom, rgba(200, 160, 100, 0.15), rgba(140, 90, 40, 0.2));
+  color: #2b1d0c;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 0 30px rgba(110, 68, 26, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  border: 1px solid #c8a876;
+  width: 100%;
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+.parchment-container::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(139, 90, 43, 0.3);
+  pointer-events: none;
+}
+
+.parchment-header {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  border-bottom: 1px dashed rgba(139, 90, 43, 0.4);
+  padding-bottom: 6px;
+  color: #5c3a1e;
+}
+
+.parchment-body {
+  font-size: 0.85rem;
+  color: #3d2817;
+  font-style: italic;
+  text-align: justify;
+}
+
+/* Interactive Wax Seal */
+.wax-seal {
+  width: 58px;
+  height: 58px;
+  background: radial-gradient(circle at 35% 35%, #b91c1c, #7f1d1d, #450a0a);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  right: 15px;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fca5a5;
+  font-size: 1.4rem;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wax-seal:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.wax-seal.broken {
+  transform: scale(0.95);
+  filter: grayscale(0.5);
+  opacity: 0.7;
+}
+
+.wax-seal::after {
+  content: "♛";
+  font-size: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. Gothic Illuminated Drop Caps */
+.gothic-manuscript {
+  font-family: 'Cinzel', Georgia, serif;
+  color: #e2d9c2;
+  background: #181411;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #5c4728;
+  position: relative;
+  line-height: 1.7;
+  width: 100%;
+}
+
+.drop-cap {
+  float: left;
+  font-family: 'Cinzel', serif;
+  font-size: 3.4rem;
+  line-height: 0.8;
+  padding: 10px 14px 6px 10px;
+  margin-right: 12px;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, #ffd700, #b8860b, #daa520);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  border: 2px solid #b8860b;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(218, 165, 32, 0.3);
+  font-weight: 900;
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #ffd700, #ffffff, #d4af37, #ffd700);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 3s linear infinite;
+  font-weight: 700;
+}
+
+@keyframes goldShimmer {
+  to { background-position: 200% center; }
+}
+
+/* 3. Baroque Gold Leaf & Filigree Frame */
+.baroque-frame {
+  padding: 24px;
+  border: 12px solid transparent;
+  border-image: linear-gradient(45deg, #d4af37, #fff2a3, #8a6c1e, #f3e08b, #967425) 12;
+  box-shadow: 
+    0 0 25px rgba(212, 175, 55, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.7);
+  background: radial-gradient(circle, #241a12, #0d0906);
+  color: #f7e7ce;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.baroque-ornament {
+  font-size: 1.5rem;
+  color: #d4af37;
+  letter-spacing: 12px;
+  margin-bottom: 8px;
+}
+
+/* 4. Grimoire Spellbook Flip & Magic Runes */
+.grimoire-book {
+  perspective: 1000px;
+  width: 260px;
+  height: 180px;
+  cursor: pointer;
+}
+
+.grimoire-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grimoire-book:hover .grimoire-inner {
+  transform: rotateY(-160deg);
+}
+
+.grimoire-cover, .grimoire-page {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.grimoire-cover {
+  background: linear-gradient(135deg, #2b1108, #501d0c);
+  border: 3px solid #d4af37;
+  color: #d4af37;
+}
+
+.grimoire-page {
+  background: #f1e0b5;
+  color: #2b1d0c;
+  transform: rotateY(180deg);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  text-align: center;
+  border: 1px solid #bda888;
+}
+
+.rune-circle {
+  width: 70px;
+  height: 70px;
+  border: 2px dashed #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  animation: runeSpin 12s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes runeSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* 5. Cathedral Stained Glass & Prism Caustics */
+.stained-glass-window {
+  width: 180px;
+  height: 220px;
+  border-radius: 90px 90px 4px 4px;
+  border: 6px solid #1c150e;
+  box-shadow: 0 0 30px rgba(255, 180, 0, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3px;
+  background: #111;
+  overflow: hidden;
+  position: relative;
+}
+
+.glass-pane {
+  transition: filter 0.3s;
+  opacity: 0.85;
+}
+
+.glass-pane.ruby { background: radial-gradient(circle, #ef4444, #991b1b); }
+.glass-pane.sapphire { background: radial-gradient(circle, #3b82f6, #1e3a8a); }
+.glass-pane.amber { background: radial-gradient(circle, #f59e0b, #78350f); }
+.glass-pane.emerald { background: radial-gradient(circle, #10b981, #064e3b); }
+.glass-pane.amethyst { background: radial-gradient(circle, #8b5cf6, #4c1d95); }
+.glass-pane.topaz { background: radial-gradient(circle, #ec4899, #831843); }
+
+.stained-glass-window:hover .glass-pane {
+  filter: brightness(1.3) saturate(1.4);
+}
+
+.prism-beam {
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+  transform: rotate(-30deg);
+  animation: sunsweep 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes sunsweep {
+  0%, 100% { transform: translateY(-40%) rotate(-30deg); }
+  50% { transform: translateY(40%) rotate(-30deg); }
+}
+
+/* 6. Vintage Nautical Astrolabe & Compass */
+.astrolabe-widget {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #382513, #150d06);
+  border: 4px solid #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(0,0,0,0.9);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.astrolabe-ring {
+  position: absolute;
+  border: 1px dashed rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+}
+
+.ring-outer { width: 140px; height: 140px; }
+.ring-inner { width: 90px; height: 90px; }
+
+.astrolabe-needle {
+  width: 4px;
+  height: 130px;
+  background: linear-gradient(to bottom, #ef4444 50%, #3b82f6 50%);
+  position: absolute;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  transition: transform 0.1s ease-out;
+}
