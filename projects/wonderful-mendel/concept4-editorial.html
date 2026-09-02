@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | Concept 4: 어워즈 에디토리얼 2컬럼 매거진</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            edGold: '#C5A059',
+            edBlack: '#0A0A0A',
+            edCard: '#141414',
+            edCognac: '#78441F',
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            serif: ['Playfair Display', 'Cinzel', 'serif'],
+            mono: ['Space Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .gold-box-btn {
+      background: #C5A059;
+      color: #0A0A0A;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      transition: all 0.2s ease;
+    }
+    .gold-box-btn:hover {
+      background: #DFC38A;
+    }
+  </style>
+</head>
+<body class="bg-[#0A0A0A] text-[#D8D8D8] antialiased font-sans">
+
+  <!-- Header -->
+  <header class="max-w-[1600px] mx-auto px-6 lg:px-12 py-4 border-b border-white/[0.08] flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <span class="text-xs font-mono tracking-widest text-[#C5A059] uppercase">HOMECARE | EST. 1996</span>
+      <span class="text-xl font-serif font-black tracking-widest text-white uppercase">Master Carpenter</span>
+    </div>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[11px] font-mono tracking-widest uppercase text-slate-300">
+      <a href="#left-page" class="hover:text-[#C5A059]">THE CRAFT</a>
+      <a href="#right-page" class="hover:text-[#C5A059]">BEFORE / AFTER</a>
+      <a href="#services" class="hover:text-[#C5A059]">ARCHIVE</a>
+      <a href="#estimate" class="text-[#C5A059] font-bold">BOOK CONSULT</a>
+    </nav>
+
+    <a href="tel:010-9276-4245" class="gold-box-btn px-5 py-2.5 text-[11px] font-mono uppercase">
+      BOOK CONSULT // 010-9276-4245
+    </a>
+  </header>
+
+  <!-- Editorial 2-Page Spread Layout -->
+  <main class="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
+      
+      <!-- LEFT SPREAD (Page 1): The Art of Homecare Hero & 3 Grid Photos -->
+      <div class="space-y-10 border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-10 lg:pb-0 lg:pr-12" id="left-page">
+        
+        <div class="space-y-6">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black text-white leading-none tracking-tight">
+            THE ART OF<br>
+            HOMECARE.
+          </h1>
+
+          <div class="text-xs font-mono tracking-widest text-[#C5A059] uppercase">
+            | PURE CRAFTSMANSHIP | BESPOKE EXECUTION |
+          </div>
+
+          <p class="text-sm text-slate-400 leading-relaxed font-serif max-w-lg">
+            Elevating living spaces with unparalleled precision, dedication, and 30-year wood architectural distinction. 
+            타 업체가 포기한 원목 상판 정밀 재단부터 벨라고 사각싱크볼 교체까지.
+          </p>
+
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#estimate" class="gold-box-btn px-6 py-3.5 text-xs font-mono uppercase">
+              Request Consultation
+            </a>
+            <a href="#services" class="px-6 py-3.5 border border-white/[0.2] hover:border-[#C5A059] text-white text-xs font-mono uppercase transition">
+              Discover Services
+            </a>
+          </div>
+        </div>
+
+        <!-- 3-Column Square Image Grid on Left Page -->
+        <div class="space-y-2 pt-6 border-t border-white/[0.08]">
+          <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <span>SINK REPLACEMENT <span class="text-[#C5A059]">[Mono]</span></span>
+            <span>DOOR WRAPPING <span class="text-[#C5A059]">[Cognac]</span></span>
+            <span>WALL FLATTENING</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="aspect-square bg-slate-900 border border-white/[0.1] overflow-hidden">
+              <img src="assets/images/sink_bellago/photo_5.jpg" alt="Sink" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+            </div>
+            <div class="aspect-square bg-slate-900 border border-white/[0.1] overflow-hidden">
+              <img src="assets/images/door_film/photo_1.jpg" alt="Door" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-square bg-slate-900 border border-white/[0.1] overflow-hidden">
+              <img src="assets/images/kitchen_artwall/photo_4.jpg" alt="Wall" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+            </div>
+          </div>
+
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 pt-1">
+            <span>MASTER INSTALLATION</span>
+            <span>BESPOKE FINISHES</span>
+            <span>PRISTINE SURFACES</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SPREAD (Page 2): Door Wrapping Before/After Slide + Legacy Quote -->
+      <div class="space-y-10" id="right-page">
+        
+        <!-- Top 3 Detail Badges -->
+        <div class="grid grid-cols-3 gap-3 text-center border-b border-white/[0.08] pb-6">
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-[#C5A059] block">SIZE: L</span>
+            <span class="text-xs font-bold text-white font-serif">벨라고 사각싱크볼</span>
+          </div>
+          <div class="space-y-1 border-x border-white/[0.08]">
+            <span class="text-[10px] font-mono text-[#C5A059] block">SIZE: M</span>
+            <span class="text-xs font-bold text-white font-serif">메탈 헤어라인 필름</span>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-[#C5A059] block">SIZE: 3</span>
+            <span class="text-xs font-bold text-white font-serif">아트월 평탄화</span>
+          </div>
+        </div>
+
+        <!-- Central Interactive Before/After Showcase: 'DOOR WRAPPING' -->
+        <div class="space-y-3">
+          <div class="text-center">
+            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">BEFORE / AFTER SHOWCASE</span>
+            <h3 class="text-2xl font-serif font-black text-white uppercase mt-1">‘DOOR WRAPPING & REPAIR’</h3>
+          </div>
+
+          <!-- Slide Box with Minimalist Handle -->
+          <div class="ba-container aspect-[16/10] border border-[#C5A059]/40 bg-slate-950" id="hero-ba-slider">
+            <img src="assets/images/door_film/photo_2.jpg" alt="After" class="ba-image">
+            <div class="absolute bottom-3 right-3 z-0 bg-[#C5A059] text-black font-mono text-[10px] font-bold px-2 py-1 uppercase">
+              AFTER (헤어라인 메탈 필름)
+            </div>
+
+            <div class="ba-before-wrapper" id="hero-ba-before">
+              <img src="assets/images/door_film/photo_1.jpg" alt="Before" class="ba-image">
+              <div class="absolute bottom-3 left-3 bg-stone-900 text-white font-mono text-[10px] font-bold px-2 py-1 uppercase border border-white/20">
+                BEFORE (낡은 우드 도어)
+              </div>
+            </div>
+
+            <div class="ba-handle" id="hero-ba-handle">
+              <div class="ba-handle-button bg-[#0A0A0A] border border-[#C5A059] text-[#C5A059] text-[10px] font-mono font-bold">
+                SLIDE
+              </div>
+            </div>
+          </div>
+
+          <p class="text-center text-xs font-mono text-slate-400 italic">
+            Transforming ordinary spaces into extraordinary masterpieces.
+          </p>
+        </div>
+
+        <!-- Bottom Signature Quote & Badge -->
+        <div class="pt-6 border-t border-white/[0.08] flex items-center justify-between gap-4">
+          <div>
+            <h4 class="text-xl sm:text-2xl font-serif italic text-white">
+              “CRAFTING LEGACIES IN EVERY DETAIL”
+            </h4>
+            <p class="text-[10px] font-mono text-slate-500 mt-1">
+              조인형 대표 직영 · 30년 목수 장인의 타협 없는 완벽주의
+            </p>
+          </div>
+
+          <div class="w-14 h-14 rounded-full border border-[#C5A059] flex items-center justify-center text-[#C5A059] text-xl shrink-0">
+            <span class="material-symbols-outlined">edit</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Photo Quote Section -->
+    <div class="mt-16 bg-[#141414] border border-[#C5A059]/40 p-8 text-center space-y-4" id="estimate">
+      <span class="text-xs font-mono text-[#C5A059] tracking-widest uppercase">// DIRECT CONSULTATION //</span>
+      <h3 class="text-2xl font-serif font-black text-white">3초 사진 간편 견적 신청</h3>
+      <p class="text-xs font-mono text-slate-400">현장 사진을 문자로 전송하시면 조인형 대표가 직접 검토 후 정확한 견적을 안내합니다.</p>
+      
+      <button onclick="sendEstimateSMS()" class="gold-box-btn px-8 py-4 text-xs font-mono uppercase w-full max-w-md mx-auto block">
+        Send Inquiry via SMS (010-9276-4245)
+      </button>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/[0.08] py-8 text-center text-[10px] font-mono text-slate-500">
+    <p>MASTER CARPENTER HOMECARE · EDITORIAL MAGAZINE SPREAD</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="switcher.js"></script>
+</body>
+</html>

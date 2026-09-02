@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 6. 레트로 픽셀 아케이드 에디션</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #181425;
+      color: #E4DCD0;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .pixel-card {
+      background: #26213D;
+      border: 4px solid #FFE74C;
+      box-shadow: 6px 6px 0px #000000;
+    }
+    .pixel-btn {
+      background: #FF0055;
+      color: #FFFFFF;
+      border: 3px solid #FFFFFF;
+      box-shadow: 4px 4px 0px #000000;
+      font-weight: 900;
+      transition: all 0.1s;
+    }
+    .pixel-btn:hover {
+      background: #00F0FF;
+      color: #000000;
+      transform: translate(-2px, -2px);
+    }
+  </style>
+</head>
+<body class="selection:bg-pink-500 selection:text-white">
+
+  <header class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-yellow-400 border-2 border-white flex items-center justify-center text-black font-black text-xs">
+        LV.99
+      </div>
+      <div>
+        <span class="text-xl font-black text-yellow-300">목수의 홈케어마스터</span>
+        <p class="text-[11px] text-pink-400 font-bold">30년 목수 용사 조인형의 집수리 RPG</p>
+      </div>
+    </div>
+    <a href="tel:010-9276-4245" class="pixel-btn px-4 py-2 text-xs">
+      CALL 010-9276-4245
+    </a>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-10 space-y-10">
+    
+    <div class="pixel-card p-6 rounded-2xl space-y-4 text-center">
+      <span class="bg-pink-600 text-white font-black text-xs px-3 py-1 rounded">QUEST : 보스급 고난이도 집수리</span>
+      <h1 class="text-2xl sm:text-4xl font-black text-yellow-300">
+        "타 업체가 포기한 집수리 던전을 클리어합니다!"
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        30년 목수 스킬트리 발동: 1mm 정밀 컷팅 공법 & 분진 제로 보양 쉴드!
+      </p>
+    </div>
+
+    <!-- 3대 퀘스트 클리어 사례 -->
+    <div class="space-y-4">
+      
+      <div class="pixel-card p-5 rounded-2xl flex flex-col sm:flex-row items-center gap-4">
+        <div class="w-full sm:w-40 h-28 bg-black rounded-lg overflow-hidden shrink-0 border-2 border-yellow-400">
+          <img src="assets/images/sink_bellago/photo_6.jpg" alt="퀘스트1" class="w-full h-full object-cover">
+        </div>
+        <div class="space-y-1">
+          <span class="text-emerald-400 font-black text-xs">[퀘스트 클리어 01]</span>
+          <h3 class="text-base font-bold text-white">부평 원목 상판 사각싱크볼</h3>
+          <p class="text-xs text-slate-300">타 업체 상판 쪼개짐 불가 선언 ➔ 30mm 정밀 가공으로 400만원 공사비 세이브 완료!</p>
+        </div>
+      </div>
+
+      <div class="pixel-card p-5 rounded-2xl flex flex-col sm:flex-row items-center gap-4">
+        <div class="w-full sm:w-40 h-28 bg-black rounded-lg overflow-hidden shrink-0 border-2 border-yellow-400">
+          <img src="assets/images/door_film/photo_1.jpg" alt="퀘스트2" class="w-full h-full object-cover">
+        </div>
+        <div class="space-y-1">
+          <span class="text-emerald-400 font-black text-xs">[퀘스트 클리어 02]</span>
+          <h3 class="text-base font-bold text-white">마곡 아파트 방문 힌지 교정</h3>
+          <p class="text-xs text-slate-300">문틀 철거 300만원 견적 ➔ 30분 힌지 목공 교정으로 30만원대 해결!</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 견적 신청 퀘스트 -->
+    <div class="pixel-card p-8 rounded-2xl text-center space-y-4 bg-[#352B52]" id="estimate">
+      <h3 class="text-2xl font-black text-yellow-300">퀘스트 의뢰 : 3초 사진 견적</h3>
+      <p class="text-xs text-slate-300">현장 사진을 보내주시면 조인형 대표가 즉시 해결책을 전송합니다.</p>
+      
+      <a href="sms:010-9276-4245?body=%5B%EB%A0%88%ED%8A%B8%EB%A1%9C%20%ED%80%98%EC%8A%A4%ED%8A%B8%20%EA%B2%AC%EC%A0%81%20%EC%9D%98%EB%A2%B0%5D" class="pixel-btn inline-block px-8 py-3.5 text-xs">
+        문자로 사진 전송 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <script src="switcher.js"></script>
+</body>
+</html>

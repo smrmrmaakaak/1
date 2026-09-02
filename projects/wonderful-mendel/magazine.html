@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>목수의 홈케어마스터 | 30년 목수의 3D & 모바일 실전 시공 매거진</title>
+  <meta name="description" content="30년 목수 장인의 1mm 오차 없는 사각싱크볼 타공, 대리석 젠다이 재단, 싱크대 상판·도어 리폼, 프리미엄 인테리어 필름 복원 3D 인터랙티브 시공 매거진.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard & FontAwesome & Material Symbols -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; box-sizing: border-box; }
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      background-color: #FFFDF0;
+      color: #111111;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    /* 만화 컷 박스 */
+    .comic-box {
+      border: 3.5px solid #111111;
+      box-shadow: 5px 5px 0px #111111;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+      max-width: 100%;
+    }
+    .comic-box:hover {
+      box-shadow: 7px 7px 0px #111111;
+    }
+
+    /* 만화 말풍선 */
+    .comic-bubble {
+      position: relative;
+      background: #FFFFFF;
+      border: 3px solid #111111;
+      box-shadow: 4px 4px 0px #111111;
+      border-radius: 18px;
+    }
+
+    /* 만화 버튼 */
+    .comic-btn {
+      background: #FFE600;
+      border: 3px solid #111111;
+      box-shadow: 4px 4px 0px #111111;
+      font-weight: 900;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .comic-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111111;
+    }
+    .comic-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #111111;
+    }
+
+    .comic-btn-emerald {
+      background: #10B981;
+      color: #FFFFFF;
+      border: 3px solid #111111;
+      box-shadow: 4px 4px 0px #111111;
+      font-weight: 900;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .comic-btn-emerald:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111111;
+    }
+
+    .sns-btn-naver { background: #03C75A; color: #FFF; border: 2.5px solid #111; box-shadow: 3px 3px 0px #111; }
+    .sns-btn-youtube { background: #FF0000; color: #FFF; border: 2.5px solid #111; box-shadow: 3px 3px 0px #111; }
+    .sns-btn-insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); color: #FFF; border: 2.5px solid #111; box-shadow: 3px 3px 0px #111; }
+
+    .sound-fx {
+      display: inline-block;
+      transform: rotate(-3deg);
+      background: #FF2E63;
+      color: #FFFFFF;
+      font-weight: 900;
+      border: 2px solid #111111;
+      box-shadow: 3px 3px 0px #111111;
+      padding: 3px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+    }
+
+    /* ---------------- 3D Book Engine ---------------- */
+    .sb-wrap {
+      display: grid;
+      justify-items: center;
+      gap: 16px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    .sb-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      touch-action: pan-y;
+    }
+    .sb-arrow {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border: 3.5px solid #111111;
+      background: #FFE600;
+      color: #111111;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 4px 4px 0px #111111;
+      transition: all 0.15s ease;
+      z-index: 100;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .sb-arrow:hover {
+      transform: scale(1.1) translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111111;
+    }
+    .sb-arrow:active {
+      transform: scale(0.95) translate(2px, 2px);
+      box-shadow: 2px 2px 0px #111111;
+    }
+
+    .sb-3d {
+      position: relative;
+      flex: 1 1;
+      min-width: 0;
+      max-width: 940px;
+      perspective: 1750px;
+      perspective-origin: 50% 46%;
+    }
+    .sb-tilt {
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--zoom, 1));
+      will-change: transform;
+    }
+    .sb-book {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1760/1240;
+      transform-style: preserve-3d;
+      z-index: 1;
+      border-radius: 12px;
+      box-shadow: 8px 8px 0px #111111;
+    }
+
+    .sb-cast { position: absolute; pointer-events: none; z-index: 0; }
+    .sb-cast.ambient {
+      left: 3%; right: 3%; top: 20%; bottom: 2%;
+      background: radial-gradient(50% 50% at 50% 58%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0) 74%);
+      filter: blur(20px);
+      opacity: calc(1 - var(--shade, 0) * 0.42);
+    }
+    .sb-cast.contact {
+      left: 6%; right: 6%; top: 55%; bottom: 6%;
+      background: radial-gradient(50% 44% at 50% 42%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.12) 48%, rgba(0,0,0,0) 78%);
+      filter: blur(8px);
+      opacity: calc(1 - var(--shade, 0) * 0.5);
+    }
+
+    .sb-full { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .sb-full img { width: 100%; height: 100%; object-fit: fill; display: block; border-radius: 8px; }
+    .sb-half { position: absolute; top: 0; bottom: 0; width: 50%; height: 100%; overflow: hidden; }
+    .sb-half.left { left: 0; }
+    .sb-half.right { left: 50%; }
+    .sb-half-img { width: 200%; max-width: none; height: 100%; display: block; object-fit: fill; }
+    .sb-half-img.right { margin-left: -100%; }
+    .gutter-shade {
+      position: absolute; top: 0; bottom: 0; width: 46%;
+      pointer-events: none; opacity: calc(var(--shade, 0) * 0.5);
+    }
+    .gutter-shade.left { right: 0; background: linear-gradient(270deg, rgba(0,0,0,0.4), rgba(0,0,0,0) 82%); }
+    .gutter-shade.right { left: 0; background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0) 82%); }
+
+    .curl {
+      position: absolute; top: 0; height: 100%;
+      width: calc(var(--bw, 0px) * var(--span));
+      transform-style: preserve-3d; z-index: 6;
+    }
+    .curl.next { left: 50%; transform-origin: left center; transform: rotateY(calc(-1 * var(--tt, 0deg))); }
+    .curl.prev { right: 50%; transform-origin: right center; transform: rotateY(var(--tt, 0deg)); }
+    .strip {
+      position: absolute; top: 0; height: 100%;
+      width: calc(var(--bw, 0px) * var(--span) / var(--n));
+      transform-style: preserve-3d;
+    }
+    .curl.next .strip { transform-origin: left center; }
+    .curl.prev .strip { transform-origin: right center; }
+    .curl.next > .strip { left: 0; }
+    .curl.prev > .strip { right: 0; left: auto; }
+    .curl.next .strip .strip { left: 100%; transform: rotateY(var(--td, 0deg)); }
+    .curl.prev .strip .strip { right: 100%; transform: rotateY(calc(-1 * var(--td, 0deg))); }
+    .face {
+      position: absolute; top: 0; bottom: 0; left: 0; right: -1.1px;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      background-repeat: no-repeat; background-size: var(--bw, 0px) auto;
+    }
+    .face.back { transform: rotateY(180deg); }
+    .face .sh { position: absolute; left: 0; right: 0; top: 0; bottom: 0; pointer-events: none; }
+    .curl.next .face.front .sh, .curl.prev .face.back .sh {
+      background: linear-gradient(90deg, rgba(0,0,0,var(--a1, 0)), rgba(0,0,0,var(--a2, 0)));
+    }
+    .curl.next .face.back .sh, .curl.prev .face.front .sh {
+      background: linear-gradient(90deg, rgba(0,0,0,var(--a2, 0)), rgba(0,0,0,var(--a1, 0)));
+    }
+
+    /* ---------------- Comic Pop Loupe Magnifier ---------------- */
+    .loupe {
+      position: absolute; left: 0; top: 0;
+      width: var(--lr, 270px); height: var(--lr, 270px);
+      pointer-events: none; z-index: 80; opacity: 0;
+      transition: opacity 0.25s ease;
+      will-change: transform;
+    }
+    .loupe.on { opacity: 1; }
+    .loupe.held .ring { cursor: grabbing; }
+    .loupe .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      pointer-events: auto; cursor: grab;
+      padding: calc(var(--lr, 270px) * 0.058);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.35),
+        0 12px 24px rgba(0,0,0,0.25),
+        0 24px 38px rgba(0,0,0,0.18);
+    }
+    .loupe .ring:before {
+      content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+      background: linear-gradient(146deg, #FFFDE0 0%, #FFE600 20%, #F59E0B 45%, #D97706 70%, #FFE600 90%, #B45309 100%);
+      box-shadow: inset 0 0 0 3px #111111, 0 0 0 3.5px #111111;
+      -webkit-mask-image: radial-gradient(circle closest-side at 50% 50%, transparent 0 88.2%, #000 89.8% 100%);
+      mask-image: radial-gradient(circle closest-side at 50% 50%, transparent 0 88.2%, #000 89.8% 100%);
+    }
+    .loupe .grip {
+      position: absolute; left: 50%; top: 50%;
+      width: calc(var(--lr, 270px) * 0.76); height: calc(var(--lr, 270px) * 0.13);
+      transform-origin: 0 50%;
+      transform: rotate(40deg) translate(calc(var(--lr, 270px) * 0.33), -50%);
+      border-radius: calc(var(--lr, 270px) * 0.065);
+      pointer-events: auto; cursor: grab;
+      border: 3px solid #111111;
+      background: linear-gradient(90deg, #FFE600 0%, #F59E0B 18%, #B45309 35%, #78350F 65%, #451A03 92%);
+      box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+    }
+    .lens {
+      position: relative; display: block; width: 100%; height: 100%; border-radius: 50%;
+      background: transparent; overflow: hidden;
+      box-shadow: inset 0 0 0 1.5px rgba(0,0,0,0.6), inset 0 2px 10px rgba(0,0,0,0.25);
+    }
+    .zoomwrap {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 20;
+      opacity: 0;
+    }
+    .zoominner { position: absolute; inset: 0; transform-origin: 0 0; }
+    .lens:after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+      background: radial-gradient(36% 26% at 29% 19%, rgba(255,255,255,0.45), rgba(255,255,255,0) 76%);
+    }
+
+    /* ---------------- Controls ---------------- */
+    .sb-tools {
+      display: flex; align-items: center; gap: 8px;
+      border: 3px solid #111111; border-radius: 999px;
+      padding: 6px 14px; background: #FFFFFF;
+      box-shadow: 4px 4px 0px #111111;
+    }
+    .tool {
+      width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+      border: 2px solid #111111; border-radius: 50%; background: #FFE600; color: #111111;
+      cursor: pointer; transition: all 0.15s ease; font-weight: 900;
+    }
+    .tool:hover { transform: scale(1.1); background: #FFD000; }
+    .tool[aria-pressed="true"] { background: #10B981; color: #FFFFFF; }
+    .tool:disabled { opacity: 0.35; cursor: default; background: #EEE; }
+
+    .sb-zone { position: absolute; top: 0; bottom: 0; border: 0; background: transparent; cursor: grab; z-index: 60; }
+    .sb-zone:active { cursor: grabbing; }
+    .sb-prev { left: 0; width: 50%; }
+    .sb-next { right: 0; width: 50%; }
+
+    .sb-caption {
+      font-size: 15px; font-weight: 900; color: #111111;
+      background: #FFE600; padding: 5px 18px; border-radius: 999px;
+      border: 2.5px solid #111111; box-shadow: 3px 3px 0px #111111;
+      text-align: center;
+    }
+
+    /* ---------------- 모바일 탭 & 이미지 줌 모달 ---------------- */
+    .tab-btn.active {
+      background: #111111;
+      color: #FFE600;
+      box-shadow: 3px 3px 0px #111111;
+    }
+
+    /* ================= 만화/웹툰 배경 스타일 프리셋 ================= */
+    /* [모바일 기본] 1. 팝아트 만화 망점 (선명한 골드 하프톤) */
+    .bg-halftone {
+      background-color: #FFF9DB !important;
+      background-image: 
+        radial-gradient(rgba(217, 119, 6, 0.32) 3px, transparent 3px),
+        radial-gradient(rgba(217, 119, 6, 0.22) 3px, transparent 3px) !important;
+      background-size: 24px 24px !important;
+      background-position: 0 0, 12px 12px !important;
+    }
+
+    /* [PC 고퀄리티 1] 30년 목수 장인의 프리미엄 원목 작업대 */
+    .bg-workbench {
+      background-color: #EEDCC6 !important;
+      background-image: 
+        radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 248, 230, 0.4) 40%, transparent 75%),
+        radial-gradient(circle at 50% 100%, rgba(85, 45, 15, 0.18) 0%, transparent 65%),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 160px, rgba(120, 65, 20, 0.08) 160px, rgba(120, 65, 20, 0.08) 162px),
+        repeating-linear-gradient(0deg, rgba(160, 90, 30, 0.06) 0px, rgba(160, 90, 30, 0.06) 1.5px, transparent 1.5px, transparent 14px),
+        linear-gradient(135deg, #F5E8D6 0%, #E8D4BB 50%, #DCBE9C 100%) !important;
+      background-attachment: fixed !important;
+    }
+
+    /* [PC 고퀄리티 2] 하이엔드 아키텍트 정밀 설계 제도판 */
+    .bg-drafting {
+      background-color: #FAF4E8 !important;
+      background-image: 
+        radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.9) 0%, transparent 65%),
+        linear-gradient(rgba(180, 100, 25, 0.22) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(180, 100, 25, 0.22) 1.5px, transparent 1.5px),
+        linear-gradient(rgba(140, 65, 15, 0.45) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(140, 65, 15, 0.45) 2px, transparent 2px),
+        radial-gradient(circle at 10% 20%, rgba(240, 190, 120, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(180, 120, 60, 0.2) 0%, transparent 50%) !important;
+      background-size: 100% 100%, 20px 20px, 20px 20px, 100px 100px, 100px 100px, 100% 100%, 100% 100% !important;
+      background-attachment: fixed !important;
+    }
+
+    /* [PC 고퀄리티 3] 네이버 스튜디오 웹툰 캔버스 */
+    .bg-studio {
+      background-color: #FFFDF0 !important;
+      background-image: 
+        radial-gradient(circle at 50% 8%, rgba(255, 230, 0, 0.45) 0%, transparent 55%),
+        radial-gradient(rgba(17, 17, 17, 0.16) 2.5px, transparent 2.5px),
+        radial-gradient(rgba(217, 119, 6, 0.25) 3.5px, transparent 3.5px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(245, 235, 205, 0.5) 100%) !important;
+      background-size: 100% 100%, 22px 22px, 44px 44px, 100% 100% !important;
+      background-position: 0 0, 0 0, 11px 11px, 0 0 !important;
+      background-attachment: fixed !important;
+    }
+
+    /* 5. 깔끔한 솔리드 크림 */
+    .bg-clean {
+      background-color: #FFFDF0 !important;
+      background-image: none !important;
+    }
+
+    .floating-manga-sticker {
+      position: absolute;
+      font-weight: 900;
+      border: 2.5px solid #111111;
+      box-shadow: 4px 4px 0px #111111;
+      padding: 4px 14px;
+      border-radius: 12px;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="p-2 sm:p-4 md:p-6 pb-24 relative min-h-screen bg-halftone">
+
+  <!-- ================= 🎨 만화 배경 부유 스티커 & 효과음 레이어 ================= -->
+  <div id="comicBgStickers" class="fixed inset-0 pointer-events-none overflow-hidden z-0 hidden lg:block">
+    <div class="floating-manga-sticker bg-yellow-300 text-black top-[140px] left-6 -rotate-12">
+      <span>🛠️ 뚝딱뚝딱!</span>
+    </div>
+    <div class="floating-manga-sticker bg-rose-200 text-rose-950 top-[420px] left-8 rotate-6">
+      <span>⚡ 1mm 칼각!</span>
+    </div>
+    <div class="floating-manga-sticker bg-amber-200 text-amber-950 top-[800px] left-5 -rotate-6">
+      <span>🪵 30년 목수 장인</span>
+    </div>
+    <div class="floating-manga-sticker bg-sky-200 text-sky-950 top-[180px] right-6 rotate-12">
+      <span>💨 먼지 Zero 집진!</span>
+    </div>
+    <div class="floating-manga-sticker bg-yellow-200 text-yellow-950 top-[560px] right-8 -rotate-12">
+      <span>✨ 쓱싹쓱싹-!</span>
+    </div>
+    <div class="floating-manga-sticker bg-purple-200 text-purple-950 top-[960px] right-6 rotate-6">
+      <span>🏆 타업체 포기 구출!</span>
+    </div>
+  </div>
+
+  <!-- ================= 📦 메인 콘텐츠 래퍼 (z-index: 10으로 전면 보장) ================= -->
+  <div class="relative z-10 w-full">
+
+  <!-- ================= 🪵 상단 네비게이션 헤더 ================= -->
+  <header class="max-w-4xl mx-auto comic-box rounded-2xl p-3 sm:p-4 mb-4 flex items-center justify-between sticky top-2 z-50 bg-white">
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a href="index.html" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-amber-800 text-yellow-300 font-black text-xl flex items-center justify-center border-3 border-black shadow-[3px_3px_0px_#111] hover:scale-105 transition" title="홈으로">
+        🪵
+      </a>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <a href="index.html" class="text-sm sm:text-lg font-black text-black tracking-tight hover:text-amber-700 transition">목수의 홈케어마스터</a>
+          <span class="bg-black text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-full">시공 매거진</span>
+        </div>
+        <p class="text-[10px] sm:text-[11px] text-slate-700 font-bold">30년 목수 조인형의 집수리 구출 일지</p>
+      </div>
+    </div>
+
+    <!-- 헤더 우측: 메인홈 & 전화 버튼 -->
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl bg-yellow-300 text-black hover:bg-yellow-400 text-xs font-black transition border-2 border-black shadow-[2px_2px_0px_#111]">
+        <i class="fa-solid fa-house text-xs"></i>
+        <span class="hidden sm:inline">메인 홈으로</span>
+        <span class="sm:hidden">홈</span>
+      </a>
+
+      <a href="tel:010-9276-4245" class="comic-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
+        <i class="fa-solid fa-phone text-xs"></i>
+        <span class="font-black">010-9276-4245</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto space-y-5">
+
+    <!-- ================= 📱 / 📖 반응형 모드 스위처 (모바일/PC 완벽 전환) ================= -->
+    <div class="comic-box p-3 sm:p-4 rounded-2xl bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="sound-fx text-xs">VIEW MODE</span>
+        <p class="text-xs sm:text-sm font-black text-black">원하시는 스타일로 시공기를 감상해보세요!</p>
+      </div>
+      <div class="flex items-center gap-2 w-full sm:w-auto">
+        <button id="btnViewMobile" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition comic-btn">
+          <i class="fa-solid fa-mobile-screen-button mr-1"></i>
+          <span>📱 모바일 집중 뷰</span>
+        </button>
+        <button id="btnView3D" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition bg-white text-slate-800 hover:bg-yellow-100">
+          <i class="fa-solid fa-book-open mr-1"></i>
+          <span>📖 3D 책장 뷰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= 📱 [VIEW 1] 모바일 집중 웹툰 카드 뷰 ================= -->
+    <div id="mobileViewSection" class="space-y-5">
+
+      <!-- 모바일 히어로 타이틀 배너 -->
+      <div class="comic-box p-5 sm:p-7 rounded-3xl bg-yellow-300 space-y-3 relative overflow-hidden">
+        <div class="flex items-center justify-between border-b-3 border-black pb-2.5">
+          <span class="sound-fx">30년 목수 장인 직영</span>
+          <span class="text-xs font-black bg-black text-white px-2.5 py-1 rounded-full">실제 시공 사진 100%</span>
+        </div>
+        <h1 class="text-xl sm:text-3xl font-black text-black leading-snug">
+          "타업체가 포기한 까다로운 집수리,<br>
+          <span class="bg-white px-2 py-0.5 border-2 border-black inline-block mt-1 shadow-[3px_3px_0px_#111]">1mm 오차 없는 장인의 구출 일지"</span>
+        </h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-800">
+          각 시공 사례의 <strong>[시공 전/후 사진]</strong>을 누르시면 고화질로 비교해보실 수 있습니다!
+        </p>
+      </div>
+
+      <!-- 모바일 현장 바로가기 퀵 네비게이션 필 -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs font-black">
+        <button onclick="scrollToCase('case1')" class="px-3.5 py-2 rounded-xl bg-white border-2 border-black shadow-[2px_2px_0px_#111] shrink-0 hover:bg-yellow-200">
+          📍 벨라고 30mm 타공
+        </button>
+        <button onclick="scrollToCase('case2')" class="px-3.5 py-2 rounded-xl bg-white border-2 border-black shadow-[2px_2px_0px_#111] shrink-0 hover:bg-yellow-200">
+          📍 한스 대리석 젠다이
+        </button>
+        <button onclick="scrollToCase('case3')" class="px-3.5 py-2 rounded-xl bg-white border-2 border-black shadow-[2px_2px_0px_#111] shrink-0 hover:bg-yellow-200">
+          📍 싱크대 상판·도어 리폼
+        </button>
+        <button onclick="scrollToCase('case4')" class="px-3.5 py-2 rounded-xl bg-white border-2 border-black shadow-[2px_2px_0px_#111] shrink-0 hover:bg-yellow-200">
+          📍 현관·욕실문 필름
+        </button>
+        <button onclick="scrollToCase('case5')" class="px-3.5 py-2 rounded-xl bg-white border-2 border-black shadow-[2px_2px_0px_#111] shrink-0 hover:bg-yellow-200">
+          📍 어린이집 마그네슘보드
+        </button>
+      </div>
+
+      <!-- CASE 01: 부평 벨라고 30mm 정밀 타공 -->
+      <article id="case1" class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-black text-yellow-300 font-black text-sm flex items-center justify-center">01</span>
+            <div>
+              <span class="text-[10px] font-black text-rose-600 uppercase">CASE STUDY · 타업체 시공 거부 현장</span>
+              <h2 class="text-base sm:text-xl font-black text-black">부평 벨라고 30mm 정밀 타공기</h2>
+            </div>
+          </div>
+          <span class="bg-rose-500 text-white text-[11px] font-black px-2.5 py-1 rounded-full border border-black">난이도 최상</span>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded-2xl border-2 border-black text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+          <strong>"싱크대 상판 폭이 좁아서 사각싱크볼이 절대 안 들어간다며 타업체들이 모두 포기했던 집!"</strong><br>
+          30년 목수의 특수 집진 플런지쏘로 상판 앞쪽 30mm를 무분진 정밀 절단하여 완벽 매립했습니다.
+        </div>
+
+        <!-- Before / After 이미지 탭 & 뷰어 -->
+        <div class="space-y-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Before -->
+            <div class="comic-box p-2 rounded-2xl bg-slate-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case1_before.jpg', '부평 벨라고 - 시공 전 노후 싱크볼')">
+              <span class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+                🔴 시공 전 (타업체 거부)
+              </span>
+              <img src="assets/magazine/cases/case1_before.jpg" alt="시공 전" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+              <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+            </div>
+            <!-- After -->
+            <div class="comic-box p-2 rounded-2xl bg-amber-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case1_after.jpg', '부평 벨라고 - 최고급 벨라고 사각싱크볼 완성')">
+              <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+                🟢 시공 후 (신축 호텔 주방)
+              </span>
+              <img src="assets/magazine/cases/case1_after.jpg" alt="시공 후" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+              <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30년 목수의 현장 구출 포인트 -->
+        <div class="comic-bubble p-4 space-y-2 bg-yellow-100 text-xs sm:text-sm font-bold text-slate-900">
+          <div class="flex items-center gap-1.5 text-black font-black text-sm">
+            <span>💬 조인형 대표의 핵심 시공 포인트</span>
+          </div>
+          <ul class="space-y-1.5 text-slate-800">
+            <li>• <strong>상판 교체비 150만원 세이브</strong>: 상판 전체를 뜯지 않고 앞쪽 30mm만 깔끔하게 확장</li>
+            <li>• <strong>1mm 집진 플런지쏘 재단</strong>: 실내 먼지 날림 0% 무분진 완벽 직선 가공</li>
+            <li>• <strong>2중 방진 패드 & 항균 바이오 실리콘</strong>: 진동 소음 감소 및 영구 방수 실현</li>
+          </ul>
+        </div>
+
+        <!-- 고객 후기 & 견적 버튼 -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-600 font-bold">
+            ⭐ <strong>부평 고객님 후기</strong>: "다른 곳에서 다 안 된다고 했는데 목수님이 상판 살려서 쏙 넣어주셨어요!"
+          </p>
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-2.5 rounded-xl text-xs font-black shrink-0 w-full sm:w-auto text-center">
+            📸 이 현장처럼 견적 받기
+          </a>
+        </div>
+      </article>
+
+      <!-- CASE 02: 부평 한스 대리석 젠다이 재단 -->
+      <article id="case2" class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-black text-yellow-300 font-black text-sm flex items-center justify-center">02</span>
+            <div>
+              <span class="text-[10px] font-black text-amber-700 uppercase">CASE STUDY · 대리석 턱 간섭 해결</span>
+              <h2 class="text-base sm:text-xl font-black text-black">부평 한스 대리석 젠다이 재단기</h2>
+            </div>
+          </div>
+          <span class="bg-amber-500 text-white text-[11px] font-black px-2.5 py-1 rounded-full border border-black">석재 정밀 가공</span>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded-2xl border-2 border-black text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+          <strong>"뒤쪽 대리석 선반 턱(젠다이) 간섭으로 사각싱크볼 설치가 불가능했던 현장!"</strong><br>
+          대리석을 손상 없이 분리하여 정밀 석재 절단기로 재단 후 재설치하여 일체형으로 완성했습니다.
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="comic-box p-2 rounded-2xl bg-slate-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case2_before.jpg', '부평 한스 - 젠다이 간섭 상태')">
+            <span class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🔴 시공 전 (선반 턱 간섭)
+            </span>
+            <img src="assets/magazine/cases/case2_before.jpg" alt="시공 전" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+          <div class="comic-box p-2 rounded-2xl bg-amber-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case2_after.jpg', '부평 한스 - 대리석 일체형 완성')">
+            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🟢 시공 후 (일체형 호텔 주방)
+            </span>
+            <img src="assets/magazine/cases/case2_after.jpg" alt="시공 후" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+        </div>
+
+        <div class="comic-bubble p-4 space-y-2 bg-yellow-100 text-xs sm:text-sm font-bold text-slate-900">
+          <div class="flex items-center gap-1.5 text-black font-black text-sm">
+            <span>💬 조인형 대표의 핵심 시공 포인트</span>
+          </div>
+          <ul class="space-y-1.5 text-slate-800">
+            <li>• <strong>대리석 크랙 Zero</strong>: 고속 석재 절단기 및 수평 밸런스 피팅으로 대리석 완벽 재단</li>
+            <li>• <strong>맞춤 가구급 일체감</strong>: 싱크볼 테두리와 젠다이가 칼같이 맞물리는 1mm 피팅</li>
+            <li>• <strong>올스텐 배수구 풀세트</strong>: 냄새·물때 걱정 없는 최고급 배수관 세트 교체</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-600 font-bold">
+            ⭐ <strong>고객 후기</strong>: "원래 한 세트였던 것처럼 싱크볼이랑 젠다이가 딱 맞아서 감탄했습니다!"
+          </p>
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-2.5 rounded-xl text-xs font-black shrink-0 w-full sm:w-auto text-center">
+            📸 이 현장처럼 견적 받기
+          </a>
+        </div>
+      </article>
+
+      <!-- CASE 03: 싱크대 알짜 리폼 (본프레임 보존) -->
+      <article id="case3" class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-black text-yellow-300 font-black text-sm flex items-center justify-center">03</span>
+            <div>
+              <span class="text-[10px] font-black text-blue-700 uppercase">CASE STUDY · 70% 비용 절감</span>
+              <h2 class="text-base sm:text-xl font-black text-black">싱크대 본프레임 보존 상판·도어 리폼</h2>
+            </div>
+          </div>
+          <span class="bg-blue-600 text-white text-[11px] font-black px-2.5 py-1 rounded-full border border-black">300만원 절약</span>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded-2xl border-2 border-black text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+          <strong>"500만원 전체 철거 대신, 멀쩡한 뼈대를 살리고 상판과 도어만 150만원에 맞춤 교체!"</strong><br>
+          신축 아파트 첫 입주 주방 느낌 그대로 올화이트 프리미엄 공간으로 재탄생시켰습니다.
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="comic-box p-2 rounded-2xl bg-slate-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case3_before.jpg', '싱크대 리폼 - 시공 전 노후 주방')">
+            <span class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🔴 시공 전 (변색 노후 주방)
+            </span>
+            <img src="assets/magazine/cases/case3_before.jpg" alt="시공 전" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+          <div class="comic-box p-2 rounded-2xl bg-amber-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case3_after.jpg', '싱크대 리폼 - 신축급 올화이트 완성')">
+            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🟢 시공 후 (신축급 화이트 완성)
+            </span>
+            <img src="assets/magazine/cases/case3_after.jpg" alt="시공 후" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+        </div>
+
+        <div class="comic-bubble p-4 space-y-2 bg-yellow-100 text-xs sm:text-sm font-bold text-slate-900">
+          <div class="flex items-center gap-1.5 text-black font-black text-sm">
+            <span>💬 조인형 대표의 핵심 시공 포인트</span>
+          </div>
+          <ul class="space-y-1.5 text-slate-800">
+            <li>• <strong>철거 폐기물 & 타일 비용 제로</strong>: 튼튼한 본체 뼈대를 살려 비용 70% 절감</li>
+            <li>• <strong>최고급 인조대리석 & 댐퍼 도어</strong>: 소음 없이 부드럽게 닫히는 매트 화이트 도어</li>
+            <li>• <strong>레이저 레벨 수평 보정</strong>: 오랜 세월로 기울어진 수평을 1mm 단위로 교정</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-600 font-bold">
+            ⭐ <strong>고객 후기</strong>: "새 싱크대 견적 받고 엄두가 안 났는데 300만원 아끼고 새집 주방 됐어요!"
+          </p>
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-2.5 rounded-xl text-xs font-black shrink-0 w-full sm:w-auto text-center">
+            📸 이 현장처럼 견적 받기
+          </a>
+        </div>
+      </article>
+
+      <!-- CASE 04: 현관문 & 욕실문 필름 래핑 -->
+      <article id="case4" class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-black text-yellow-300 font-black text-sm flex items-center justify-center">04</span>
+            <div>
+              <span class="text-[10px] font-black text-purple-700 uppercase">CASE STUDY · 문짝 교체 없는 복원</span>
+              <h2 class="text-base sm:text-xl font-black text-black">현관문·욕실문 프리미엄 필름 래핑</h2>
+            </div>
+          </div>
+          <span class="bg-purple-600 text-white text-[11px] font-black px-2.5 py-1 rounded-full border border-black">호텔급 복원</span>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded-2xl border-2 border-black text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+          <strong>"습기로 썩은 욕실문과 낡은 현관문, 문짝 통교체 없이 프리미엄 필름으로 새 문 복원!"</strong><br>
+          썩은 부위를 샌딩하고 목공 방수 퍼티로 성형한 뒤 최고급 메탈 헤어라인 필름을 입혔습니다.
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="comic-box p-2 rounded-2xl bg-slate-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case4_before.jpg', '현관·욕실문 - 시공 전 낡은 문')">
+            <span class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🔴 시공 전 (습기로 부식된 문)
+            </span>
+            <img src="assets/magazine/cases/case4_before.jpg" alt="시공 전" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+          <div class="comic-box p-2 rounded-2xl bg-amber-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case4_after.jpg', '현관·욕실문 - 메탈 헤어라인 완성')">
+            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🟢 시공 후 (신축 호텔 감성)
+            </span>
+            <img src="assets/magazine/cases/case4_after.jpg" alt="시공 후" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+        </div>
+
+        <div class="comic-bubble p-4 space-y-2 bg-yellow-100 text-xs sm:text-sm font-bold text-slate-900">
+          <div class="flex items-center gap-1.5 text-black font-black text-sm">
+            <span>💬 조인형 대표의 핵심 시공 포인트</span>
+          </div>
+          <ul class="space-y-1.5 text-slate-800">
+            <li>• <strong>썩은 부위 완벽 성형</strong>: 방수 목공 퍼티로 면을 고르게 잡아 들뜸 원천 방지</li>
+            <li>• <strong>친환경 고접착 프라이머</strong>: 10년 이상 들뜨지 않는 강력한 내구성 확보</li>
+            <li>• <strong>문짝 교체 비용의 1/4</strong>: 가성비 극대화로 신축 인테리어 효과 완성</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-600 font-bold">
+            ⭐ <strong>고객 후기</strong>: "문 새로 사야 하나 고민했는데 목수님이 호텔 문으로 바꿔주셨어요!"
+          </p>
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-2.5 rounded-xl text-xs font-black shrink-0 w-full sm:w-auto text-center">
+            📸 이 현장처럼 견적 받기
+          </a>
+        </div>
+      </article>
+
+      <!-- CASE 05: 어린이집 마그네슘보드 목공 -->
+      <article id="case5" class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="flex items-center justify-between border-b-2 border-black pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-black text-yellow-300 font-black text-sm flex items-center justify-center">05</span>
+            <div>
+              <span class="text-[10px] font-black text-teal-700 uppercase">CASE STUDY · 관공서·대기업 인증</span>
+              <h2 class="text-base sm:text-xl font-black text-black">푸르니 어린이집 마그네슘보드 목공</h2>
+            </div>
+          </div>
+          <span class="bg-teal-600 text-white text-[11px] font-black px-2.5 py-1 rounded-full border border-black">친환경 준불연</span>
+        </div>
+
+        <div class="bg-yellow-50 p-3 rounded-2xl border-2 border-black text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+          <strong>"아이들의 안전과 화재 예방이 최우선인 유수의 어린이집 시설 목공!"</strong><br>
+          준불연 인증 친환경 마그네슘보드와 레이저 하지 목공으로 소방 기준을 100% 만족시켰습니다.
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="comic-box p-2 rounded-2xl bg-slate-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case5_before.jpg', '어린이집 - 정밀 하지 목공 작업')">
+            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🛠️ 시공 중 (각재 하지 작업)
+            </span>
+            <img src="assets/magazine/cases/case5_before.jpg" alt="시공 중" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+          <div class="comic-box p-2 rounded-2xl bg-amber-50 relative group cursor-pointer" onclick="openPhotoZoom('assets/magazine/cases/case5_after.jpg', '어린이집 - 마그네슘보드 완공')">
+            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full border border-black shadow-[2px_2px_0px_#111] z-10">
+              🟢 시공 후 (친환경 안전 벽체)
+            </span>
+            <img src="assets/magazine/cases/case5_after.jpg" alt="시공 후" class="w-full aspect-[4/3] object-cover rounded-xl border border-black">
+            <p class="text-[11px] font-bold text-slate-600 text-center mt-1.5">🔍 터치하여 크게 보기</p>
+          </div>
+        </div>
+
+        <div class="comic-bubble p-4 space-y-2 bg-yellow-100 text-xs sm:text-sm font-bold text-slate-900">
+          <div class="flex items-center gap-1.5 text-black font-black text-sm">
+            <span>💬 조인형 대표의 핵심 시공 포인트</span>
+          </div>
+          <ul class="space-y-1.5 text-slate-800">
+            <li>• <strong>준불연 안전 인증</strong>: 화재 시 유독가스 배출이 없는 친환경 준불연 마그네슘보드</li>
+            <li>• <strong>곰팡이·결로 차단</strong>: 습기에 강하고 방음·단열 효과가 탁월한 고급 벽체 완성</li>
+            <li>• <strong>관공서 규격 완벽 통과</strong>: 철저한 현장 감리 기준을 충족하는 30년 목수 시공</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <p class="text-xs text-slate-600 font-bold">
+            ⭐ <strong>원장님 후기</strong>: "아이들 안전 규격에 맞춰 튼튼하고 깔끔하게 시공해 주셔서 감사합니다!"
+          </p>
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-2.5 rounded-xl text-xs font-black shrink-0 w-full sm:w-auto text-center">
+            📸 이 현장처럼 견적 받기
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ================= 📖 [VIEW 2] 3D 인터랙티브 책장 뷰 ================= -->
+    <div id="desktop3DSection" class="hidden space-y-5">
+
+      <div class="comic-box p-6 sm:p-8 rounded-3xl bg-yellow-300 relative overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b-3 border-black">
+          <div class="flex items-center gap-2">
+            <span class="sound-fx">3D STORYBOOK</span>
+            <span class="text-xs sm:text-sm font-black text-black">실제 시공 사진 수록</span>
+          </div>
+          <span class="bg-black text-white text-xs font-black px-3 py-1 rounded-full">30년 목수 직영</span>
+        </div>
+        <div class="mt-3 space-y-1">
+          <h2 class="text-xl sm:text-3xl font-black text-black leading-tight">
+            "3D로 넘겨보는 30년 목수 장인의 1mm 실전 시공 매거진"
+          </h2>
+          <p class="text-xs sm:text-sm font-bold text-slate-800">
+            화살표 버튼이나 책장을 드래그하여 넘기고, 돋보기를 움직여 1mm 정밀 마감을 검수해보세요!
+          </p>
+        </div>
+      </div>
+
+      <section class="comic-box p-4 sm:p-6 rounded-3xl bg-white space-y-4">
+        <div class="sb-wrap" id="sbWrap">
+          <div class="sb-stage" id="sbStage">
+            <button class="sb-arrow left" id="sbLeft" aria-label="이전 페이지">
+              <i class="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+            
+            <div class="sb-3d" id="sb3d">
+              <div class="sb-tilt" id="sbTilt">
+                <div class="sb-cast ambient" aria-hidden="true"></div>
+                <div class="sb-cast contact" aria-hidden="true"></div>
+                <div class="sb-book" id="sbBook"></div>
+              </div>
+              <div class="zoomwrap" id="zoomWrap" aria-hidden="true"><div class="zoominner" id="zoomInner"></div></div>
+              <div class="loupe" id="loupe"><span class="grip"></span><span class="ring"><span class="lens" id="loupeLens"><span class="mag" id="loupeMag"></span></span></span></div>
+            </div>
+
+            <button class="sb-arrow right" id="sbRight" aria-label="다음 페이지">
+              <i class="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+          </div>
+
+          <div class="sb-captions" id="sbCaptions"></div>
+
+          <div class="sb-tools">
+            <button class="tool" id="zOut" aria-label="축소"><i class="fa-solid fa-magnifying-glass-minus text-xs"></i></button>
+            <span class="font-black text-xs px-2" id="zRead">100%</span>
+            <button class="tool" id="zIn" aria-label="확대"><i class="fa-solid fa-magnifying-glass-plus text-xs"></i></button>
+            <div class="w-[2px] h-4 bg-slate-300 mx-1"></div>
+            <button class="tool" id="loupeBtn" aria-label="돋보기 토글" aria-pressed="true" title="돋보기 토글"><i class="fa-solid fa-search text-xs"></i></button>
+          </div>
+
+          <p class="text-xs font-bold text-slate-500" id="sbHint">
+            👉 책장 좌/우 또는 화살표를 눌러 넘기고 · 돋보기를 끌어 당겨보세요!
+          </p>
+        </div>
+      </section>
+
+      <!-- 3D 전용 목차 -->
+      <section class="comic-box p-5 sm:p-7 rounded-3xl bg-white space-y-3">
+        <div class="flex items-center justify-between pb-2 border-b-2 border-black">
+          <h3 class="text-base font-black text-black">시공 사례 목차 (클릭 시 책장 즉시 이동)</h3>
+          <span class="text-xs font-bold text-slate-500">총 5개 주요 현장</span>
+        </div>
+        <div class="grid grid-cols-1 gap-2" id="plateList"></div>
+      </section>
+
+    </div>
+
+    <!-- ================= 👨‍🔧 30년 목수 조인형 대표 프로필 ================= -->
+    <section class="comic-box p-5 sm:p-7 rounded-3xl bg-yellow-400 space-y-3">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black text-yellow-300 font-black text-xl sm:text-2xl flex items-center justify-center border-3 border-black shadow-[3px_3px_0px_#111]">
+          匠人
+        </div>
+        <div>
+          <span class="bg-black text-white text-[10px] font-black px-2 py-0.5 rounded-full">대표 시공 장인</span>
+          <h3 class="text-lg sm:text-xl font-black text-black">조인형 대표 (목공 30년 경력)</h3>
+          <p class="text-[11px] sm:text-xs text-slate-900 font-bold">누적 1,500건 이상 집수리 시공 · 타 업체 포기 현장 전문</p>
+        </div>
+      </div>
+
+      <div class="comic-box p-4 rounded-2xl bg-white space-y-2 text-xs sm:text-sm leading-relaxed text-slate-900 font-bold">
+        <p>"나무는 계절에 따라 숨을 쉬고, 집의 수평은 세월에 따라 미세하게 변합니다."</p>
+        <p>"단순히 뜯고 새로 갈아치우는 건 누구나 할 수 있지만, <strong>기존 구조를 살리고 원인을 바로잡아 불필요한 과다 공사 없이 고쳐드리는 것</strong>이 진짜 30년 목수의 사명입니다."</p>
+        <div class="pt-2 flex flex-wrap items-center justify-between text-xs text-slate-700 font-black border-t border-slate-200 gap-2">
+          <span>직통 번호: <strong>010-9276-4245</strong></span>
+          <span>서울/경기/인천 전지역 출장 (무상 1년 AS)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 📸 10분 무료 사진 견적 CTA 배너 ================= -->
+    <section class="comic-box p-5 sm:p-7 rounded-3xl bg-yellow-300 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="sound-fx mb-1.5">QUICK ESTIMATE</span>
+          <h3 class="text-lg sm:text-2xl font-black text-black">
+            우리 집 주방·문짝도 수리가 될까 고민이신가요?
+          </h3>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 mt-1">
+            현장 사진을 찍어 보내주시면 30년 목수 조인형 대표가 10분 안에 정확한 견적과 최적의 공법을 안내해 드립니다!
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 shrink-0">
+          <a href="index.html#estimate" class="comic-btn-emerald px-4 py-3 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto">
+            <i class="fa-solid fa-camera"></i>
+            <span>10분 사진 견적 신청하기</span>
+          </a>
+          <a href="tel:010-9276-4245" class="comic-btn px-4 py-3 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-1.5 w-full sm:w-auto">
+            <i class="fa-solid fa-phone"></i>
+            <span>010-9276-4245</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="comic-box p-5 rounded-3xl bg-white text-center space-y-2 text-xs font-bold text-slate-600">
+      <p>목수의 홈케어마스터 | 대표: 조인형 | 직통 문의: 010-9276-4245</p>
+      <p>인천광역시 부평구 부평대로 · 서울 / 경기 / 인천 전지역 직영 출장 시공</p>
+      <div class="pt-2 flex items-center justify-center gap-3">
+        <a href="index.html" class="text-black font-black underline">메인 홈페이지</a>
+        <span>·</span>
+        <a href="https://blog.naver.com/home_master82" target="_blank" class="text-emerald-700 font-black underline">공식 네이버 블로그</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ================= 🔍 고화질 사진 확대 모달 (모바일 터치 줌) ================= -->
+  <div id="photoModal" class="fixed inset-0 bg-black/90 z-[1000] hidden flex-col items-center justify-center p-4">
+    <button onclick="closePhotoZoom()" class="absolute top-5 right-5 w-12 h-12 rounded-full bg-yellow-400 text-black font-black text-xl flex items-center justify-center border-3 border-black shadow-[3px_3px_0px_#FFF] z-50">
+      ✕
+    </button>
+    <div class="max-w-3xl w-full text-center space-y-3">
+      <h3 id="modalTitle" class="text-white font-black text-base sm:text-lg bg-black/60 px-4 py-2 rounded-xl inline-block border border-white/20"></h3>
+      <div class="relative overflow-hidden rounded-2xl border-3 border-yellow-400 shadow-2xl bg-black flex items-center justify-center max-h-[75vh]">
+        <img id="modalImg" src="" alt="확대 사진" class="w-full h-auto max-h-[72vh] object-contain">
+      </div>
+      <p class="text-xs font-bold text-yellow-300">손가락으로 확대하거나 닫기(✕)를 누르세요</p>
+    </div>
+  </div>
+
+  </div> <!-- End of z-10 Content Wrapper -->
+
+  <script>
+    /* =====================================================================
+       1. 고화질 사진 확대 모달 & 모바일 스크롤
+       ===================================================================== */
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+
+    function openPhotoZoom(src, title) {
+      modalImg.src = src;
+      modalTitle.textContent = title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePhotoZoom() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    modal.onclick = (e) => {
+      if (e.target === modal || e.target.closest('#modalTitle')) closePhotoZoom();
+    };
+
+    function scrollToCase(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* =====================================================================
+       3. 3D 인터랙티브 책장 엔진 (PC 및 대화면용)
+       ===================================================================== */
+    const DIR = 'assets/magazine/';
+    const PAGES = [
+      { file: 'spread_00_cover.png',         title: '표지 · 30년 목수 실전 시공 매거진', place: 'REAL STORYBOOK' },
+      { file: 'spread_01_bellago.png',       title: 'PLATE 01 · 부평 벨라고 30mm 정밀 타공기', place: '타업체 포기 현장 해결' },
+      { file: 'spread_02_hans.png',          title: 'PLATE 02 · 부평 한스 대리석 젠다이 재단기', place: '대리석 턱 간섭 일체형 가공' },
+      { file: 'spread_03_sink_reform.png',   title: 'PLATE 03 · 싱크대 본프레임 보존 상판·도어 리폼', place: '500만원 대신 70% 절약' },
+      { file: 'spread_04_film.png',          title: 'PLATE 04 · 현관문·욕실문 프리미엄 필름 래핑', place: '교체 없는 신축 호텔 복원' },
+      { file: 'spread_05_magnesium.png',     title: 'PLATE 05 · 푸르니 어린이집 마그네슘보드 목공', place: '관공서·친환경 불연 시공' }
+    ];
+
+    PAGES.forEach(p => p.url = DIR + p.file);
+    const M = PAGES.length;
+
+    const wrap = document.getElementById('sbWrap');
+    const stage = document.getElementById('sbStage');
+    const sb3d = document.getElementById('sb3d');
+    const book = document.getElementById('sbBook');
+    const capBox = document.getElementById('sbCaptions');
+    const hint = document.getElementById('sbHint');
+    const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const N = 18;
+    const SPAN = 0.449;
+    const BETA = 0.60;
+    let idx = 0, turn = null;
+    let strips = [];
+
+    function el(t, c) { const e = document.createElement(t); if (c) e.className = c; return e; }
+    function imgEl(i, side) {
+      const im = new Image();
+      im.className = 'sb-half-img ' + side;
+      im.draggable = false; im.alt = ''; im.src = PAGES[i].url;
+      return im;
+    }
+
+    function halfEl(pos, i) {
+      const d = el('div', 'sb-half ' + pos);
+      d.appendChild(imgEl(i, pos));
+      d.appendChild(el('div', 'gutter-shade ' + pos));
+      return d;
+    }
+
+    function buildCurl(dir, from, to) {
+      strips = [];
+      const c = el('div', 'curl ' + dir);
+      c.style.setProperty('--n', N);
+      c.style.setProperty('--span', SPAN);
+      let host = c;
+      for (let i = 0; i < N; i++) {
+        const s = el('div', 'strip');
+        s.style.setProperty('--i', i);
+        const gut = 'calc(var(--bw) * 0.5)';
+        const sw = 'calc(var(--bw) * ' + SPAN + ' / ' + N + ')';
+        const A = 'calc(-1 * (' + gut + ' + ' + i + ' * ' + sw + '))';
+        const B = 'calc(' + (i + 1) + ' * ' + sw + ' - ' + gut + ')';
+        const f = el('div', 'face front'), b = el('div', 'face back');
+        const dress = (e, url, px) => {
+          e.style.backgroundImage = 'url(' + url + ')';
+          e.style.backgroundPositionX = px;
+        };
+        dress(f, PAGES[from].url, dir === 'next' ? A : B);
+        dress(b, PAGES[to].url,   dir === 'next' ? B : A);
+        f.appendChild(el('div', 'sh'));
+        b.appendChild(el('div', 'sh'));
+        s.appendChild(f); s.appendChild(b);
+        if (i === N - 1) s.classList.add('edge');
+        host.appendChild(s); host = s;
+        strips.push(s);
+      }
+      return c;
+    }
+
+    function applyTurn(t) {
+      const th = Math.PI * t;
+      const beta = BETA * Math.sin(Math.PI * t);
+      const D = 180 / Math.PI;
+      const tt = th + beta, td = 2 * beta / N;
+      sb3d.style.setProperty('--tt', (tt * D).toFixed(2) + 'deg');
+      sb3d.style.setProperty('--td', (td * D).toFixed(3) + 'deg');
+      sb3d.style.setProperty('--shade', Math.sin(Math.PI * t).toFixed(3));
+      fadeCaption(t);
+      for (let i = 0; i < strips.length; i++) {
+        const l1 = Math.abs(Math.cos(tt - i * td));
+        const l2 = Math.abs(Math.cos(tt - (i + 1) * td));
+        const st = strips[i].style;
+        st.setProperty('--lit', l1.toFixed(3));
+        st.setProperty('--a1', ((1 - l1) * 0.5).toFixed(3));
+        st.setProperty('--a2', ((1 - l2) * 0.5).toFixed(3));
+      }
+    }
+
+    function paint() {
+      book.textContent = '';
+      if (!turn) {
+        const f = el('div', 'sb-full');
+        const im = new Image(); im.src = PAGES[idx].url; im.alt = PAGES[idx].title;
+        im.draggable = false;
+        f.appendChild(im); book.appendChild(f);
+        sb3d.style.setProperty('--shade', '0');
+      } else {
+        const next = turn.dir === 'next';
+        book.appendChild(halfEl('left', next ? turn.from : turn.to));
+        book.appendChild(halfEl('right', next ? turn.to : turn.from));
+        book.appendChild(buildCurl(turn.dir, turn.from, turn.to));
+        applyTurn(turn.t);
+      }
+      const a = el('button', 'sb-zone sb-prev'), b = el('button', 'sb-zone sb-next');
+      a.setAttribute('aria-label', '이전 페이지'); b.setAttribute('aria-label', '다음 페이지');
+      book.appendChild(a); book.appendChild(b);
+      layout();
+      caption();
+      marks();
+      if (typeof syncZoomLayer === 'function') syncZoomLayer();
+      if (typeof placeLoupe === 'function') placeLoupe();
+    }
+
+    function caption() {
+      capBox.textContent = '';
+      if (turn) {
+        const capOut = el('p', 'sb-caption live'); capOut.textContent = PAGES[turn.from].title; capBox.appendChild(capOut);
+        const capIn = el('p', 'sb-caption live'); capIn.textContent = PAGES[turn.to].title; capBox.appendChild(capIn);
+        fadeCaption(turn.t);
+      } else {
+        const p = el('p', 'sb-caption'); p.textContent = PAGES[idx].title; capBox.appendChild(p);
+      }
+    }
+
+    function fadeCaption(t) {
+      const caps = capBox.querySelectorAll('.sb-caption.live');
+      if (caps.length < 2) return;
+      const out = 1 - Math.max(0, Math.min(1, (t - 0.10) / 0.28));
+      const inn = Math.max(0, Math.min(1, (t - 0.56) / 0.30));
+      caps[0].style.opacity = out.toFixed(3);
+      caps[1].style.opacity = inn.toFixed(3);
+    }
+
+    function layout() {
+      if (!book) return;
+      sb3d.style.setProperty('--bw', book.clientWidth + 'px');
+    }
+    addEventListener('resize', layout);
+
+    /* Spring Animation Loop */
+    let spring = null;
+    function animateTo(target, onDone, stiff, damp) {
+      spring = { kind: 'spring', v: 0, target: target, done: onDone, k: stiff || 150, c: damp || 22 };
+      kick();
+    }
+
+    let raf = null, last = 0;
+    function tick(now) {
+      raf = null;
+      const dt = Math.min(0.032, (now - last) / 1000 || 0.016); last = now;
+      if (spring && turn) {
+        const x = turn.t - spring.target;
+        spring.v += (-spring.k * x - spring.c * spring.v) * dt;
+        turn.t += spring.v * dt;
+        if (Math.abs(turn.t - spring.target) < 0.002 && Math.abs(spring.v) < 0.02) {
+          turn.t = spring.target; const d = spring.done; spring = null;
+          applyTurn(turn.t);
+          if (d) d();
+        } else applyTurn(turn.t);
+      }
+      viewSpring();
+      const lmoved = loupeEase();
+      if ((spring || viewActive || lmoved) && raf === null) raf = requestAnimationFrame(tick);
+    }
+    function kick() { if (raf === null) { last = performance.now(); raf = requestAnimationFrame(tick); } }
+
+    /* 3D Tilt & Zoom */
+    const TILT_X = 4, TILT_Y = 6;
+    const ZOOM_MIN = 0.9, ZOOM_MAX = 1.4;
+    const view = { rx: 0, ry: 0, z: 1, trx: 0, try_: 0, tz: 1 };
+    let viewActive = false;
+    let lastZ = 1;
+
+    function applyView() {
+      sb3d.style.setProperty('--rx', view.rx.toFixed(2) + 'deg');
+      sb3d.style.setProperty('--ry', view.ry.toFixed(2) + 'deg');
+      sb3d.style.setProperty('--zoom', view.z.toFixed(3));
+      if (view.z !== lastZ) { lastZ = view.z; if (typeof placeLoupe === 'function') placeLoupe(); }
+    }
+
+    function viewSpring() {
+      const e = 0.14;
+      let moved = false;
+      for (const [k, t] of [['rx', 'trx'], ['ry', 'try_'], ['z', 'tz']]) {
+        const d = view[t] - view[k];
+        if (Math.abs(d) > 0.0006) { view[k] += d * e; moved = true; }
+        else view[k] = view[t];
+      }
+      if (moved) applyView();
+      viewActive = moved;
+      return moved;
+    }
+
+    function setView(rx, ry, z) {
+      view.trx = Math.max(-TILT_X, Math.min(TILT_X, rx));
+      view.try_ = Math.max(-TILT_Y, Math.min(TILT_Y, ry));
+      view.tz = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, z));
+      viewActive = true; kick();
+      if (typeof syncZoom === 'function') syncZoom();
+    }
+
+    function tiltTo(cx, cy) {
+      if (drag) return;
+      const r = book.getBoundingClientRect();
+      if (!r.width) return;
+      const nx = Math.max(-1, Math.min(1, (cx - (r.left + r.width / 2)) / (r.width * 0.62)));
+      const ny = Math.max(-1, Math.min(1, (cy - (r.top + r.height / 2)) / (r.height * 0.9)));
+      setView(-ny * TILT_X, nx * TILT_Y, view.tz);
+    }
+
+    addEventListener('pointermove', e => {
+      if (e.pointerType === 'touch') return;
+      tiltTo(e.clientX, e.clientY);
+    }, { passive: true });
+
+    addEventListener('pointerout', e => { if (!e.relatedTarget) setView(0, 0, view.tz); });
+    addEventListener('blur', () => setView(0, 0, view.tz));
+    stage.addEventListener('dblclick', () => setView(view.trx, view.try_, 1));
+
+    /* Drag / Turn */
+    let drag = null;
+    function hideHint() { hint.classList.add('opacity-0'); }
+
+    stage.addEventListener('pointerdown', e => {
+      if (e.button !== 0) return;
+      if (e.target.closest('.sb-arrow') || e.target.closest('.loupe') || e.target.closest('.tool') || e.target.closest('.sb-tools')) {
+        return;
+      }
+      const onBook = e.target.closest('.sb-zone');
+      if (!onBook) return;
+      
+      e.preventDefault();
+      stage.setPointerCapture(e.pointerId);
+      hideHint();
+      const r = book.getBoundingClientRect();
+      const dir = (e.clientX - r.left) / r.width > 0.5 ? 'next' : 'prev';
+      startTurn(dir, 0);
+      drag = { dir: dir, x0: e.clientX, w: r.width, moved: 0, vel: 0, tPrev: performance.now() };
+    });
+
+    stage.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x0;
+      drag.moved = Math.max(drag.moved, Math.abs(dx));
+      const raw = (drag.dir === 'next' ? -dx : dx) / (drag.w * 0.62);
+      const t = Math.max(0, Math.min(1, raw));
+      const now = performance.now();
+      drag.vel = (t - (turn ? turn.t : 0)) / Math.max(0.001, (now - drag.tPrev) / 1000);
+      drag.tPrev = now;
+      if (turn) { turn.t = t; applyTurn(t); }
+    });
+
+    function endDrag() {
+      if (!drag) return;
+      const d = drag; drag = null;
+      if (!turn) return;
+      if (d.moved < 6) { commit(); return; }
+      const go = turn.t > 0.42 || d.vel > 1.1;
+      if (go) commit(); else cancel();
+    }
+
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+
+    function startTurn(dir, t) {
+      spring = null;
+      if (turn) { idx = turn.to; turn = null; }
+      if (typeof shoveLoupe === 'function') shoveLoupe(dir);
+      const from = idx;
+      turn = { dir: dir, from: from, to: dir === 'next' ? (from + 1) % M : (from - 1 + M) % M, t: t || 0 };
+      paint();
+    }
+
+    function commit() {
+      if (!turn) return;
+      if (REDUCED) { idx = turn.to; turn = null; paint(); return; }
+      animateTo(1, () => { idx = turn.to; turn = null; paint(); }, 170, 26);
+      kick();
+    }
+
+    function cancel() {
+      if (!turn) return;
+      animateTo(0, () => { turn = null; paint(); }, 150, 24);
+      kick();
+    }
+
+    function step(dir) {
+      if (turn) { idx = turn.to; turn = null; }
+      startTurn(dir, 0); commit();
+    }
+
+    function goTo(i) {
+      if (i === idx) return;
+      if (turn) { idx = turn.to; turn = null; }
+      const fwd = (i - idx + M) % M, back = (idx - i + M) % M;
+      if (Math.min(fwd, back) === 1) { step(fwd === 1 ? 'next' : 'prev'); return; }
+      idx = i; paint();
+    }
+
+    const sbLeft = document.getElementById('sbLeft');
+    const sbRight = document.getElementById('sbRight');
+
+    function handleLeft(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      hideHint();
+      step('prev');
+    }
+
+    function handleRight(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      hideHint();
+      step('next');
+    }
+
+    sbLeft.addEventListener('pointerdown', e => e.stopPropagation());
+    sbRight.addEventListener('pointerdown', e => e.stopPropagation());
+    sbLeft.addEventListener('click', handleLeft);
+    sbRight.addEventListener('click', handleRight);
+
+    addEventListener('keydown', e => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const t = e.target;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      e.preventDefault(); hideHint();
+      step(e.key === 'ArrowRight' ? 'next' : 'prev');
+    });
+
+    /* Loupe Magnifier */
+    const loupe = document.getElementById('loupe');
+    const zRead = document.getElementById('zRead');
+    const loupeBtn = document.getElementById('loupeBtn');
+    const zInBtn = document.getElementById('zIn'), zOutBtn = document.getElementById('zOut');
+    const MAG = 2.4;
+    let loupeOn = true, lx = null, ly = null, lgrab = null, lTarget = null;
+
+    function loupeSize() { return Math.round(Math.max(165, Math.min(270, book.clientWidth * 0.235))); }
+    function bookBox() { return { x: 0, y: 0, w: book.clientWidth, h: book.clientHeight }; }
+
+    function restLoupe() {
+      const b = bookBox();
+      lx = b.x + b.w * 0.86; ly = b.y + b.h * 0.84;
+      placeLoupe();
+    }
+
+    const zoomWrap = document.getElementById('zoomWrap');
+    const zoomInner = document.getElementById('zoomInner');
+
+    function syncZoomLayer() {
+      zoomInner.textContent = '';
+      for (const c of book.children) {
+        if (c.classList.contains('sb-zone')) continue;
+        zoomInner.appendChild(c.cloneNode(true));
+      }
+    }
+
+    function placeLoupe() {
+      if (lx === null) return;
+      const B = bookBox(), bw = B.w, bh = B.h;
+      if (!bw) return;
+      const R = loupeSize() / 2, bez = R * 2 * 0.058;
+      loupe.style.setProperty('--lr', R * 2 + 'px');
+      loupe.style.transform = 'translate3d(' + (lx - R).toFixed(1) + 'px,' + (ly - R).toFixed(1) + 'px,0)';
+      if (loupeOn) loupe.classList.add('on');
+
+      const z = view.z, cx = bw / 2, cy = bh / 2;
+      const x0 = cx + (bw * .05 - cx) * z, x1 = cx + (bw * .95 - cx) * z;
+      const y0 = cy + (bh * .05 - cy) * z, y1 = cy + (bh * .95 - cy) * z;
+
+      const nx = Math.max(x0, Math.min(lx, x1));
+      const ny = Math.max(y0, Math.min(ly, y1));
+      const inside = (lx > x0 && lx < x1 && ly > y0 && ly < y1)
+        ? Math.min(lx - x0, x1 - lx, ly - y0, y1 - ly)
+        : -Math.hypot(lx - nx, ly - ny);
+      const k = Math.max(0, Math.min(1, (inside + R * 0.30) / (R * 0.55)));
+
+      zoomWrap.style.opacity = (loupeOn ? k : 0).toFixed(3);
+      if (k <= 0.002) return;
+      const r = (R - bez).toFixed(1);
+      const mask = 'radial-gradient(circle ' + r + 'px at ' + lx.toFixed(1) + 'px ' + ly.toFixed(1) + 'px,#000 calc(100% - 1px),transparent 100%)';
+      zoomWrap.style.webkitMaskImage = mask;
+      zoomWrap.style.maskImage = mask;
+
+      const px = cx + (lx - cx) / z, py = cy + (ly - cy) / z, s = MAG * z;
+      zoomInner.style.transform = 'translate(' + (lx - px * s).toFixed(1) + 'px,' + (ly - py * s).toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
+    }
+
+    function shoveLoupe(dir) {
+      if (!loupeOn || lx === null || lgrab) return;
+      const b = bookBox();
+      const nx = (b.w / 2 + (lx - b.x - b.w / 2) / view.z) / b.w, ny = (b.h / 2 + (ly - b.y - b.h / 2) / view.z) / b.h;
+      if (nx < 0.02 || nx > 0.98 || ny < 0.17 || ny > 0.83) return;
+      lTarget = { x: b.x + b.w * (dir === 'next' ? 0.12 : 0.88), y: b.y + b.h * 0.84 };
+      kick();
+    }
+
+    function loupeEase() {
+      if (!lTarget) return false;
+      if (lgrab) { lTarget = null; return false; }
+      const dx = lTarget.x - lx, dy = lTarget.y - ly;
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) { lx = lTarget.x; ly = lTarget.y; lTarget = null; placeLoupe(); return false; }
+      lx += dx * 0.17; ly += dy * 0.17; placeLoupe();
+      return true;
+    }
+
+    loupe.addEventListener('pointerdown', e => {
+      if (!loupeOn || e.button !== 0) return;
+      e.preventDefault(); e.stopPropagation();
+      lTarget = null;
+      lgrab = { cx: e.clientX, cy: e.clientY, lx0: lx, ly0: ly };
+      loupe.classList.add('held');
+      loupe.setPointerCapture(e.pointerId);
+      hideHint();
+    });
+
+    loupe.addEventListener('pointermove', e => {
+      if (!lgrab) return;
+      const b = bookBox(), R = loupeSize() / 2;
+      lx = Math.max(b.x - R * 0.7, Math.min(b.x + b.w + R * 0.7, lgrab.lx0 + (e.clientX - lgrab.cx)));
+      ly = Math.max(b.y - R * 0.7, Math.min(b.y + b.h + R * 1.0, lgrab.ly0 + (e.clientY - lgrab.cy)));
+      placeLoupe();
+    });
+
+    function dropLoupe() { lgrab = null; loupe.classList.remove('held'); }
+    loupe.addEventListener('pointerup', dropLoupe);
+    loupe.addEventListener('pointercancel', dropLoupe);
+
+    loupeBtn.onclick = () => {
+      loupeOn = !loupeOn;
+      loupeBtn.setAttribute('aria-pressed', String(loupeOn));
+      loupe.classList.toggle('on', loupeOn);
+      if (loupeOn && lx === null) restLoupe();
+    };
+
+    function syncZoom() {
+      zRead.textContent = Math.round(view.tz * 100) + '%';
+      zOutBtn.disabled = view.tz <= ZOOM_MIN + 0.001;
+      zInBtn.disabled = view.tz >= ZOOM_MAX - 0.001;
+    }
+
+    zInBtn.onclick = () => { setView(view.trx, view.try_, view.tz * 1.16); hideHint(); };
+    zOutBtn.onclick = () => { setView(view.trx, view.try_, view.tz / 1.16); hideHint(); };
+
+    /* ---------------- Table of Contents Index ---------------- */
+    const plateList = document.getElementById('plateList');
+    PAGES.forEach((p, i) => {
+      const b = el('button', 'comic-box p-3 rounded-2xl flex items-center justify-between gap-3 text-left w-full hover:bg-yellow-100 transition cursor-pointer');
+      b.innerHTML = `
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="w-7 h-7 rounded-xl bg-black text-yellow-300 font-black text-xs flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#111]">${String(i).padStart(2, '0')}</span>
+          <div class="min-w-0">
+            <h4 class="text-xs sm:text-sm font-black text-black truncate">${p.title}</h4>
+            <p class="text-[11px] text-slate-600 font-bold">${p.place}</p>
+          </div>
+        </div>
+        <span class="comic-btn text-[11px] px-3 py-1 rounded-lg shrink-0 font-black">보기 👉</span>
+      `;
+      b.onclick = () => {
+        goTo(i);
+        document.getElementById('sbWrap').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      };
+      plateList.appendChild(b);
+    });
+
+    function marks() {
+      const cur = turn ? turn.to : idx;
+      const btns = plateList.querySelectorAll('button');
+      btns.forEach((b, i) => {
+        if (i === cur) {
+          b.classList.add('bg-yellow-200');
+          b.classList.remove('bg-white');
+        } else {
+          b.classList.remove('bg-yellow-200');
+          b.classList.add('bg-white');
+        }
+      });
+    }
+
+    /* Initial render */
+    paint();
+    restLoupe();
+
+    /* =====================================================================
+       4. 모바일 뷰 vs 3D 뷰 전환 스위처 & 자동 감지
+       ===================================================================== */
+    const btnMobile = document.getElementById('btnViewMobile');
+    const btn3D = document.getElementById('btnView3D');
+    const mobileSec = document.getElementById('mobileViewSection');
+    const desktopSec = document.getElementById('desktop3DSection');
+
+    function setViewMode(mode) {
+      if (mode === 'mobile') {
+        mobileSec.style.display = 'block';
+        desktopSec.style.display = 'none';
+        btnMobile.className = 'flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition comic-btn';
+        btn3D.className = 'flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition bg-white text-slate-800 hover:bg-yellow-100';
+      } else {
+        mobileSec.style.display = 'none';
+        desktopSec.style.display = 'block';
+        btn3D.className = 'flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition comic-btn';
+        btnMobile.className = 'flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs sm:text-sm font-black border-2 border-black transition bg-white text-slate-800 hover:bg-yellow-100';
+        
+        setTimeout(() => {
+          layout();
+          paint();
+          restLoupe();
+        }, 50);
+      }
+    }
+
+    btnMobile.onclick = () => setViewMode('mobile');
+    btn3D.onclick = () => setViewMode('3d');
+
+    // 화면 크기에 맞춘 초기 모드 설정
+    if (window.innerWidth < 768) {
+      setViewMode('mobile');
+    } else {
+      setViewMode('3d');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+/* ============================================================
+   목수의 홈케어마스터 (Homecare Master) - Ultra Premium Design
+   ============================================================ */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Manrope', 'Pretendard', sans-serif;
+  --bg-deep: #080B11;
+  --bg-card: rgba(18, 24, 38, 0.65);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(245, 158, 11, 0.35);
+  --color-gold: #F59E0B;
+  --color-gold-glow: rgba(245, 158, 11, 0.25);
+  --color-wood-amber: #D97706;
+  --color-emerald: #10B981;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: #F3F4F6;
+  letter-spacing: -0.015em;
+}
+
+/* Custom Ultra-Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080B11;
+}
+::-webkit-scrollbar-thumb {
+  background: #252D3D;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+/* Ambient Radial Glows */
+.mesh-gradient-hero {
+  background: radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.07) 0%, transparent 50%),
+              radial-gradient(circle at 15% 40%, rgba(217, 119, 6, 0.08) 0%, transparent 50%);
+}
+
+.mesh-gradient-section {
+  background: radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
+}
+
+/* Glassmorphism 2.0 */
+.glass-panel {
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.12);
+}
+
+/* Gold Gradient Accents */
+.gold-gradient-btn {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  color: #0F172A;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-gradient-btn:hover {
+  background: linear-gradient(135deg, #FDE68A 0%, #FBBF24 50%, #F59E0B 100%);
+  box-shadow: 0 6px 30px rgba(245, 158, 11, 0.45);
+  transform: translateY(-2px);
+}
+.gold-gradient-btn:active {
+  transform: translateY(0);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FDE68A 30%, #F59E0B 70%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Before & After Interactive Slider */
+.ba-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+  border-radius: 1.25rem;
+}
+
+.ba-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-before-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ba-before-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(245, 158, 11, 0.8);
+  cursor: ew-resize;
+  z-index: 20;
+  transform: translateX(-50%);
+}
+
+.ba-handle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  background: #0F172A;
+  border: 2px solid #F59E0B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F59E0B;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(245, 158, 11, 0.3);
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.ba-handle:hover .ba-handle-button {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Interactive Estimate Chip Cards */
+.estimate-chip-card {
+  cursor: pointer;
+  background: rgba(18, 24, 38, 0.6);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.estimate-chip-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.estimate-chip-card.selected {
+  border-color: #F59E0B;
+  background: rgba(245, 158, 11, 0.14);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.estimate-chip-card.selected .check-indicator {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.check-indicator {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+}
+
+/* Floating Bottom Bar (Mobile) */
+.mobile-bottom-bar {
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Animation */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(15px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+}

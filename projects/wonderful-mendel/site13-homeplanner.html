@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>목수의 홈케어마스터 | 13. 종합 인테리어 3D 공간 플래너 Pro</title>
+  <meta name="description" content="바닥재 8종 · 벽지 6종 · 아트월 5종 · 100% 정품 3D 가구 16종 · 5대 AAA 실사 시네마틱 조명">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js + OrbitControls + GLTFLoader + GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Pretendard & FontAwesome & Google Material Symbols -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; box-sizing: border-box; }
+    body {
+      background-color: #080706;
+      color: #F5F5F0;
+      font-family: 'Pretendard', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .viewport-3d {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), inset 0 0 60px rgba(0, 0, 0, 0.8);
+      background-color: #120F0D;
+      touch-action: none;
+    }
+
+    .pill-btn {
+      background: rgba(28, 24, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #E6E1DC;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pill-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #F59E0B;
+      color: #FFFFFF;
+    }
+    .pill-btn.active {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #080706;
+      font-weight: 800;
+      border-color: #F59E0B;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+    }
+
+    .catalog-item-card {
+      background: linear-gradient(180deg, rgba(32, 28, 24, 0.85) 0%, rgba(20, 17, 14, 0.98) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+    .catalog-item-card:hover {
+      border-color: rgba(245, 158, 11, 0.6);
+      background: rgba(245, 158, 11, 0.15);
+      transform: translateX(4px);
+    }
+
+    .placed-item-card {
+      background: rgba(28, 24, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+    .placed-item-card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      background: rgba(245, 158, 11, 0.1);
+    }
+    .placed-item-card.selected {
+      border-color: #F59E0B;
+      background: rgba(245, 158, 11, 0.25);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+    }
+
+    .gold-action-btn {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #080706;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+      transition: all 0.25s ease;
+    }
+    .gold-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.6);
+    }
+
+    .custom-scroll::-webkit-scrollbar { width: 5px; }
+    .custom-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .custom-scroll::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 4px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.6); }
+
+    .spinner-ring {
+      border: 3px solid rgba(245, 158, 11, 0.2);
+      border-top: 3px solid #F59E0B;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+  <!-- 헤더 (모바일 반응형 최적화) -->
+  <header class="fixed top-[42px] inset-x-0 z-40 bg-[#080706]/95 backdrop-blur-xl border-b border-amber-500/20 px-3 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-stone-950 font-black shadow-lg shadow-amber-500/20 shrink-0">
+        <span class="material-symbols-outlined text-xl sm:text-2xl">roofing</span>
+      </div>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-xs sm:text-base font-black text-white">홈케어마스터 <span class="text-amber-400">3D 공간 플래너</span></span>
+          <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-bold hidden sm:inline">44종 리모델링</span>
+        </div>
+        <p class="text-[10px] sm:text-[11px] text-stone-400 font-medium">30년 목수 조인형 대표 직영</p>
+      </div>
+    </div>
+
+    <!-- 5대 AAA 실사 시네마틱 조명 엔진 (데스크톱) -->
+    <div class="hidden xl:flex items-center gap-1 bg-stone-950/90 p-1.5 rounded-2xl border border-stone-800 shadow-xl">
+      <button onclick="setAAALighting('daylight')" id="btn-light-daylight" class="pill-btn active px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>☀️ 정오 자연광</span>
+      </button>
+      <button onclick="setAAALighting('sunset')" id="btn-light-sunset" class="pill-btn px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🌅 골든 선셋</span>
+      </button>
+      <button onclick="setAAALighting('hotel')" id="btn-light-hotel" class="pill-btn px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>☕ 코지 호텔웜</span>
+      </button>
+      <button onclick="setAAALighting('midnight')" id="btn-light-midnight" class="pill-btn px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🎬 시네마틱 나이트</span>
+      </button>
+      <button onclick="setAAALighting('studio')" id="btn-light-studio" class="pill-btn px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>💡 3점 스튜디오</span>
+      </button>
+      <button onclick="toggleSpotlightFollow()" id="btn-light-spot" class="pill-btn active px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1">
+        <span>🔦 커서광</span>
+      </button>
+    </div>
+
+    <a href="tel:010-9276-4245" class="gold-action-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs flex items-center gap-1 shadow-lg shrink-0">
+      <i class="fa-solid fa-phone text-[10px] sm:text-xs"></i>
+      <span class="font-bold text-[11px] sm:text-xs">010-9276-4245</span>
+    </a>
+  </header>
+
+  <!-- 메인 워크스페이스 (모바일: 3D 뷰포트가 최상단 order-1, 카탈로그 order-2, 견적 order-3) -->
+  <main class="w-full px-2 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-3 sm:space-y-4">
+
+    <!-- 상단 평수 및 종합 자재 상태 바 -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-2.5 bg-stone-900/90 p-2.5 sm:p-3 rounded-2xl border border-amber-500/30 backdrop-blur-xl shadow-xl">
+      
+      <!-- 평수 선택 (가로 스크롤) -->
+      <div class="flex items-center gap-1 overflow-x-auto no-scrollbar w-full sm:w-auto py-0.5">
+        <span class="text-[11px] sm:text-xs font-black text-amber-400 flex items-center gap-1 shrink-0 px-1">
+          <span class="material-symbols-outlined text-sm">straighten</span> 평수:
+        </span>
+        <button onclick="setPyeong(18)" id="pyeong-btn-18" class="pill-btn px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-bold shrink-0">18평 (59㎡)</button>
+        <button onclick="setPyeong(25)" id="pyeong-btn-25" class="pill-btn px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-bold shrink-0">25평 (84㎡)</button>
+        <button onclick="setPyeong(34)" id="pyeong-btn-34" class="pill-btn active px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-bold shrink-0">34평 국민평형</button>
+        <button onclick="setPyeong(45)" id="pyeong-btn-45" class="pill-btn px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-bold shrink-0">45평 대형</button>
+        <button onclick="setPyeong(58)" id="pyeong-btn-58" class="pill-btn px-2.5 py-1 rounded-xl text-[11px] sm:text-xs font-bold shrink-0">58평 펜트</button>
+      </div>
+
+      <!-- 모바일 조명 선택 칩 -->
+      <div class="flex xl:hidden items-center gap-1 overflow-x-auto no-scrollbar w-full py-0.5">
+        <button onclick="setAAALighting('daylight')" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold shrink-0">☀️ 자연광</button>
+        <button onclick="setAAALighting('sunset')" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold shrink-0">🌅 선셋</button>
+        <button onclick="setAAALighting('hotel')" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold shrink-0">☕ 호텔웜</button>
+        <button onclick="setAAALighting('midnight')" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold shrink-0">🎬 나이트</button>
+        <button onclick="setAAALighting('studio')" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold shrink-0">💡 스튜디오</button>
+      </div>
+
+    </div>
+
+    <!-- 3단 그리드 워크스페이스 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-start">
+      
+      <!-- ================= 2. 중앙 3D 뷰포트 (모바일 최상단 order-1, 데스크톱 order-2) ================= -->
+      <div class="order-1 lg:order-2 lg:col-span-6 h-[420px] sm:h-[540px] lg:h-[740px]">
+        <div class="viewport-3d" id="stage-3d-box">
+          <canvas id="canvas-3d" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+
+          <!-- 로딩 인디케이터 오버레이 -->
+          <div id="planner-spinner" class="hidden absolute inset-0 bg-black/60 backdrop-blur-sm z-30 flex flex-col items-center justify-center gap-3">
+            <div class="spinner-ring"></div>
+            <p class="text-xs font-bold text-amber-400 font-mono" id="planner-spinner-text">3D 실물 에셋 로딩 중...</p>
+          </div>
+
+          <!-- 좌측 상단: 평수 및 조명 상태 배지 -->
+          <div class="absolute top-3 left-3 flex flex-col gap-1 z-10">
+            <div class="flex items-center gap-1.5 bg-black/80 backdrop-blur-xl border border-white/10 px-2.5 py-1 rounded-xl text-[10px] sm:text-xs">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <span class="font-bold text-white" id="badge-mood-title">34평형 (☀️ 정오 자연광)</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-stone-950/85 backdrop-blur-md border border-amber-500/30 px-2.5 py-0.5 rounded-lg text-[9px] sm:text-[10px] text-amber-300 font-mono">
+              <span id="badge-dim-title">10.0m × 8.0m (80.0㎡)</span>
+            </div>
+          </div>
+
+          <!-- 우측 상단: 선택된 가구 조작 패널 -->
+          <div id="selection-panel" class="hidden absolute top-3 right-3 bg-stone-950/95 backdrop-blur-xl border border-amber-500/50 p-2.5 rounded-2xl text-xs space-y-1.5 shadow-2xl z-30">
+            <div class="flex justify-between items-center gap-2">
+              <span class="font-bold text-amber-400 text-[11px] truncate max-w-[120px]" id="selected-item-name">선택된 가구</span>
+              <button onclick="deselectObject()" class="text-stone-400 hover:text-white text-xs">✕</button>
+            </div>
+            <div class="flex items-center gap-1">
+              <button onclick="rotateSelected()" class="pill-btn px-2 py-1 rounded-lg text-[10px] font-bold flex items-center gap-0.5">
+                <span class="material-symbols-outlined text-xs">rotate_right</span> 45°
+              </button>
+              <button onclick="deleteSelected()" class="px-2 py-1 rounded-lg text-[10px] font-bold bg-rose-600/80 hover:bg-rose-500 text-white flex items-center gap-0.5">
+                <span class="material-symbols-outlined text-xs">delete</span> 삭제
+              </button>
+            </div>
+          </div>
+
+          <!-- 하단 조작 가이드 -->
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1.5 rounded-xl text-[10px] text-stone-300 pointer-events-none z-10">
+            <p class="font-bold text-amber-400">💡 터치 드래그: 가구 이동 / 빈 공간: 회전</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 1. 좌측: 44종 종합 인테리어 리모델링 카탈로그 (모바일 order-2, 데스크톱 order-1) ================= -->
+      <div class="order-2 lg:order-1 lg:col-span-3 bg-stone-950/90 border border-stone-800 rounded-3xl p-3 sm:p-4 flex flex-col h-[520px] lg:h-[740px] shadow-2xl">
+        
+        <div class="pb-2.5 border-b border-stone-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-400 text-lg">architecture</span>
+              <h3 class="text-xs sm:text-sm font-black text-white">리모델링 자재 & 가구</h3>
+            </div>
+            <span class="text-[10px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full" id="left-count-badge">44종</span>
+          </div>
+
+          <!-- 실시간 검색 -->
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs sm:text-sm">search</span>
+            <input type="text" id="left-search-input" oninput="filterLeftCatalog()" placeholder="마루, 벽지, 아트월, 소파 검색..." class="w-full bg-stone-900 border border-stone-700/70 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 transition">
+          </div>
+
+          <!-- 카테고리 필터 칩 (가로 스크롤) -->
+          <div class="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 text-[11px]" id="left-cat-chips">
+            <button onclick="setLeftCategory('전체')" class="pill-btn active px-2.5 py-1 rounded-lg font-bold shrink-0">전체</button>
+            <button onclick="setLeftCategory('바닥재 & 마루')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🪵 바닥재</button>
+            <button onclick="setLeftCategory('벽지 & 도장 & 페인트')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">📜 벽지/도장</button>
+            <button onclick="setLeftCategory('아트월 & 루버 템바보드')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🧱 아트월</button>
+            <button onclick="setLeftCategory('정품 가구 & 좌석')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🛋️ 가구</button>
+            <button onclick="setLeftCategory('주방 가전 & 식기')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🍳 주방</button>
+            <button onclick="setLeftCategory('플랜테리어 & 소품')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">🌿 식물</button>
+            <button onclick="setLeftCategory('럭셔리 조명 & 스탠드')" class="pill-btn px-2.5 py-1 rounded-lg font-bold shrink-0">💡 조명</button>
+          </div>
+        </div>
+
+        <!-- 3D 카탈로그 카드 리스트 -->
+        <div class="flex-1 overflow-y-auto custom-scroll space-y-2 py-2 pr-1" id="left-catalog-list"></div>
+
+      </div>
+
+      <!-- ================= 3. 우측: 내 시공 & 배치 목록 & 실시간 견적 패널 (모바일 order-3, 데스크톱 order-3) ================= -->
+      <div class="order-3 lg:order-3 lg:col-span-3 bg-stone-950/90 border border-stone-800 rounded-3xl p-3 sm:p-4 flex flex-col h-[520px] lg:h-[740px] shadow-2xl">
+        
+        <div class="pb-2.5 border-b border-stone-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400 text-lg">checklist</span>
+            <div>
+              <h3 class="text-xs sm:text-sm font-black text-white">내 시공 & 배치 목록</h3>
+              <p class="text-[9px] sm:text-[10px] text-stone-400" id="placed-count-text">바닥+벽지+아트월+가구</p>
+            </div>
+          </div>
+
+          <button onclick="clearAllFurniture()" class="px-2 py-1 rounded-xl bg-rose-600/20 border border-rose-500/40 hover:bg-rose-600 hover:text-white text-rose-400 text-[10px] font-bold transition flex items-center gap-0.5">
+            <span class="material-symbols-outlined text-xs">delete_sweep</span>
+            <span>가구 비우기</span>
+          </button>
+        </div>
+
+        <!-- 리스트 (스크롤) -->
+        <div class="flex-1 overflow-y-auto custom-scroll space-y-2 py-2.5 pr-1" id="placed-models-list"></div>
+
+        <!-- 하단 실시간 견적 및 전송 버튼 -->
+        <div class="pt-2 border-t border-stone-800 space-y-2">
+          <div class="bg-stone-900/90 p-2.5 rounded-2xl border border-stone-800 space-y-1">
+            <div class="flex justify-between items-center text-[11px] sm:text-xs">
+              <span class="text-stone-400">타 업체 교체 대비</span>
+              <span class="text-emerald-400 font-black font-mono" id="total-save-badge">약 0만원 절감</span>
+            </div>
+            <div class="flex justify-between items-center text-[11px] sm:text-xs">
+              <span class="text-stone-300 font-bold">30년 목수 직영가</span>
+              <span class="text-amber-400 font-black font-mono text-sm" id="total-cost-badge">약 0만원</span>
+            </div>
+          </div>
+
+          <button onclick="submitPlannerQuote()" class="gold-action-btn w-full py-2.5 sm:py-3 rounded-2xl text-xs font-black flex items-center justify-center gap-1.5 shadow-xl">
+            <span class="material-symbols-outlined text-sm">send</span>
+            <span>이 인테리어 견적 조인형 대표에게 접수</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="assets/data/catalog200.js"></script>
+  <script src="switcher.js"></script>
+
+  <script>
+    let scene, camera, renderer, controls;
+    let floorMesh, wallsGroup = null, artwallMesh = null, furnitureGroup = [];
+    let selectedObject = null;
+    let currentLightMode = 'daylight';
+
+    let selectedFloorItem = CATALOG_200.find(i => i.type === 'floor') || CATALOG_200[0];
+    let selectedWallItem = CATALOG_200.find(i => i.type === 'wall') || CATALOG_200[8];
+    let selectedArtwallItem = CATALOG_200.find(i => i.type === 'artwall') || CATALOG_200[14];
+
+    const PYEONG_CONFIGS = {
+      18: { width: 6.0, depth: 5.0, area: 30.0, label: '18평 (59㎡)' },
+      25: { width: 8.0, depth: 6.5, area: 52.0, label: '25평 (84㎡)' },
+      34: { width: 10.0, depth: 8.0, area: 80.0, label: '34평 (112㎡)' },
+      45: { width: 12.0, depth: 9.5, area: 114.0, label: '45평 (148㎡)' },
+      58: { width: 14.5, depth: 11.0, area: 159.5, label: '58평 (192㎡)' }
+    };
+    let currentPyeong = 34;
+
+    const GLB_CACHE = {};
+
+    let isDragging = false;
+    let draggedObject = null;
+    const floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+    const planeIntersectPoint = new THREE.Vector3();
+    const dragOffset = new THREE.Vector3();
+
+    let ambientLight, sunLight, skyLight, fillLight, rimLight, cursorSpotlightLight, tvBacklight, artwallCoveLight;
+    let downlights = [];
+    let spotlightFollowEnabled = true;
+
+    const gltfLoader = new THREE.GLTFLoader();
+    const texLoader = new THREE.TextureLoader();
+    const studioEnv = texLoader.load('assets/textures/studio_env.jpg');
+    studioEnv.mapping = THREE.EquirectangularReflectionMapping;
+
+    function initPlanner() {
+      const container = document.getElementById('stage-3d-box');
+      const canvas = document.getElementById('canvas-3d');
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x14110E);
+      scene.environment = studioEnv;
+
+      camera = new THREE.PerspectiveCamera(38, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(12, 10, 12);
+
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.35;
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.target.set(0, 0, 0);
+      controls.maxPolarAngle = Math.PI / 2 - 0.05;
+      controls.minDistance = 4;
+      controls.maxDistance = 30;
+
+      setupAAALightingRig();
+      buildRoomStructure(currentPyeong);
+      resetRoomLayout();
+
+      const raycaster = new THREE.Raycaster();
+      const mouse = new THREE.Vector2();
+
+      function getPointerCoords(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: ((clientX - rect.left) / rect.width) * 2 - 1,
+          y: -((clientY - rect.top) / rect.height) * 2 + 1
+        };
+      }
+
+      function handlePointerStart(e) {
+        const coords = getPointerCoords(e);
+        mouse.x = coords.x; mouse.y = coords.y;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(furnitureGroup, true);
+
+        if (intersects.length > 0) {
+          let topObj = intersects[0].object;
+          while (topObj.parent && topObj.parent !== scene && !topObj.userData.isFurnitureRoot) {
+            topObj = topObj.parent;
+          }
+
+          selectObject(topObj);
+          isDragging = true;
+          draggedObject = topObj;
+          controls.enabled = false;
+
+          if (raycaster.ray.intersectPlane(floorPlane, planeIntersectPoint)) {
+            dragOffset.copy(draggedObject.position).sub(planeIntersectPoint);
+          }
+          canvas.style.cursor = 'grabbing';
+          if (e.cancelable) e.preventDefault();
+        }
+      }
+
+      function handlePointerMove(e) {
+        const coords = getPointerCoords(e);
+        mouse.x = coords.x; mouse.y = coords.y;
+
+        raycaster.setFromCamera(mouse, camera);
+
+        if (isDragging && draggedObject) {
+          if (raycaster.ray.intersectPlane(floorPlane, planeIntersectPoint)) {
+            const cfg = PYEONG_CONFIGS[currentPyeong];
+            const maxW = (cfg.width / 2) - 0.6;
+            const maxD = (cfg.depth / 2) - 0.6;
+
+            const targetX = THREE.MathUtils.clamp(planeIntersectPoint.x + dragOffset.x, -maxW, maxW);
+            const targetZ = THREE.MathUtils.clamp(planeIntersectPoint.z + dragOffset.z, -maxD, maxD);
+
+            draggedObject.position.x = targetX;
+            draggedObject.position.z = targetZ;
+          }
+          if (e.cancelable) e.preventDefault();
+        } else {
+          if (spotlightFollowEnabled && floorMesh) {
+            const hits = raycaster.intersectObject(floorMesh);
+            if (hits.length > 0) {
+              const p = hits[0].point;
+              cursorSpotlightLight.target.position.set(p.x, 0, p.z);
+              cursorSpotlightLight.position.set(p.x + 2, 7, p.z + 2);
+            }
+          }
+        }
+      }
+
+      function handlePointerEnd() {
+        if (isDragging) {
+          isDragging = false;
+          draggedObject = null;
+          controls.enabled = true;
+          canvas.style.cursor = 'grab';
+        }
+      }
+
+      canvas.addEventListener('pointerdown', handlePointerStart);
+      canvas.addEventListener('pointermove', handlePointerMove);
+      window.addEventListener('pointerup', handlePointerEnd);
+
+      // 모바일 터치 이벤트
+      canvas.addEventListener('touchstart', handlePointerStart, { passive: false });
+      canvas.addEventListener('touchmove', handlePointerMove, { passive: false });
+      window.addEventListener('touchend', handlePointerEnd);
+
+      window.addEventListener('resize', onResize);
+      renderLeftCatalog();
+      preloadPlannerGLBs();
+      animate();
+    }
+
+    function setupAAALightingRig() {
+      ambientLight = new THREE.AmbientLight(0xFFF2E6, 0.85);
+      scene.add(ambientLight);
+
+      skyLight = new THREE.HemisphereLight(0x8AB4F8, 0x3D2C1E, 0.6);
+      scene.add(skyLight);
+
+      sunLight = new THREE.DirectionalLight(0xFFE8D0, 2.8);
+      sunLight.position.set(12, 16, 10);
+      sunLight.castShadow = true;
+      sunLight.shadow.mapSize.width = 2048;
+      sunLight.shadow.mapSize.height = 2048;
+      sunLight.shadow.bias = -0.00005;
+      scene.add(sunLight);
+
+      fillLight = new THREE.DirectionalLight(0x7FB5FF, 0.9);
+      fillLight.position.set(-12, 10, -10);
+      scene.add(fillLight);
+
+      rimLight = new THREE.PointLight(0xF59E0B, 1.8, 20);
+      rimLight.position.set(0, 5, 0);
+      scene.add(rimLight);
+
+      const downlightPos = [
+        { x: -2.5, y: 3.1, z: -1.5 },
+        { x: 2.5, y: 3.1, z: -1.5 },
+        { x: -2.5, y: 3.1, z: 1.5 },
+        { x: 2.5, y: 3.1, z: 1.5 }
+      ];
+      downlights = downlightPos.map(pos => {
+        const spot = new THREE.SpotLight(0xFFE0B2, 0.8, 8, Math.PI / 4, 0.5);
+        spot.position.set(pos.x, pos.y, pos.z);
+        spot.target.position.set(pos.x, 0, pos.z);
+        scene.add(spot);
+        scene.add(spot.target);
+        return spot;
+      });
+
+      artwallCoveLight = new THREE.PointLight(0xFFB74D, 1.8, 6);
+      artwallCoveLight.position.set(0.25, 2.7, -3.7);
+      scene.add(artwallCoveLight);
+
+      cursorSpotlightLight = new THREE.SpotLight(0xFFFFFF, 2.0, 20, Math.PI / 6, 0.4);
+      cursorSpotlightLight.position.set(0, 9, 0);
+      cursorSpotlightLight.castShadow = true;
+      scene.add(cursorSpotlightLight);
+      scene.add(cursorSpotlightLight.target);
+    }
+
+    function buildRoomStructure(pyeong) {
+      const cfg = PYEONG_CONFIGS[pyeong];
+      const W = cfg.width;
+      const D = cfg.depth;
+      const H = 3.2;
+
+      if (floorMesh) scene.remove(floorMesh);
+      if (wallsGroup) scene.remove(wallsGroup);
+
+      const floorTex = texLoader.load(selectedFloorItem.tex);
+      floorTex.wrapS = THREE.RepeatWrapping;
+      floorTex.wrapT = THREE.RepeatWrapping;
+      floorTex.repeat.set(W / 2.5, D / 2.5);
+
+      const floorBump = selectedFloorItem.bump ? texLoader.load(selectedFloorItem.bump) : null;
+      if (floorBump) {
+        floorBump.wrapS = THREE.RepeatWrapping;
+        floorBump.wrapT = THREE.RepeatWrapping;
+        floorBump.repeat.set(W / 2.5, D / 2.5);
+      }
+
+      const floorMat = new THREE.MeshStandardMaterial({
+        map: floorTex,
+        bumpMap: floorBump,
+        bumpScale: 0.02,
+        roughness: selectedFloorItem.rough || 0.35,
+        metalness: selectedFloorItem.metal || 0.05
+      });
+
+      floorMesh = new THREE.Mesh(new THREE.BoxGeometry(W, 0.2, D), floorMat);
+      floorMesh.position.y = -0.1;
+      floorMesh.receiveShadow = true;
+      scene.add(floorMesh);
+
+      wallsGroup = new THREE.Group();
+      const wallTex = texLoader.load(selectedWallItem.tex);
+      wallTex.wrapS = THREE.RepeatWrapping;
+      wallTex.wrapT = THREE.RepeatWrapping;
+      wallTex.repeat.set(W / 3, 2);
+
+      const wallMat = new THREE.MeshStandardMaterial({ 
+        map: wallTex,
+        roughness: selectedWallItem.rough || 0.85, 
+        color: selectedWallItem.color || 0xFFFFFF 
+      });
+
+      const backWall = new THREE.Mesh(new THREE.BoxGeometry(W, H, 0.2), wallMat);
+      backWall.position.set(0, H / 2, -D / 2);
+      backWall.castShadow = true;
+      backWall.receiveShadow = true;
+      wallsGroup.add(backWall);
+
+      const leftWall = new THREE.Mesh(new THREE.BoxGeometry(0.2, H, D), wallMat);
+      leftWall.position.set(-W / 2, H / 2, 0);
+      leftWall.castShadow = true;
+      leftWall.receiveShadow = true;
+      wallsGroup.add(leftWall);
+
+      const part1 = new THREE.Mesh(new THREE.BoxGeometry(0.18, 2.6, D * 0.45), wallMat);
+      part1.position.set(-W * 0.16, 1.3, -D * 0.27);
+      part1.castShadow = true;
+      part1.receiveShadow = true;
+      wallsGroup.add(part1);
+
+      const part2 = new THREE.Mesh(new THREE.BoxGeometry(0.18, 2.6, D * 0.45), wallMat);
+      part2.position.set(W * 0.22, 1.3, -D * 0.27);
+      part2.castShadow = true;
+      part2.receiveShadow = true;
+      wallsGroup.add(part2);
+
+      const artW = Math.min(3.4, W * 0.35);
+      const artTex = texLoader.load(selectedArtwallItem.tex);
+      artTex.wrapS = THREE.RepeatWrapping;
+      artTex.wrapT = THREE.RepeatWrapping;
+      artTex.repeat.set(3, 1);
+
+      const artMat = new THREE.MeshStandardMaterial({
+        map: artTex,
+        roughness: selectedArtwallItem.rough || 0.45,
+        metalness: selectedArtwallItem.metal || 0.05
+      });
+      artwallMesh = new THREE.Mesh(new THREE.BoxGeometry(artW, 2.6, 0.1), artMat);
+      artwallMesh.position.set(0.25, 1.4, -D / 2 + 0.15);
+      artwallMesh.castShadow = true;
+      artwallMesh.receiveShadow = true;
+      wallsGroup.add(artwallMesh);
+
+      const tv = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 0.05), new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.1, metalness: 0.9 }));
+      tv.position.set(0.25, 1.7, -D / 2 + 0.23);
+      wallsGroup.add(tv);
+
+      tvBacklight = new THREE.PointLight(0xF59E0B, 1.5, 3);
+      tvBacklight.position.set(0.25, 1.7, -D / 2 + 0.21);
+      wallsGroup.add(tvBacklight);
+
+      const tvStand = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.35, 0.45), new THREE.MeshStandardMaterial({ color: 0x2A231D, roughness: 0.4 }));
+      tvStand.position.set(0.25, 0.17, -D / 2 + 0.4);
+      tvStand.castShadow = true;
+      tvStand.receiveShadow = true;
+      wallsGroup.add(tvStand);
+
+      scene.add(wallsGroup);
+
+      if (artwallCoveLight) {
+        artwallCoveLight.position.set(0.25, 2.7, -D / 2 + 0.25);
+      }
+
+      document.getElementById('badge-dim-title').textContent = `${W.toFixed(1)}m × ${D.toFixed(1)}m (${cfg.area.toFixed(1)}㎡)`;
+    }
+
+    function handleCatalogCardClick(item) {
+      if (item.type === 'floor') {
+        selectedFloorItem = item;
+        buildRoomStructure(currentPyeong);
+        updatePlacedList();
+      } else if (item.type === 'wall') {
+        selectedWallItem = item;
+        buildRoomStructure(currentPyeong);
+        updatePlacedList();
+      } else if (item.type === 'artwall') {
+        selectedArtwallItem = item;
+        buildRoomStructure(currentPyeong);
+        updatePlacedList();
+      } else if (item.type === 'model') {
+        spawnCatalogItem(item);
+      }
+    }
+
+    function setPyeong(pyeong) {
+      currentPyeong = pyeong;
+      [18, 25, 34, 45, 58].forEach(p => {
+        const btn = document.getElementById(`pyeong-btn-${p}`);
+        if (btn) btn.classList.toggle('active', p === pyeong);
+      });
+
+      buildRoomStructure(pyeong);
+
+      const cfg = PYEONG_CONFIGS[pyeong];
+      const dist = Math.max(10, cfg.width * 1.25);
+      gsap.to(camera.position, { x: dist, y: dist * 0.8, z: dist, duration: 1.0, ease: 'power2.out' });
+      controls.target.set(0, 0, 0);
+      updatePlacedList();
+    }
+
+    function setAAALighting(mode) {
+      currentLightMode = mode;
+      document.querySelectorAll('#btn-light-daylight, #btn-light-sunset, #btn-light-hotel, #btn-light-midnight, #btn-light-studio').forEach(b => b && b.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-light-${mode}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const cfg = PYEONG_CONFIGS[currentPyeong];
+      const badge = document.getElementById('badge-mood-title');
+
+      if (mode === 'daylight') {
+        ambientLight.color.setHex(0xFFF2E6); ambientLight.intensity = 0.9;
+        skyLight.color.setHex(0x8AB4F8); skyLight.intensity = 0.6;
+        sunLight.color.setHex(0xFFE8D0); sunLight.intensity = 2.8;
+        fillLight.color.setHex(0x7FB5FF); fillLight.intensity = 0.8;
+        rimLight.intensity = 1.2;
+        downlights.forEach(d => d.intensity = 0.2);
+        artwallCoveLight.intensity = 0.8;
+        renderer.toneMappingExposure = 1.35;
+        scene.background.setHex(0x14110E);
+        badge.textContent = `${cfg.label} (☀️ 정오 자연광)`;
+      } else if (mode === 'sunset') {
+        ambientLight.color.setHex(0xFFA060); ambientLight.intensity = 0.65;
+        skyLight.color.setHex(0x553388); skyLight.intensity = 0.4;
+        sunLight.color.setHex(0xFF7722); sunLight.intensity = 3.5;
+        fillLight.color.setHex(0x884422); fillLight.intensity = 0.9;
+        rimLight.intensity = 2.5;
+        downlights.forEach(d => d.intensity = 0.4);
+        artwallCoveLight.color.setHex(0xFF8833); artwallCoveLight.intensity = 2.0;
+        renderer.toneMappingExposure = 1.45;
+        scene.background.setHex(0x221008);
+        badge.textContent = `${cfg.label} (🌅 골든 선셋)`;
+      } else if (mode === 'hotel') {
+        ambientLight.color.setHex(0x2A1E14); ambientLight.intensity = 0.35;
+        skyLight.color.setHex(0x442211); skyLight.intensity = 0.2;
+        sunLight.color.setHex(0xAA6633); sunLight.intensity = 0.4;
+        fillLight.color.setHex(0x332211); fillLight.intensity = 0.3;
+        rimLight.intensity = 3.0;
+        downlights.forEach(d => { d.color.setHex(0xFFD599); d.intensity = 1.6; });
+        artwallCoveLight.color.setHex(0xFFA726); artwallCoveLight.intensity = 3.2;
+        renderer.toneMappingExposure = 1.5;
+        scene.background.setHex(0x0E0A08);
+        badge.textContent = `${cfg.label} (☕ 코지 호텔웜)`;
+      } else if (mode === 'midnight') {
+        ambientLight.color.setHex(0x0A0D1A); ambientLight.intensity = 0.25;
+        skyLight.color.setHex(0x112244); skyLight.intensity = 0.3;
+        sunLight.color.setHex(0x335588); sunLight.intensity = 0.3;
+        fillLight.color.setHex(0x112255); fillLight.intensity = 0.6;
+        rimLight.color.setHex(0x60A5FA); rimLight.intensity = 2.8;
+        downlights.forEach(d => { d.color.setHex(0x93C5FD); d.intensity = 0.6; });
+        artwallCoveLight.color.setHex(0x3B82F6); artwallCoveLight.intensity = 2.4;
+        renderer.toneMappingExposure = 1.3;
+        scene.background.setHex(0x05070B);
+        badge.textContent = `${cfg.label} (🎬 시네마틱 나이트)`;
+      } else if (mode === 'studio') {
+        ambientLight.color.setHex(0xFFFFFF); ambientLight.intensity = 0.8;
+        skyLight.color.setHex(0xE0E7FF); skyLight.intensity = 0.7;
+        sunLight.color.setHex(0xFFFFFF); sunLight.intensity = 3.2;
+        fillLight.color.setHex(0xC7D2FE); fillLight.intensity = 1.4;
+        rimLight.color.setHex(0xF59E0B); rimLight.intensity = 3.5;
+        downlights.forEach(d => { d.color.setHex(0xFFFFFF); d.intensity = 1.2; });
+        artwallCoveLight.color.setHex(0xFFD54F); artwallCoveLight.intensity = 2.0;
+        renderer.toneMappingExposure = 1.4;
+        scene.background.setHex(0x120F0D);
+        badge.textContent = `${cfg.label} (💡 3점 스튜디오)`;
+      }
+    }
+
+    function preloadPlannerGLBs() {
+      CATALOG_200.forEach(item => {
+        if (item.type === 'model' && item.glb && !GLB_CACHE[item.glb]) {
+          gltfLoader.load(`assets/models/${item.glb}`, (gltf) => {
+            gltf.scene.traverse((child) => {
+              if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+                if (child.material) {
+                  child.material.envMap = studioEnv;
+                  child.material.envMapIntensity = 1.2;
+                  child.material.needsUpdate = true;
+                }
+              }
+            });
+            GLB_CACHE[item.glb] = gltf.scene;
+          });
+        }
+      });
+    }
+
+    function autoFitPlannerItem(model, targetSize = 1.8) {
+      const box = new THREE.Box3().setFromObject(model);
+      const size = box.getSize(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      if (maxDim > 0) {
+        const scale = targetSize / maxDim;
+        model.scale.set(scale, scale, scale);
+      }
+      const newBox = new THREE.Box3().setFromObject(model);
+      model.position.y -= newBox.min.y;
+    }
+
+    function spawnRealGLBItem(item, spawnPos) {
+      const g = new THREE.Group();
+      g.userData = { 
+        id: item.id,
+        name: item.name, 
+        brand: item.brand, 
+        price: item.price, 
+        costNum: item.costNum,
+        save: item.save, 
+        cat: item.cat,
+        glb: item.glb,
+        realSize: item.realSize || 1.8,
+        dimText: item.dimText || '',
+        isFurnitureRoot: true 
+      };
+
+      const realTargetSize = item.realSize || 1.8;
+      const spinner = document.getElementById('planner-spinner');
+
+      if (GLB_CACHE[item.glb]) {
+        const clone = GLB_CACHE[item.glb].clone(true);
+        autoFitPlannerItem(clone, realTargetSize);
+        g.add(clone);
+        g.position.set(spawnPos.x, spawnPos.y, spawnPos.z);
+        scene.add(g);
+        furnitureGroup.push(g);
+        selectObject(g);
+        updatePlacedList();
+        return g;
+      }
+
+      if (spinner) {
+        document.getElementById('planner-spinner-text').textContent = `${item.glb} 로딩 중...`;
+        spinner.classList.remove('hidden');
+      }
+
+      gltfLoader.load(`assets/models/${item.glb}`, (gltf) => {
+        gltf.scene.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            if (child.material) {
+              child.material.envMap = studioEnv;
+              child.material.envMapIntensity = 1.2;
+              child.material.needsUpdate = true;
+            }
+          }
+        });
+
+        GLB_CACHE[item.glb] = gltf.scene;
+        const clone = gltf.scene.clone(true);
+        autoFitPlannerItem(clone, realTargetSize);
+        g.add(clone);
+
+        g.position.set(spawnPos.x, spawnPos.y, spawnPos.z);
+        scene.add(g);
+        furnitureGroup.push(g);
+        selectObject(g);
+        updatePlacedList();
+
+        if (spinner) spinner.classList.add('hidden');
+      }, undefined, (err) => {
+        if (spinner) spinner.classList.add('hidden');
+      });
+
+      return g;
+    }
+
+    let zoneCounters = { kitchen: 0, living: 0, bedroom: 0, door: 0 };
+
+    function calculateZonePos(cat) {
+      let x = 0, y = 0, z = 0;
+      const cfg = PYEONG_CONFIGS[currentPyeong];
+
+      if (cat.includes('주방')) {
+        const idx = zoneCounters.kitchen % 3;
+        zoneCounters.kitchen++;
+        x = -cfg.width * 0.3 + (idx * 0.8);
+        z = cfg.depth * 0.2 - (idx * 0.3);
+      } else if (cat.includes('가구')) {
+        const idx = zoneCounters.living % 3;
+        zoneCounters.living++;
+        x = 0.2 + (idx * 0.8);
+        z = -cfg.depth * 0.15 + (idx * 0.5);
+      } else if (cat.includes('조명') || cat.includes('침대')) {
+        const idx = zoneCounters.bedroom % 2;
+        zoneCounters.bedroom++;
+        x = -cfg.width * 0.35 + (idx * 0.8);
+        z = -cfg.depth * 0.2 + (idx * 0.5);
+      } else {
+        const idx = zoneCounters.door % 2;
+        zoneCounters.door++;
+        x = cfg.width * 0.25 + (idx * 0.7);
+        z = -cfg.depth * 0.2 + (idx * 0.7);
+      }
+      return { x, y, z };
+    }
+
+    function spawnCatalogItem(item) {
+      const pos = calculateZonePos(item.cat);
+      spawnRealGLBItem(item, pos);
+    }
+
+    let activeLeftCategory = '전체';
+
+    function renderLeftCatalog() {
+      const list = document.getElementById('left-catalog-list');
+      list.innerHTML = '';
+
+      const q = (document.getElementById('left-search-input').value || '').trim().toLowerCase();
+
+      let filtered = CATALOG_200.filter(item => {
+        const matchCat = (activeLeftCategory === '전체' || item.cat === activeLeftCategory);
+        const matchQuery = !q || item.name.toLowerCase().includes(q) || item.brand.toLowerCase().includes(q) || item.spec.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q);
+        return matchCat && matchQuery;
+      });
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        const isMaterial = item.type === 'floor' || item.type === 'wall' || item.type === 'artwall';
+        const isApplied = (item.type === 'floor' && selectedFloorItem.id === item.id) ||
+                          (item.type === 'wall' && selectedWallItem.id === item.id) ||
+                          (item.type === 'artwall' && selectedArtwallItem.id === item.id);
+
+        card.className = `catalog-item-card p-2.5 sm:p-3 rounded-2xl flex items-center justify-between gap-2.5 cursor-pointer ${isApplied ? 'border-amber-400 bg-amber-500/20' : ''}`;
+        card.onclick = () => {
+          handleCatalogCardClick(item);
+          renderLeftCatalog();
+        };
+
+        const iconName = item.type === 'floor' ? 'layers' : item.type === 'wall' ? 'wallpaper' : item.type === 'artwall' ? 'texture' : 'view_in_ar';
+        const typeBadge = item.type === 'floor' ? '바닥재' : item.type === 'wall' ? '벽지/도장' : item.type === 'artwall' ? '아트월' : '3D 가구';
+
+        card.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-stone-900/90 border border-stone-700/60 flex items-center justify-center shrink-0 shadow-inner">
+              <span class="material-symbols-outlined text-amber-400 text-xl">${iconName}</span>
+            </div>
+            <div class="space-y-0.5 min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.2 rounded text-[9px] font-bold">${typeBadge}</span>
+                <span class="text-emerald-400 font-bold font-mono text-[9px] sm:text-[10px]">${item.save}</span>
+              </div>
+              <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
+              <p class="text-[9px] sm:text-[10px] text-stone-400 truncate">${item.dimText || item.spec}</p>
+            </div>
+          </div>
+
+          <button class="shrink-0 w-7 h-7 rounded-xl ${isApplied ? 'bg-amber-500 text-stone-950 font-bold' : 'bg-amber-500/20 text-amber-400'} hover:bg-amber-500 hover:text-stone-950 flex items-center justify-center transition border border-amber-500/40 shadow-sm">
+            <span class="material-symbols-outlined text-xs sm:text-sm font-bold">${isMaterial ? (isApplied ? 'check' : 'brush') : 'add'}</span>
+          </button>
+        `;
+        list.appendChild(card);
+      });
+
+      document.getElementById('left-count-badge').textContent = `${filtered.length}종`;
+    }
+
+    function setLeftCategory(cat) {
+      activeLeftCategory = cat;
+      const chips = document.getElementById('left-cat-chips').children;
+      for (let c of chips) {
+        c.classList.toggle('active', c.textContent.includes(cat.split(' ')[0]) || (cat === '전체' && c.textContent === '전체'));
+      }
+      renderLeftCatalog();
+    }
+
+    function filterLeftCatalog() {
+      renderLeftCatalog();
+    }
+
+    function updatePlacedList() {
+      const list = document.getElementById('placed-models-list');
+      list.innerHTML = '';
+
+      const count = furnitureGroup.length;
+      document.getElementById('placed-count-text').textContent = `바닥+벽지+아트월 + 가구 ${count}종`;
+
+      const pyeongVal = currentPyeong;
+      let totalCostNum = 0;
+      let totalSaveNum = 0;
+
+      const floorCost = (selectedFloorItem.costNum || 180000) * pyeongVal;
+      const floorSave = 8 * pyeongVal;
+      totalCostNum += floorCost;
+      totalSaveNum += floorSave;
+
+      const floorCard = document.createElement('div');
+      floorCard.className = 'placed-item-card p-2 rounded-xl flex items-center justify-between gap-1.5 border-amber-500/30 bg-amber-500/10';
+      floorCard.innerHTML = `
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="w-4 h-4 rounded-full bg-amber-400 text-stone-950 flex items-center justify-center text-[9px] font-bold shrink-0">🪵</span>
+          <div class="min-w-0">
+            <h4 class="text-[11px] font-black text-amber-300 truncate">[바닥] ${selectedFloorItem.name}</h4>
+            <p class="text-[9px] text-stone-300 font-mono">${pyeongVal}평 시공 · <span class="text-emerald-400 font-bold">${floorSave}만원 절감</span></p>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono font-bold text-amber-400 shrink-0">${(floorCost/10000).toFixed(0)}만원</span>
+      `;
+      list.appendChild(floorCard);
+
+      const wallCost = (selectedWallItem.costNum || 45000) * Math.round(pyeongVal * 2.5);
+      const wallSave = 2 * pyeongVal;
+      totalCostNum += wallCost;
+      totalSaveNum += wallSave;
+
+      const wallCard = document.createElement('div');
+      wallCard.className = 'placed-item-card p-2 rounded-xl flex items-center justify-between gap-1.5 border-amber-500/30 bg-amber-500/10';
+      wallCard.innerHTML = `
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="w-4 h-4 rounded-full bg-amber-400 text-stone-950 flex items-center justify-center text-[9px] font-bold shrink-0">📜</span>
+          <div class="min-w-0">
+            <h4 class="text-[11px] font-black text-amber-300 truncate">[벽면] ${selectedWallItem.name}</h4>
+            <p class="text-[9px] text-stone-300 font-mono">${pyeongVal}평 도배 · <span class="text-emerald-400 font-bold">${wallSave}만원 절감</span></p>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono font-bold text-amber-400 shrink-0">${(wallCost/10000).toFixed(0)}만원</span>
+      `;
+      list.appendChild(wallCard);
+
+      const artCost = selectedArtwallItem.costNum || 650000;
+      const artSave = 80;
+      totalCostNum += artCost;
+      totalSaveNum += artSave;
+
+      const artCard = document.createElement('div');
+      artCard.className = 'placed-item-card p-2 rounded-xl flex items-center justify-between gap-1.5 border-amber-500/30 bg-amber-500/10';
+      artCard.innerHTML = `
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="w-4 h-4 rounded-full bg-amber-400 text-stone-950 flex items-center justify-center text-[9px] font-bold shrink-0">🧱</span>
+          <div class="min-w-0">
+            <h4 class="text-[11px] font-black text-amber-300 truncate">[아트월] ${selectedArtwallItem.name}</h4>
+            <p class="text-[9px] text-stone-300 font-mono">목수 직영 제작 · <span class="text-emerald-400 font-bold">${artSave}만원 절감</span></p>
+          </div>
+        </div>
+        <span class="text-[11px] font-mono font-bold text-amber-400 shrink-0">${(artCost/10000).toFixed(0)}만원</span>
+      `;
+      list.appendChild(artCard);
+
+      furnitureGroup.forEach((obj, idx) => {
+        const isSel = selectedObject === obj;
+        const card = document.createElement('div');
+        card.className = `placed-item-card p-2 rounded-xl flex items-center justify-between gap-1.5 cursor-pointer ${isSel ? 'selected' : ''}`;
+        card.onclick = () => selectObject(obj);
+
+        const priceText = obj.userData.price || '450,000원';
+        const saveText = obj.userData.save || '100만원';
+
+        totalCostNum += parseInt(priceText.replace(/[^0-9]/g, '')) || 450000;
+        totalSaveNum += parseInt(saveText.replace(/[^0-9]/g, '')) || 100;
+
+        card.innerHTML = `
+          <div class="flex items-center gap-1.5 min-w-0">
+            <span class="w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-[9px] font-mono font-bold shrink-0">
+              ${idx + 1}
+            </span>
+            <div class="min-w-0">
+              <h4 class="text-[11px] font-bold text-white truncate">${obj.userData.name}</h4>
+              <p class="text-[9px] text-stone-400 font-mono font-bold truncate">${obj.userData.glb} · <span class="text-emerald-400">${saveText} 절감</span></p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-0.5 shrink-0">
+            <button onclick="event.stopPropagation(); rotateSpecific(${idx});" class="p-1 rounded hover:bg-stone-800 text-stone-300 hover:text-amber-400" title="45° 회전">
+              <span class="material-symbols-outlined text-xs">rotate_right</span>
+            </button>
+            <button onclick="event.stopPropagation(); deleteSpecific(${idx});" class="p-1 rounded hover:bg-rose-900/50 text-stone-400 hover:text-rose-400" title="삭제">
+              <span class="material-symbols-outlined text-xs">close</span>
+            </button>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+
+      document.getElementById('total-save-badge').textContent = `약 ${totalSaveNum}만원 절감`;
+      document.getElementById('total-cost-badge').textContent = `약 ${(totalCostNum / 10000).toFixed(0)}만원`;
+    }
+
+    function clearAllFurniture() {
+      furnitureGroup.forEach(obj => scene.remove(obj));
+      furnitureGroup = [];
+      zoneCounters = { kitchen: 0, living: 0, bedroom: 0, door: 0 };
+      deselectObject();
+      updatePlacedList();
+    }
+
+    function rotateSpecific(idx) {
+      if (furnitureGroup[idx]) {
+        furnitureGroup[idx].rotation.y += Math.PI / 4;
+        selectObject(furnitureGroup[idx]);
+      }
+    }
+
+    function deleteSpecific(idx) {
+      if (furnitureGroup[idx]) {
+        const target = furnitureGroup[idx];
+        scene.remove(target);
+        furnitureGroup.splice(idx, 1);
+        if (selectedObject === target) deselectObject();
+        updatePlacedList();
+      }
+    }
+
+    function resetRoomLayout() {
+      clearAllFurniture();
+      const sofaItem = CATALOG_200.find(i => i.glb === 'sheen_wood_leather_sofa.glb');
+      const fridgeItem = CATALOG_200.find(i => i.glb === 'commercial_refrigerator.glb');
+      const plantItem = CATALOG_200.find(i => i.glb === 'indoor_plant.glb');
+
+      if (sofaItem) spawnRealGLBItem(sofaItem, { x: 0.25, y: 0, z: -1.5 });
+      if (fridgeItem) spawnRealGLBItem(fridgeItem, { x: -2.8, y: 0, z: 1.6 });
+      if (plantItem) spawnRealGLBItem(plantItem, { x: 3.4, y: 0, z: 1.8 });
+      updatePlacedList();
+    }
+
+    function selectObject(obj) {
+      selectedObject = obj;
+      document.getElementById('selection-panel').classList.remove('hidden');
+      document.getElementById('selected-item-name').textContent = obj.userData.name || '선택된 가구';
+      updatePlacedList();
+    }
+
+    function deselectObject() {
+      selectedObject = null;
+      document.getElementById('selection-panel').classList.add('hidden');
+      updatePlacedList();
+    }
+
+    function rotateSelected() {
+      if (selectedObject) selectedObject.rotation.y += Math.PI / 4;
+    }
+
+    function deleteSelected() {
+      if (selectedObject) {
+        scene.remove(selectedObject);
+        furnitureGroup = furnitureGroup.filter(o => o !== selectedObject);
+        deselectObject();
+        updatePlacedList();
+      }
+    }
+
+    function toggleSpotlightFollow() {
+      spotlightFollowEnabled = !spotlightFollowEnabled;
+      document.getElementById('btn-light-spot').classList.toggle('active', spotlightFollowEnabled);
+      cursorSpotlightLight.intensity = spotlightFollowEnabled ? 2.0 : 0.0;
+    }
+
+    function onResize() {
+      const container = document.getElementById('stage-3d-box');
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    function submitPlannerQuote() {
+      const items = furnitureGroup.map((f, idx) => `${idx + 1}. [${f.userData.glb}] ${f.userData.name} (위치: X:${f.position.x.toFixed(1)}m, Z:${f.position.z.toFixed(1)}m)`).join('\n');
+      const cfg = PYEONG_CONFIGS[currentPyeong];
+      const msg = `[목수의 홈케어마스터 13번 3D 종합 리모델링 견적 문의]\n\n실제 평수: ${cfg.label} (${cfg.width}m x ${cfg.depth}m)\n- 선택 바닥재: ${selectedFloorItem.name}\n- 선택 벽지: ${selectedWallItem.name}\n- 선택 아트월: ${selectedArtwallItem.name}\n- 조명 모드: ${currentLightMode}\n- 내가 드래그 배치한 3D 가구 (${furnitureGroup.length}종):\n${items}\n\n※ 현장 사진과 함께 보내주시면 조인형 대표가 10분 내로 무료 견적서를 안내해 드립니다.`;
+      const phone = '010-9276-4245';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = `sms:${phone}?body=${encodeURIComponent(msg)}`;
+      } else {
+        navigator.clipboard.writeText(msg).then(() => {
+          alert(`[문자 내용이 복사되었습니다]\n\n받는 사람: ${phone}\n\n문자 메시지에 붙여넣기 후 사진과 함께 전송해주세요.`);
+          window.location.href = `tel:${phone}`;
+        });
+      }
+    }
+
+    window.addEventListener('load', initPlanner);
+  </script>
+</body>
+</html>

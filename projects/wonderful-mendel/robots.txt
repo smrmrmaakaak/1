@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /data/
+
+User-agent: Yeti
+Allow: /
+Disallow: /admin.html
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin.html
+Disallow: /api/
+
+Sitemap: https://homemaster82.vercel.app/sitemap.xml

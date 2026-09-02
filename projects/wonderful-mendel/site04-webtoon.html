@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 4. 웹툰 컷 스토리텔링 에디션</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #FFFDF0;
+      color: #111111;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .comic-box {
+      border: 3px solid #111111;
+      box-shadow: 6px 6px 0px #111111;
+      background: #FFFFFF;
+    }
+    .comic-bubble {
+      position: relative;
+      background: #FFFFFF;
+      border: 3px solid #111111;
+      box-shadow: 4px 4px 0px #111111;
+      border-radius: 16px;
+    }
+    .comic-btn {
+      background: #FFD000;
+      border: 3px solid #111111;
+      box-shadow: 5px 5px 0px #111111;
+      font-weight: 900;
+      transition: all 0.1s;
+    }
+    .comic-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #111111;
+    }
+  </style>
+</head>
+<body class="selection:bg-yellow-300">
+
+  <header class="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-yellow-400 border-2 border-black flex items-center justify-center font-black text-lg">
+        목수
+      </div>
+      <div>
+        <span class="text-xl font-black text-black">목수의 홈케어마스터 [현장툰]</span>
+        <p class="text-xs text-slate-600 font-bold">30년 목수 조인형의 집수리 구출 대작전</p>
+      </div>
+    </div>
+    <a href="tel:010-9276-4245" class="comic-btn px-4 py-2 rounded-xl text-xs">
+      전화 010-9276-4245
+    </a>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-10 space-y-12">
+    
+    <div class="comic-box p-6 rounded-3xl space-y-4 bg-yellow-100">
+      <span class="bg-black text-yellow-300 font-black text-xs px-3 py-1 rounded-full uppercase">제 1화</span>
+      <h1 class="text-2xl sm:text-3xl font-black text-black">
+        "타 업체가 안 된다고 도망간 현장에 목수가 나타났다?!"
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+        원목 싱크대 상판을 자르지 못해 400만원 공사를 권유받은 고객님... 이때 등장한 30년 베테랑 목수 조인형 대표!
+      </p>
+    </div>
+
+    <!-- 웹툰 4컷 만화 레이아웃 -->
+    <div class="space-y-6">
+      
+      <!-- 컷 1 -->
+      <div class="comic-box p-5 rounded-3xl space-y-3">
+        <div class="text-xs font-black text-red-600">[1컷] 타 설비업체의 포기 선언</div>
+        <div class="aspect-video rounded-2xl overflow-hidden border-2 border-black">
+          <img src="assets/images/sink_bellago/photo_1.jpg" alt="시공 전" class="w-full h-full object-cover">
+        </div>
+        <div class="comic-bubble p-4 text-xs font-bold text-slate-900">
+          "고객님, 이거 원목 상판이라 자르면 다 쪼개집니다! 싱크대 400만원 주고 다 뜯어고치셔야 해요!"
+        </div>
+      </div>
+
+      <!-- 컷 2 -->
+      <div class="comic-box p-5 rounded-3xl space-y-3 bg-amber-50">
+        <div class="text-xs font-black text-amber-700">[2컷] 30년 목수 조인형 대표의 등장!</div>
+        <div class="comic-bubble p-4 text-xs font-bold text-slate-900">
+          "잠깐만요! 목수가 있는데 왜 싱크대를 다 뜯습니까? 제가 특수 30mm 정밀 집진 컷팅으로 상판 손상 없이 해결해 드립니다!"
+        </div>
+      </div>
+
+      <!-- 컷 3 -->
+      <div class="comic-box p-5 rounded-3xl space-y-3">
+        <div class="text-xs font-black text-emerald-600">[3컷] 1mm 오차 없는 완벽 결합 성공!</div>
+        <div class="aspect-video rounded-2xl overflow-hidden border-2 border-black">
+          <img src="assets/images/sink_bellago/photo_6.jpg" alt="시공 후" class="w-full h-full object-cover">
+        </div>
+        <div class="comic-bubble p-4 text-xs font-bold text-emerald-900 bg-emerald-100">
+          "우와! 상판 손상 0%로 벨라고 사각싱크볼이 완벽하게 들어갔어요! 400만원 아꼈습니다!"
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 웹툰 하단 견적 접수 -->
+    <div class="comic-box p-8 rounded-3xl text-center space-y-4 bg-yellow-300" id="estimate">
+      <h3 class="text-2xl font-black text-black">당신의 집도 조인형 목수가 구출합니다!</h3>
+      <p class="text-xs font-bold text-slate-900">고장난 곳 사진 2~3장을 문자로 보내주시면 10분 내로 견적을 드립니다.</p>
+      
+      <a href="sms:010-9276-4245?body=%5B%ED%99%88%EC%BC%80%EC%96%B4%EB%A7%88%EC%8A%A4%ED%84%B0%20%EA%B5%AC%EC%B6%9C%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%5D" class="comic-btn inline-block px-8 py-4 rounded-2xl text-sm font-black bg-white">
+        문자로 사진 보내고 구출 요청하기 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="py-10 text-center text-xs font-bold text-slate-600">
+    <p>목수의 홈케어마스터 · 조인형 대표 · 010-9276-4245</p>
+  </footer>
+
+  <script src="switcher.js"></script>
+</body>
+</html>

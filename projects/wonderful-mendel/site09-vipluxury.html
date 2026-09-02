@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 9. VIP 프라이빗 컨시어지 에디션</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #080808;
+      color: #E5E5E5;
+      font-family: 'Gowun Batang', serif;
+    }
+    .vip-card {
+      background: #111111;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .vip-btn {
+      background: #D4AF37;
+      color: #080808;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+    .vip-btn:hover {
+      background: #E8C860;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#D4AF37] selection:text-black">
+
+  <header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between border-b border-stone-800">
+    <div class="flex items-center gap-3">
+      <span class="text-xl tracking-widest text-[#D4AF37] font-bold">목수의 홈케어마스터 VIP</span>
+    </div>
+    <a href="tel:010-9276-4245" class="text-xs tracking-widest text-[#D4AF37] border border-[#D4AF37] px-4 py-2">
+      프라이빗 상담 010-9276-4245
+    </a>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-20 space-y-20">
+    
+    <div class="text-center space-y-6 max-w-3xl mx-auto">
+      <span class="text-[10px] tracking-widest text-[#D4AF37] uppercase block">// PRIVATE ATELIER //</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-white leading-[1.3]">
+        공간의 가치를 아는 분을 위한<br>
+        30년 목공 장인의 전담 케어
+      </h1>
+      <p class="text-sm text-stone-400 leading-relaxed font-sans max-w-xl mx-auto">
+        타 업체가 다루지 못하는 최고급 원목 상판, 이태리 사각싱크볼, 하이엔드 도어 밸런싱까지 조인형 대표가 직접 책임 시공합니다.
+      </p>
+      <a href="#estimate" class="vip-btn inline-block px-8 py-3.5 text-xs tracking-widest uppercase">
+        전담 마스터 상담 신청
+      </a>
+    </div>
+
+    <!-- VIP 시공 3선 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-stone-800">
+      <div class="vip-card p-6 space-y-4">
+        <div class="aspect-[4/3] bg-stone-900 overflow-hidden">
+          <img src="assets/images/sink_bellago/photo_6.jpg" alt="사각싱크볼" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-base font-bold text-white">프리미엄 사각싱크볼 마스터 컷팅</h3>
+        <p class="text-xs text-stone-400 font-sans leading-relaxed">벨라고/한스 사각싱크볼 맞춤 30mm 정밀 타공 및 올스텐 배수 시스템 구축.</p>
+      </div>
+
+      <div class="vip-card p-6 space-y-4">
+        <div class="aspect-[4/3] bg-stone-900 overflow-hidden">
+          <img src="assets/images/door_film/photo_1.jpg" alt="도어" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-base font-bold text-white">도어 힌지 밸런싱 & 메탈 랩핑</h3>
+        <p class="text-xs text-stone-400 font-sans leading-relaxed">문틀 철거 없는 정밀 경첩 교정과 현관문 메탈 헤어라인 필름 마감.</p>
+      </div>
+
+      <div class="vip-card p-6 space-y-4">
+        <div class="aspect-[4/3] bg-stone-900 overflow-hidden">
+          <img src="assets/images/kitchen_artwall/photo_4.jpg" alt="아트월" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-base font-bold text-white">벽체 1mm 단차 제로 평탄화</h3>
+        <p class="text-xs text-stone-400 font-sans leading-relaxed">노후 아트월 철거 후 완벽한 도배 밀착을 위한 석고보드 2P 목공 시공.</p>
+      </div>
+    </div>
+
+    <!-- 견적 섹션 -->
+    <div class="vip-card p-10 text-center space-y-4 max-w-xl mx-auto" id="estimate">
+      <h3 class="text-2xl font-bold text-white">VIP 1:1 사진 진단</h3>
+      <p class="text-xs text-stone-400 font-sans">현장 사진을 전송하시면 조인형 대표가 직접 검토 후 신속히 연락드립니다.</p>
+      <a href="sms:010-9276-4245?body=%5BVIP%20%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97%20%EA%B2%AC%EC%A0%81%20%EC%9D%98%EB%A2%B0%5D" class="vip-btn inline-block px-10 py-4 text-xs tracking-wider uppercase font-sans">
+        문자로 사진 전송 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-stone-800 py-10 text-center text-xs text-stone-600 font-sans">
+    <p>목수의 홈케어마스터 · 조인형 대표 · 010-9276-4245</p>
+  </footer>
+
+  <script src="switcher.js"></script>
+</body>
+</html>

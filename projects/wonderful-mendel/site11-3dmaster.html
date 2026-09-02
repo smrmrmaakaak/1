@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목수의 홈케어마스터 | 11. 블렌더 3D 인터랙티브 마스터피스</title>
+  <meta name="description" content="블렌더 3D 기반 정밀 목공 가공 쇼룸 · 30년 목수 장인 조인형 대표 (010-9276-4245)">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js + OrbitControls + GLTFLoader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <style>
+    * { word-break: keep-all; }
+    body {
+      background-color: #080706;
+      color: #F5F5F0;
+      font-family: 'Pretendard', sans-serif;
+      overflow-x: hidden;
+    }
+    .canvas-container {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: radial-gradient(circle at center, #1C1713 0%, #080706 80%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), inset 0 0 50px rgba(0, 0, 0, 0.8);
+    }
+    .control-btn {
+      background: rgba(28, 23, 19, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #E6E1DC;
+      transition: all 0.2s ease;
+    }
+    .control-btn:hover, .control-btn.active {
+      background: #F59E0B;
+      color: #080706;
+      font-weight: 800;
+      border-color: #F59E0B;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    .gold-action-btn {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #080706;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.35);
+      transition: all 0.25s ease;
+    }
+    .gold-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+  <!-- 상단 네비게이션 -->
+  <header class="fixed top-[45px] inset-x-0 z-40 bg-[#080706]/90 backdrop-blur-xl border-b border-amber-500/20 px-6 lg:px-12 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-400 font-black">
+        <span class="material-symbols-outlined text-2xl">view_in_ar</span>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-black text-white">목수의 홈케어마스터 <span class="text-amber-400">3D 쇼룸</span></span>
+          <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold">블렌더 3D 엔진</span>
+        </div>
+        <p class="text-[11px] text-stone-400 font-medium">30년 목공 장인 조인형 대표 직영</p>
+      </div>
+    </div>
+
+    <a href="tel:010-9276-4245" class="gold-action-btn px-5 py-2.5 rounded-xl text-xs flex items-center gap-2">
+      <i class="fa-solid fa-phone text-xs"></i>
+      <span>010-9276-4245</span>
+    </a>
+  </header>
+
+  <!-- 메인 3D 인터랙티브 쇼룸 -->
+  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 space-y-16">
+    
+    <!-- 헤드라인 -->
+    <div class="text-center space-y-4 max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span>마우스로 3D 모델을 360도 회전하고 확대하여 디테일을 확인하세요</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+        "보이지 않는 단면까지<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500">
+          3D로 정밀하게 설계·시공합니다
+        </span>"
+      </h1>
+
+      <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
+        타 업체가 "상판 쪼개진다"며 거부한 원목 싱크대를 블렌더 3D 정밀 시뮬레이션과 30년 목공 가공 기술로 1mm 오차 없이 완벽 결합합니다.
+      </p>
+    </div>
+
+    <!-- 3D 캔버스 인터랙션 스테이지 -->
+    <div class="space-y-4">
+      
+      <!-- 상단 3D 조작 컨트롤 바 -->
+      <div class="flex flex-wrap items-center justify-between gap-3 px-2 text-xs">
+        <div class="flex items-center gap-2">
+          <button onclick="toggleAutoRotate()" id="btn-rotate" class="control-btn px-4 py-2 rounded-xl font-bold flex items-center gap-1.5 active">
+            <span class="material-symbols-outlined text-sm">rotate_right</span>
+            <span>360도 자동 회전</span>
+          </button>
+          <button onclick="toggleExplode()" id="btn-explode" class="control-btn px-4 py-2 rounded-xl font-bold flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">splitscreen</span>
+            <span>싱크볼 분해 조립</span>
+          </button>
+          <button onclick="reset3DView()" class="control-btn px-4 py-2 rounded-xl font-bold flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">restart_alt</span>
+            <span>시점 초기화</span>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-stone-400 font-bold hidden sm:inline">상판 재질:</span>
+          <button onclick="changeMaterial('walnut')" id="mat-walnut" class="control-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold">
+            🪵 웜 월넛 원목
+          </button>
+          <button onclick="changeMaterial('marble')" id="mat-marble" class="control-btn px-3.5 py-1.5 rounded-lg text-xs font-bold">
+            🏛️ 천연 대리석
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D 캔버스 영역 -->
+      <div class="canvas-container" id="webgl-canvas-box">
+        <canvas id="webgl-3d-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+        
+        <!-- 좌측 하단 조작 가이드 -->
+        <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md border border-white/10 px-3.5 py-2 rounded-xl text-[11px] text-stone-300 space-y-0.5 pointer-events-none">
+          <p class="font-bold text-amber-400">💡 3D 조작 방법</p>
+          <p>• 마우스 좌클릭 드래그: 360도 회전</p>
+          <p>• 마우스 휠 스크롤: 줌인 / 줌아웃</p>
+        </div>
+
+        <!-- 우측 하단 스펙 칩 -->
+        <div class="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md border border-amber-500/30 px-4 py-2 rounded-xl text-[11px] text-amber-300 font-mono font-bold pointer-events-none">
+          [ 30MM PRECISION JOINERY // BLENDER 4.2 ]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3D 시공 스펙 3대 포인트 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+      
+      <div class="bg-[#14100D] border border-amber-500/30 p-6 rounded-2xl space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+          01
+        </div>
+        <h3 class="text-lg font-bold text-white">30mm 상판 특수 정밀 타공</h3>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          원목의 결이 쪼개지지 않도록 특수 목공 톱날의 회전 각도와 깊이를 0.1mm 단위로 제어하여 완벽한 사각 홈을 가공합니다.
+        </p>
+      </div>
+
+      <div class="bg-[#14100D] border border-amber-500/30 p-6 rounded-2xl space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+          02
+        </div>
+        <h3 class="text-lg font-bold text-white">벨라고 대형 사각싱크볼 결합</h3>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          올스텐 브러시드 표면의 고급 벨라고 싱크볼과 거위목 수전을 하부 보강목과 결속하여 흔들림 없는 완벽한 내구성을 보장합니다.
+        </p>
+      </div>
+
+      <div class="bg-[#14100D] border border-amber-500/30 p-6 rounded-2xl space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+          03
+        </div>
+        <h3 class="text-lg font-bold text-white">살림집 비산 분진 0% 보양</h3>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          공구와 100% 직결된 고성능 집진기와 비닐 텐트 이중 보양으로 가구가 있는 살림집에서도 먼지 걱정 없이 당일 완료합니다.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 3초 사진 견적 신청대 -->
+    <div class="bg-gradient-to-r from-[#1E1610] via-[#14100D] to-[#1E1610] border border-amber-500/40 p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-2xl max-w-2xl mx-auto" id="estimate">
+      <h3 class="text-2xl sm:text-3xl font-black text-white">3D 모델 기반 3초 사진 견적</h3>
+      <p class="text-xs text-stone-300">현장 사진 2~3장을 문자로 보내주시면 조인형 대표가 직접 3D 가공 솔루션과 견적을 회신합니다.</p>
+
+      <a href="sms:010-9276-4245?body=%5B%EB%B8%94%EB%A0%8C%EB%8D%94%203D%20%EC%8B%9C%EA%B3%B5%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%5D%20%ED%98%84%EC%9E%A5%20%EC%82%AC%EC%A7%84%20%EC%A0%84%EC%86%A1" class="gold-action-btn inline-block px-10 py-4 rounded-2xl text-xs sm:text-sm uppercase tracking-wider">
+        문자로 사진 보내기 (010-9276-4245)
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-stone-800 py-12 text-center text-xs text-stone-500">
+    <p class="text-stone-300 font-bold">목수의 홈케어마스터 | 블렌더 3D 마스터피스 에디션 | 010-9276-4245</p>
+    <p class="text-[10px] mt-1">&copy; 2026 MASTER CARPENTER. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+  <script src="switcher.js"></script>
+
+  <!-- Three.js 3D 렌더링 스크립트 -->
+  <script>
+    let scene, camera, renderer, controls;
+    let sinkGroup, countertopMesh, sinkMesh, faucetGroup;
+    let autoRotate = true;
+    let exploded = false;
+
+    function init3D() {
+      const container = document.getElementById('webgl-canvas-box');
+      const canvas = document.getElementById('webgl-3d-canvas');
+
+      // 1. Scene
+      scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x080706, 0.15);
+
+      // 2. Camera
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(2.5, 1.8, 3.2);
+
+      // 3. Renderer
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.3;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      // 4. Controls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.maxPolarAngle = Math.PI / 2 + 0.1;
+      controls.minDistance = 1.5;
+      controls.maxDistance = 6.0;
+
+      // 5. Lighting (Studio Setup)
+      const ambientLight = new THREE.AmbientLight(0xFFF0DD, 0.8);
+      scene.add(ambientLight);
+
+      const mainLight = new THREE.DirectionalLight(0xFFB800, 2.2);
+      mainLight.position.set(4, 5, 3);
+      mainLight.castShadow = true;
+      scene.add(mainLight);
+
+      const fillLight = new THREE.DirectionalLight(0x66AAFF, 1.0);
+      fillLight.position.set(-4, 3, -2);
+      scene.add(fillLight);
+
+      const rimLight = new THREE.PointLight(0xFF9900, 2.0, 10);
+      rimLight.position.set(0, -1, 0);
+      scene.add(rimLight);
+
+      // 6. Build High-Quality 3D Sink Object
+      sinkGroup = new THREE.Group();
+
+      // 원목 상판 (Countertop)
+      const woodGeo = new THREE.BoxGeometry(2.4, 0.08, 1.4);
+      const woodMat = new THREE.MeshStandardMaterial({
+        color: 0x4A2A18,
+        roughness: 0.35,
+        metalness: 0.05
+      });
+      countertopMesh = new THREE.Mesh(woodGeo, woodMat);
+      countertopMesh.castShadow = true;
+      countertopMesh.receiveShadow = true;
+      sinkGroup.add(countertopMesh);
+
+      // 사각싱크볼 (Stainless Steel Sink)
+      const sinkGeo = new THREE.BoxGeometry(1.2, 0.45, 0.8);
+      const steelMat = new THREE.MeshStandardMaterial({
+        color: 0xD8DCE0,
+        roughness: 0.2,
+        metalness: 0.95
+      });
+      sinkMesh = new THREE.Mesh(sinkGeo, steelMat);
+      sinkMesh.position.y = -0.22;
+      sinkMesh.castShadow = true;
+      sinkMesh.receiveShadow = true;
+      sinkGroup.add(sinkMesh);
+
+      // 고급 거위목 수전 (Gooseneck Faucet)
+      faucetGroup = new THREE.Group();
+      const faucetBaseGeo = new THREE.CylinderGeometry(0.03, 0.03, 0.35, 32);
+      const faucetBase = new THREE.Mesh(faucetBaseGeo, steelMat);
+      faucetBase.position.set(0, 0.2, -0.3);
+      faucetGroup.add(faucetBase);
+
+      const faucetCurveGeo = new THREE.TorusGeometry(0.12, 0.025, 16, 32, Math.PI);
+      const faucetCurve = new THREE.Mesh(faucetCurveGeo, steelMat);
+      faucetCurve.position.set(0, 0.375, -0.18);
+      faucetCurve.rotation.y = Math.PI / 2;
+      faucetGroup.add(faucetCurve);
+
+      sinkGroup.add(faucetGroup);
+
+      // 바닥 그림자 그리드
+      const grid = new THREE.GridHelper(6, 20, 0xF59E0B, 0x332211);
+      grid.position.y = -0.6;
+      scene.add(grid);
+
+      scene.add(sinkGroup);
+
+      // GLB 파일 로더 연동
+      const loader = new THREE.GLTFLoader();
+      loader.load('assets/models/kitchen_sink.glb', (gltf) => {
+        console.log('Blender GLB loaded successfully');
+      }, undefined, (err) => {
+        console.log('Using procedural fallback Three.js mesh');
+      });
+
+      // 리사이즈 이벤트
+      window.addEventListener('resize', onWindowResize);
+
+      // 렌더 루프
+      animate();
+    }
+
+    function onWindowResize() {
+      const container = document.getElementById('webgl-canvas-box');
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (autoRotate && sinkGroup) {
+        sinkGroup.rotation.y += 0.005;
+      }
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    function toggleAutoRotate() {
+      autoRotate = !autoRotate;
+      document.getElementById('btn-rotate').classList.toggle('active', autoRotate);
+    }
+
+    function toggleExplode() {
+      exploded = !exploded;
+      document.getElementById('btn-explode').classList.toggle('active', exploded);
+      
+      const targetSinkY = exploded ? -0.7 : -0.22;
+      const targetFaucetY = exploded ? 0.3 : 0.0;
+      
+      sinkMesh.position.y = targetSinkY;
+      faucetGroup.position.y = targetFaucetY;
+    }
+
+    function reset3DView() {
+      camera.position.set(2.5, 1.8, 3.2);
+      controls.target.set(0, 0, 0);
+      sinkGroup.rotation.set(0, 0, 0);
+    }
+
+    function changeMaterial(type) {
+      document.getElementById('mat-walnut').classList.toggle('active', type === 'walnut');
+      document.getElementById('mat-marble').classList.toggle('active', type === 'marble');
+
+      if (type === 'walnut') {
+        countertopMesh.material.color.setHex(0x4A2A18);
+        countertopMesh.material.roughness = 0.35;
+      } else {
+        countertopMesh.material.color.setHex(0xE0E0D8);
+        countertopMesh.material.roughness = 0.15;
+      }
+    }
+
+    window.addEventListener('load', init3D);
+  </script>
+</body>
+</html>
