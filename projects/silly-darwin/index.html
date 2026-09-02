@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Hyper-Realistic Thunder SFX Soundboard | 초거대 천둥 효과음</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: rgba(18, 24, 38, 0.75);
+      --card-border: rgba(99, 133, 200, 0.2);
+      --accent-cyan: #38bdf8;
+      --accent-yellow: #fde047;
+      --accent-purple: #c084fc;
+      --text-main: #f1f5f9;
+      --text-sub: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 60px;
+    }
+
+    /* Screen Lightning Flash Overlay */
+    #lightning-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.05s ease-out;
+    }
+
+    /* Background Ambient Glow */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.12), transparent 50%),
+        radial-gradient(circle at 80% 40%, rgba(192, 132, 252, 0.08), transparent 40%),
+        radial-gradient(circle at 20% 70%, rgba(30, 58, 138, 0.2), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 80%, #fde047 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+    }
+
+    p.subtitle {
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Master Controls & Visualizer */
+    .visualizer-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 35px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .visualizer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .status-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .controls-panel {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .control-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .control-item input[type=range] {
+      accent-color: var(--accent-cyan);
+      cursor: pointer;
+    }
+
+    canvas#visualizer {
+      width: 100%;
+      height: 130px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Sound Cards List */
+    .tracks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sound-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sound-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .sound-card.playing {
+      border-color: var(--accent-yellow);
+      box-shadow: 0 0 35px rgba(253, 224, 71, 0.25);
+      background: rgba(28, 36, 56, 0.85);
+    }
+
+    .sound-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex: 1;
+    }
+
+    .play-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.6);
+    }
+
+    .sound-card.playing .play-btn {
+      background: linear-gradient(135deg, #eab308, #fde047);
+      color: #0f172a;
+      box-shadow: 0 0 20px rgba(253, 224, 71, 0.6);
+    }
+
+    .sound-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sound-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sound-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .sound-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #93c5fd;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .sound-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.4;
+    }
+
+    .sound-specs {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    .sound-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dl-wav {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+    }
+    .dl-wav:hover {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8;
+      color: #fff;
+    }
+
+    .dl-mp3 {
+      background: rgba(192, 132, 252, 0.12);
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      color: #c084fc;
+    }
+    .dl-mp3:hover {
+      background: rgba(192, 132, 252, 0.25);
+      border-color: #c084fc;
+      color: #fff;
+    }
+
+    /* Footer Info */
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #475569;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .sound-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .sound-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .visualizer-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="lightning-overlay"></div>
+  <div class="bg-gradient"></div>
+
+  <div class="container">
+    <header>
+      <div class="badge">⚡ 48kHz / 24-bit DSP Mastered SFX</div>
+      <h1>ULTRA THUNDER SOUND EFFECTS</h1>
+      <p class="subtitle">
+        지축을 흔드는 초저음 충격파(Sub-bass)부터 공기를 찢는 고전압 방전음(Electric Arc), 
+        하늘 전체를 뒤덮는 웅장한 롤링 잔향까지 완벽하게 합성된 고음질 천둥 효과음 세트입니다.
+      </p>
+    </header>
+
+    <!-- Visualizer & Master Bar -->
+    <div class="visualizer-box">
+      <div class="visualizer-header">
+        <div class="status-text">
+          <div class="status-dot"></div>
+          <span id="active-track-name">선택된 트랙을 재생해보세요 (이어폰/스피커 권장)</span>
+        </div>
+        <div class="controls-panel">
+          <div class="control-item">
+            <span>🔊 볼륨</span>
+            <input type="range" id="master-volume" min="0" max="1.5" step="0.05" value="1.0">
+          </div>
+          <div class="control-item">
+            <span>💥 서브우퍼 부스트</span>
+            <input type="range" id="bass-boost" min="0" max="12" step="1" value="4">
+          </div>
+        </div>
+      </div>
+      <canvas id="visualizer"></canvas>
+    </div>
+
+    <!-- Tracks List -->
+    <div class="tracks-grid">
+      
+      <!-- Track 1 -->
+      <div class="sound-card" id="card-1">
+        <div class="sound-left">
+          <button class="play-btn" onclick="playTrack(1, 'thunder_sfx/01_massive_strike_thunder.mp3', '01. 초거대 벼락 직격타 (Massive Strike)')">▶</button>
+          <div class="sound-meta">
+            <div class="sound-title-row">
+              <span class="sound-title">01. 초거대 벼락 직격타 (Super Massive Strike)</span>
+              <span class="sound-tag" style="color:#fde047; background:rgba(253,224,71,0.15);">극강의 충격파</span>
+            </div>
+            <p class="sound-desc">머리 바로 위에서 내리꽂히는 초고전압 스파크 파열음과 귓전을 때리는 압도적 1차 폭음 & 저음 진동</p>
+            <div class="sound-specs">
+              <span>길이: 7.5초</span> • <span>주파수: 20Hz ~ 14kHz</span> • <span>채널: Stereo Reverb</span>
+            </div>
+          </div>
+        </div>
+        <div class="sound-actions">
+          <a class="dl-btn dl-wav" href="thunder_sfx/01_massive_strike_thunder.wav" download>WAV 다운로드</a>
+          <a class="dl-btn dl-mp3" href="thunder_sfx/01_massive_strike_thunder.mp3" download>MP3 다운로드</a>
+        </div>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="sound-card" id="card-2">
+        <div class="sound-left">
+          <button class="play-btn" onclick="playTrack(2, 'thunder_sfx/02_cinematic_epic_thunder.mp3', '02. 영화 예고편급 웅장한 시네마틱 천둥 (Cinematic Epic)')">▶</button>
+          <div class="sound-meta">
+            <div class="sound-title-row">
+              <span class="sound-title">02. 영화 예고편급 시네마틱 천둥 (Cinematic Epic Trailer)</span>
+              <span class="sound-tag" style="color:#38bdf8; background:rgba(56,189,248,0.15);">블록버스터 3단 히트</span>
+            </div>
+            <p class="sound-desc">헐리우드 SFX 트레일러 스타일. 3단계 연속 타격음과 24Hz 서브우퍼 피치 드롭이 결합된 웅장한 사운드</p>
+            <div class="sound-specs">
+              <span>길이: 8.5초</span> • <span>주파수: 22Hz ~ 9kHz</span> • <span>채널: Wide Stereo</span>
+            </div>
+          </div>
+        </div>
+        <div class="sound-actions">
+          <a class="dl-btn dl-wav" href="thunder_sfx/02_cinematic_epic_thunder.wav" download>WAV 다운로드</a>
+          <a class="dl-btn dl-mp3" href="thunder_sfx/02_cinematic_epic_thunder.mp3" download>MP3 다운로드</a>
+        </div>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="sound-card" id="card-3">
+        <div class="sound-left">
+          <button class="play-btn" onclick="playTrack(3, 'thunder_sfx/03_distant_rolling_thunder.mp3', '03. 지평선 롱 롤링 천둥 (Distant Rolling)')">▶</button>
+          <div class="sound-meta">
+            <div class="sound-title-row">
+              <span class="sound-title">03. 지평선 롱 롤링 천둥 (Distant Cloud Rolling)</span>
+              <span class="sound-tag" style="color:#a78bfa; background:rgba(167,139,250,0.15);">10초 지속 잔향</span>
+            </div>
+            <p class="sound-desc">지평선 너머 먹구름을 타고 좌우로 끝없이 파도치며 굴러가는 웅장하고 깊은 저음 롤링 천둥</p>
+            <div class="sound-specs">
+              <span>길이: 10.0초</span> • <span>주파수: 25Hz ~ 1.5kHz</span> • <span>채널: Atmospheric Diffusion</span>
+            </div>
+          </div>
+        </div>
+        <div class="sound-actions">
+          <a class="dl-btn dl-wav" href="thunder_sfx/03_distant_rolling_thunder.wav" download>WAV 다운로드</a>
+          <a class="dl-btn dl-mp3" href="thunder_sfx/03_distant_rolling_thunder.mp3" download>MP3 다운로드</a>
+        </div>
+      </div>
+
+      <!-- Track 4 -->
+      <div class="sound-card" id="card-4">
+        <div class="sound-left">
+          <button class="play-btn" onclick="playTrack(4, 'thunder_sfx/04_apocalyptic_cataclysm_thunder.mp3', '04. 아포칼립스 대재앙 하이퍼 천둥 (Apocalyptic Cataclysm)')">▶</button>
+          <div class="sound-meta">
+            <div class="sound-title-row">
+              <span class="sound-title">04. 아포칼립스 대재앙 천둥 (Apocalyptic Cataclysm)</span>
+              <span class="sound-tag" style="color:#f87171; background:rgba(248,113,113,0.15);">지진 & 화산급 굉음</span>
+            </div>
+            <p class="sound-desc">세계의 종말을 연상시키는 묵직한 하이퍼 포화음. 18Hz 초저음 지진 진동과 다중 충격파 연타</p>
+            <div class="sound-specs">
+              <span>길이: 9.0초</span> • <span>주파수: 18Hz ~ 10kHz</span> • <span>채널: Hyper Saturation</span>
+            </div>
+          </div>
+        </div>
+        <div class="sound-actions">
+          <a class="dl-btn dl-wav" href="thunder_sfx/04_apocalyptic_cataclysm_thunder.wav" download>WAV 다운로드</a>
+          <a class="dl-btn dl-mp3" href="thunder_sfx/04_apocalyptic_cataclysm_thunder.mp3" download>MP3 다운로드</a>
+        </div>
+      </div>
+
+      <!-- Track 5 -->
+      <div class="sound-card" id="card-5">
+        <div class="sound-left">
+          <button class="play-btn" onclick="playTrack(5, 'thunder_sfx/05_storm_rain_thunder.mp3', '05. 폭풍우 빗소리와 천둥 앰비언스 (Storm Rain & Thunder)')">▶</button>
+          <div class="sound-meta">
+            <div class="sound-title-row">
+              <span class="sound-title">05. 폭풍우 빗소리와 천둥 (Storm Rain & Thunder Ambience)</span>
+              <span class="sound-tag" style="color:#34d399; background:rgba(52,211,153,0.15);">실사 앰비언스 배경</span>
+            </div>
+            <p class="sound-desc">세차게 쏟아지는 리얼 폭풍우 빗소리 텍스처 사이로 정적을 깨고 터지는 실감 나는 천둥번개</p>
+            <div class="sound-specs">
+              <span>길이: 10.0초</span> • <span>주파수: 20Hz ~ 15kHz</span> • <span>채널: Full Storm Texture</span>
+            </div>
+          </div>
+        </div>
+        <div class="sound-actions">
+          <a class="dl-btn dl-wav" href="thunder_sfx/05_storm_rain_thunder.wav" download>WAV 다운로드</a>
+          <a class="dl-btn dl-mp3" href="thunder_sfx/05_storm_rain_thunder.mp3" download>MP3 다운로드</a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      ⚡ Mastered with Python DSP (Scipy Signal Processing & Tube Saturation Modeling)<br>
+      각 음원은 게임 개발(Unity/Unreal), 영상 편집(유튜브/틱톡/영화), 음악 비트, 효과음 등에 상업적 제한 없이 자유롭게 사용하실 수 있습니다.
+    </footer>
+  </div>
+
+  <script>
+    let audioCtx = null;
+    let currentAudio = null;
+    let currentTrackId = null;
+    let analyser = null;
+    let gainNode = null;
+    let biquadFilter = null;
+    let canvas = document.getElementById('visualizer');
+    let ctx = canvas.getContext('2d');
+    let animationId = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+        
+        gainNode = audioCtx.createGain();
+        gainNode.gain.value = parseFloat(document.getElementById('master-volume').value);
+        
+        biquadFilter = audioCtx.createBiquadFilter();
+        biquadFilter.type = "lowshelf";
+        biquadFilter.frequency.value = 80;
+        biquadFilter.gain.value = parseFloat(document.getElementById('bass-boost').value);
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function triggerLightning() {
+      const overlay = document.getElementById('lightning-overlay');
+      overlay.style.opacity = '0.9';
+      setTimeout(() => { overlay.style.opacity = '0.1'; }, 40);
+      setTimeout(() => { overlay.style.opacity = '0.7'; }, 90);
+      setTimeout(() => { overlay.style.opacity = '0'; }, 220);
+    }
+
+    function playTrack(trackId, audioUrl, trackTitle) {
+      initAudioContext();
+
+      // If clicking currently playing track, pause it
+      if (currentTrackId === trackId && currentAudio && !currentAudio.paused) {
+        currentAudio.pause();
+        resetAllCards();
+        document.getElementById('active-track-name').innerText = '일시 정지됨';
+        return;
+      }
+
+      // Stop any running track
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+      resetAllCards();
+
+      triggerLightning();
+
+      currentAudio = new Audio(audioUrl);
+      currentAudio.crossOrigin = "anonymous";
+      currentTrackId = trackId;
+
+      const trackSource = audioCtx.createMediaElementSource(currentAudio);
+      trackSource.connect(biquadFilter);
+      biquadFilter.connect(gainNode);
+      gainNode.connect(analyser);
+      analyser.connect(audioCtx.destination);
+
+      currentAudio.play().then(() => {
+        const card = document.getElementById(`card-${trackId}`);
+        card.classList.add('playing');
+        card.querySelector('.play-btn').innerText = '⏸';
+        document.getElementById('active-track-name').innerText = `⚡ 재생 중: ${trackTitle}`;
+        drawVisualizer();
+      }).catch(err => {
+        console.error("Playback error:", err);
+      });
+
+      currentAudio.onended = () => {
+        resetAllCards();
+        document.getElementById('active-track-name').innerText = '재생 완료. 다른 트랙을 선택해보세요.';
+      };
+    }
+
+    function resetAllCards() {
+      for (let i = 1; i <= 5; i++) {
+        const card = document.getElementById(`card-${i}`);
+        if (card) {
+          card.classList.remove('playing');
+          card.querySelector('.play-btn').innerText = '▶';
+        }
+      }
+      currentTrackId = null;
+    }
+
+    // Volume & Bass boost change listeners
+    document.getElementById('master-volume').addEventListener('input', (e) => {
+      if (gainNode) gainNode.gain.value = parseFloat(e.target.value);
+    });
+
+    document.getElementById('bass-boost').addEventListener('input', (e) => {
+      if (biquadFilter) biquadFilter.gain.value = parseFloat(e.target.value);
+    });
+
+    function drawVisualizer() {
+      if (!analyser) return;
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      function renderFrame() {
+        animationId = requestAnimationFrame(renderFrame);
+        analyser.getByteFrequencyData(dataArray);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const barWidth = (canvas.width / bufferLength) * 2.2;
+        let barHeight;
+        let x = 0;
+
+        for (let i = 0; i < bufferLength; i++) {
+          barHeight = (dataArray[i] / 255) * canvas.height * 0.9;
+
+          // Gradient color: Sub bass (purple/cyan) -> Mid/High (Yellow/White)
+          const grad = ctx.createLinearGradient(0, canvas.height, 0, canvas.height - barHeight);
+          grad.addColorStop(0, '#0284c7');
+          grad.addColorStop(0.5, '#38bdf8');
+          grad.addColorStop(1, '#fde047');
+
+          ctx.fillStyle = grad;
+          ctx.fillRect(x, canvas.height - barHeight, barWidth - 1, barHeight);
+
+          x += barWidth + 1;
+        }
+      }
+
+      if (animationId) cancelAnimationFrame(animationId);
+      renderFrame();
+    }
+
+    // Resize canvas
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth - 48;
+      canvas.height = 130;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+  </script>
+</body>
+</html>
